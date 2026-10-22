@@ -1,8 +1,9 @@
 """Loading the corpus into the object model.
 
-`load()` reads every data file through `phylohist.loader.io`, registers
-authors, publications and sources, builds the taxa, the sections and then every tree,
-and returns the raw data with the tree roots per source. The scripts,
+`load()` reads every data file through `phylohist.loader.io`, builds a
+`Corpus` (`corpus.py`) of the authors, publications and sources, the taxa,
+the sections and then every tree, and returns it with the raw data and the
+tree roots per source; each call builds a corpus of its own. The scripts,
 the tests and the extractor all come through here. Every integrity
 problem is logged where it is found so that one run reports them all;
 the load then fails with their count, unless the caller asks for the
@@ -19,50 +20,53 @@ import logging
 from ..derivatives import kind_of
 from ..ranks import GENUS_GROUP, SPECIES_GROUP, fold_rank, implied_rank, rank_order
 from . import checks, material, nomenclature
+from .corpus import Corpus
 from .io import DATA_DIR, TREE_DIR, LoadError, display_path, fail, load_files
-from .research import Author, Publication, Source
-from .taxa import Section, Taxon, Tree
+from .taxa import Tree
 
 logger = logging.getLogger(__name__)
 
 
-def _basic_load(data, field, cls):
-  logger.info(f'Loading {len(data[field])} {field}...')
-  for item_key, item_data in data[field].items():
-    cls.add(item_data, item_key)
+def _basic_load(corpus, field, add):
+  records = corpus.data[field]
+  logger.info(f'Loading {len(records)} {field}...')
+  for item_key, item_data in records.items():
+    add(item_data, item_key)
   logger.info(f'...{field} loaded.')
 
 
-def _load_sources(data):
+def _load_sources(corpus):
   # An alias resolves its target on construction, so aliases load last,
   # wherever they sit in the file.
-  logger.info(f'Loading {len(data["sources"])} sources...')
+  records = corpus.data['sources']
+  logger.info(f'Loading {len(records)} sources...')
   deferred = []
-  for source_key, source_data in data['sources'].items():
+  for source_key, source_data in records.items():
     if 'aliasOf' in source_data:
       deferred.append((source_key, source_data))
       continue
-    Source.add(source_data, source_key)
+    corpus.add_source(source_data, source_key)
   for source_key, source_data in deferred:
-    Source.add(source_data, source_key)
+    corpus.add_source(source_data, source_key)
   logger.info('...sources loaded.')
 
 
-def _load_taxa(data):
-  logger.info(f'Processing {len(data["taxa"])} taxa...')
+def _load_taxa(corpus):
+  records = corpus.data['taxa']
+  logger.info(f'Processing {len(records)} taxa...')
   # A derivative is built after its target, wherever the file puts them.
   waiting = {}
-  for taxon_key, taxon_data in data['taxa'].items():
+  for taxon_key, taxon_data in records.items():
     if kind_of(taxon_data) is None:
-      Taxon.add(taxon_data, taxon_key)
+      corpus.add_taxon(taxon_data, taxon_key)
     else:
       waiting[taxon_key] = taxon_data
   while waiting:
-    _add_derivative(next(iter(waiting)), waiting)
+    _add_derivative(corpus, next(iter(waiting)), waiting)
   logger.info('...taxa processed.')
 
 
-def _add_derivative(taxon_key, waiting, chain=()):
+def _add_derivative(corpus, taxon_key, waiting, chain=()):
   """Build the derivative `taxon_key` out of `waiting`, its target first
   when that is waiting too; a target that closes a loop ends the load, and
   one with no record is `Taxon._known`'s to report."""
@@ -77,11 +81,12 @@ def _add_derivative(taxon_key, waiting, chain=()):
       f'taxon {taxon_key} is in a loop of derivative records',
     )
   if target_key in waiting:
-    _add_derivative(target_key, waiting, (*chain, taxon_key))
-  Taxon.add(taxon_data, taxon_key)
+    _add_derivative(corpus, target_key, waiting, (*chain, taxon_key))
+  corpus.add_taxon(taxon_data, taxon_key)
 
 
-def _report_merge_targets(data):
+def _report_merge_targets(corpus):
+  data = corpus.data
   for ref_key, opinion in data['trees'].items():
     for tax_tree in opinion.get('taxonomies', ()):
       if 'mergeInto' not in tax_tree:
@@ -126,37 +131,39 @@ def _source_ids(value, pointer=()):
       yield from _source_ids(item, (*pointer, index))
 
 
-def _report_cited_sources(data):
+def _report_cited_sources(corpus):
   """Every source id a tree file carries names a source record (an alias
   counts). The schema's pattern cannot tell a typo or a stale id from a
-  key; only the registry can, and the store indexes these keys directly
-  when it renders, so an unknown one is an error here with its path.
-  `mergeInto` names a tree and is `_report_merge_targets`'s."""
-  for ref_key, opinion in data['trees'].items():
+  key; only the corpus's source records can, and the store indexes these
+  keys directly when it renders, so an unknown one is an error here with
+  its path. `mergeInto` names a tree and is `_report_merge_targets`'s."""
+  for ref_key, opinion in corpus.data['trees'].items():
     file_level = {k: v for k, v in opinion.items() if k not in ('taxonomies', 'phylogenies')}
     found = [(None, pointer, key) for pointer, key in _source_ids(file_level)]
     for path, node, _ in material.walk_document(opinion):
       found.extend((path, pointer, key) for pointer, key in _source_ids(node))
     for path, pointer, key in found:
-      if Source.get(key) is None:
+      if corpus.sources.get(key) is None:
         where = f'{ref_key} at {path}' if path is not None else ref_key
         field = '/'.join(str(p) for p in pointer)
         logger.error(f'{where}: `{field}` names "{key}", which has no source record')
 
 
-def _report_missing_protologues(data, roots):
+def _report_missing_protologues(corpus):
   # A protologue is the source that names a taxon; if that source is one of
   # our trees, the taxon should show up flagged `new` in it. The keys each
   # tree uses come from a walk.
+  data = corpus.data
   used = {
     (node.taxon.key, source_key)
-    for source_key, trees in roots.items()
+    for source_key, trees in corpus.roots.items()
     for root in trees
     for node in root.walk()
     if node.taxon is not None
   }
+  new = corpus.protologue_sources()
   missing = 0
-  for taxon in Taxon._taxa.values():
+  for taxon in corpus.taxa.values():
     # Open taxa and derivative records have no protologue to flag.
     if taxon.name is None or taxon.derivative_of is not None:
       continue
@@ -165,7 +172,7 @@ def _report_missing_protologues(data, roots):
       continue
     # An authority may cite its protologue's source by an alias.
     source = source.canonical
-    if source.key not in Tree._new_index.get(taxon.key, ()):
+    if source.key not in new.get(taxon.key, ()):
       if (taxon.key, source.key) in used:
         # We recorded the taxon but did not acknowledge its new-ness.
         logger.error(f'Protologue not flagged: {taxon.key} in {source.key}')
@@ -212,12 +219,13 @@ def _protologue_value(value):
   return 'none' if value is None else json.dumps(value, ensure_ascii=False)
 
 
-def _report_protologue_mismatches(data, roots):
+def _report_protologue_mismatches(corpus):
   # A record that gives its protologue page must agree with the node marked
   # new for it, on the fields that node declares; and it may not give a
   # field its tree file lists as unused.
+  data, roots = corpus.data, corpus.roots
   mismatches = 0
-  for taxon in Taxon._taxa.values():
+  for taxon in corpus.taxa.values():
     if taxon.pages is None:
       continue
     source = taxon.authority.source
@@ -287,7 +295,7 @@ def _placed_rank(node):
   return node.taxon.rank
 
 
-def _report_rank_order(roots):
+def _report_rank_order(corpus):
   # A child of a genus, subgenus or species in a taxonomy is at a rank
   # below its parent's. A node giving no rank of its own sits where its
   # record's rank says, so the record must agree with the tree: an open
@@ -295,7 +303,7 @@ def _report_rank_order(roots):
   # with a rank word is the protologue check's, and one written
   # `rank: null` stands outside the order.
   misplaced = 0
-  for trees in roots.values():
+  for trees in corpus.roots.values():
     for root in trees:
       if root.tree_type != Tree.TYPE_TAXONOMY:
         continue
@@ -331,12 +339,13 @@ _SECTION_PROTOLOGUE_FIELDS = (
 )
 
 
-def _report_section_protologues(data, roots):
+def _report_section_protologues(corpus):
   # A section record that gives `pages` must agree with the `sectionStart`
   # marker flagged `new` for it in its authority's trees, on the fields that
   # marker declares.
+  data, roots = corpus.data, corpus.roots
   mismatches = 0
-  for section in Section._sections.values():
+  for section in corpus.sections.values():
     if section.pages is None:
       continue
     source = section.authority.source if section.authority else None
@@ -369,10 +378,10 @@ def _report_section_protologues(data, roots):
   logger.info(f'{mismatches} disagreements between a section record and its protologue marker')
 
 
-def _report_lapsus_records(roots):
+def _report_lapsus_records(corpus):
   # A record that exists because of a slip of the pen appears under
   # `lapsus`, and elsewhere only as a synonymy entry marked `lapsusFor`.
-  nodes = [node for trees in roots.values() for root in trees for node in root.walk()]
+  nodes = [node for trees in corpus.roots.values() for root in trees for node in root.walk()]
   lapsus = {node.taxon.key for node in nodes if node.axis == 'lapsus' and node.taxon}
   for node in nodes:
     if node.taxon is None or node.taxon.key not in lapsus or node.axis == 'lapsus':
@@ -381,23 +390,26 @@ def _report_lapsus_records(roots):
       logger.error(f'Lapsus record {node.taxon.key} at {node} is not under `lapsus` or `lapsusFor`')
 
 
-def _load_trees(data):
-  """Build every tree; return ``{source_key: [roots in position order]}``."""
+def _load_trees(corpus):
+  """Build every tree into ``corpus.roots``, ``{source_key: [roots in
+  position order]}``, then run the checks over the loaded corpus."""
+  data = corpus.data
   logger.info(f'Processing {len(data["trees"])} opinions...')
 
   roots = {}
   for ref_key, opinion in data['trees'].items():
     logger.debug(f'Processing opinions from "{ref_key}"')
-    if Source.get(ref_key) is None:
+    source = corpus.sources.get(ref_key)
+    if source is None:
       # A tree needs its source record: every node hashes by it. Skipped,
       # not built half-way, so a draft without its record fails the load
       # cleanly instead of crashing it.
       logger.error(f'Tree file "{ref_key}" has no source record; its trees are skipped')
       continue
-    if Source.get(ref_key).canonical.key != ref_key:
+    if source.canonical.key != ref_key:
       logger.error(
         f'Tree file "{ref_key}" is named by an alias; name it '
-        f'"{Source.get(ref_key).canonical.key}". Its trees are skipped',
+        f'"{source.canonical.key}". Its trees are skipped',
       )
       continue
     roots[ref_key] = []
@@ -418,7 +430,7 @@ def _load_trees(data):
       }
       position += 1
 
-      t = Tree(tax_tree, metadata)
+      t = Tree(tax_tree, metadata, corpus=corpus)
       roots[ref_key].append(t)
       logger.debug(f'Processed tree {t}')
 
@@ -437,33 +449,34 @@ def _load_trees(data):
       if 'notes' in phy_tree:
         metadata['notes'] = phy_tree['notes']
 
-      t = Tree(phy_tree['tree'], metadata)
+      t = Tree(phy_tree['tree'], metadata, corpus=corpus)
       roots[ref_key].append(t)
 
   logger.info('...opinions processed.')
+  corpus.roots = roots
 
-  _report_merge_targets(data)
-  _report_cited_sources(data)
-  _report_missing_protologues(data, roots)
-  _report_protologue_mismatches(data, roots)
-  _report_rank_order(roots)
-  _report_section_protologues(data, roots)
-  _report_lapsus_records(roots)
-  _report_material(data)
-  _report_nomenclature(data)
-  return roots
+  _report_merge_targets(corpus)
+  _report_cited_sources(corpus)
+  _report_missing_protologues(corpus)
+  _report_protologue_mismatches(corpus)
+  _report_rank_order(corpus)
+  _report_section_protologues(corpus)
+  _report_lapsus_records(corpus)
+  _report_material(corpus)
+  _report_nomenclature(corpus)
 
 
 def _log_material(level, message):
   (logger.error if level == 'error' else logger.warning)(message)
 
 
-def _report_material(data):
-  """Run the material checks over the registry, then over every opinion
-  (`checks.FILE_CHECKS`) and its nodes (`checks.MATERIAL_CHECKS`), logging
-  each at its level with the source key and, for a per-node check, the
-  node's path, then the `sameAs` links across the whole corpus."""
-  repositories = data.get('repositories') or {}
+def _report_material(corpus):
+  """Run the material checks over the corpus's repository registry, then
+  over every opinion (`checks.FILE_CHECKS`) and its nodes
+  (`checks.MATERIAL_CHECKS`), logging each at its level with the source key
+  and, for a per-node check, the node's path, then the `sameAs` links
+  across the whole corpus."""
+  data, repositories = corpus.data, corpus.repositories
   for level, message in material.registry_links(repositories):
     _log_material(level, f'repositories: {message}')
 
@@ -475,18 +488,18 @@ def _report_material(data):
       _log_material(level, f'{source_key} at {path}: {message}')
 
   for level, message in material.same_as_links(
-    data['trees'], lambda key: material.source_year(Source.get(key))
+    data['trees'], lambda key: material.source_year(corpus.sources.get(key))
   ):
     _log_material(level, message)
 
 
-def _report_nomenclature(data):
+def _report_nomenclature(corpus):
   """Run the open-nomenclature checks (`checks.NOMENCLATURE_CHECKS`) over
   every opinion's nodes, logging each at its level with the source key and
   the node's path, then the one check across the whole corpus."""
-  repositories = data.get('repositories') or {}
+  data, repositories = corpus.data, corpus.repositories
   for source_key, opinion in data['trees'].items():
-    scope = checks.file_scope(opinion, repositories, Taxon.get)
+    scope = checks.file_scope(opinion, repositories, corpus.taxa.get)
     for path, level, message in checks.node_messages(scope, checks.NOMENCLATURE_CHECKS):
       _log_material(level, f'{source_key} at {path}: {message}')
   for level, message in nomenclature.compared_link_conflicts(data['trees'].items()):
@@ -533,27 +546,26 @@ def collecting():
 
 
 def load(drafts=False, tolerate=False, data_dir=DATA_DIR, fast=False):
-  """``(data, roots)``: the loaded data files and ``{source: [roots]}``.
-  Raises `LoadError` when any integrity check logged an error, with the
-  count, so a caller cannot take a broken load for a good one; with
-  ``tolerate`` the data comes back regardless, for a caller that wants
-  to see everything before stopping. A record the load cannot continue
-  without ends it at once, ``tolerate`` or not (`io.fail`). ``data_dir`` and ``fast`` are
+  """The loaded `Corpus`, a new one each call: its records, the data files
+  as loaded (`data`) and ``{source: [roots]}`` (`roots`). Raises
+  `LoadError` when any integrity check logged an error, with the count, so
+  a caller cannot take a broken load for a good one; with ``tolerate`` the
+  corpus comes back regardless, for a caller that wants to see everything
+  before stopping. A record the load cannot continue without ends it at
+  once, ``tolerate`` or not (`io.fail`). ``data_dir`` and ``fast`` are
   `load_files`'s: another directory shaped like `data/`, and libyaml."""
   with collecting() as logged:
     data = load_files(drafts=drafts, data_dir=data_dir, fast=fast)
-    material.set_repository_registry(data.get('repositories'))
-    for field, cls in (
-      ('authors', Author),
-      ('publications', Publication),
-    ):
-      _basic_load(data, field, cls)
-    _load_sources(data)
-    _load_taxa(data)
-    _basic_load(data, 'sections', Section)
-    roots = _load_trees(data)
+    corpus = Corpus(data.get('repositories'))
+    corpus.data = data
+    _basic_load(corpus, 'authors', corpus.add_author)
+    _basic_load(corpus, 'publications', corpus.add_publication)
+    _load_sources(corpus)
+    _load_taxa(corpus)
+    _basic_load(corpus, 'sections', corpus.add_section)
+    _load_trees(corpus)
   count = len(logged.errors)
   if count and not tolerate:
     plural = 's' if count != 1 else ''
     raise LoadError(f'{count} integrity error{plural} while loading; see the log')
-  return data, roots
+  return corpus

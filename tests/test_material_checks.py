@@ -720,7 +720,7 @@ def test_walk_document_ignores_non_dict_and_absent_axes():
 # -- Tree.file_contexts / file_unused / contexts / context_scopes -------------
 
 
-def test_tree_file_contexts_and_unused_read_from_root_metadata():
+def test_tree_file_contexts_and_unused_read_from_root_metadata(records):
   # No `taxon` field: only a registered source is needed (`Tree` hashes by
   # it), which the corpus provides for source key '1961_dehm'.
   metadata = {
@@ -730,7 +730,7 @@ def test_tree_file_contexts_and_unused_read_from_root_metadata():
     'file_contexts': {'loc': {}},
     'file_unused': ('ranges',),
   }
-  root = Tree({'children': [{}]}, metadata)
+  root = Tree({'children': [{}]}, metadata, corpus=records)
   assert root.file_contexts == {'loc': {}}
   assert root.file_unused == ('ranges',)
   child = root.children[0]
@@ -738,21 +738,21 @@ def test_tree_file_contexts_and_unused_read_from_root_metadata():
   assert child.file_unused == ('ranges',)
 
 
-def test_tree_contexts_merge_node_over_file_with_scope_map():
+def test_tree_contexts_merge_node_over_file_with_scope_map(records):
   metadata = {
     'source_key': '1961_dehm',
     'position': 901,
     'type': 'taxonomy',
     'file_contexts': {'loc': {'unit': ['a']}, 'file-only': {}},
   }
-  root = Tree({'contexts': {'loc': {'unit': ['b']}}}, metadata)
+  root = Tree({'contexts': {'loc': {'unit': ['b']}}}, metadata, corpus=records)
   assert root.contexts == {'loc': {'unit': ['b']}, 'file-only': {}}
   assert root.context_scopes == {'loc': 'node', 'file-only': 'file'}
 
 
-def test_tree_file_contexts_defaults_when_absent():
+def test_tree_file_contexts_defaults_when_absent(records):
   metadata = {'source_key': '1961_dehm', 'position': 902, 'type': 'taxonomy'}
-  root = Tree({}, metadata)
+  root = Tree({}, metadata, corpus=records)
   assert root.file_contexts == {}
   assert root.file_unused == ()
   assert root.contexts == {}
@@ -770,10 +770,7 @@ def test_source_year_puts_a_work_in_preparation_last():
 # -- loader wiring (`load.py`'s `_report_material`) ---------------------------
 
 
-def test_load_reports_material_checks_at_the_right_level(caplog):
-  # Direct call, not a full `load()`: `Source`, `Taxon` and `Tree` keep
-  # class-level registries shared by the whole session, so a fake corpus
-  # routed through `load()` would leak into every other test.
+def test_load_reports_material_checks_at_the_right_level(records, caplog):
   from phylohist.loader.load import _report_material
 
   data = {
@@ -800,7 +797,7 @@ def test_load_reports_material_checks_at_the_right_level(caplog):
     },
   }
   with caplog.at_level(logging.WARNING, logger='phylohist'):
-    _report_material(data)
+    _report_material(support.with_documents(records, data))
   warnings = [r.getMessage() for r in caplog.records if r.levelno == logging.WARNING]
   errors = [r.getMessage() for r in caplog.records if r.levelno == logging.ERROR]
   assert any('_synthetic_source' in m and 'context "stray"' in m for m in warnings)
@@ -817,7 +814,7 @@ def test_load_reports_material_checks_at_the_right_level(caplog):
   assert sum('repository "nowhere"' in m for m in errors) == 1
 
 
-def test_load_reports_tentative_on_ranges_and_contexts(caplog):
+def test_load_reports_tentative_on_ranges_and_contexts(records, caplog):
   from phylohist.loader.load import _report_material
 
   data = {
@@ -835,7 +832,7 @@ def test_load_reports_tentative_on_ranges_and_contexts(caplog):
     },
   }
   with caplog.at_level(logging.ERROR, logger='phylohist'):
-    _report_material(data)
+    _report_material(support.with_documents(records, data))
   errors = [r.getMessage() for r in caplog.records if r.levelno == logging.ERROR]
   assert any(m.startswith('_synthetic_source: context "f": a file-level context') for m in errors)
   assert any(
@@ -1394,7 +1391,7 @@ def test_schema_rejects_a_malformed_prefix_map_or_locality_number(extra):
 # -- Tree metadata, the loader and the draft checker ---------------------------
 
 
-def test_tree_reads_the_prefix_map_and_locality_register_from_root_metadata():
+def test_tree_reads_the_prefix_map_and_locality_register_from_root_metadata(records):
   metadata = {
     'source_key': '1961_dehm',
     'position': 903,
@@ -1402,14 +1399,14 @@ def test_tree_reads_the_prefix_map_and_locality_register_from_root_metadata():
     'file_prefixes': {'MCZ': 'mcz'},
     'file_locality_register': 'sprinkle-l',
   }
-  root = Tree({'children': [{}]}, metadata)
+  root = Tree({'children': [{}]}, metadata, corpus=records)
   child = root.children[0]
   assert (child.file_prefixes, child.file_locality_register) == ({'MCZ': 'mcz'}, 'sprinkle-l')
-  bare = Tree({}, {'source_key': '1961_dehm', 'position': 904, 'type': 'taxonomy'})
+  bare = Tree({}, {'source_key': '1961_dehm', 'position': 904, 'type': 'taxonomy'}, corpus=records)
   assert (bare.file_prefixes, bare.file_locality_register) == ({}, None)
 
 
-def test_load_reports_the_new_shape_checks(caplog):
+def test_load_reports_the_new_shape_checks(records, caplog):
   from phylohist.loader.load import _report_material
 
   data = {
@@ -1438,7 +1435,7 @@ def test_load_reports_the_new_shape_checks(caplog):
     },
   }
   with caplog.at_level(logging.WARNING, logger='phylohist'):
-    _report_material(data)
+    _report_material(support.with_documents(records, data))
   warnings = [r.getMessage() for r in caplog.records if r.levelno == logging.WARNING]
   errors = [r.getMessage() for r in caplog.records if r.levelno == logging.ERROR]
   assert '_synthetic_source: prefix "GM" is not a known form of "mcz"' in warnings
@@ -1589,7 +1586,7 @@ def test_same_as_pointing_at_a_later_source_is_an_error_but_equal_years_are_allo
   assert _same_as_errors(later, {}) == []
 
 
-def test_the_loader_reports_same_as_links_across_the_corpus(caplog):
+def test_the_loader_reports_same_as_links_across_the_corpus(records, caplog):
   from phylohist.loader.load import _report_material
 
   data = {
@@ -1602,7 +1599,7 @@ def test_the_loader_reports_same_as_links_across_the_corpus(caplog):
     },
   }
   with caplog.at_level(logging.WARNING, logger='phylohist'):
-    _report_material(data)
+    _report_material(support.with_documents(records, data))
   errors = [r.getMessage() for r in caplog.records if r.levelno == logging.ERROR]
   # The corpus's own years come from the source records, 1897 before 1914.
   assert errors == [

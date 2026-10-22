@@ -4,13 +4,11 @@ a tree names it only through `mineralTaxon`, which names nothing else. The
 schema, the loader, the draft checker, the claims, the names index and the
 resolver.
 
-Synthetic records and trees are built on the loaded test corpus (`Taxon`
-and `Tree` keep class-level registries, so each test gets its own copies,
-restored afterwards); the store tests read a copy of the corpus's claim
+Synthetic records and trees are built on each test's copy of the loaded
+test corpus (`records`); the store tests read a copy of the corpus's claim
 table with one source's claims replaced.
 """
 
-import collections
 import itertools
 import json
 import logging
@@ -26,7 +24,7 @@ from phylohist.loader.load import (
   _report_protologue_mismatches,
   _report_rank_order,
 )
-from phylohist.loader.taxa import Taxon, Tree
+from phylohist.loader.taxa import Tree
 from phylohist.store import ClaimStore
 from tests import support
 
@@ -54,14 +52,12 @@ NOT_MINERAL = '`mineralTaxon` "{}" is not a mineral record (`mineral: true`)'
 ONLY_MINERAL_TAXON = '`{}` "{}" is a mineral record, which only `mineralTaxon` names'
 
 
-@pytest.fixture(autouse=True)
-def registries(monkeypatch):
-  """Private copies of the class-level registries a `Tree` writes to, with
-  the synthetic records loaded."""
-  monkeypatch.setattr(Tree, '_new_index', collections.defaultdict(set))
-  monkeypatch.setattr(Taxon, '_taxa', dict(Taxon._taxa))
+@pytest.fixture
+def records(records):
+  """The test's copy of the corpus, with the synthetic records loaded."""
   for key, record in RECORDS.items():
-    Taxon.add(dict(record), key)
+    records.add_taxon(dict(record), key)
+  return records
 
 
 def _record_valid(record):
@@ -72,8 +68,10 @@ def _node_valid(node):
   return support.schema()[io.TREE_DEF].check({'taxonomies': [node]})
 
 
-def _tree(node):
-  return Tree(node, {'source_key': SOURCE, 'type': 'taxonomy', 'position': next(POSITIONS)})
+def _tree(records, node):
+  return Tree(
+    node, {'source_key': SOURCE, 'type': 'taxonomy', 'position': next(POSITIONS)}, corpus=records
+  )
 
 
 def _logged(caplog, level, build):
@@ -134,76 +132,80 @@ def test_schema_rejects_a_mineral_taxon_that_is_no_key():
 # -- records ------------------------------------------------------------------
 
 
-def test_a_mineral_reads_as_unranked_and_mineral():
-  assert (Taxon.get(MINERAL).rank, Taxon.get(MINERAL).mineral) == ('Unranked', True)
-  assert (Taxon.get(GENUS).mineral, Taxon.get(UNRANKED).mineral) == (False, False)
+def test_a_mineral_reads_as_unranked_and_mineral(records):
+  assert (records.taxa[MINERAL].rank, records.taxa[MINERAL].mineral) == ('Unranked', True)
+  assert (records.taxa[GENUS].mineral, records.taxa[UNRANKED].mineral) == (False, False)
 
 
-def test_a_spelling_of_a_mineral_is_a_mineral():
-  assert Taxon.get(SPELLING).mineral is True
+def test_a_spelling_of_a_mineral_is_a_mineral(records):
+  assert records.taxa[SPELLING].mineral is True
   vulgar = 'mineralen_linnaeus_1758'
-  Taxon.add({'name': 'mineralen', 'lang': 'DE', 'vulgarSpellingOf': MINERAL}, vulgar)
-  assert Taxon.get(vulgar).mineral is True
+  records.add_taxon({'name': 'mineralen', 'lang': 'DE', 'vulgarSpellingOf': MINERAL}, vulgar)
+  assert records.taxa[vulgar].mineral is True
 
 
-def test_a_mineral_key_takes_the_authority_suffix_as_a_species_does(caplog):
+def test_a_mineral_key_takes_the_authority_suffix_as_a_species_does(records, caplog):
   record = {'name': 'lapillus', 'rank': None, 'mineral': True, **EARLIER}
   for key in ('lapillus_linnaeus_1758', 'lapillus'):
-    _, errors = _logged(caplog, logging.ERROR, lambda key=key: Taxon.add(dict(record), key))
+    _, errors = _logged(caplog, logging.ERROR, lambda key=key: records.add_taxon(dict(record), key))
     assert errors == []
-  _, errors = _logged(caplog, logging.ERROR, lambda: Taxon.add(dict(record), 'lapillus-stone'))
+  _, errors = _logged(
+    caplog, logging.ERROR, lambda: records.add_taxon(dict(record), 'lapillus-stone')
+  )
   assert len(errors) == 1
   assert errors[0].startswith('"lapillus-stone" not in expected set: ')
   assert 'lapillus_linnaeus_1758' in errors[0]
 
 
-def test_a_mineral_is_exempt_from_the_rank_suffix_warnings(caplog):
+def test_a_mineral_is_exempt_from_the_rank_suffix_warnings(records, caplog):
   record = {'name': 'Lapida', 'rank': None, **EARLIER}
-  _, warned = _logged(caplog, logging.WARNING, lambda: Taxon.add(dict(record), 'lapida'))
+  _, warned = _logged(caplog, logging.WARNING, lambda: records.add_taxon(dict(record), 'lapida'))
   assert len(warned) == 1 and 'Lapida with suffix "ida"' in warned[0]
   mineral = {**record, 'mineral': True}
-  _, warned = _logged(caplog, logging.WARNING, lambda: Taxon.add(mineral, 'lapida_linnaeus_1758'))
+  _, warned = _logged(
+    caplog, logging.WARNING, lambda: records.add_taxon(mineral, 'lapida_linnaeus_1758')
+  )
   assert warned == []
 
 
 # -- nodes --------------------------------------------------------------------
 
 
-def test_mineral_taxon_loads_as_a_named_entry(caplog):
+def test_mineral_taxon_loads_as_a_named_entry(records, caplog):
   node = {'taxon': GENUS, 'synonyms': [{'mineralTaxon': MINERAL}]}
-  root, errors = _logged(caplog, logging.ERROR, lambda: _tree(node))
+  root, errors = _logged(caplog, logging.ERROR, lambda: _tree(records, node))
   assert errors == []
   [(_, entry)] = list(root.related())
-  assert (entry.axis, entry.taxon is Taxon.get(MINERAL)) == ('synonyms', True)
+  assert (entry.axis, entry.taxon is records.taxa[MINERAL]) == ('synonyms', True)
 
 
-def test_a_primary_mineral_taxon_is_checked_for_its_source_like_a_taxon(caplog):
+def test_a_primary_mineral_taxon_is_checked_for_its_source_like_a_taxon(records, caplog):
   own = 'calculus_linnaeus_1766'
-  Taxon.add(
+  records.add_taxon(
     {'name': 'calculus', 'rank': None, 'mineral': True, 'authority': {'source': SOURCE}}, own
   )
   node = {'taxon': GENUS, 'children': [{'mineralTaxon': own}]}
-  _, errors = _logged(caplog, logging.ERROR, lambda: _tree(node))
+  _, errors = _logged(caplog, logging.ERROR, lambda: _tree(records, node))
   assert len(errors) == 1
   assert 'lists this source as its authority, but is not marked as new' in errors[0]
   node = {'taxon': GENUS, 'children': [{'mineralTaxon': MINERAL, 'new': True}]}
-  _, errors = _logged(caplog, logging.ERROR, lambda: _tree(node))
+  _, errors = _logged(caplog, logging.ERROR, lambda: _tree(records, node))
   assert len(errors) == 1 and errors[0].startswith('Expected source ')
   node = {'taxon': GENUS, 'children': [{'mineralTaxon': own, 'new': True}]}
-  _, errors = _logged(caplog, logging.ERROR, lambda: _tree(node))
+  _, errors = _logged(caplog, logging.ERROR, lambda: _tree(records, node))
   assert errors == []
 
 
-def test_designation_beside_mineral_taxon_is_an_error(caplog):
+def test_designation_beside_mineral_taxon_is_an_error(records, caplog):
   node = {'taxon': GENUS, 'synonyms': [{'mineralTaxon': MINERAL, 'designation': 'a stone'}]}
-  _, errors = _logged(caplog, logging.ERROR, lambda: _tree(node))
+  _, errors = _logged(caplog, logging.ERROR, lambda: _tree(records, node))
   assert len(errors) == 1
   assert errors[0].endswith('has `designation` but is not an `openTaxon` node')
 
 
-def test_mineral_taxon_beside_taxon_is_one_field_too_many(caplog):
+def test_mineral_taxon_beside_taxon_is_one_field_too_many(records, caplog):
   node = {'taxon': GENUS, 'synonyms': [{'mineralTaxon': MINERAL, 'taxon': SPECIES}]}
-  _, errors = _logged(caplog, logging.ERROR, lambda: _tree(node))
+  _, errors = _logged(caplog, logging.ERROR, lambda: _tree(records, node))
   assert len(errors) == 1 and errors[0].startswith('Found 2 taxon fields')
 
 
@@ -218,9 +220,9 @@ def test_record_lookup_carries_mineral_and_reads_an_explicit_null_as_unranked():
   assert LOOKUP('nothing') is None
 
 
-def test_record_lookup_agrees_with_the_loaded_taxa():
+def test_record_lookup_agrees_with_the_loaded_taxa(records):
   for key in RECORDS:
-    loaded = Taxon.get(key)
+    loaded = records.taxa[key]
     assert (LOOKUP(key).rank, LOOKUP(key).mineral) == (loaded.rank, loaded.mineral)
 
 
@@ -236,18 +238,18 @@ def test_mineral_fields_says_nothing_for_a_right_pairing():
     assert nomenclature.mineral_fields(node, LOOKUP) == []
 
 
-def test_mineral_taxon_naming_no_mineral_is_an_error():
+def test_mineral_taxon_naming_no_mineral_is_an_error(records):
   expected = [('error', NOT_MINERAL.format(GENUS))]
   assert nomenclature.mineral_fields({'mineralTaxon': GENUS}, LOOKUP) == expected
-  assert nomenclature.mineral_fields({'mineralTaxon': GENUS}, Taxon.get) == expected
+  assert nomenclature.mineral_fields({'mineralTaxon': GENUS}, records.taxa.get) == expected
 
 
 @pytest.mark.parametrize('field', ['taxon', 'openTaxon', 'bracketStart', 'bracketEnd'])
-def test_a_mineral_named_by_any_other_field_is_an_error(field):
+def test_a_mineral_named_by_any_other_field_is_an_error(records, field):
   for key in (MINERAL, SPELLING):
     expected = [('error', ONLY_MINERAL_TAXON.format(field, key))]
     assert nomenclature.mineral_fields({field: key}, LOOKUP) == expected
-    assert nomenclature.mineral_fields({field: key}, Taxon.get) == expected
+    assert nomenclature.mineral_fields({field: key}, records.taxa.get) == expected
 
 
 def test_quoted_parent_and_a_compared_link_are_errors_on_a_mineral_node():
@@ -259,7 +261,7 @@ def test_quoted_parent_and_a_compared_link_are_errors_on_a_mineral_node():
   ]
 
 
-def test_the_load_reports_the_pairing_on_every_axis(caplog):
+def test_the_load_reports_the_pairing_on_every_axis(records, caplog):
   document = {
     'taxonomies': [
       {
@@ -271,7 +273,9 @@ def test_the_load_reports_the_pairing_on_every_axis(caplog):
     ]
   }
   _, errors = _logged(
-    caplog, logging.ERROR, lambda: _report_nomenclature({'trees': {SOURCE: document}})
+    caplog,
+    logging.ERROR,
+    lambda: _report_nomenclature(support.with_documents(records, {'trees': {SOURCE: document}})),
   )
   assert sorted(errors) == sorted(
     [
@@ -326,25 +330,29 @@ def test_check_draft_lists_a_mineral_taxon_key_without_a_record(tmp_path, minera
 # -- the other loader reports -------------------------------------------------
 
 
-def test_the_protologue_check_reads_no_rank_off_a_mineral(caplog):
+def test_the_protologue_check_reads_no_rank_off_a_mineral(records, caplog):
   own = 'calculus_linnaeus_1766'
   record = {'name': 'calculus', 'rank': None, 'authority': {'source': SOURCE, 'pages': 22}}
-  Taxon.add({**record, 'mineral': True}, own)
-  tree = _tree({'mineralTaxon': own, 'new': True})
+  records.add_taxon({**record, 'mineral': True}, own)
+  tree = _tree(records, {'mineralTaxon': own, 'new': True})
   _, errors = _logged(
     caplog,
     logging.ERROR,
-    lambda: _report_protologue_mismatches({'trees': {SOURCE: {}}}, {SOURCE: [tree]}),
+    lambda: _report_protologue_mismatches(
+      support.with_documents(records, {'trees': {SOURCE: {}}}, {SOURCE: [tree]})
+    ),
   )
   assert errors == []
   # The same record as a taxon is read as a species, which its null rank
   # is not.
-  Taxon.add(dict(record), 'calculus')
-  tree = _tree({'taxon': 'calculus', 'new': True})
+  records.add_taxon(dict(record), 'calculus')
+  tree = _tree(records, {'taxon': 'calculus', 'new': True})
   _, errors = _logged(
     caplog,
     logging.ERROR,
-    lambda: _report_protologue_mismatches({'trees': {SOURCE: {}}}, {SOURCE: [tree]}),
+    lambda: _report_protologue_mismatches(
+      support.with_documents(records, {'trees': {SOURCE: {}}}, {SOURCE: [tree]})
+    ),
   )
   assert errors == [
     'taxa.yaml calculus: rank none but its protologue node in '
@@ -352,18 +360,26 @@ def test_the_protologue_check_reads_no_rank_off_a_mineral(caplog):
   ]
 
 
-def test_the_rank_order_check_ignores_a_mineral_under_a_genus(caplog):
-  tree = _tree({'taxon': GENUS, 'children': [{'mineralTaxon': MINERAL}]})
-  _, errors = _logged(caplog, logging.ERROR, lambda: _report_rank_order({SOURCE: [tree]}))
+def test_the_rank_order_check_ignores_a_mineral_under_a_genus(records, caplog):
+  tree = _tree(records, {'taxon': GENUS, 'children': [{'mineralTaxon': MINERAL}]})
+  _, errors = _logged(
+    caplog,
+    logging.ERROR,
+    lambda: _report_rank_order(support.with_documents(records, roots={SOURCE: [tree]})),
+  )
   assert errors == []
 
 
 # -- claims and the names index -----------------------------------------------
 
 
-def test_a_mineral_synonym_yields_a_usage_and_an_acceptance():
-  tree = _tree({'taxon': GENUS, 'synonyms': [{'mineralTaxon': MINERAL, 'citedAs': 'Mineralum'}]})
-  about = {c['kind']: c for c in extract({SOURCE: [tree]})[SOURCE] if c['subject'] == MINERAL}
+def test_a_mineral_synonym_yields_a_usage_and_an_acceptance(records):
+  tree = _tree(
+    records, {'taxon': GENUS, 'synonyms': [{'mineralTaxon': MINERAL, 'citedAs': 'Mineralum'}]}
+  )
+  about = {
+    c['kind']: c for c in extract(records, {SOURCE: [tree]})[SOURCE] if c['subject'] == MINERAL
+  }
   assert set(about) == {'usage', 'acceptance'}
   usage, acceptance = about['usage'], about['acceptance']
   assert (usage['form'], usage['spelling'], usage['axis']) == ('mineralTaxon', MINERAL, 'synonyms')
@@ -371,8 +387,8 @@ def test_a_mineral_synonym_yields_a_usage_and_an_acceptance():
   assert (acceptance['stance'], acceptance['under']) == ('accepts', GENUS)
 
 
-def test_the_names_index_marks_a_mineral_and_its_spellings():
-  rows = names_index()
+def test_the_names_index_marks_a_mineral_and_its_spellings(records):
+  rows = names_index(records)
   mineral = rows[MINERAL]
   assert (mineral['mineral'], mineral['rank'], mineral['kind']) == (True, 'Unranked', 'primary')
   spelling = rows[SPELLING]
@@ -392,24 +408,25 @@ def synthetic(corpus, tmp_path_factory):
   carrying the mineral, its spelling and a genus of the same name."""
   directory = tmp_path_factory.mktemp('claims')
   shutil.copytree(corpus.claims, directory, dirs_exist_ok=True)
-  records = (
+  added = (
     (MINERAL, MINERAL_RECORD),
     (SPELLING, RECORDS[SPELLING]),
     (GENUS, GENUS_RECORD),
     (HOMONYM, {'name': 'Mineralum', 'rank': 'genus', **EARLIER}),
   )
-  with pytest.MonkeyPatch.context() as patch:
-    for key, record in records:
-      patch.setitem(Taxon._taxa, key, Taxon(dict(record), key))
-    tree = Tree(
-      {'taxon': GENUS, 'synonyms': [{'mineralTaxon': MINERAL, 'citedAs': 'Mineralum'}]},
-      {'source_key': SOURCE, 'type': 'taxonomy', 'position': 620},
-    )
-    claims = extract({SOURCE: [tree]})[SOURCE]
-    rows = names_index()
+  records = corpus.records.copy()
+  for key, record in added:
+    records.add_taxon(dict(record), key)
+  tree = Tree(
+    {'taxon': GENUS, 'synonyms': [{'mineralTaxon': MINERAL, 'citedAs': 'Mineralum'}]},
+    {'source_key': SOURCE, 'type': 'taxonomy', 'position': 620},
+    corpus=records,
+  )
+  claims = extract(records, {SOURCE: [tree]})[SOURCE]
+  rows = names_index(records)
   (directory / f'{SOURCE}.jsonl').write_text(''.join(json.dumps(c) + '\n' for c in claims))
   names = json.loads((directory / 'names.json').read_text())
-  for key, _ in records:
+  for key, _ in added:
     names[key] = rows[key]
   (directory / 'names.json').write_text(json.dumps(names))
   return ClaimStore(directory)

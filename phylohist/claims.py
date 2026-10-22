@@ -1,25 +1,20 @@
 """Claims: one statement a source prints about one name, with provenance.
 
-`docs/claims.md` is the specification. `extract` turns the trees built by
-`main._load_trees` into claims deterministically: the same YAML always
-yields the same claims in the same order, nothing is merged across sources,
-and nothing is normalised beyond resolving keys. `manifest` derives the
-per-source coverage counts and cross-checks them against the declared
-`audit.coverage`.
+`docs/claims.md` is the specification. `extract` turns a loaded `Corpus`
+(what `phylohist.loader.load` returns: the records and the trees) into
+claims deterministically: the same YAML always yields the same claims in
+the same order, nothing is merged across sources, and nothing is
+normalised beyond resolving keys. `manifest` derives the per-source
+coverage counts and cross-checks them against the declared
+`audit.coverage`. A function that reads a record takes the corpus it reads
+it from; nothing is kept between calls.
 """
 
 import collections
 
 from .acts import RELATED_ACTS
-from .loader.material import (
-  context_key,
-  entries_named,
-  flat_numbers,
-  repository_registry,
-  same_as_matches,
-)
-from .loader.research import Author, Publication, Source
-from .loader.taxa import Taxon, names_attribution
+from .loader.material import context_key, entries_named, flat_numbers, same_as_matches
+from .loader.taxa import names_attribution
 from .names import fold, fold_forms, key_stem
 from .ranks import GENUS_GROUP, SPECIES_GROUP, fold_rank
 
@@ -183,8 +178,6 @@ DERIVED_KINDS = {
   },
 }
 
-_rank_hubs = None
-
 
 def _rank_hub(taxon):
   """The record `taxon` is the same name at another rank of, or `None`:
@@ -193,20 +186,28 @@ def _rank_hub(taxon):
   return taxon.derivative_of.key if kind is not None and not kind.borrows_rank else None
 
 
-def rank_variants(key):
+def rank_hubs(corpus):
+  """``{hub key: {spoke keys}}`` over the corpus's taxa: each record another
+  is the same name at another rank of (`altRankOf`), with the records that
+  are."""
+  hubs = collections.defaultdict(set)
+  for key, taxon in corpus.taxa.items():
+    if (hub := _rank_hub(taxon)) is not None:
+      hubs[hub].add(key)
+  return hubs
+
+
+def rank_variants(corpus, key, hubs=None):
   """The records of the same name at other ranks, in both directions of
   the `altRankOf` link: a spoke sees its hub and the other spokes, a hub
-  sees its spokes."""
-  global _rank_hubs
-  if _rank_hubs is None:
-    _rank_hubs = collections.defaultdict(set)
-    for k, taxon in Taxon._taxa.items():
-      if (hub := _rank_hub(taxon)) is not None:
-        _rank_hubs[hub].add(k)
-  hub = _rank_hub(Taxon.get(key)) if Taxon.get(key) else None
-  family = set(_rank_hubs.get(key, ()))
+  sees its spokes. ``hubs`` is `rank_hubs(corpus)`, computed afresh when
+  not given."""
+  hubs = rank_hubs(corpus) if hubs is None else hubs
+  taxon = corpus.taxa.get(key)
+  hub = _rank_hub(taxon) if taxon is not None else None
+  family = set(hubs.get(key, ()))
   if hub:
-    family |= {hub} | _rank_hubs.get(hub, set())
+    family |= {hub} | hubs.get(hub, set())
   family.discard(key)
   return sorted(family)
 
@@ -292,11 +293,14 @@ def _within_chain(repository, registry):
 class _NodeClaims:
   """Builds the claims of one node; the shared fields are computed once."""
 
-  def __init__(self, node, source_key, audit):
+  def __init__(self, node, source_key, audit, corpus, hubs):
     self.node = node
     self.data = node.data
     self.source_key = source_key
     self.audit = audit
+    # The corpus the tree was built against, and its rank hubs.
+    self.corpus = corpus
+    self.hubs = hubs
     self.path = f'{node.position}{node.pointer}'.rstrip('/')
     self.claims = []
 
@@ -657,7 +661,7 @@ class _NodeClaims:
         fields['translatedFrom'] = earlier
       # The identity link between coordinate names is undirected: the
       # variants are listed whichever record carries the link.
-      variants = rank_variants(node.taxon.key)
+      variants = rank_variants(self.corpus, node.taxon.key, self.hubs)
       if variants:
         fields['rankVariants'] = variants
       self._act('nomTransl', 'translated', **fields)
@@ -725,7 +729,7 @@ class _NodeClaims:
     mapped = self.node.file_prefixes.get(entry.get('prefix'))
     explicit = entry.get('repository')
     if mapped is not None and explicit is not None:
-      return mapped if mapped in _within_chain(explicit, repository_registry()) else explicit
+      return mapped if mapped in _within_chain(explicit, self.corpus.repositories) else explicit
     return mapped or explicit
 
   def _numbers_fields(self, entry, claim):
@@ -1003,25 +1007,28 @@ def _effective_coverage(declared, derived_row):
   return coverage
 
 
-def extract(roots, sources=None):
+def extract(corpus, roots=None, sources=None):
   """Claims per source, in walk order.
 
-  ``roots`` is `main._load_trees`'s result; ``sources`` optionally
-  restricts the output to those keys. Each claim's `audit.coverage` is
-  the effective value (`_effective_coverage`).
+  ``roots`` is ``{source key: [root Tree]}``, the corpus's own trees by
+  default; a test passes synthetic ones built against ``corpus``.
+  ``sources`` optionally restricts the output to those keys. Each claim's
+  `audit.coverage` is the effective value (`_effective_coverage`).
   """
+  roots = corpus.roots if roots is None else roots
+  hubs = rank_hubs(corpus)
   out = {}
   derived = derived_coverage(roots)
   for source_key, trees in roots.items():
     if sources is not None and source_key not in sources:
       continue
-    source = Source.get(source_key)
+    source = corpus.sources.get(source_key)
     audit = dict(source.audit) if source is not None else {'state': 'unaudited'}
     audit['coverage'] = _effective_coverage(audit.get('coverage'), derived.get(source_key))
     claims = []
     for root in trees:
       for node in root.walk():
-        claims.extend(_NodeClaims(node, source_key, audit).build())
+        claims.extend(_NodeClaims(node, source_key, audit, corpus, hubs).build())
     out[source_key] = claims
   _link_same_as(out)
   return out
@@ -1089,7 +1096,7 @@ def citation(source):
   }
   for field in ('journal', 'book'):
     if field in fields:
-      publication = Publication.get(fields[field])
+      publication = source.publication
       entry['in'] = publication.name if publication is not None else fields[field]
   for field in ('series', 'volume', 'number', 'pages', 'plates'):
     if field in fields:
@@ -1097,11 +1104,11 @@ def citation(source):
   return entry
 
 
-def names_index():
-  """One row per taxon record: what a resolver needs to find it and say
-  what it is, with the folded lookup forms precomputed."""
+def names_index(corpus):
+  """One row per taxon record of ``corpus``: what a resolver needs to find
+  it and say what it is, with the folded lookup forms precomputed."""
   rows = {}
-  for key, taxon in Taxon._taxa.items():
+  for key, taxon in corpus.taxa.items():
     kind = taxon.derivative_kind.field if taxon.derivative_kind else 'primary'
     if taxon.name is None:
       kind = 'placeholder'
@@ -1147,10 +1154,16 @@ def names_index():
   return dict(sorted(rows.items()))
 
 
-def _source_order(source_key):
-  source = Source.get(source_key)
-  year = source.year if source is not None and not source.in_preparation else 9999
-  return (year, source_key)
+def _source_order(corpus):
+  """The sort key for source keys: the year (a work in preparation, or a
+  key with no record, last), then the key."""
+
+  def order(source_key):
+    source = corpus.sources.get(source_key)
+    year = source.year if source is not None and not source.in_preparation else 9999
+    return (year, source_key)
+
+  return order
 
 
 def _flat_ids(ids):
@@ -1169,7 +1182,7 @@ def _specimen_identity(claim):
   return set(_flat_ids(claim.get('ids')))
 
 
-def holotype_conflicts(claims_by_source):
+def holotype_conflicts(corpus, claims_by_source):
   """One row per taxon whose holotype is a different specimen in two
   sources (roadmap F5): `{'taxon', 'holotypes': [{'source', 'ids',
   'joinKeys', 'claim'}]}`, sources in year order, every holotype claim of
@@ -1197,7 +1210,7 @@ def holotype_conflicts(claims_by_source):
   rows = []
   for taxon, by_source in sorted(by_taxon.items()):
     holotypes = []
-    for source_key in sorted(by_source, key=_source_order):
+    for source_key in sorted(by_source, key=_source_order(corpus)):
       claims = by_source[source_key]
       if any(c.get('role') in ('lectotype', 'neotype') for c in claims):
         continue
@@ -1229,19 +1242,21 @@ def holotype_conflicts(claims_by_source):
   return rows
 
 
-def manifest(claims_by_source, roots):
+def manifest(corpus, claims_by_source, roots=None):
   """Derived coverage per source and per taxon, cross-checked with the
   declared audit block (`docs/claims.md`, "Derived coverage").
 
-  ``roots`` is what `extract` took; the node-state coverage reads it whole,
-  so a ``claims_by_source`` restricted to some sources does not skew it.
+  ``roots``, the corpus's own by default, is what `extract` took; the
+  node-state coverage reads it whole, so a ``claims_by_source`` restricted
+  to some sources does not skew it.
   """
+  roots = corpus.roots if roots is None else roots
+  order = _source_order(corpus)
   sources = {}
   taxa = collections.defaultdict(set)
   derived_by_source = derived_coverage(roots)
 
-  for source_key in Source._sources:
-    source = Source.get(source_key)
+  for source_key, source in corpus.sources.items():
     if source.canonical is not source:
       # An alias cites its target by some of its authors; the rest of the
       # row is the target's.
@@ -1315,8 +1330,8 @@ def manifest(claims_by_source, roots):
 
   return {
     # Author keys to surnames, so a printed attribution renders by field.
-    'authors': {key: author.surname for key, author in sorted(Author._authors.items())},
+    'authors': {key: author.surname for key, author in sorted(corpus.authors.items())},
     'sources': dict(sorted(sources.items())),
-    'taxa': {key: sorted(keys, key=_source_order) for key, keys in sorted(taxa.items())},
-    'holotypeConflicts': holotype_conflicts(claims_by_source),
+    'taxa': {key: sorted(keys, key=order) for key, keys in sorted(taxa.items())},
+    'holotypeConflicts': holotype_conflicts(corpus, claims_by_source),
   }

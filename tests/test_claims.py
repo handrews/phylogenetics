@@ -34,10 +34,10 @@ from phylohist.claims import (
   holotype_conflicts,
   manifest,
   merge_patch,
+  rank_variants,
 )
 from phylohist.evaluation import alternatives, normalise
 from phylohist.loader import io
-from phylohist.loader.research import Source
 from phylohist.loader.taxa import Tree
 from phylohist.render import render_composition
 from tests import support
@@ -50,7 +50,7 @@ with open(QUESTIONS_PATH) as fd:
 
 @pytest.fixture(scope='session')
 def roots(corpus):
-  return corpus.roots
+  return corpus.records.roots
 
 
 @pytest.fixture(scope='session')
@@ -96,10 +96,8 @@ def test_no_inconsistencies(production):
     )
 
 
-def test_citation_reads_the_records_own_fields():
-  from phylohist.loader.research import Source
-
-  linnaeus = Source.get('1758_linnaeus')
+def test_citation_reads_the_records_own_fields(records):
+  linnaeus = records.sources['1758_linnaeus']
   assert linnaeus.citation_fields == {
     'title': 'Regnum Animalia',
     'book': 'systema-naturae-10th-ed',
@@ -107,7 +105,7 @@ def test_citation_reads_the_records_own_fields():
   }
   assert citation(linnaeus)['title'] == 'Regnum Animalia'
   # A source with no title of its own cites none; the book is where it is.
-  untitled = citation(Source.get('1741_linnaeus'))
+  untitled = citation(records.sources['1741_linnaeus'])
   assert untitled['title'] is None and untitled['in']
 
 
@@ -163,8 +161,8 @@ def test_corrections_reach_the_claims(claims):
   }
 
 
-def test_manifest_carries_author_surnames(claims, roots):
-  authors = manifest(claims, roots)['authors']
+def test_manifest_carries_author_surnames(records, claims, roots):
+  authors = manifest(records, claims, roots)['authors']
   assert authors['bell.b.m'] == 'Bell' and authors['bather'] == 'Bather'
 
 
@@ -192,8 +190,16 @@ def test_change_node_acts(claims):
   assert len(nudum) == 3 and all('/synonyms/' in c['path'] for c in nudum)
 
 
+def test_rank_variants_of_a_hub_are_the_records_linked_to_it(corpus):
+  # Diploporita as an order and as a suborder are each `altRankOf` the class.
+  assert rank_variants(corpus.records, 'diploporita-class') == [
+    'diploporita-order',
+    'diploporita-suborder',
+  ]
+
+
 @pytest.mark.parametrize('axis', ['translated', 'corrected', 'substituted', 'moved', 'removed'])
-def test_earlier_state_entries_are_cited(caplog, axis):
+def test_earlier_state_entries_are_cited(records, caplog, axis):
   # The node under a change is the earlier state of the name as this
   # source cites it: as on a synonymy entry, the pages and illustrations in
   # its `authority` locate that earlier use, never this source's own page or
@@ -212,8 +218,9 @@ def test_earlier_state_entries_are_cited(caplog, axis):
   root = Tree(
     {'taxon': 'cyathocystidae', 'pages': 100, 'children': [child]},
     {'source_key': '1961_dehm', 'type': 'taxonomy', 'position': 99},
+    corpus=records,
   )
-  claims = extract({'1961_dehm': [root]})['1961_dehm']
+  claims = extract(records, {'1961_dehm': [root]})['1961_dehm']
   assert not [r for r in caplog.records if r.levelno >= logging.ERROR]
   cited = [c for c in claims if f'/{axis}' in c['path']]
   assert cited and not [c for c in cited if c['kind'] == 'material']
@@ -222,7 +229,7 @@ def test_earlier_state_entries_are_cited(caplog, axis):
     assert claim['citedPages'] == 12 and claim['citedIllustrations'] == illustrations
 
 
-def test_lapsus_is_the_slip_not_a_synonym(caplog):
+def test_lapsus_is_the_slip_not_a_synonym(records, caplog):
   # The intended name stands in the tree and the name printed by a slip of
   # the pen hangs under `lapsus`: the intended name's node names the slip,
   # and the slip is used as printed here but neither accepted as a synonym
@@ -234,8 +241,9 @@ def test_lapsus_is_the_slip_not_a_synonym(caplog):
   root = Tree(
     {'taxon': 'astrocystites', 'pages': 100, 'children': [child]},
     {'source_key': '1961_dehm', 'type': 'taxonomy', 'position': 98},
+    corpus=records,
   )
-  claims = extract({'1961_dehm': [root]})['1961_dehm']
+  claims = extract(records, {'1961_dehm': [root]})['1961_dehm']
   assert not [r for r in caplog.records if r.levelno >= logging.ERROR]
   by_path = collections.defaultdict(list)
   for claim in claims:
@@ -246,7 +254,8 @@ def test_lapsus_is_the_slip_not_a_synonym(caplog):
   assert slip['kind'] == 'usage' and slip['axis'] == 'lapsus'
   # The slip is printed in this source: its pages are the source's own.
   assert slip['pages'] == 13 and 'citedPages' not in slip
-  assert '1961_dehm' in Tree._new_index['canadensis_billings_1866']
+  protologues = support.with_documents(records, roots={'1961_dehm': [root]}).protologue_sources()
+  assert '1961_dehm' in protologues.get('canadensis_billings_1866', ())
 
 
 def test_lapsus_listed_in_a_synonymy(claims):
@@ -261,7 +270,7 @@ def test_lapsus_listed_in_a_synonymy(claims):
   assert entry['parents'] == ['steganoblastus'] and entry['citedPages'] == 395
 
 
-def test_lapsus_records_stay_under_lapsus(caplog):
+def test_lapsus_records_stay_under_lapsus(records, caplog):
   # A lapsus record appears under `lapsus`, or as a synonymy entry marked
   # `lapsusFor`; anywhere else, and a `lapsusFor` off a synonymy entry, is
   # an error.
@@ -274,6 +283,7 @@ def test_lapsus_records_stay_under_lapsus(caplog):
       'children': [{'taxon': 'ottawaensis_whiteaves_1897', 'lapsus': slip}],
     },
     {'source_key': '1961_dehm', 'type': 'taxonomy', 'position': 97},
+    corpus=records,
   )
   listed = {
     'taxon': 'ottawaensis_whiteaves_1897',
@@ -282,9 +292,10 @@ def test_lapsus_records_stay_under_lapsus(caplog):
   placed = Tree(
     {'taxon': 'astrocystites', 'children': [dict(slip), listed]},
     {'source_key': '1961_dehm', 'type': 'taxonomy', 'position': 96},
+    corpus=records,
   )
   caplog.clear()
-  _report_lapsus_records({'1961_dehm': [printed, placed]})
+  _report_lapsus_records(support.with_documents(records, roots={'1961_dehm': [printed, placed]}))
   errors = [r.getMessage() for r in caplog.records if r.levelno >= logging.ERROR]
   assert len(errors) == 1 and '[96]/astrocystites/0/canadensis_billings_1866' in errors[0]
 
@@ -292,12 +303,13 @@ def test_lapsus_records_stay_under_lapsus(caplog):
   Tree(
     {'taxon': 'astrocystites', 'lapsusFor': {'taxon': 'ottawaensis_whiteaves_1897'}},
     {'source_key': '1961_dehm', 'type': 'taxonomy', 'position': 95},
+    corpus=records,
   )
   errors = [r.getMessage() for r in caplog.records if r.levelno >= logging.ERROR]
   assert len(errors) == 1 and 'is not a `synonyms` or `non` entry' in errors[0]
 
 
-def test_recombined_is_the_printed_new_combination(caplog):
+def test_recombined_is_the_printed_new_combination(records, caplog):
   # "comb. nov.": the act on the species, beside the move out of the genus
   # it leaves; followed from another work, it names that work.
   child = {
@@ -312,8 +324,9 @@ def test_recombined_is_the_printed_new_combination(caplog):
   root = Tree(
     {'taxon': 'rhenopyrgus', 'children': [child, followed]},
     {'source_key': '1985_jell_burrett_banks', 'type': 'taxonomy', 'position': 94},
+    corpus=records,
   )
-  claims = extract({'1985_jell_burrett_banks': [root]})['1985_jell_burrett_banks']
+  claims = extract(records, {'1985_jell_burrett_banks': [root]})['1985_jell_burrett_banks']
   assert not [r for r in caplog.records if r.levelno >= logging.ERROR]
   at = collections.defaultdict(list)
   for claim in claims:
@@ -327,12 +340,13 @@ def test_recombined_is_the_printed_new_combination(caplog):
   Tree(
     {'taxon': 'rhenopyrgus', 'recombined': True},
     {'source_key': '1985_jell_burrett_banks', 'type': 'taxonomy', 'position': 93},
+    corpus=records,
   )
   errors = [r.getMessage() for r in caplog.records if r.levelno >= logging.ERROR]
   assert len(errors) == 1 and 'is not a species-group name' in errors[0]
 
 
-def test_emended_by_lists_the_emendations_followed(caplog):
+def test_emended_by_lists_the_emendations_followed(records, caplog):
   # "Emended Paul, 1972b, and herein": each emendation the source follows
   # names its work, in printed order, before the source's own.
   root = Tree(
@@ -342,8 +356,9 @@ def test_emended_by_lists_the_emendations_followed(caplog):
       'emendedBy': [{'source': '1968b_paul.c.r.c', 'pages': 700}, {'source': '1983_holloway_jell'}],
     },
     {'source_key': '1985_jell_burrett_banks', 'type': 'taxonomy', 'position': 92},
+    corpus=records,
   )
-  claims = extract({'1985_jell_burrett_banks': [root]})['1985_jell_burrett_banks']
+  claims = extract(records, {'1985_jell_burrett_banks': [root]})['1985_jell_burrett_banks']
   assert not [r for r in caplog.records if r.levelno >= logging.ERROR]
   acts = [c for c in claims if c.get('actKind') == 'emended']
   assert [(a.get('by'), a.get('byPages')) for a in acts] == [
@@ -362,7 +377,7 @@ def test_emended_by_lists_the_emendations_followed(caplog):
   assert not schema.check({'taxonomies': [{'taxon': 'rhenopyrgus', 'emendedBy': []}]})
 
 
-def test_restricted_by_lists_the_restrictions_followed(caplog):
+def test_restricted_by_lists_the_restrictions_followed(records, caplog):
   # A restriction is its own act beside an emendation: each restriction
   # the source follows names its work, in printed order, before its own.
   root = Tree(
@@ -376,8 +391,9 @@ def test_restricted_by_lists_the_restrictions_followed(caplog):
       ],
     },
     {'source_key': '1985_jell_burrett_banks', 'type': 'taxonomy', 'position': 92},
+    corpus=records,
   )
-  claims = extract({'1985_jell_burrett_banks': [root]})['1985_jell_burrett_banks']
+  claims = extract(records, {'1985_jell_burrett_banks': [root]})['1985_jell_burrett_banks']
   assert not [r for r in caplog.records if r.levelno >= logging.ERROR]
   acts = [(c['actKind'], c.get('by'), c.get('byPages')) for c in claims if c['kind'] == 'act']
   assert acts == [
@@ -396,7 +412,7 @@ def test_restricted_by_lists_the_restrictions_followed(caplog):
   assert not schema.check({'taxonomies': [{'taxon': 'rhenopyrgus', 'restrictedBy': []}]})
 
 
-def test_material_adapter(caplog):
+def test_material_adapter(records, caplog):
   # Contexts, material, illustrations, ranges, in that fixed order, over a
   # node with a file context, a node context, a numbered entry, a range
   # pair, a label-only entry, an explicit repository, a prefix the file's
@@ -455,8 +471,9 @@ def test_material_adapter(caplog):
       'file_unused': (),
       'file_prefixes': {'GSC': 'gsc', 'PE': 'fmnh-pe'},
     },
+    corpus=records,
   )
-  claims = extract({'1961_dehm': [root]})['1961_dehm']
+  claims = extract(records, {'1961_dehm': [root]})['1961_dehm']
   assert not [r for r in caplog.records if r.levelno >= logging.ERROR]
   material = [c for c in claims if c['kind'] == 'material']
 
@@ -465,7 +482,7 @@ def test_material_adapter(caplog):
   assert kinds == ['occurrence'] * 2 + ['specimen'] * 7 + ['illustration'] * 3 + ['range'] * 2
   assert [c['id'] for c in material] == [f'1961_dehm:90:material:{n}' for n in range(len(material))]
   assert [
-    c['id'] for c in extract({'1961_dehm': [root]})['1961_dehm'] if c['kind'] == 'material'
+    c['id'] for c in extract(records, {'1961_dehm': [root]})['1961_dehm'] if c['kind'] == 'material'
   ] == [c['id'] for c in material]
 
   # A file context the node refers to and the node's own context, once each.
@@ -539,9 +556,10 @@ def test_material_adapter(caplog):
       ],
     },
     {'source_key': '1961_dehm', 'type': 'taxonomy', 'position': 91},
+    corpus=records,
   )
   new_claims = [
-    c for c in extract({'1961_dehm': [new_node]})['1961_dehm'] if c['kind'] == 'material'
+    c for c in extract(records, {'1961_dehm': [new_node]})['1961_dehm'] if c['kind'] == 'material'
   ]
   assert not [r for r in caplog.records if r.levelno >= logging.ERROR]
   assert [c.get('roleAct') for c in new_claims] == [
@@ -554,7 +572,7 @@ def test_material_adapter(caplog):
   assert new_claims[0]['count'] == 5
 
 
-def _numbered(entries, prefixes=None, locality_register=None, **node):
+def _numbered(records, entries, prefixes=None, locality_register=None, **node):
   """The specimen claims of a node whose tree file carries a `prefixes` map
   (and a `localityRegister`)."""
   root = Tree(
@@ -566,13 +584,15 @@ def _numbered(entries, prefixes=None, locality_register=None, **node):
       'file_prefixes': prefixes or {},
       'file_locality_register': locality_register,
     },
+    corpus=records,
   )
-  claims = extract({'1961_dehm': [root]})['1961_dehm']
+  claims = extract(records, {'1961_dehm': [root]})['1961_dehm']
   return [c for c in claims if c.get('materialKind') == 'specimen']
 
 
-def test_a_prefix_and_numbers_entry_carries_its_fields_and_display_ids():
+def test_a_prefix_and_numbers_entry_carries_its_fields_and_display_ids(records):
   [claim] = _numbered(
+    records,
     [{'prefix': 'MCZ', 'numbers': ['581A', 581], 'asPrinted': 'MCZ 581A, 581', 'role': 'holotype'}],
     {'MCZ': 'mcz'},
   )
@@ -587,8 +607,9 @@ def test_a_prefix_and_numbers_entry_carries_its_fields_and_display_ids():
   assert 'rangeJoin' not in claim
 
 
-def test_two_printed_prefixes_of_one_register_share_a_join_key():
+def test_two_printed_prefixes_of_one_register_share_a_join_key(records):
   first, second = _numbered(
+    records,
     [{'prefix': 'F.', 'numbers': [5404]}, {'prefix': 'UQF', 'numbers': ['5404']}],
     {'F.': 'uq-f', 'UQF': 'uq-f'},
   )
@@ -596,8 +617,9 @@ def test_two_printed_prefixes_of_one_register_share_a_join_key():
   assert (first['ids'], second['ids']) == (['F. 5404'], ['UQF 5404'])
 
 
-def test_a_range_pair_gives_both_ends_and_stays_a_pair_in_ids():
+def test_a_range_pair_gives_both_ends_and_stays_a_pair_in_ids(records):
   [claim] = _numbered(
+    records,
     [{'prefix': 'GSC', 'numbers': [[25935, 25961], 'A-1'], 'asPrinted': 'GSC 25935–25961'}],
     {'GSC': 'gsc'},
   )
@@ -607,33 +629,37 @@ def test_a_range_pair_gives_both_ends_and_stays_a_pair_in_ids():
   assert claim['numbers'] == [[25935, 25961], 'A-1']
 
 
-def test_an_explicit_repository_within_the_prefixs_register_keys_under_the_register():
+def test_an_explicit_repository_within_the_prefixs_register_keys_under_the_register(records):
   [specimen] = _numbered(
+    records,
     [{'prefix': 'USNM', 'numbers': [165421], 'repository': 'usnm-walcott'}],
     {'USNM': 'usnm'},
   )
   assert specimen['repository'] == 'usnm-walcott' and specimen['repositoryVia'] == 'explicit'
   assert specimen['joinKeys'] == ['usnm:165421']
   # The register itself is within itself.
-  [same] = _numbered([{'prefix': 'USNM', 'numbers': [1], 'repository': 'usnm'}], {'USNM': 'usnm'})
+  [same] = _numbered(
+    records, [{'prefix': 'USNM', 'numbers': [1], 'repository': 'usnm'}], {'USNM': 'usnm'}
+  )
   assert same['joinKeys'] == ['usnm:1']
 
 
-def test_an_explicit_repository_outside_the_prefixs_register_wins():
+def test_an_explicit_repository_outside_the_prefixs_register_wins(records):
   [specimen] = _numbered(
-    [{'prefix': 'MCZ', 'numbers': [690], 'repository': 'usnm-walcott'}], {'MCZ': 'mcz'}
+    records, [{'prefix': 'MCZ', 'numbers': [690], 'repository': 'usnm-walcott'}], {'MCZ': 'mcz'}
   )
   assert specimen['repository'] == 'usnm-walcott' and specimen['repositoryVia'] == 'explicit'
   assert specimen['joinKeys'] == ['usnm-walcott:690']
   # A collection above the register is not within it either.
   [above] = _numbered(
-    [{'prefix': 'USNM', 'numbers': [1], 'repository': 'usnm'}], {'USNM': 'usnm-walcott'}
+    records, [{'prefix': 'USNM', 'numbers': [1], 'repository': 'usnm'}], {'USNM': 'usnm-walcott'}
   )
   assert above['joinKeys'] == ['usnm:1']
 
 
-def test_numbers_with_no_prefix_key_under_the_repository_or_not_at_all():
+def test_numbers_with_no_prefix_key_under_the_repository_or_not_at_all(records):
   repo, holder, nothing = _numbered(
+    records,
     [
       {'repository': 'u-cincinnati-caster', 'numbers': ['KR-2']},
       {'holder': 'A. R. Palmer', 'numbers': [[500, 501]]},
@@ -651,8 +677,9 @@ def test_numbers_with_no_prefix_key_under_the_repository_or_not_at_all():
   assert nothing['ids'] == ['ZZ 1']
 
 
-def test_a_figure_names_a_prefix_and_numbers_entry_by_a_number():
+def test_a_figure_names_a_prefix_and_numbers_entry_by_a_number(records):
   [claim] = _numbered(
+    records,
     [{'prefix': 'MCZ', 'numbers': [581, ['600', '610']]}],
     {'MCZ': 'mcz'},
     illustrations=[{'plate': 1, 'of': 581}, {'plate': 2, 'of': 605}, {'plate': 3, 'of': 'x'}],
@@ -660,7 +687,7 @@ def test_a_figure_names_a_prefix_and_numbers_entry_by_a_number():
   assert [f['plate'] for f in claim['specimenIllustrations']] == [1, 2]
 
 
-def test_locality_keys_on_specimen_claims():
+def test_locality_keys_on_specimen_claims(records):
   entries = [
     {
       'prefix': 'GK',
@@ -677,18 +704,21 @@ def test_locality_keys_on_specimen_claims():
   ]
   prefixes = {'GK': 'mcz', 'GTBM': 'usgs-l'}
   with_default, without = _numbered(
-    entries, prefixes, 'sprinkle-l', contexts={'miaobanpo': {'unit': ['Kaili Formation']}}
+    records, entries, prefixes, 'sprinkle-l', contexts={'miaobanpo': {'unit': ['Kaili Formation']}}
   )
   assert with_default['localityKeys'] == ['usgs-l:91526a', 'usgs-l:4148co', 'sprinkle-l:fc1']
   assert with_default['localityNumbers'] == entries[0]['localityNumbers']
   assert 'localityKeys' not in without and 'localityNumbers' not in without
   # Without a file `localityRegister` the bare number keys nothing.
-  [claim, _] = _numbered(entries, prefixes, contexts={'miaobanpo': {'unit': ['Kaili Formation']}})
+  [claim, _] = _numbered(
+    records, entries, prefixes, contexts={'miaobanpo': {'unit': ['Kaili Formation']}}
+  )
   assert claim['localityKeys'] == ['usgs-l:91526a', 'usgs-l:4148co']
 
 
-def test_an_object_of_names_one_specimen_by_prefix_or_label():
+def test_an_object_of_names_one_specimen_by_prefix_or_label(records):
   gk, gtb, slab = _numbered(
+    records,
     [
       {'prefix': 'GK', 'numbers': [112]},
       {'prefix': 'GTB', 'numbers': [112]},
@@ -710,7 +740,7 @@ def test_an_object_of_names_one_specimen_by_prefix_or_label():
   )
 
 
-def _locality(context, prefixes=None, locality_register=None):
+def _locality(records, context, prefixes=None, locality_register=None):
   root = Tree(
     {'taxon': 'rhenopyrgus', 'contexts': {'x': context}},
     {
@@ -720,13 +750,14 @@ def _locality(context, prefixes=None, locality_register=None):
       'file_prefixes': prefixes or {},
       'file_locality_register': locality_register,
     },
+    corpus=records,
   )
-  claims = extract({'1961_dehm': [root]})['1961_dehm']
+  claims = extract(records, {'1961_dehm': [root]})['1961_dehm']
   [claim] = [c for c in claims if c.get('materialKind') == 'occurrence']
   return claim
 
 
-def test_locality_keys_of_object_numbers():
+def test_locality_keys_of_object_numbers(records):
   context = {
     'localityNumbers': [
       {'number': 'FC-1'},
@@ -739,7 +770,7 @@ def test_locality_keys_of_object_numbers():
     ]
   }
   prefixes = {'USGS': 'usgs-l', 'Walcott': 'usnm-l'}
-  claim = _locality(context, prefixes, 'sprinkle-l')
+  claim = _locality(records, context, prefixes, 'sprinkle-l')
   assert claim['localityKeys'] == [
     'sprinkle-l:fc1',
     'usgs-l:4148co',
@@ -750,7 +781,7 @@ def test_locality_keys_of_object_numbers():
   ]
   # With no `localityRegister` a number with neither prefix nor register is skipped;
   # a prefix the map lacks never falls to it.
-  assert _locality(context, prefixes)['localityKeys'] == [
+  assert _locality(records, context, prefixes)['localityKeys'] == [
     'usgs-l:4148co',
     'usnm-l:35k',
     'usnm-l:35',
@@ -764,10 +795,14 @@ def test_locality_keys_of_object_numbers():
       {'register': 'usgs-l', 'number': '4148 co'},
     ]
   }
-  assert _locality(both, prefixes)['localityKeys'] == ['usgs-l:4148co']
+  assert _locality(records, both, prefixes)['localityKeys'] == ['usgs-l:4148co']
   # A context with no locality numbers has no field.
-  assert 'localityKeys' not in _locality({'unit': ['Wheeler Shale']}, prefixes, 'sprinkle-l')
-  assert 'localityKeys' not in _locality({'localityNumbers': [{'number': 'SH-1'}]}, prefixes)
+  assert 'localityKeys' not in _locality(
+    records, {'unit': ['Wheeler Shale']}, prefixes, 'sprinkle-l'
+  )
+  assert 'localityKeys' not in _locality(
+    records, {'localityNumbers': [{'number': 'SH-1'}]}, prefixes
+  )
 
 
 def test_a_specimen_is_followed_across_sources_by_its_join_key(claims):
@@ -786,11 +821,11 @@ def test_a_specimen_is_followed_across_sources_by_its_join_key(claims):
   assert keys['1941_whitehouse'] == keys['2021_jell_sprinkle'] == ['uq-f:5404']
 
 
-def test_derived_coverage():
+def test_derived_coverage(records):
   base = {'source_key': '1961_dehm', 'type': 'taxonomy'}
 
   def tree(data, position, file_unused=()):
-    return Tree(data, {**base, 'position': position, 'file_unused': file_unused})
+    return Tree(data, {**base, 'position': position, 'file_unused': file_unused}, corpus=records)
 
   def derived(root, kind='material'):
     return derived_coverage({'s': [root]})['s'][kind]
@@ -964,17 +999,20 @@ def test_derived_coverage():
   cladogram = Tree(
     {'taxon': 'rhenopyrgus', 'children': [other]},
     {**base, 'type': 'cladogram', 'position': 20},
+    corpus=records,
   )
   assert derived_coverage({'s': [taxonomy, cladogram]})['s']['material'] == 'all'
   assert derived_coverage({'s': [cladogram]})['s']['material'] is None
 
 
-def test_derived_synonymy_coverage():
+def test_derived_synonymy_coverage(records):
   base = {'source_key': '1961_dehm', 'type': 'taxonomy'}
 
   def derived(data, position, file_unused=(), tree_type='taxonomy'):
     root = Tree(
-      data, {**base, 'type': tree_type, 'position': 100 + position, 'file_unused': file_unused}
+      data,
+      {**base, 'type': tree_type, 'position': 100 + position, 'file_unused': file_unused},
+      corpus=records,
     )
     return derived_coverage({'s': [root]})['s']['synonymy']
 
@@ -998,17 +1036,19 @@ def test_derived_synonymy_coverage():
   assert derived({'taxon': 'rhenopyrgus', 'non': syn}, 6) is None
   # A phylogeny root contributes nothing.
   assert derived({'taxon': 'rhenopyrgus', 'synonyms': None}, 7, tree_type='cladogram') is None
-  taxonomy = Tree({'taxon': 'rhenopyrgus', 'synonyms': None}, {**base, 'position': 108})
+  taxonomy = Tree(
+    {'taxon': 'rhenopyrgus', 'synonyms': None}, {**base, 'position': 108}, corpus=records
+  )
   cladogram = Tree(
-    {'taxon': 'rhenopyrgus', 'children': [other]}, {**base, 'type': 'cladogram', 'position': 109}
+    {'taxon': 'rhenopyrgus', 'children': [other]},
+    {**base, 'type': 'cladogram', 'position': 109},
+    corpus=records,
   )
   assert derived_coverage({'s': [taxonomy, cladogram]})['s']['synonymy'] == 'all'
 
 
-def test_manifest_synonymy_keeps_the_count_check_unless_a_null_derives_it(monkeypatch):
-  from phylohist.loader.research import Source
-
-  coverage = Source.get('1961_dehm')._data['audit']['coverage']
+def test_manifest_synonymy_keeps_the_count_check_unless_a_null_derives_it(records, monkeypatch):
+  coverage = records.sources['1961_dehm']._data['audit']['coverage']
   # Declared `all`, no null: nothing derived, and no acceptance claims, so
   # the claim-count check fires.
   monkeypatch.setitem(coverage, 'synonymy', 'all')
@@ -1017,10 +1057,11 @@ def test_manifest_synonymy_keeps_the_count_check_unless_a_null_derives_it(monkey
       Tree(
         {'taxon': 'pyrgocystis', 'children': [{'taxon': 'grayae_bather_1915'}]},
         {'source_key': '1961_dehm', 'type': 'taxonomy', 'position': 30},
+        corpus=records,
       )
     ]
   }
-  entry = manifest(extract(values), values)['sources']['1961_dehm']
+  entry = manifest(records, extract(records, values), values)['sources']['1961_dehm']
   assert entry['derivedCoverage']['synonymy'] is None
   assert entry['coverage']['synonymy'] == 'all'
   assert 'synonymy: declared all, no claims derived' in entry['inconsistencies']
@@ -1032,10 +1073,11 @@ def test_manifest_synonymy_keeps_the_count_check_unless_a_null_derives_it(monkey
       Tree(
         {'taxon': 'pyrgocystis', 'synonyms': None, 'children': [{'taxon': 'grayae_bather_1915'}]},
         {'source_key': '1961_dehm', 'type': 'taxonomy', 'position': 31},
+        corpus=records,
       )
     ]
   }
-  entry = manifest(extract(nulled), nulled)['sources']['1961_dehm']
+  entry = manifest(records, extract(records, nulled), nulled)['sources']['1961_dehm']
   assert entry['derivedCoverage']['synonymy'] == 'partly'
   assert entry['coverage']['synonymy'] == 'partly'
   assert (
@@ -1044,11 +1086,9 @@ def test_manifest_synonymy_keeps_the_count_check_unless_a_null_derives_it(monkey
   assert not [r for r in entry['inconsistencies'] if r.startswith('synonymy: declared all, no')]
 
 
-def test_manifest_reports_derived_disagreement(monkeypatch):
+def test_manifest_reports_derived_disagreement(records, monkeypatch):
   # A declared value that the file's nulls contradict is an inconsistency
   # row naming both, and the effective map carries the derived label.
-  from phylohist.loader.research import Source
-
   audited = Tree(
     {
       'taxon': 'pyrgocystis',
@@ -1058,12 +1098,15 @@ def test_manifest_reports_derived_disagreement(monkeypatch):
       ],
     },
     {'source_key': '1961_dehm', 'type': 'taxonomy', 'position': 0},
+    corpus=records,
   )
   synthetic = {'1961_dehm': [audited]}
   assert derived_coverage(synthetic)['1961_dehm']['illustrations'] == 'partly'
-  monkeypatch.setitem(Source.get('1961_dehm')._data['audit']['coverage'], 'illustrations', 'none')
+  monkeypatch.setitem(
+    records.sources['1961_dehm']._data['audit']['coverage'], 'illustrations', 'none'
+  )
 
-  entry = manifest(extract(synthetic), synthetic)['sources']['1961_dehm']
+  entry = manifest(records, extract(records, synthetic), synthetic)['sources']['1961_dehm']
   assert (
     'illustrations: declared none but derived from the tree (partly); remove the declaration'
   ) in entry['inconsistencies']
@@ -1072,12 +1115,16 @@ def test_manifest_reports_derived_disagreement(monkeypatch):
 
   # Agreeing values still draw the row: the tree gives the kind its
   # coverage, so the declaration is redundant.
-  monkeypatch.setitem(Source.get('1961_dehm')._data['audit']['coverage'], 'illustrations', 'partly')
-  entry = manifest(extract(synthetic), synthetic)['sources']['1961_dehm']
+  monkeypatch.setitem(
+    records.sources['1961_dehm']._data['audit']['coverage'], 'illustrations', 'partly'
+  )
+  entry = manifest(records, extract(records, synthetic), synthetic)['sources']['1961_dehm']
   assert (
     'illustrations: declared partly but derived from the tree (partly); remove the declaration'
   ) in entry['inconsistencies']
-  monkeypatch.setitem(Source.get('1961_dehm')._data['audit']['coverage'], 'illustrations', 'none')
+  monkeypatch.setitem(
+    records.sources['1961_dehm']._data['audit']['coverage'], 'illustrations', 'none'
+  )
 
   # A value alone derives nothing, so the declaration stands and no row fires.
   values_only = {
@@ -1085,10 +1132,11 @@ def test_manifest_reports_derived_disagreement(monkeypatch):
       Tree(
         {'taxon': 'pyrgocystis', 'illustrations': [{'plate': 1}]},
         {'source_key': '1961_dehm', 'type': 'taxonomy', 'position': 1},
+        corpus=records,
       )
     ]
   }
-  entry = manifest(extract(values_only), values_only)['sources']['1961_dehm']
+  entry = manifest(records, extract(records, values_only), values_only)['sources']['1961_dehm']
   assert entry['derivedCoverage']['illustrations'] is None
   assert entry['coverage']['illustrations'] == 'none'
   assert not [r for r in entry['inconsistencies'] if r.startswith('illustrations')]
@@ -1101,18 +1149,18 @@ _SPECIES = 'grayae_bather_1915'
 _SISTER = 'sardesoni_bather_1915'
 
 
-def _claims_of(data, position, **metadata):
-  root = Tree(data, {**_BASE, 'position': position, **metadata})
-  return extract({'1961_dehm': [root]})['1961_dehm']
+def _claims_of(records, data, position, **metadata):
+  root = Tree(data, {**_BASE, 'position': position, **metadata}, corpus=records)
+  return extract(records, {'1961_dehm': [root]})['1961_dehm']
 
 
 def _absences(claims):
   return [(c['absenceOf'], c['fields']) for c in claims if c['kind'] == 'absence']
 
 
-def test_absence_emission_by_kind():
+def test_absence_emission_by_kind(records):
   def absences(node, position, **metadata):
-    return _absences(_claims_of({'taxon': _SPECIES, **node}, position, **metadata))
+    return _absences(_claims_of(records, {'taxon': _SPECIES, **node}, position, **metadata))
 
   assert absences({'material': None}, 200) == [('material', ['material'])]
   assert absences({'illustrations': None}, 201) == [('illustrations', ['illustrations'])]
@@ -1144,20 +1192,21 @@ def test_absence_emission_by_kind():
   ]
 
 
-def test_absence_is_emitted_at_any_rank_and_never_on_a_cited_entry():
-  genus = _claims_of({'taxon': 'rhenopyrgus', 'material': None}, 210)
+def test_absence_is_emitted_at_any_rank_and_never_on_a_cited_entry(records):
+  genus = _claims_of(records, {'taxon': 'rhenopyrgus', 'material': None}, 210)
   assert _absences(genus) == [('material', ['material'])]
   cited = _claims_of(
+    records,
     {'taxon': _SPECIES, 'synonyms': [{'taxon': _SISTER, 'synonyms': None, 'material': None}]},
     211,
   )
   assert _absences(cited) == []
 
 
-def test_absence_claim_shape_and_effect_on_ids():
+def test_absence_claim_shape_and_effect_on_ids(records):
   data = {'taxon': _SPECIES, 'pages': 7, 'notes': 'n', 'material': [{'label': 'A'}]}
-  plain = _claims_of(data, 212)
-  nulled = _claims_of({**data, 'ranges': None, 'synonyms': None}, 213)
+  plain = _claims_of(records, data, 212)
+  nulled = _claims_of(records, {**data, 'ranges': None, 'synonyms': None}, 213)
   absences = [c for c in nulled if c['kind'] == 'absence']
   assert [c['id'] for c in absences] == [
     '1961_dehm:213:absence:0',
@@ -1173,14 +1222,12 @@ def test_absence_claim_shape_and_effect_on_ids():
     return [c['id'].replace(f':{position}:', ':P:') for c in claims if c['kind'] != 'absence']
 
   assert others(plain, 212) == others(nulled, 213)
-  entry = manifest({'1961_dehm': nulled}, {'1961_dehm': []})['sources']['1961_dehm']
+  entry = manifest(records, {'1961_dehm': nulled}, {'1961_dehm': []})['sources']['1961_dehm']
   assert entry['claims']['absence'] == 2
   assert 'absence' not in entry['derived']
 
 
-def test_unfigured_specimens_are_derived_only_when_illustrations_are_all(monkeypatch):
-  from phylohist.loader.research import Source
-
+def test_unfigured_specimens_are_derived_only_when_illustrations_are_all(records, monkeypatch):
   figured = {
     'taxon': _SPECIES,
     'material': [{'label': 'A'}, {'label': 'B'}],
@@ -1191,7 +1238,9 @@ def test_unfigured_specimens_are_derived_only_when_illustrations_are_all(monkeyp
 
   def specimens(species, position, with_sister=True, **metadata):
     children = [species, sister] if with_sister else [species]
-    claims = _claims_of({'taxon': 'rhenopyrgus', 'children': children}, position, **metadata)
+    claims = _claims_of(
+      records, {'taxon': 'rhenopyrgus', 'children': children}, position, **metadata
+    )
     return {
       c['label']: c.get('figured')
       for c in claims
@@ -1200,12 +1249,14 @@ def test_unfigured_specimens_are_derived_only_when_illustrations_are_all(monkeyp
 
   assert specimens(figured, 220) == {'A': None, 'B': False}
   # `figured` is never set to True: a figured specimen has illustrationClaims.
-  claims = _claims_of({'taxon': 'rhenopyrgus', 'children': [figured, sister]}, 221)
+  claims = _claims_of(records, {'taxon': 'rhenopyrgus', 'children': [figured, sister]}, 221)
   by_label = {c['label']: c for c in claims if c.get('materialKind') == 'specimen'}
   assert 'illustrationClaims' in by_label['A'] and 'figured' not in by_label['A']
 
   # Not set when the source's figures are not entered in full.
-  monkeypatch.setitem(Source.get('1961_dehm')._data['audit']['coverage'], 'illustrations', 'partly')
+  monkeypatch.setitem(
+    records.sources['1961_dehm']._data['audit']['coverage'], 'illustrations', 'partly'
+  )
   assert specimens(figured, 222, with_sister=False) == {'A': None, 'B': None}
   monkeypatch.undo()
 
@@ -1221,25 +1272,25 @@ def test_unfigured_specimens_are_derived_only_when_illustrations_are_all(monkeyp
   assert specimens({**figured, 'illustrations': None}, 225) == {'A': False, 'B': False}
 
 
-def test_a_number_inside_a_run_names_its_entry_for_figured():
+def test_a_number_inside_a_run_names_its_entry_for_figured(records):
   node = {
     'taxon': _SPECIES,
     'material': [{'prefix': 'GSC', 'numbers': [[100, 105]]}, {'label': 'B'}],
     'illustrations': [{'plate': 1, 'of': 103}],
   }
   sister = {'taxon': _SISTER, 'illustrations': None}
-  claims = _claims_of({'taxon': 'rhenopyrgus', 'children': [node, sister]}, 226)
+  claims = _claims_of(records, {'taxon': 'rhenopyrgus', 'children': [node, sister]}, 226)
   specimens = [
     c for c in claims if c.get('materialKind') == 'specimen' and c['subject'] == _SPECIES
   ]
   assert [c.get('figured') for c in specimens] == [None, False]
 
 
-def test_a_figured_role_or_a_figured_cast_is_never_unfigured():
+def test_a_figured_role_or_a_figured_cast_is_never_unfigured(records):
   sister = {'taxon': _SISTER, 'illustrations': None}
 
   def figured(node, position):
-    claims = _claims_of({'taxon': 'rhenopyrgus', 'children': [node, sister]}, position)
+    claims = _claims_of(records, {'taxon': 'rhenopyrgus', 'children': [node, sister]}, position)
     return {
       c['label']: c.get('figured')
       for c in claims
@@ -1274,7 +1325,7 @@ def test_a_figured_role_or_a_figured_cast_is_never_unfigured():
     ],
     'illustrations': [{'plate': 1, 'of': 101}],
   }
-  claims = _claims_of({'taxon': 'rhenopyrgus', 'children': [numbered, sister]}, 231)
+  claims = _claims_of(records, {'taxon': 'rhenopyrgus', 'children': [numbered, sister]}, 231)
   assert [
     c.get('figured')
     for c in claims
@@ -1299,23 +1350,23 @@ def _claim(source, role='holotype', taxon=_TAXON, **fields):
   }
 
 
-def _conflicts(*claims):
+def _conflicts(records, *claims):
   by_source = {}
   for claim in claims:
     by_source.setdefault(claim['source'], []).append(claim)
-  return holotype_conflicts(by_source)
+  return holotype_conflicts(records, by_source)
 
 
-def test_one_specimen_under_two_printed_forms_is_no_conflict():
+def test_one_specimen_under_two_printed_forms_is_no_conflict(records):
   first = _claim('1941_whitehouse', ids=['F. 5404'], joinKeys=['uq-f:5404'])
   second = _claim('2021_jell_sprinkle', ids=['UQF5404'], joinKeys=['uq-f:5404'])
-  assert _conflicts(first, second) == []
+  assert _conflicts(records, first, second) == []
 
 
-def test_two_different_numbers_are_a_conflict_in_year_order():
+def test_two_different_numbers_are_a_conflict_in_year_order(records):
   later = _claim('2021_jell_sprinkle', ids=['UQF 9'], joinKeys=['uq-f:9'])
   first = _claim('1941_whitehouse', ids=['F. 5404'], joinKeys=['uq-f:5404'])
-  [row] = _conflicts(later, first)
+  [row] = _conflicts(records, later, first)
   assert row['taxon'] == _TAXON
   assert row['holotypes'] == [
     {
@@ -1333,51 +1384,53 @@ def test_two_different_numbers_are_a_conflict_in_year_order():
   ]
 
 
-def test_a_later_lectotype_or_neotype_is_no_conflict():
+def test_a_later_lectotype_or_neotype_is_no_conflict(records):
   holotype = _claim('1941_whitehouse', ids=['F. 5404'], joinKeys=['uq-f:5404'])
   for role in ('lectotype', 'neotype'):
     later = _claim('2021_jell_sprinkle', role=role, ids=['UQF 9'], joinKeys=['uq-f:9'])
-    assert _conflicts(holotype, later) == []
+    assert _conflicts(records, holotype, later) == []
   # A source that designates a lectotype leaves the comparison whole, even
   # when it also reports the old holotype entry.
   report = _claim('2021_jell_sprinkle', ids=['UQF 9'], joinKeys=['uq-f:9'])
-  assert _conflicts(holotype, later, report) == []
+  assert _conflicts(records, holotype, later, report) == []
 
 
-def test_an_uncertain_holotype_is_ignored():
+def test_an_uncertain_holotype_is_ignored(records):
   holotype = _claim('1941_whitehouse', ids=['F. 5404'], joinKeys=['uq-f:5404'])
   doubtful = _claim('2021_jell_sprinkle', ids=['UQF 9'], joinKeys=['uq-f:9'], uncertain=True)
-  assert _conflicts(holotype, doubtful) == []
+  assert _conflicts(records, holotype, doubtful) == []
   # An uncertain lectotype does not excuse a conflict either.
   lectotype = _claim('2021_jell_sprinkle', role='lectotype', ids=['UQF 9'], uncertain=True)
-  assert _conflicts(holotype, lectotype) == []
+  assert _conflicts(records, holotype, lectotype) == []
 
 
-def test_other_roles_and_a_single_source_are_no_conflict():
+def test_other_roles_and_a_single_source_are_no_conflict(records):
   holotype = _claim('1941_whitehouse', ids=['F. 5404'], joinKeys=['uq-f:5404'])
   paratype = _claim('2021_jell_sprinkle', role='paratype', ids=['UQF 9'], joinKeys=['uq-f:9'])
-  assert _conflicts(holotype, paratype) == []
+  assert _conflicts(records, holotype, paratype) == []
   other = _claim('1941_whitehouse', ids=['F. 5405'], joinKeys=['uq-f:5405'], count=1)
-  assert _conflicts(holotype, other) == []
+  assert _conflicts(records, holotype, other) == []
 
 
-def test_unnumbered_holotypes_are_compared_by_label_then_printed_ids():
+def test_unnumbered_holotypes_are_compared_by_label_then_printed_ids(records):
   first = _claim('1941_whitehouse', label='the Taf. 2 fossil')
   same = _claim('2021_jell_sprinkle', label='the Taf. 2 fossil')
-  assert _conflicts(first, same) == []
-  [row] = _conflicts(first, _claim('2021_jell_sprinkle', label='the Taf. 3 fossil'))
+  assert _conflicts(records, first, same) == []
+  [row] = _conflicts(records, first, _claim('2021_jell_sprinkle', label='the Taf. 3 fossil'))
   assert row['holotypes'][0]['joinKeys'] == [] and row['holotypes'][0]['label'] == first['label']
   # No join keys and no label: the printed ids, a range pair's endpoints included.
   ids = _claim('1941_whitehouse', ids=[['XX 1', 'XX 2']])
-  assert _conflicts(ids, _claim('2021_jell_sprinkle', ids=['XX 2'])) == []
-  [row] = _conflicts(ids, _claim('2021_jell_sprinkle', ids=['XX 3']))
+  assert _conflicts(records, ids, _claim('2021_jell_sprinkle', ids=['XX 2'])) == []
+  [row] = _conflicts(records, ids, _claim('2021_jell_sprinkle', ids=['XX 3']))
   assert row['holotypes'][0]['ids'] == [['XX 1', 'XX 2']]
 
 
-def test_the_manifest_reports_holotype_conflicts(claims, roots):
+def test_the_manifest_reports_holotype_conflicts(records, claims, roots):
   # The corpus: the function runs and the manifest carries what it returns.
-  assert isinstance(holotype_conflicts(claims), list)
-  assert manifest(claims, roots)['holotypeConflicts'] == holotype_conflicts(claims)
+  assert isinstance(holotype_conflicts(records, claims), list)
+  assert manifest(records, claims, roots)['holotypeConflicts'] == holotype_conflicts(
+    records, claims
+  )
 
 
 # -- `sameAs`: a link from one specimen entry to an earlier source's ------------
@@ -1386,35 +1439,37 @@ _EARLY, _LATE, _LATEST = '1897_whiteaves', '1914c_bather', '1962_fay'
 _OTTAWA = 'ottawaensis_whiteaves_1897'
 
 
-def _linked_claims(trees, sources=None):
+def _linked_claims(records, trees, sources=None):
   """`extract` over synthetic trees of real sources: `trees` maps a source
-  key to `(position, node)`; each position is used once, since `Tree` keeps
-  class-level registries."""
+  key to `(position, node)`."""
   roots = {
-    source: [Tree(node, {'source_key': source, 'type': 'taxonomy', 'position': position})]
+    source: [
+      Tree(node, {'source_key': source, 'type': 'taxonomy', 'position': position}, corpus=records)
+    ]
     for source, (position, node) in trees.items()
   }
-  return extract(roots, sources)
+  return extract(records, roots, sources)
 
 
 def _specimens(claims, source):
   return [c for c in claims[source] if c.get('materialKind') == 'specimen']
 
 
-def test_the_linked_sources_are_in_year_order():
-  assert [Source.get(k).year for k in (_EARLY, _LATE, _LATEST)] == [1897, 1914, 1962]
+def test_the_linked_sources_are_in_year_order(records):
+  assert [records.sources[k].year for k in (_EARLY, _LATE, _LATEST)] == [1897, 1914, 1962]
 
 
-def test_same_as_is_copied_and_resolved_to_the_earlier_claim():
+def test_same_as_is_copied_and_resolved_to_the_earlier_claim(records):
   link = {'source': _EARLY, 'label': 'First  specimen'}
   claims = _linked_claims(
+    records,
     {
       _EARLY: (1300, {'taxon': _OTTAWA, 'material': [{'label': 'first specimen'}, {'label': 'x'}]}),
       _LATE: (
         1301,
         {'taxon': _OTTAWA, 'material': [{'label': 'A', 'role': 'holotype', 'sameAs': link}]},
       ),
-    }
+    },
   )
   first, _ = _specimens(claims, _EARLY)
   [later] = _specimens(claims, _LATE)
@@ -1423,7 +1478,7 @@ def test_same_as_is_copied_and_resolved_to_the_earlier_claim():
   assert 'sameAs' not in first and 'sameAsClaim' not in first
 
 
-def test_same_as_by_number_within_a_prefix():
+def test_same_as_by_number_within_a_prefix(records):
   entries = [
     {'prefix': 'GSC', 'numbers': [5]},
     {'prefix': 'ROM', 'numbers': [5]},
@@ -1433,7 +1488,7 @@ def test_same_as_by_number_within_a_prefix():
 
   def resolved(link, position):
     node = {'taxon': _OTTAWA, 'material': [{'label': 'A', 'sameAs': {'source': _EARLY, **link}}]}
-    claims = _linked_claims({**trees, _LATE: (position, node)})
+    claims = _linked_claims(records, {**trees, _LATE: (position, node)})
     return _specimens(claims, _LATE)[0].get('sameAsClaim'), _specimens(claims, _EARLY)
 
   target, early = resolved({'number': 5, 'prefix': 'ROM'}, 1303)
@@ -1445,20 +1500,20 @@ def test_same_as_by_number_within_a_prefix():
   assert target == early[2]['id']
 
 
-def test_same_as_stays_unresolved_when_the_target_is_not_extracted_or_not_found():
+def test_same_as_stays_unresolved_when_the_target_is_not_extracted_or_not_found(records):
   link = {'source': _EARLY, 'label': 'first specimen'}
   trees = {
     _EARLY: (1306, {'taxon': _OTTAWA, 'material': [{'label': 'first specimen'}]}),
     _LATE: (1307, {'taxon': _OTTAWA, 'material': [{'label': 'A', 'sameAs': link}]}),
   }
-  [later] = _specimens(_linked_claims(trees, sources=[_LATE]), _LATE)
+  [later] = _specimens(_linked_claims(records, trees, sources=[_LATE]), _LATE)
   assert later['sameAs'] == link and 'sameAsClaim' not in later
   lost = {'taxon': _OTTAWA, 'material': [{'label': 'A', 'sameAs': {**link, 'label': 'nope'}}]}
-  claims = _linked_claims({**trees, _LATE: (1308, lost)})
+  claims = _linked_claims(records, {**trees, _LATE: (1308, lost)})
   assert 'sameAsClaim' not in _specimens(claims, _LATE)[0]
 
 
-def test_an_inferred_same_as_is_listed_in_inferred_fields():
+def test_an_inferred_same_as_is_listed_in_inferred_fields(records):
   editorial = {'inferred': ['role', 'sameAs'], 'basis': 'the editor reads No. 752 as the lectotype'}
   node = {
     'taxon': _OTTAWA,
@@ -1472,7 +1527,7 @@ def test_an_inferred_same_as_is_listed_in_inferred_fields():
       }
     ],
   }
-  [claim] = _specimens(_linked_claims({_LATEST: (1309, node)}), _LATEST)
+  [claim] = _specimens(_linked_claims(records, {_LATEST: (1309, node)}), _LATEST)
   assert claim['inferredFields'] == ['role', 'sameAs']
   assert claim['sameAs'] == {'source': _LATE, 'label': 'A'}
   # The entry is printed and only its fields are the editor's.
@@ -1488,43 +1543,45 @@ def _holotype_chain(middle_role):
   return early, middle, late
 
 
-def test_holotypes_linked_by_same_as_are_one_specimen():
+def test_holotypes_linked_by_same_as_are_one_specimen(records):
   early = _claim(_EARLY, id='early', label='first specimen')
   later = _claim(_LATE, id='later', label='A', sameAsClaim='early')
-  assert _conflicts(early, later) == []
+  assert _conflicts(records, early, later) == []
   # The link is read in either direction.
   early['sameAsClaim'], later['sameAsClaim'] = 'later', None
-  assert _conflicts(early, later) == []
+  assert _conflicts(records, early, later) == []
   # Unlinked, different labels are two specimens.
-  [row] = _conflicts(_claim(_EARLY, id='early', label='first specimen'), _claim(_LATE, label='A'))
+  [row] = _conflicts(
+    records, _claim(_EARLY, id='early', label='first specimen'), _claim(_LATE, label='A')
+  )
   assert [h['source'] for h in row['holotypes']] == [_EARLY, _LATE]
 
 
 @pytest.mark.parametrize('middle_role', ['holotype', 'syntype'])
-def test_holotypes_linked_through_a_chain_are_one_specimen(middle_role):
-  assert _conflicts(*_holotype_chain(middle_role)) == []
+def test_holotypes_linked_through_a_chain_are_one_specimen(records, middle_role):
+  assert _conflicts(records, *_holotype_chain(middle_role)) == []
   # Without the middle link the ends are two specimens.
   early, middle, late = _holotype_chain(middle_role)
   late['sameAsClaim'] = None
-  assert len(_conflicts(early, middle, late)) == 1
+  assert len(_conflicts(records, early, middle, late)) == 1
 
 
-def test_a_shared_join_key_joins_one_number_entries_but_a_batch_joins_nothing():
+def test_a_shared_join_key_joins_one_number_entries_but_a_batch_joins_nothing(records):
   one = _claim('1941_whitehouse', id='one', ids=['F. 1'], joinKeys=['uq-f:1'])
   two = _claim('2021_jell_sprinkle', id='two', ids=['UQF 2'], joinKeys=['uq-f:2'])
   # A paratype entry printing both numbers does not make them one specimen.
   batch = _claim(
     '1960_gill_caster', role='paratype', id='batch', joinKeys=['uq-f:1', 'uq-f:2'], rangeJoin=True
   )
-  assert len(_conflicts(one, two, batch)) == 1
+  assert len(_conflicts(records, one, two, batch)) == 1
   # A one-number entry that links to the earlier label joins the two.
   early = _claim(_EARLY, id='early', label='first specimen')
   bridge = _claim(_LATE, role='paratype', id='bridge', joinKeys=['uq-f:1'], sameAsClaim='early')
   same = _claim('2021_jell_sprinkle', id='same', ids=['UQF 1'], joinKeys=['uq-f:1'])
-  assert _conflicts(early, bridge, same) == []
+  assert _conflicts(records, early, bridge, same) == []
 
 
-def test_auctt_cites_authors_in_place_of_a_work(caplog):
+def test_auctt_cites_authors_in_place_of_a_work(records, caplog):
   # "Echinozoa auctt.": the name in the sense of authors generally, cited
   # in place of a work; "auctt. veterum" qualifies the authors.
   root = Tree(
@@ -1534,8 +1591,9 @@ def test_auctt_cites_authors_in_place_of_a_work(caplog):
       'emendedBy': [{'auctt': True}, {'source': '1968b_paul.c.r.c'}],
     },
     {'source_key': '1985_jell_burrett_banks', 'type': 'taxonomy', 'position': 92},
+    corpus=records,
   )
-  claims = extract({'1985_jell_burrett_banks': [root]})['1985_jell_burrett_banks']
+  claims = extract(records, {'1985_jell_burrett_banks': [root]})['1985_jell_burrett_banks']
   assert not [r for r in caplog.records if r.levelno >= logging.ERROR]
   [usage] = [c for c in claims if c['kind'] == 'usage']
   assert usage['citesAuctt'] == 'veterum' and 'citesSource' not in usage

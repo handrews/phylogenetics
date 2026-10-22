@@ -3,9 +3,9 @@ schema, the loader check, the claims, the derived `skeleton` coverage, and
 the listing, sentence and table the tools say.
 
 Synthetic trees are built on the loaded test corpus under positions
-330 and up (`Tree` keeps class-level registries); the tool tests read a
-`ClaimStore` over a copy of `claims/` whose file for `1766_linnaeus` is
-replaced by the claims of those trees, since no data uses the nulls yet.
+330 and up; the tool tests read a `ClaimStore` over a copy of `claims/`
+whose file for `1766_linnaeus` is replaced by the claims of those trees,
+since no data uses the nulls yet.
 """
 
 import json
@@ -17,8 +17,7 @@ import pytest
 from phylohist.claims import DERIVED_KINDS, derived_coverage, extract, manifest
 from phylohist.loader import io, material, nomenclature
 from phylohist.loader.load import _report_nomenclature
-from phylohist.loader.research import Source
-from phylohist.loader.taxa import Taxon, Tree
+from phylohist.loader.taxa import Tree
 from phylohist.store import ClaimStore
 from phylohist.words import ABSENCE_WORDS
 from tests import support
@@ -113,7 +112,7 @@ def test_a_node_with_pages_or_none_says_nothing():
   assert nomenclature.inferred_pages({'taxon': 'animalia', 'rank': None}) == []
 
 
-def test_load_reports_the_null_pages_with_the_nodes_path(caplog):
+def test_load_reports_the_null_pages_with_the_nodes_path(records, caplog):
   data = {
     'trees': {
       'src1': {
@@ -129,7 +128,7 @@ def test_load_reports_the_null_pages_with_the_nodes_path(caplog):
     },
   }
   with caplog.at_level(logging.WARNING, logger='phylohist'):
-    _report_nomenclature(data)
+    _report_nomenclature(support.with_documents(records, data))
   errors = [r.getMessage() for r in caplog.records if r.levelno == logging.ERROR]
   assert len(errors) == 1
   assert errors[0].endswith(
@@ -176,9 +175,10 @@ def test_check_draft_reports_a_null_pages_on_a_printed_node(tmp_path):
 # -- claims -------------------------------------------------------------------
 
 
-def _claims(root, position, source=SOURCE):
-  tree = Tree(root, {'source_key': source, 'type': 'taxonomy', 'position': position})
-  return extract({source: [tree]})[source]
+def _claims(records, root, position, source=SOURCE):
+  metadata = {'source_key': source, 'type': 'taxonomy', 'position': position}
+  tree = Tree(root, metadata, corpus=records)
+  return extract(records, {source: [tree]})[source]
 
 
 def _at(claims, path, kind='placement'):
@@ -186,13 +186,13 @@ def _at(claims, path, kind='placement'):
   return claim
 
 
-def test_a_null_rank_is_a_null_rank_as_printed():
+def test_a_null_rank_is_a_null_rank_as_printed(records):
   root = {
     'taxon': 'animalia',
     'rank': 'Kingdom',
     'children': [{'taxon': 'vermes', 'rank': None}, {'taxon': 'echinodermata'}],
   }
-  claims = _claims(root, 330)
+  claims = _claims(records, root, 330)
   vermes = _at(claims, '330/children/0')
   assert 'rankAsPrinted' in vermes and vermes['rankAsPrinted'] is None
   # The record's rank is unchanged, and a node with no `rank` has no key.
@@ -201,7 +201,7 @@ def test_a_null_rank_is_a_null_rank_as_printed():
   assert 'rankAsPrinted' not in _at(claims, '330', 'usage')
 
 
-def test_an_inferred_node_with_null_pages_has_none():
+def test_an_inferred_node_with_null_pages_has_none(records):
   root = {
     'taxon': 'animalia',
     'rank': 'Kingdom',
@@ -209,7 +209,7 @@ def test_an_inferred_node_with_null_pages_has_none():
     'editorial': INFERRED,
     'children': [{'taxon': 'vermes', 'pages': 12}, {'taxon': 'mollusca'}],
   }
-  claims = _claims(root, 331)
+  claims = _claims(records, root, 331)
   root_claim = _at(claims, '331', 'usage')
   assert 'pages' not in root_claim
   assert root_claim['inferred'] is True
@@ -219,14 +219,14 @@ def test_an_inferred_node_with_null_pages_has_none():
   assert 'pages' not in _at(claims, '331/children/1')
 
 
-def test_a_node_without_pages_does_not_take_its_parents():
+def test_a_node_without_pages_does_not_take_its_parents(records):
   # A parent's page says where the parent is printed, not its children.
   root = {
     'taxon': 'animalia',
     'pages': 5,
     'children': [{'taxon': 'vermes', 'children': [{'taxon': 'echinodermata', 'pages': 7}]}],
   }
-  claims = _claims(root, 332)
+  claims = _claims(records, root, 332)
   assert _at(claims, '332', 'usage')['pages'] == 5
   assert 'pages' not in _at(claims, '332/children/0')
   assert _at(claims, '332/children/0/children/0')['pages'] == 7
@@ -254,7 +254,7 @@ def synthetic(corpus, tmp_path_factory):
   replaced by those of `TREE`."""
   directory = tmp_path_factory.mktemp('claims')
   shutil.copytree(corpus.claims, directory, dirs_exist_ok=True)
-  claims = _claims(TREE, 340)
+  claims = _claims(corpus.records, TREE, 340)
   (directory / f'{SOURCE}.jsonl').write_text(''.join(json.dumps(c) + '\n' for c in claims))
   return ClaimStore(directory)
 
@@ -293,10 +293,10 @@ def test_the_placements_table_keeps_the_records_rank(synthetic):
   assert cell['value'] == 'Animalia' and cell['rank'] == 'Class'
 
 
-def test_an_unranked_root_prints_its_name_alone(corpus, tmp_path):
+def test_an_unranked_root_prints_its_name_alone(records, corpus, tmp_path):
   # A root has no placement claim: its usage carries the null printed rank.
   root = {'taxon': 'vermes', 'rank': None, 'pages': 12, 'children': [{'taxon': 'mollusca'}]}
-  claims = _claims(root, 341)
+  claims = _claims(records, root, 341)
   assert _at(claims, '341', kind='usage')['rankAsPrinted'] is None
   directory = tmp_path / 'claims'
   shutil.copytree(corpus.claims, directory)
@@ -349,13 +349,15 @@ def _errors(caplog):
   return [r.getMessage() for r in caplog.records if r.levelno >= logging.ERROR]
 
 
-def _load(root, position, caplog, tree_type='taxonomy'):
+def _load(records, root, position, caplog, tree_type='taxonomy'):
   with caplog.at_level(logging.ERROR, logger='phylohist'):
-    return Tree(root, {**_BASE, 'type': tree_type, 'position': position})
+    return Tree(root, {**_BASE, 'type': tree_type, 'position': position}, corpus=records)
 
 
-def test_children_null_on_an_order_is_clean(caplog):
-  tree = _load({'taxon': PHYLUM, 'children': [{'taxon': ORDER, 'children': None}]}, 1100, caplog)
+def test_children_null_on_an_order_is_clean(records, caplog):
+  tree = _load(
+    records, {'taxon': PHYLUM, 'children': [{'taxon': ORDER, 'children': None}]}, 1100, caplog
+  )
   assert _errors(caplog) == []
   assert [n.taxon.key for n in tree.walk()] == [PHYLUM, ORDER]
 
@@ -365,13 +367,14 @@ def test_children_null_on_an_order_is_clean(caplog):
   [('taxon', t) for t in (SECTION, PHYLUM, CLASS, FAMILY, GENUS, GENUS_2, SUBGENUS)]
   + [('openTaxon', PLACEHOLDER)],
 )
-def test_children_null_is_allowed_above_the_species_level(caplog, field, taxon):
-  _load({field: taxon, 'children': None}, 1101, caplog)
+def test_children_null_is_allowed_above_the_species_level(records, caplog, field, taxon):
+  _load(records, {field: taxon, 'children': None}, 1101, caplog)
   assert _errors(caplog) == []
 
 
-def test_children_null_on_a_genus_or_subgenus_is_clean(caplog):
+def test_children_null_on_a_genus_or_subgenus_is_clean(records, caplog):
   tree = _load(
+    records,
     {
       'taxon': FAMILY,
       'children': [{'taxon': GENUS_2, 'children': None}, {'taxon': SUBGENUS, 'children': None}],
@@ -383,8 +386,8 @@ def test_children_null_on_a_genus_or_subgenus_is_clean(caplog):
   assert [n.taxon.key for n in tree.walk()] == [FAMILY, GENUS_2, SUBGENUS]
 
 
-def test_children_null_on_a_species_is_an_error(caplog):
-  _load({'taxon': GENUS, 'children': [{'taxon': SPECIES, 'children': None}]}, 1104, caplog)
+def test_children_null_on_a_species_is_an_error(records, caplog):
+  _load(records, {'taxon': GENUS, 'children': [{'taxon': SPECIES, 'children': None}]}, 1104, caplog)
   [error] = _errors(caplog)
   assert error.endswith(
     'carries `children: null` but is a species-level name; '
@@ -393,14 +396,15 @@ def test_children_null_on_a_species_is_an_error(caplog):
   assert SPECIES in error
 
 
-def test_children_null_is_compared_lower_cased(monkeypatch, caplog):
-  monkeypatch.setattr(Taxon.get(SPECIES), '_rank', 'Species')
-  _load({'taxon': SPECIES, 'children': None}, 1105, caplog)
+def test_children_null_is_compared_lower_cased(records, monkeypatch, caplog):
+  monkeypatch.setattr(records.taxa[SPECIES], '_rank', 'Species')
+  _load(records, {'taxon': SPECIES, 'children': None}, 1105, caplog)
   assert len(_errors(caplog)) == 1
 
 
-def test_a_genus_with_no_children_says_nothing(caplog):
+def test_a_genus_with_no_children_says_nothing(records, caplog):
   _load(
+    records,
     {'taxon': FAMILY, 'children': [{'taxon': GENUS_2}, {'taxon': GENUS, 'children': []}]},
     1106,
     caplog,
@@ -408,9 +412,9 @@ def test_a_genus_with_no_children_says_nothing(caplog):
   assert _errors(caplog) == []
 
 
-def test_children_null_outside_a_taxonomy_is_an_error(caplog):
+def test_children_null_outside_a_taxonomy_is_an_error(records, caplog):
   root = {'taxon': PHYLUM, 'children': [{'taxon': ORDER, 'children': None}]}
-  _load(root, 1107, caplog, tree_type='cladogram')
+  _load(records, root, 1107, caplog, tree_type='cladogram')
   [error] = _errors(caplog)
   assert error.endswith('`children: null` outside a taxonomy')
   assert error.startswith('Dehm (1961)[1107]/echinodermata/0/lithophyta')
@@ -425,7 +429,7 @@ def test_children_null_on_a_cited_entry_is_an_error():
   assert nomenclature.children_null({'taxon': ORDER}, is_cited=True) == []
 
 
-def test_load_reports_a_null_children_on_a_cited_entry_with_the_nodes_path(caplog):
+def test_load_reports_a_null_children_on_a_cited_entry_with_the_nodes_path(records, caplog):
   data = {
     'trees': {
       'src1': {
@@ -442,7 +446,7 @@ def test_load_reports_a_null_children_on_a_cited_entry_with_the_nodes_path(caplo
     },
   }
   with caplog.at_level(logging.WARNING, logger='phylohist'):
-    _report_nomenclature(data)
+    _report_nomenclature(support.with_documents(records, data))
   errors = [r.getMessage() for r in caplog.records if r.levelno == logging.ERROR]
   assert errors == ['src1 at 0/children/1/synonyms/0: cited entry carries `children: null`']
 
@@ -480,9 +484,9 @@ def test_check_draft_allows_an_empty_children_list(tmp_path):
 # -- the absence claim --------------------------------------------------------
 
 
-def test_a_null_children_is_an_absence_claim():
+def test_a_null_children_is_an_absence_claim(records):
   root = {'taxon': PHYLUM, 'children': [{'taxon': ORDER, 'children': None}]}
-  claims = _claims(root, 1110)
+  claims = _claims(records, root, 1110)
   [absence] = [c for c in claims if c['kind'] == 'absence']
   assert absence['absenceOf'] == 'skeleton'
   assert absence['fields'] == ['children']
@@ -495,13 +499,17 @@ def test_a_null_children_is_an_absence_claim():
   # A list, an empty list and an absent `children` are no absence.
   for position, children in ((1111, [{'taxon': GENUS}]), (1112, [])):
     assert not [
-      c for c in _claims({'taxon': ORDER, 'children': children}, position) if c['kind'] == 'absence'
+      c
+      for c in _claims(records, {'taxon': ORDER, 'children': children}, position)
+      if c['kind'] == 'absence'
     ]
-  assert not [c for c in _claims({'taxon': ORDER}, 1113) if c['kind'] == 'absence']
+  assert not [c for c in _claims(records, {'taxon': ORDER}, 1113) if c['kind'] == 'absence']
 
 
-def test_the_skeleton_absence_follows_the_other_absences():
-  claims = _claims({'taxon': ORDER, 'synonyms': None, 'type': None, 'children': None}, 1114)
+def test_the_skeleton_absence_follows_the_other_absences(records):
+  claims = _claims(
+    records, {'taxon': ORDER, 'synonyms': None, 'type': None, 'children': None}, 1114
+  )
   assert [c['absenceOf'] for c in claims if c['kind'] == 'absence'] == [
     'synonymy',
     'types',
@@ -512,8 +520,9 @@ def test_the_skeleton_absence_follows_the_other_absences():
 # -- derived `skeleton` coverage ----------------------------------------------
 
 
-def _skeleton(node, position, file_unused=(), tree_type='taxonomy'):
-  root = Tree(node, {**_BASE, 'type': tree_type, 'position': position, 'file_unused': file_unused})
+def _skeleton(records, node, position, file_unused=(), tree_type='taxonomy'):
+  metadata = {**_BASE, 'type': tree_type, 'position': position, 'file_unused': file_unused}
+  root = Tree(node, metadata, corpus=records)
   return derived_coverage({'s': [root]})['s']['skeleton']
 
 
@@ -521,13 +530,13 @@ def _phylum(*orders):
   return {'taxon': PHYLUM, 'children': list(orders)}
 
 
-def test_skeleton_coverage_declares_nothing_without_a_null():
-  assert _skeleton(_phylum({'taxon': ORDER, 'children': [{'taxon': GENUS}]}), 1120) is None
-  assert _skeleton(_phylum({'taxon': ORDER}), 1121) is None
-  assert _skeleton(_phylum({'taxon': ORDER, 'children': []}), 1122) is None
+def test_skeleton_coverage_declares_nothing_without_a_null(records):
+  assert _skeleton(records, _phylum({'taxon': ORDER, 'children': [{'taxon': GENUS}]}), 1120) is None
+  assert _skeleton(records, _phylum({'taxon': ORDER}), 1121) is None
+  assert _skeleton(records, _phylum({'taxon': ORDER, 'children': []}), 1122) is None
 
 
-def test_skeleton_coverage_all_when_every_node_above_species_has_a_list_or_a_null():
+def test_skeleton_coverage_all_when_every_node_above_species_has_a_list_or_a_null(records):
   genus = {'taxon': GENUS, 'children': [{'taxon': SPECIES}]}
   tree = {
     'taxon': PHYLUM,
@@ -536,25 +545,25 @@ def test_skeleton_coverage_all_when_every_node_above_species_has_a_list_or_a_nul
       {'taxon': CLASS, 'children': [{'taxon': FAMILY, 'children': [genus]}]},
     ],
   }
-  assert _skeleton(tree, 1123) == 'all'
+  assert _skeleton(records, tree, 1123) == 'all'
 
 
-def test_skeleton_coverage_partly_when_a_node_above_species_lacks_children():
+def test_skeleton_coverage_partly_when_a_node_above_species_lacks_children(records):
   tree = _phylum({'taxon': ORDER, 'children': None}, {'taxon': CLASS})
-  assert _skeleton(tree, 1124) == 'partly'
+  assert _skeleton(records, tree, 1124) == 'partly'
   # A node lower down is counted as well.
   deeper = {'taxon': CLASS, 'children': [{'taxon': ORDER, 'children': None}, {'taxon': FAMILY}]}
-  assert _skeleton(_phylum(deeper), 1125) == 'partly'
-  assert _skeleton({'taxon': ORDER, 'children': None}, 1126) == 'all'
+  assert _skeleton(records, _phylum(deeper), 1125) == 'partly'
+  assert _skeleton(records, {'taxon': ORDER, 'children': None}, 1126) == 'all'
 
 
-def test_a_genus_or_subgenus_counts():
+def test_a_genus_or_subgenus_counts(records):
   # A genus with no `children` is one whose species are not yet entered.
   tree = {
     'taxon': PHYLUM,
     'children': [{'taxon': ORDER, 'children': None}, {'taxon': GENUS}, {'taxon': GENUS_2}],
   }
-  assert _skeleton(tree, 1127) == 'partly'
+  assert _skeleton(records, tree, 1127) == 'partly'
   tree = {
     'taxon': PHYLUM,
     'children': [
@@ -564,41 +573,41 @@ def test_a_genus_or_subgenus_counts():
       {'taxon': SUBGENUS, 'children': []},
     ],
   }
-  assert _skeleton(tree, 1128) == 'all'
+  assert _skeleton(records, tree, 1128) == 'all'
   tree = {'taxon': ORDER, 'children': [{'taxon': GENUS}, {'taxon': GENUS_2, 'children': []}]}
-  assert _skeleton(_phylum(tree, {'taxon': CLASS, 'children': None}), 1129) == 'partly'
-  assert _skeleton({'taxon': ORDER, 'children': [{'taxon': SUBGENUS}]}, 1144) is None
+  assert _skeleton(records, _phylum(tree, {'taxon': CLASS, 'children': None}), 1129) == 'partly'
+  assert _skeleton(records, {'taxon': ORDER, 'children': [{'taxon': SUBGENUS}]}, 1144) is None
   # Without a null anywhere the coverage declares nothing, whatever the genera say.
-  assert _skeleton({'taxon': GENUS, 'children': [{'taxon': SPECIES}]}, 1145) is None
+  assert _skeleton(records, {'taxon': GENUS, 'children': [{'taxon': SPECIES}]}, 1145) is None
   # A species counts for nothing.
-  assert _skeleton({'taxon': GENUS, 'children': None}, 1130) == 'all'
+  assert _skeleton(records, {'taxon': GENUS, 'children': None}, 1130) == 'all'
   tree = {'taxon': GENUS, 'children': [{'taxon': SPECIES}, {'taxon': SPECIES_2}]}
-  assert _skeleton(_phylum({'taxon': ORDER, 'children': None}, tree), 1143) == 'all'
+  assert _skeleton(records, _phylum({'taxon': ORDER, 'children': None}, tree), 1143) == 'all'
 
 
-def test_a_section_and_an_unranked_node_count(monkeypatch):
+def test_a_section_and_an_unranked_node_count(records, monkeypatch):
   tree = {'taxon': ORDER, 'children': None}
-  assert _skeleton(_phylum(tree, {'taxon': SECTION}), 1131) == 'partly'
-  assert _skeleton(_phylum(tree, {'taxon': SECTION, 'children': None}), 1132) == 'all'
-  monkeypatch.setattr(Taxon.get(SECTION), '_rank', 'Unranked')
-  assert _skeleton(_phylum(tree, {'taxon': SECTION}), 1133) == 'partly'
-  assert _skeleton(_phylum(tree, {'taxon': SECTION, 'children': None}), 1134) == 'all'
+  assert _skeleton(records, _phylum(tree, {'taxon': SECTION}), 1131) == 'partly'
+  assert _skeleton(records, _phylum(tree, {'taxon': SECTION, 'children': None}), 1132) == 'all'
+  monkeypatch.setattr(records.taxa[SECTION], '_rank', 'Unranked')
+  assert _skeleton(records, _phylum(tree, {'taxon': SECTION}), 1133) == 'partly'
+  assert _skeleton(records, _phylum(tree, {'taxon': SECTION, 'children': None}), 1134) == 'all'
 
 
-def test_a_placeholder_above_the_species_level_does_not_count():
+def test_a_placeholder_above_the_species_level_does_not_count(records):
   tree = _phylum({'taxon': ORDER, 'children': None}, {'openTaxon': PLACEHOLDER})
-  assert _skeleton(tree, 1135) == 'all'
+  assert _skeleton(records, tree, 1135) == 'all'
   # A placeholder's own null is allowed and writes the null; it is not counted as a node.
-  assert _skeleton(_phylum({'openTaxon': PLACEHOLDER, 'children': None}), 1136) is None
+  assert _skeleton(records, _phylum({'openTaxon': PLACEHOLDER, 'children': None}), 1136) is None
 
 
-def test_skeleton_coverage_is_never_na_and_a_cladogram_contributes_nothing():
+def test_skeleton_coverage_is_never_na_and_a_cladogram_contributes_nothing(records):
   tree = _phylum({'taxon': ORDER, 'children': None})
-  assert _skeleton(tree, 1137, file_unused=('children',)) == 'all'
-  assert _skeleton(_phylum({'taxon': ORDER}), 1138, file_unused=('children',)) is None
-  assert _skeleton(_phylum({'taxon': ORDER}), 1139, file_unused=('synonyms',)) is None
+  assert _skeleton(records, tree, 1137, file_unused=('children',)) == 'all'
+  assert _skeleton(records, _phylum({'taxon': ORDER}), 1138, file_unused=('children',)) is None
+  assert _skeleton(records, _phylum({'taxon': ORDER}), 1139, file_unused=('synonyms',)) is None
   # The null outside a taxonomy is an error and contributes nothing.
-  assert _skeleton(tree, 1140, tree_type='cladogram') is None
+  assert _skeleton(records, tree, 1140, tree_type='cladogram') is None
 
 
 def test_skeleton_is_a_derived_kind_with_no_unused_form():
@@ -613,21 +622,23 @@ def test_skeleton_is_a_derived_kind_with_no_unused_form():
   ]
 
 
-def _manifest_entry(values):
-  return manifest(extract(values), values)['sources'][DEHM]
+def _manifest_entry(records, values):
+  return manifest(records, extract(records, values), values)['sources'][DEHM]
 
 
-def test_manifest_skeleton_declared_beside_a_derived_value_is_inconsistent(monkeypatch):
-  coverage = Source.get(DEHM)._data['audit']['coverage']
+def test_manifest_skeleton_declared_beside_a_derived_value_is_inconsistent(records, monkeypatch):
+  coverage = records.sources[DEHM]._data['audit']['coverage']
   monkeypatch.setitem(coverage, 'skeleton', 'all')
   values = {
     DEHM: [
       Tree(
-        _phylum({'taxon': ORDER, 'children': None}, {'taxon': CLASS}), {**_BASE, 'position': 1141}
+        _phylum({'taxon': ORDER, 'children': None}, {'taxon': CLASS}),
+        {**_BASE, 'position': 1141},
+        corpus=records,
       )
     ]
   }
-  entry = _manifest_entry(values)
+  entry = _manifest_entry(records, values)
   assert entry['derivedCoverage']['skeleton'] == 'partly'
   assert entry['coverage']['skeleton'] == 'partly'
   assert (
@@ -638,19 +649,20 @@ def test_manifest_skeleton_declared_beside_a_derived_value_is_inconsistent(monke
 
 
 def test_manifest_skeleton_keeps_the_claim_count_check_for_a_source_that_derives_nothing(
+  records,
   monkeypatch,
 ):
-  coverage = Source.get(DEHM)._data['audit']['coverage']
+  coverage = records.sources[DEHM]._data['audit']['coverage']
   # Declared `none` beside a tree that places nodes: the claim-count check fires.
   monkeypatch.setitem(coverage, 'skeleton', 'none')
-  values = {DEHM: [Tree(_phylum({'taxon': ORDER}), {**_BASE, 'position': 1142})]}
-  entry = _manifest_entry(values)
+  values = {DEHM: [Tree(_phylum({'taxon': ORDER}), {**_BASE, 'position': 1142}, corpus=records)]}
+  entry = _manifest_entry(records, values)
   assert entry['derivedCoverage']['skeleton'] is None
   assert entry['coverage']['skeleton'] == 'none'
   assert any(r.startswith('skeleton: declared none, ') for r in entry['inconsistencies'])
   # Declared `all` with a source that has no tree at all: no claims derived.
   monkeypatch.setitem(coverage, 'skeleton', 'all')
-  entry = _manifest_entry({})
+  entry = _manifest_entry(records, {})
   assert 'skeleton: declared all, no claims derived' in entry['inconsistencies']
 
 
@@ -702,7 +714,7 @@ def stopped(corpus, tmp_path_factory):
   replaced by those of `STOPS`, its `skeleton` coverage `partly`."""
   directory = tmp_path_factory.mktemp('claims_stops')
   shutil.copytree(corpus.claims, directory, dirs_exist_ok=True)
-  claims = _claims(STOPS, 1150, DEHM)
+  claims = _claims(corpus.records, STOPS, 1150, DEHM)
   (directory / f'{DEHM}.jsonl').write_text(''.join(json.dumps(c) + '\n' for c in claims))
   store = ClaimStore(directory)
   store.sources[DEHM]['coverage'] = {**store.sources[DEHM]['coverage'], 'skeleton': 'partly'}
@@ -838,7 +850,7 @@ def test_schema_rejects_a_null_authority_on_a_record_or_a_section():
   assert not support.schema()['sections'].check({'integra': {**section, 'authority': None}})
 
 
-def test_a_null_authority_says_none_was_printed():
+def test_a_null_authority_says_none_was_printed(records):
   root = {
     'taxon': 'animalia',
     'authority': None,
@@ -848,7 +860,7 @@ def test_a_null_authority_says_none_was_printed():
       {'taxon': 'echinodermata', 'authority': {'auth': ['linnaeus']}},
     ],
   }
-  claims = _claims(root, 342)
+  claims = _claims(records, root, 342)
   assert _at(claims, '342', 'usage')['printedAttribution'] == 'none'
   assert 'citesSource' not in _at(claims, '342', 'usage')
   vermes = _at(claims, '342/children/0')

@@ -4,8 +4,8 @@ Jell, Burrett & Banks 1985). Its key's year and letter are the target's, its
 authors a strict subset of the target's in their order; everything else is
 the target's.
 
-The aliases are synthetic, built on the test corpus; the registries they
-write to are restored before every test (`conftest.py`).
+The aliases are synthetic, built on the test corpus in each test's own
+copy of it (`records`, `conftest.py`).
 """
 
 import importlib
@@ -17,17 +17,17 @@ import pytest
 from phylohist.claims import manifest
 from phylohist.loader import LoadError, load
 from phylohist.loader.load import _load_sources
-from phylohist.loader.research import Source
-from phylohist.loader.taxa import Authority, Taxon, Tree
+from phylohist.loader.taxa import Authority, Tree
 from phylohist.resolve import Resolver
+from tests import support
 
 TARGET = '1985_jell_burrett_banks'
 
 
-def _add(key, target=TARGET, caplog=None):
+def _add(records, key, target=TARGET, caplog=None):
   with caplog.at_level(logging.ERROR, logger='phylohist'):
     caplog.clear()
-    Source.add({'aliasOf': target}, key)
+    records.add_source({'aliasOf': target}, key)
   return [r.getMessage() for r in caplog.records if r.levelno >= logging.ERROR]
 
 
@@ -35,16 +35,16 @@ ALIASES = ['1985_jell', '1985_banks', '1985_jell_banks', '1985_burrett_banks']
 
 
 @pytest.mark.parametrize('key', ALIASES)
-def test_an_ordered_strict_subset_is_an_alias(key, caplog):
-  assert _add(key, caplog=caplog) == []
-  alias = Source.get(key)
-  assert alias.canonical is Source.get(TARGET)
+def test_an_ordered_strict_subset_is_an_alias(key, records, caplog):
+  assert _add(records, key, caplog=caplog) == []
+  alias = records.sources[key]
+  assert alias.canonical is records.sources[TARGET]
   assert alias.alias_of == TARGET
   assert alias.author_keys_string == key.partition('_')[2]
   assert [a.key for a in alias.authors] == key.partition('_')[2].split('_')
   assert (alias.year, alias.disambiguator) == (1985, '')
   assert alias.author_keys == tuple(key.partition('_')[2].split('_'))
-  assert alias.citation_fields == Source.get(TARGET).citation_fields
+  assert alias.citation_fields == records.sources[TARGET].citation_fields
 
 
 @pytest.mark.parametrize(
@@ -57,79 +57,92 @@ def test_an_ordered_strict_subset_is_an_alias(key, caplog):
     ('1985_sprinkle', 'authors must be a strict subset'),
   ],
 )
-def test_a_key_that_does_not_fit_its_target_is_an_error(key, message, caplog):
-  errors = _add(key, caplog=caplog)
+def test_a_key_that_does_not_fit_its_target_is_an_error(key, message, records, caplog):
+  errors = _add(records, key, caplog=caplog)
   assert len(errors) == 1 and message in errors[0]
 
 
-def test_an_author_with_no_record_ends_the_load(caplog):
+def test_an_author_with_no_record_ends_the_load(records, caplog):
   # The alias cannot be built without its authors, so the load stops here
   # with a `LoadError` instead of going on to a crash in `Source.__str__`.
   with (
     caplog.at_level(logging.ERROR, logger='phylohist'),
     pytest.raises(LoadError, match='source alias 1985_nobody names author "nobody"'),
   ):
-    Source.add({'aliasOf': TARGET}, '1985_nobody')
+    records.add_source({'aliasOf': TARGET}, '1985_nobody')
   assert [r.getMessage() for r in caplog.records if r.levelno >= logging.ERROR] == [
     'Author "nobody" not found for source alias 1985_nobody!'
   ]
-  assert Source.get('1985_nobody') is None
+  assert '1985_nobody' not in records.sources
 
 
-def test_the_target_must_be_a_source_record(caplog):
-  assert _add('1985_banks', caplog=caplog) == []
-  errors = _add('1985_jell', target='1985_banks', caplog=caplog)
+def test_the_target_must_be_a_source_record(records, caplog):
+  assert _add(records, '1985_banks', caplog=caplog) == []
+  errors = _add(records, '1985_jell', target='1985_banks', caplog=caplog)
   assert errors == ['Alias "1985_jell" names "1985_banks", which is itself an alias']
-  assert Source.get('1985_jell') is None
-  errors = _add('1985_jell', target='1985_nobody', caplog=caplog)
+  assert '1985_jell' not in records.sources
+  errors = _add(records, '1985_jell', target='1985_nobody', caplog=caplog)
   assert errors == ['Alias "1985_jell" names source "1985_nobody", which does not exist']
-  assert Source.get('1985_jell') is None
+  assert '1985_jell' not in records.sources
 
 
-def test_an_alias_may_precede_its_target(caplog):
-  target_data = Source.get(TARGET)._data
-  del Source._sources[TARGET]
+def test_an_alias_may_precede_its_target(records, caplog):
+  target_data = records.sources.pop(TARGET)._data
+  view = support.with_documents(
+    records, {'sources': {'1985_banks': {'aliasOf': TARGET}, TARGET: target_data}}
+  )
   with caplog.at_level(logging.ERROR, logger='phylohist'):
-    _load_sources({'sources': {'1985_banks': {'aliasOf': TARGET}, TARGET: target_data}})
+    _load_sources(view)
   assert [r for r in caplog.records if r.levelno >= logging.ERROR] == []
-  assert Source.get('1985_banks').canonical is Source.get(TARGET)
+  assert view.sources['1985_banks'].canonical is view.sources[TARGET]
 
 
-def test_an_authority_by_alias_cites_the_alias_authors(caplog):
-  _add('1985_banks', caplog=caplog)
-  authority = Authority({'source': '1985_banks'})
+def test_an_authority_by_alias_cites_the_alias_authors(records, caplog):
+  _add(records, '1985_banks', caplog=caplog)
+  authority = Authority({'source': '1985_banks'}, records)
   assert str(authority) == 'Banks 1985'
   assert authority.taxon_suffix == 'banks_1985'
 
 
-def _protologue_errors(new, caplog):
-  _add('1985_banks', caplog=caplog)
+def _protologue_errors(records, new, caplog):
+  _add(records, '1985_banks', caplog=caplog)
   key = 'testum_banks_1985'
-  Taxon.add({'name': 'testum', 'rank': 'species', 'authority': {'source': '1985_banks'}}, key)
+  records.add_taxon(
+    {'name': 'testum', 'rank': 'species', 'authority': {'source': '1985_banks'}}, key
+  )
   with caplog.at_level(logging.ERROR, logger='phylohist'):
     caplog.clear()
     Tree(
       {'taxon': key, 'new': new},
       {'source_key': TARGET, 'type': 'taxonomy', 'position': 400, 'file_unused': ()},
+      corpus=records,
     )
   return [r.getMessage() for r in caplog.records if r.levelno >= logging.ERROR]
 
 
-def test_a_new_taxon_by_alias_is_new_in_the_target_tree(caplog):
-  assert _protologue_errors(True, caplog) == []
+def test_a_new_taxon_by_alias_is_new_in_the_target_tree(records, caplog):
+  assert _protologue_errors(records, True, caplog) == []
 
 
-def test_a_taxon_by_alias_in_the_target_tree_must_be_new(caplog):
-  errors = _protologue_errors(False, caplog)
+def test_a_taxon_by_alias_in_the_target_tree_must_be_new(records, caplog):
+  errors = _protologue_errors(records, False, caplog)
   assert len(errors) == 1 and 'but is not marked as new' in errors[0]
 
 
-def test_a_tree_file_named_by_an_alias_is_skipped(monkeypatch, caplog):
+def test_a_tree_file_named_by_an_alias_is_skipped(corpus, monkeypatch, caplog):
+  # A load builds a corpus of its own, so the files hold what the alias
+  # needs: the target's record, and the authors and publications it names.
   loading = importlib.import_module('phylohist.loader.load')
+  documents = corpus.records.data
 
   def aliased(drafts=False, **_):
-    data = {k: {} for k in ('authors', 'publications', 'taxa', 'sections')}
-    data['sources'] = {'1985_banks': {'aliasOf': TARGET}}
+    data = {
+      'authors': documents['authors'],
+      'publications': documents['publications'],
+      'taxa': {},
+      'sections': {},
+    }
+    data['sources'] = {TARGET: documents['sources'][TARGET], '1985_banks': {'aliasOf': TARGET}}
     data['trees'] = {'1985_banks': {'taxonomies': [{'taxon': 'cyathocystis'}]}}
     return data
 
@@ -137,13 +150,12 @@ def test_a_tree_file_named_by_an_alias_is_skipped(monkeypatch, caplog):
   with pytest.raises(LoadError, match='1 integrity error'):
     load()
   assert f'Tree file "1985_banks" is named by an alias; name it "{TARGET}"' in caplog.text
-  _, roots = load(tolerate=True)
-  assert roots == {}
+  assert load(tolerate=True).roots == {}
 
 
-def test_the_manifest_row_of_an_alias_is_its_citation_and_target(caplog):
-  _add('1985_banks', caplog=caplog)
-  rows = manifest({}, {})['sources']
+def test_the_manifest_row_of_an_alias_is_its_citation_and_target(records, caplog):
+  _add(records, '1985_banks', caplog=caplog)
+  rows = manifest(records, {}, {})['sources']
   target = rows[TARGET]['citation']
   assert rows['1985_banks'] == {
     'citation': {**target, 'authors': ['Banks']},

@@ -10,10 +10,7 @@ pairs, ``level`` being ``'error'`` or ``'warning'``; the caller adds the
 source key and, for a per-node check, the node path. `context_key`,
 `flat_numbers`, `entries_named` and `same_as_matches` are exported for the
 claims extractor (`phylohist.claims`), and `in_run` for the store
-(`phylohist.store`, `specimen_history`);
-`set_repository_registry`/`repository_registry` hold the loaded
-`data/repositories.yaml`, set once by `load.py`, so the extractor can reach
-it the way it reaches `Source`.
+(`phylohist.store`, `specimen_history`).
 """
 
 import re
@@ -31,21 +28,6 @@ from .taxa import (
 )
 
 _WHITESPACE_RE = re.compile(r'\s+')
-
-
-_registry = {}
-
-
-def set_repository_registry(data):
-  """Register `data/repositories.yaml`'s content once (`loader.load.load`),
-  so the claim extractor can reach it the way it reaches `Source`."""
-  global _registry
-  _registry = dict(data or {})
-
-
-def repository_registry():
-  """The registered repositories, keyed by registry key."""
-  return _registry
 
 
 def _fold(text):

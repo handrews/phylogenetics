@@ -4,10 +4,9 @@
 the tools say.
 
 Synthetic trees are built on the loaded test corpus under positions
-200 and up (`Tree` keeps class-level registries), and the tool tests read a
-`ClaimStore` over a copy of the corpus claims whose `1961_dehm` file is
-replaced by the claims of one synthetic tree, with its own `…-cf-…` record
-registered while they are built.
+200 and up, and the tool tests read a `ClaimStore` over a copy of the corpus
+claims whose `1961_dehm` file is replaced by the claims of one synthetic
+tree, built on a copy of the corpus that holds its own `…-cf-…` record.
 """
 
 import collections
@@ -20,7 +19,7 @@ import pytest
 from phylohist.claims import extract
 from phylohist.loader import io, nomenclature
 from phylohist.loader.load import _report_nomenclature
-from phylohist.loader.taxa import Taxon, Tree
+from phylohist.loader.taxa import Tree
 from phylohist.store import ClaimStore
 from tests import support
 
@@ -117,7 +116,7 @@ def test_record_lookup_computes_the_rank_as_the_loader_does():
 
 
 def test_record_lookup_agrees_with_the_loaded_taxa(corpus):
-  lookup = nomenclature.record_lookup(corpus.data['taxa'])
+  lookup = nomenclature.record_lookup(corpus.records.data['taxa'])
   for key in (
     'grayae_bather_1915',
     'rhenopyrgus',
@@ -131,9 +130,10 @@ def test_record_lookup_agrees_with_the_loaded_taxa(corpus):
     'rhodocrinus-subgenus',
     'echinida-family',
   ):
-    assert lookup(key).rank == Taxon.get(key).rank, key
-    assert lookup(key).name == Taxon.get(key).name, key
-    assert lookup(key).mineral == Taxon.get(key).mineral, key
+    taxon = corpus.records.taxa[key]
+    assert lookup(key).rank == taxon.rank, key
+    assert lookup(key).name == taxon.name, key
+    assert lookup(key).mineral == taxon.mineral, key
 
 
 def test_compared_links_clean_cases():
@@ -239,9 +239,7 @@ def test_compared_link_conflicts_leave_agreement_and_unlinked_uses_alone():
   assert nomenclature.compared_link_conflicts([]) == []
 
 
-def test_load_reports_nomenclature_checks_at_the_right_level(caplog):
-  # Direct call, as for `_report_material`: a synthetic corpus routed
-  # through `load()` would leak into the session's registries.
+def test_load_reports_nomenclature_checks_at_the_right_level(records, caplog):
   data = {
     'trees': {
       'src1': {
@@ -268,7 +266,7 @@ def test_load_reports_nomenclature_checks_at_the_right_level(caplog):
     },
   }
   with caplog.at_level(logging.WARNING, logger='phylohist'):
-    _report_nomenclature(data)
+    _report_nomenclature(support.with_documents(records, data))
   warnings = [r.getMessage() for r in caplog.records if r.levelno == logging.WARNING]
   errors = [r.getMessage() for r in caplog.records if r.levelno == logging.ERROR]
   assert any(
@@ -352,10 +350,9 @@ def test_check_draft_warns_of_conflicting_links_without_failing(tmp_path):
 # -- claims -------------------------------------------------------------------
 
 
-def _claims(root, position, source=SOURCE):
-  return extract(
-    {source: [Tree(root, {'source_key': source, 'type': 'taxonomy', 'position': position})]}
-  )[source]
+def _claims(records, root, position, source=SOURCE):
+  metadata = {'source_key': source, 'type': 'taxonomy', 'position': position}
+  return extract(records, {source: [Tree(root, metadata, corpus=records)]})[source]
 
 
 def _by_path(claims):
@@ -370,7 +367,7 @@ def _one(claims, kind):
   return claim
 
 
-def test_usage_claim_carries_the_compared_link(caplog):
+def test_usage_claim_carries_the_compared_link(records, caplog):
   root = {
     'taxon': 'rhenopyrgus',
     'children': [
@@ -379,7 +376,7 @@ def test_usage_claim_carries_the_compared_link(caplog):
       {'openTaxon': 'gogia-sp-1_sprinkle_1973'},
     ],
   }
-  at = _by_path(_claims(root, 200))
+  at = _by_path(_claims(records, root, 200))
   assert not [r for r in caplog.records if r.levelno >= logging.ERROR]
   cf = _one(at['200/children/0'], 'usage')
   assert cf['form'] == 'openTaxon' and 'target' not in cf
@@ -395,16 +392,16 @@ def test_the_retired_cf_and_aff_taxon_fields_are_rejected(field):
 
 
 @pytest.mark.parametrize('field', ['cfTaxon', 'affTaxon'])
-def test_the_loader_does_not_read_the_retired_fields_as_a_name(field, caplog):
+def test_the_loader_does_not_read_the_retired_fields_as_a_name(records, field, caplog):
   # As for any node with no recognised taxon field: it has no taxon of its
   # own and states no usage; the schema is what rejects it.
   root = {'taxon': 'rhenopyrgus', 'children': [{field: 'grayae_bather_1915'}]}
-  at = _by_path(_claims(root, 201))
+  at = _by_path(_claims(records, root, 201))
   assert not [r for r in caplog.records if r.levelno >= logging.ERROR]
   assert not [c for c in at['201/children/0'] if c['kind'] == 'usage']
 
 
-def test_placement_claim_carries_quoted_parent_and_non_monophyly():
+def test_placement_claim_carries_quoted_parent_and_non_monophyly(records):
   root = {
     'taxon': 'cyathocystidae',
     'children': [
@@ -414,7 +411,7 @@ def test_placement_claim_carries_quoted_parent_and_non_monophyly():
       {'taxon': 'sardesoni_bather_1915'},
     ],
   }
-  at = _by_path(_claims(root, 202))
+  at = _by_path(_claims(records, root, 202))
   assert _one(at['202/children/0'], 'placement')['nonMonophyletic'] is True
   assert _one(at['202/children/1'], 'placement')['nonMonophyletic'] == 'polyphyletic'
   quoted = _one(at['202/children/2'], 'placement')
@@ -423,29 +420,29 @@ def test_placement_claim_carries_quoted_parent_and_non_monophyly():
   assert 'quotedParent' not in plain and 'nonMonophyletic' not in plain
 
 
-def test_placement_claim_carries_mutable():
+def test_placement_claim_carries_mutable(records):
   root = {
     'taxon': 'cyathocystidae',
     'children': [{'taxon': 'rhenopyrgus', 'mutable': True}, {'taxon': 'pyrgocystis'}],
   }
-  at = _by_path(_claims(root, 205))
+  at = _by_path(_claims(records, root, 205))
   assert _one(at['205/children/0'], 'placement')['mutable'] is True
   assert 'mutable' not in _one(at['205/children/1'], 'placement')
 
 
-def test_acceptance_claim_carries_quoted_parent():
+def test_acceptance_claim_carries_quoted_parent(records):
   root = {
     'taxon': 'grayae_bather_1915',
     'synonyms': [
       {'taxon': 'sardesoni_bather_1915', 'quotedParent': True, 'nonMonophyletic': True},
     ],
   }
-  entry = _one(_by_path(_claims(root, 203))['203/synonyms/0'], 'acceptance')
+  entry = _one(_by_path(_claims(records, root, 203))['203/synonyms/0'], 'acceptance')
   assert entry['quotedParent'] is True
   assert 'nonMonophyletic' not in entry
 
 
-def test_specimen_claim_carries_uncertain_and_role_uncertain():
+def test_specimen_claim_carries_uncertain_and_role_uncertain(records):
   root = {
     'taxon': 'grayae_bather_1915',
     'material': [
@@ -454,7 +451,7 @@ def test_specimen_claim_carries_uncertain_and_role_uncertain():
       {'prefix': 'USNM', 'numbers': [165427]},
     ],
   }
-  first, second, third = [c for c in _claims(root, 204) if c['kind'] == 'material']
+  first, second, third = [c for c in _claims(records, root, 204) if c['kind'] == 'material']
   assert first['roleUncertain'] is True and 'uncertain' not in first
   assert second['uncertain'] is True and 'roleUncertain' not in second
   assert 'uncertain' not in third and 'roleUncertain' not in third
@@ -501,12 +498,16 @@ CITING_TREE = {
 @pytest.fixture(scope='module')
 def synthetic(corpus, tmp_path_factory):
   """A `ClaimStore` over a copy of `claims/` with `SOURCE`'s claims
-  replaced by those of `SYNTHETIC`, and the record `CF_KEY` registered."""
+  replaced by those of `SYNTHETIC`, built on a copy of the corpus that
+  holds the record `CF_KEY`."""
   directory = tmp_path_factory.mktemp('claims')
   shutil.copytree(corpus.claims, directory, dirs_exist_ok=True)
-  with pytest.MonkeyPatch.context() as patch:
-    patch.setitem(Taxon._taxa, CF_KEY, Taxon(dict(CF_RECORD), CF_KEY))
-    written = {SOURCE: _claims(SYNTHETIC, 220), CITING: _claims(CITING_TREE, 221, CITING)}
+  records = corpus.records.copy()
+  records.add_taxon(dict(CF_RECORD), CF_KEY)
+  written = {
+    SOURCE: _claims(records, SYNTHETIC, 220),
+    CITING: _claims(records, CITING_TREE, 221, CITING),
+  }
   for source_key, claims in written.items():
     (directory / f'{source_key}.jsonl').write_text(''.join(json.dumps(c) + '\n' for c in claims))
   names = json.loads((directory / 'names.json').read_text())

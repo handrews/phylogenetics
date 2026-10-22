@@ -554,7 +554,8 @@ not fail on them.
 ## Reading the table
 
 Three more generated files sit beside the claims. `claims/repositories.json`
-is the repository registry as loaded (`data/repositories.yaml`), keys sorted,
+is `data/repositories.yaml` as the load read it (the corpus's
+`repositories`), keys sorted,
 each entry's `name`, `type`, `subject`, `within`, `prefixes`, `otherNames` and
 `place` as present: the store reads it to split a catalog number a reader
 types into its holder and its bare number.

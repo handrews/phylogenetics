@@ -4,12 +4,13 @@ the curated corpus for the checks that are about it.
 `tests/corpus/` is a frozen copy of `data/` (its README says from where).
 `corpus` loads it once per process and writes its claim table to a
 temporary directory, so the tests read the shapes the tools read over
-`claims/` without depending on what the curated data says today. `Taxon`
-and `Tree` keep class-level registries, so every test starts with them as
-that load left them (`support.restore`), whatever the tests before it
-added, and with the tools' store over the corpus; `store` and `closure`
-are over the corpus too. `production` loads `data/` for the tests marked
-`production`, which are about the curated corpus itself. The tests marked
+`claims/` without depending on what the curated data says today. The
+loaded `Corpus` is `corpus.records`; a test that adds records or builds
+trees takes `records`, its own copy, so the session's stays as the load
+left it (`_isolated` checks), and every test has the tools' store over the
+corpus; `store` and `closure` are over the corpus too. `production` loads
+`data/` for the tests marked `production`, which are about the curated
+corpus itself. The tests marked
 `demo` run the eval questions and the walkthrough over the committed
 `claims/`; they hold for the data they were last refreshed against, so
 they run only with `--demo`.
@@ -46,42 +47,50 @@ def pytest_collection_modifyitems(config, items):
 
 
 def _load(**kwargs):
-  """``(data, logged, roots)``: a tolerated load and what it logged (the
-  `collecting` collector), for a test to assert on."""
+  """``(records, logged)``: a tolerated load (a fresh `Corpus`) and what it
+  logged (the `collecting` collector), for a test to assert on."""
   with collecting() as logged:
-    data, roots = load(tolerate=True, **kwargs)
-  return data, logged, roots
+    records = load(tolerate=True, **kwargs)
+  return records, logged
 
 
 @pytest.fixture(scope='session')
 def corpus(tmp_path_factory):
-  """The test corpus: its data, what its load logged and its roots, its
-  claims by source and the directory they are written to, a store over
-  them, and the registries as the load left them."""
-  support.reset()
-  data, logged, roots = _load(data_dir=support.CORPUS, fast=True)
+  """The test corpus: the loaded `Corpus` (`records`), what its load
+  logged, its claims by source and the directory they are written to, and
+  a store over them."""
+  records, logged = _load(data_dir=support.CORPUS, fast=True)
   errors = [r.getMessage() for r in logged.errors]
   assert not errors, 'tests/corpus does not load cleanly:\n' + '\n'.join(errors)
-  claims_by_source = extract(roots)
+  claims_by_source = extract(records)
   claims = tmp_path_factory.mktemp('corpus-claims')
-  support.script('claims').write(claims, claims_by_source, roots, full=True)
+  support.script('claims').write(claims, records, claims_by_source, full=True)
   return types.SimpleNamespace(
-    data=data,
+    records=records,
     logged=logged,
-    roots=roots,
     claims_by_source=claims_by_source,
     claims=claims,
     store=ClaimStore(claims),
-    registries=support.snapshot(),
   )
+
+
+@pytest.fixture
+def records(corpus):
+  """The loaded corpus for one test: what the test adds, deletes or builds
+  stays in this copy."""
+  return corpus.records.copy()
 
 
 @pytest.fixture(autouse=True)
 def _isolated(corpus):
-  """The registries as the corpus load left them, and the tools' store
-  over the corpus, before every test."""
-  support.restore(corpus.registries)
+  """The tools' store over the corpus for every test; afterwards, the
+  session's corpus as the load left it."""
   tools._store = corpus.store
+  before = support.footprint(corpus.records)
+  yield
+  assert support.footprint(corpus.records) == before, (
+    'a test changed the session corpus; use `records`'
+  )
 
 
 @pytest.fixture(scope='session')
@@ -95,17 +104,12 @@ def closure(store):
 
 
 @pytest.fixture(scope='session')
-def production(corpus):
+def production():
   """`data/` loaded (and `drafts/` under `PHYLOHIST_DRAFTS`): its data,
-  what the load logged, and its manifest when the load logged no error.
-  The registries are the corpus's again afterwards."""
-  support.reset()
-  try:
-    data, logged, roots = _load(drafts=bool(os.getenv('PHYLOHIST_DRAFTS')), fast=True)
-    report = manifest(extract(roots), roots) if not logged.errors else None
-  finally:
-    support.restore(corpus.registries)
-  return types.SimpleNamespace(data=data, logged=logged, manifest=report)
+  what the load logged, and its manifest when the load logged no error."""
+  records, logged = _load(drafts=bool(os.getenv('PHYLOHIST_DRAFTS')), fast=True)
+  report = manifest(records, extract(records)) if not logged.errors else None
+  return types.SimpleNamespace(data=records.data, logged=logged, manifest=report)
 
 
 @pytest.fixture(scope='session')

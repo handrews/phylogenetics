@@ -1546,8 +1546,9 @@ def numbered(corpus, tmp_path_factory):
       'position': 230,
       'file_prefixes': {'MCZ': 'mcz', 'GSC': 'gsc', 'USNM': 'usnm'},
     },
+    corpus=corpus.records,
   )
-  claims = extract({'1961_dehm': [root]})['1961_dehm']
+  claims = extract(corpus.records, {'1961_dehm': [root]})['1961_dehm']
   (directory / '1961_dehm.jsonl').write_text(''.join(json.dumps(c) + '\n' for c in claims))
   return ClaimStore(directory)
 
@@ -1676,11 +1677,12 @@ def linked(corpus, tmp_path_factory):
           'position': position,
           'file_prefixes': {'GSC': 'gsc'},
         },
+        corpus=corpus.records,
       )
     ]
     for source, (position, node) in LINKED.items()
   }
-  for source, claims in extract(roots).items():
+  for source, claims in extract(corpus.records, roots).items():
     (directory / f'{source}.jsonl').write_text(''.join(json.dumps(c) + '\n' for c in claims))
   return ClaimStore(directory)
 

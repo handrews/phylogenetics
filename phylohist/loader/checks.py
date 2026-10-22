@@ -63,7 +63,7 @@ DRAFT_NODE_CHECKS = (
 
 def file_scope(document, repositories, taxa=None):
   """The names the tables' arguments are read from, for the raw tree file
-  `document`; `taxa` (`Taxon.get`, or `nomenclature.record_lookup`) is read
+  `document`; `taxa` (a corpus's `taxa.get`, or `nomenclature.record_lookup`) is read
   only by `NOMENCLATURE_CHECKS`."""
   return {
     'document': document,
