@@ -38,6 +38,11 @@ RECORDS = {
   'varietya': {'name': 'varietya', 'rank': 'variety'},
   'spelled_a': {'altSpellingOf': 'species_a'},
   'ranked_a': {'name': 'Rankeda', 'rank': 'Family'},
+  'gendered_a': {'name': 'speciesum', 'altGenderOf': 'species_a'},
+  'vulgar_a': {'name': 'Rankeden', 'rank': 'Order', 'lang': 'DE'},
+  'latin_a': {'name': 'Rankedum', 'latinSpellingOf': 'vulgar_a'},
+  'ranked-a-order': {'rank': 'Order', 'altRankOf': 'ranked_a'},
+  'ranked-a-order-spelled': {'name': 'Rankedae', 'altSpellingOf': 'ranked-a-order'},
 }
 LOOKUP = nomenclature.record_lookup(RECORDS)
 
@@ -96,8 +101,16 @@ def test_schema_rejects_the_wrong_value_types(node):
 def test_record_lookup_computes_the_rank_as_the_loader_does():
   assert LOOKUP('species_a').rank == 'species'
   assert LOOKUP('genus-a').rank == 'genus'
-  # A spelling has the rank of the record it spells.
+  # A spelling has the rank of the record it spells, whatever its kind, and
+  # through a chain; a rank variant that gives no name takes its target's.
   assert LOOKUP('spelled_a').rank == 'species'
+  assert LOOKUP('gendered_a').rank == 'species'
+  assert LOOKUP('latin_a').rank == 'Order'
+  assert (LOOKUP('ranked-a-order').name, LOOKUP('ranked-a-order').rank) == ('Rankeda', 'Order')
+  assert (LOOKUP('ranked-a-order-spelled').name, LOOKUP('ranked-a-order-spelled').rank) == (
+    'Rankedae',
+    'Order',
+  )
   assert LOOKUP('open-bin').rank == 'Order'
   assert LOOKUP('nowhere') is None
   assert nomenclature.record_lookup({'x': {}})('x').rank is None
@@ -105,9 +118,22 @@ def test_record_lookup_computes_the_rank_as_the_loader_does():
 
 def test_record_lookup_agrees_with_the_loaded_taxa(corpus):
   lookup = nomenclature.record_lookup(corpus.data['taxa'])
-  for key in ('grayae_bather_1915', 'rhenopyrgus', 'gogia-sp_robison_1965', 'cyathocystidae'):
-    assert lookup(key).rank == Taxon.get(key).rank
-    assert lookup(key).name == Taxon.get(key).name
+  for key in (
+    'grayae_bather_1915',
+    'rhenopyrgus',
+    'gogia-sp_robison_1965',
+    'cyathocystidae',
+    # Derivatives: a nameless rank variant, a vernacular form of one, a
+    # spelling of a spelling, a rank variant of a spelling, and of a rank variant.
+    'crinoidea-family',
+    'crinoiden',
+    'cystoidea',
+    'rhodocrinus-subgenus',
+    'echinida-family',
+  ):
+    assert lookup(key).rank == Taxon.get(key).rank, key
+    assert lookup(key).name == Taxon.get(key).name, key
+    assert lookup(key).mineral == Taxon.get(key).mineral, key
 
 
 def test_compared_links_clean_cases():

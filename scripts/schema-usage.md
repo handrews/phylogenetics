@@ -38,7 +38,7 @@ even when its parent is also unreached, so read parents first.
 | `range` | `phylogeny#/$defs/range/properties/inferred` |
 | `relationalFields` | `phylogeny#/$defs/relationalFields/properties/type/oneOf/1` |
 | `stageRange` | `phylogeny#/$defs/stageRange`<br>`phylogeny#/$defs/stageRange/items` |
-| `taxonRecord` | `phylogeny#/$defs/taxonRecord/properties/holotype/additionalProperties/items/items` |
+| `taxonRecord` | `phylogeny#/$defs/taxonRecord/else/oneOf/3`<br>`phylogeny#/$defs/taxonRecord/else/oneOf/4`<br>`phylogeny#/$defs/taxonRecord/properties/altGenderOf`<br>`phylogeny#/$defs/taxonRecord/properties/holotype/additionalProperties/items/items`<br>`phylogeny#/$defs/taxonRecord/properties/latinSpellingOf` |
 | `timeFields` | `phylogeny#/$defs/timeFields/properties/eon`<br>`phylogeny#/$defs/timeFields/properties/era`<br>`phylogeny#/$defs/timeFields/properties/seriesBoundary`<br>`phylogeny#/$defs/timeFields/properties/stageBoundary`<br>`phylogeny#/$defs/timeFields/properties/stageRange` |
 | `tree` | `tree#/then/not`<br>`tree#/then/not/anyOf/0`<br>`tree#/then/not/anyOf/1`<br>`tree#/then/not/anyOf/2` |
 | `typeNode` | `phylogeny#/$defs/typeNode/properties/fixedBy` |
@@ -433,8 +433,8 @@ property.
 | `pages` | 260 | 9.2% |
 | `notes` | 239 | 8.4% |
 | `altSpellingOf` | 149 | 5.3% |
-| `lang` | 73 | 2.6% |
-| `originalParent` | 70 | 2.5% |
+| `lang` | 76 | 2.7% |
+| `originalParent` | 71 | 2.5% |
 | `altRankOf` | 51 | 1.8% |
 | `vulgarSpellingOf` | 45 | 1.6% |
 | `homonym` | 16 | 0.6% |
@@ -444,6 +444,8 @@ property.
 | `holotype` | 1 | 0.0% |
 | `mineral` | 1 | 0.0% |
 | `status` | 1 | 0.0% |
+| `altGenderOf` | 0 | 0.0% |
+| `latinSpellingOf` | 0 | 0.0% |
 
 ### `timeFields` -- 194 instances in `data/`
 

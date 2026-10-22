@@ -2,6 +2,7 @@ import collections
 import logging
 from functools import cached_property, reduce
 
+from ..derivatives import kind_of
 from .io import fail
 from .research import Author, Source
 
@@ -230,44 +231,27 @@ class Taxon:
 
     logger.debug(f'  Processing taxon "{taxon_key}"...')
 
-    if alt_key := taxon_data.get('altSpellingOf'):
-      alt = self._known(alt_key, 'alt spelling')
-      self._alt = alt
-      self._rank = alt.rank
-      self._mineral = alt.mineral
-      if 'auth' in self._data or 'authority' in self._data:
-        self._authority = Authority(taxon_data, where=where)
-      else:
-        self._authority = alt.authority
-      for field in ('homonym', 'originalParent', 'needsQualification'):
-        if field in alt._data:
-          self._data[field] = alt._data[field]
-
-    elif latin_key := taxon_data.get('vulgarSpellingOf'):
-      latin = self._known(latin_key, 'vulgar spelling')
-      self._alt = latin
-      self._rank = latin.rank
-      self._mineral = latin.mineral
-      if 'auth' in self._data or 'authority' in self._data:
-        self._authority = Authority(taxon_data, where=where)
-      else:
-        self._authority = latin.authority
-
-    elif alt_key := taxon_data.get('altRankOf'):
-      alt = self._known(alt_key, 'alt rank')
-      self._alt = alt
-      if 'name' in self._data:
-        self._name = self._data['name']
-      else:
-        self._name = alt.name
-      if 'auth' in self._data or 'authority' in self._data:
-        self._authority = Authority(taxon_data, where=where)
-      else:
-        self._authority = alt.authority
-
-    else:
+    # A derivative (`derivatives.KINDS`) is built from its target by its
+    # kind's flags: the name for a rank variant that gives none, the rank
+    # and mineral flag for every spelling, the authority for any that gives
+    # none of its own.
+    self._kind = kind = kind_of(taxon_data)
+    if kind is None:
       self._alt = None
       self._authority = Authority(taxon_data, where=where)
+    else:
+      target = self._known(taxon_data[kind.field], kind.relation)
+      self._alt = target
+      if kind.borrows_name and 'name' not in self._data:
+        self._name = target.name
+      if kind.borrows_rank:
+        self._rank = target.rank
+        self._mineral = target.mineral
+      if 'auth' in self._data or 'authority' in self._data:
+        self._authority = Authority(taxon_data, where=where)
+      else:
+        self._authority = target.authority
+      self._check_lang(kind, target)
 
     if self._name is not None:
       expected = self._name.lower()
@@ -291,6 +275,14 @@ class Taxon:
         f'taxon {self._key} is a {relation} of an unknown record',
       )
     return target
+
+  def _check_lang(self, kind, target):
+    """A vernacular record carries `lang`: a vulgar spelling itself, and
+    the record a Latin spelling is of (`Kind.lang`)."""
+    if kind.lang == 'record' and 'lang' not in self._data:
+      logger.error(f'Taxon {self._key} {kind.relation} of {target.key} has no `lang`')
+    elif kind.lang == 'target' and 'lang' not in target._data:
+      logger.error(f'Taxon {self._key} {kind.relation} of {target.key}, whose record has no `lang`')
 
   def _check_expected_taxon(self, expected):
     if self._key == expected:
@@ -447,18 +439,6 @@ class Taxon:
       string = f'[{self._key}]'
     return string
 
-  @cached_property
-  def canonical_name(self):
-    # The canonical name is:
-    # * nomen correct. if one exists, or...
-    # * the normalized spelling of the originally defined name
-    # If a name is the result of a re-ranking that has been
-    # done both with and without translation, the translation is preferred.
-    # TODO: Align with ICZN wherever possible.
-    if alt := self._data.get('altSpellingOf'):
-      return Taxon.get(alt).name
-    return self.name
-
   @property
   def rank(self):
     # TODO: Handle this properly, it's more complex than it looks
@@ -476,10 +456,15 @@ class Taxon:
 
   @property
   def derivative_of(self):
-    # The record this one derives from (a spelling, vulgar or rank variant),
-    # if any; the authority is borrowed from it, so there is no protologue of
-    # this record's own.
+    # The record this one derives from (`derivative_kind` says how), if any;
+    # the authority is borrowed from it, so there is no protologue of this
+    # record's own.
     return self._alt
+
+  @property
+  def derivative_kind(self):
+    """The `derivatives.Kind` this record derives by, or `None`."""
+    return self._kind
 
 
 class Section:

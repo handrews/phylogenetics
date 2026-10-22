@@ -132,7 +132,8 @@ says on what evidence. Two kinds:
   `inferred: [isType]`.
 
 What it is not for: an apparently intentional change of spelling, which is
-an `altSpellingOf` record; nor the name's true authority, which lives on
+an `altSpellingOf` record (an `altGenderOf` one for gender agreement); nor
+the name's true authority, which lives on
 the taxon record. A printed attribution that merely disagrees with the
 record is kept as printed and the disagreement is derived (B19);
 `corrections` is for what the editor judges wrong on the page, with the
@@ -415,8 +416,10 @@ Taxon-record relations:
 
 | field | term | decision |
 |---|---|---|
-| `altSpellingOf` | subsequent spelling, incl. incorrect ones, gender agreement, æ/ae (*Preface* x–xi) | keep |
-| `vulgarSpellingOf` | vernacular-language form | keep |
+| `altSpellingOf` | subsequent spelling, incl. incorrect ones, æ/ae (*Preface* x–xi); not a gender or language form | keep |
+| `altGenderOf` | gender agreement: the epithet in another gender (*Preface* x–xi) | added 2026-10-21, split from `altSpellingOf`; the existing records await review |
+| `latinSpellingOf` | the first Latin spelling of a vernacular original, which holds the authority and carries `lang` | added 2026-10-21 |
+| `vulgarSpellingOf` | vernacular-language form; carries `lang` | keep |
 | `altRankOf` | nomen translatum: same name at another rank, so a distinct record (*Preface* xv) | keep |
 | `originalParent` | original combination (*Preface* xix) | keep |
 | `homonym` | homonymy (*Preface* xx) | keep; see B10 |
@@ -425,6 +428,15 @@ Taxon-record relations:
 | `synonym` | unsourced equation | move to the editorial layer (B8) |
 | `status` | mixed: `informal`, `unregistered`, `monophyletic` | split (B9) |
 | `designation` | open-nomenclature designation ("*Rhenopyrgus* sp. indet. 1") | keep |
+
+The derivative kinds and what each borrows from its target are one table,
+`phylohist/derivatives.py` (2026-10-21): every kind takes the authority
+unless the record gives its own, a spelling of any kind takes the rank, a
+rank variant takes the name when it gives none; `homonym`,
+`originalParent` and `needsQualification` are each record's own, since
+they tell identically spelled records apart. A derivative may point at
+another derivative (a vernacular form at a rank variant), and the loader
+builds each after its target whatever the file order.
 
 **B2 (MVP). What a synonymy entry asserts.** Every entry under `synonyms`
 means: *this source accepts the cited usage as belonging to this taxon*. That is
@@ -853,10 +865,12 @@ and the data shows when and where each was printed. The original spelling
 is derived, not declared: it is the spelling on the node flagged `new: true`
 in its source's tree. So `vorticellata_hall_1866` with `vorticellatus` as
 the variant needs no swap; Hall's tree, once entered, will carry `new` on
-*vorticellatus*. `canonical_name` in `phylohist/loader/taxa.py` returns the
-`altSpellingOf` target as the code's consistent display choice, not as a
-nomenclatural claim; the claim extractor (M2) does not use it to decide
-which spelling is original.
+*vorticellatus*. No code picks a canonical spelling (the loader's
+`canonical_name` went on 2026-10-21): `claims/names.json` carries each
+record's kind and the record it derives from, the tools follow those
+links as far as they go so a question about any spelling covers the
+whole family, and the claim extractor does not decide which spelling is
+original.
 
 ---
 
@@ -1419,7 +1433,9 @@ fail also exit non-zero.
 
 **F1 (MVP). Reference resolution, fail.** Every source id, taxon key (including
 `openTaxon`, `cf`, `aff` and `mergeInto` targets), author id and
-`altSpellingOf` / `altRankOf` / `vulgarSpellingOf` target resolves.
+derivative target (`altSpellingOf`, `altGenderOf`, `latinSpellingOf`,
+`vulgarSpellingOf`, `altRankOf`) resolves, and a loop of derivatives
+fails (2026-10-21).
 
 **F2. Repository prefixes (done 2026-10-01, by removing the thing to
 check).** An entry's `prefix` must be a key of its tree file's

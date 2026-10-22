@@ -182,6 +182,13 @@ DERIVED_KINDS = {
 _rank_hubs = None
 
 
+def _rank_hub(taxon):
+  """The record `taxon` is the same name at another rank of, or `None`:
+  the one derivative kind that keeps its own rank (`altRankOf`)."""
+  kind = taxon.derivative_kind
+  return taxon.derivative_of.key if kind is not None and not kind.borrows_rank else None
+
+
 def rank_variants(key):
   """The records of the same name at other ranks, in both directions of
   the `altRankOf` link: a spoke sees its hub and the other spokes, a hub
@@ -190,10 +197,9 @@ def rank_variants(key):
   if _rank_hubs is None:
     _rank_hubs = collections.defaultdict(set)
     for k, taxon in Taxon._taxa.items():
-      hub = taxon._data.get('altRankOf')
-      if hub:
+      if (hub := _rank_hub(taxon)) is not None:
         _rank_hubs[hub].add(k)
-  hub = Taxon.get(key)._data.get('altRankOf') if Taxon.get(key) else None
+  hub = _rank_hub(Taxon.get(key)) if Taxon.get(key) else None
   family = set(_rank_hubs.get(key, ()))
   if hub:
     family |= {hub} | _rank_hubs.get(hub, set())
@@ -1097,10 +1103,7 @@ def names_index():
   rows = {}
   for key, taxon in Taxon._taxa.items():
     data = taxon._data
-    kind = 'primary'
-    for field in ('altSpellingOf', 'altRankOf', 'vulgarSpellingOf'):
-      if field in data:
-        kind = field
+    kind = taxon.derivative_kind.field if taxon.derivative_kind else 'primary'
     if taxon.name is None:
       kind = 'placeholder'
     row = {'name': taxon.name, 'rank': taxon.rank, 'kind': kind}

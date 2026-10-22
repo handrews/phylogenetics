@@ -11389,6 +11389,7 @@
    "cystideen"
   ],
   "kind": "primary",
+  "lang": "DE",
   "name": "Cystideen",
   "rank": "Unranked"
  },
@@ -17067,6 +17068,7 @@
    "fistulides"
   ],
   "kind": "vulgarSpellingOf",
+  "lang": "FR",
   "name": "Fistulides",
   "of": "fistulidae",
   "rank": "Family"
@@ -40316,6 +40318,7 @@
    "strahlthiere"
   ],
   "kind": "vulgarSpellingOf",
+  "lang": "DE",
   "name": "Strahlthiere",
   "of": "radiata",
   "rank": "Class"

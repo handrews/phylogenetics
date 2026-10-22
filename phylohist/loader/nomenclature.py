@@ -15,6 +15,7 @@ for a key with no record; `record_lookup` builds one from the raw
 
 import collections
 
+from ..derivatives import kind_of
 from .material import walk_document
 
 # The two signs of an open form's link, as the node fields naming the taxon
@@ -30,23 +31,33 @@ _FIXED_BY_FIXATIONS = ('subsequentDesignation', 'subsequentMonotypy', 'iczn')
 _Record = collections.namedtuple('_Record', 'name rank mineral')
 
 
-def _base_record(records, key, seen=()):
-  """The raw record a spelling is of, followed to the record that is no
-  spelling; the record itself otherwise."""
+def _borrowed_from(records, key, borrows, seen=()):
+  """The raw record `key` takes a borrowed value from: its derivative
+  target while `borrows(kind, data)` holds, followed as far as that goes
+  (`derivatives.KINDS`); the record itself otherwise."""
   data = records[key]
-  for field in ('altSpellingOf', 'vulgarSpellingOf'):
-    target = data.get(field)
+  kind = kind_of(data)
+  if kind is not None and borrows(kind, data):
+    target = data[kind.field]
     if target in records and target not in seen:
-      return _base_record(records, target, (*seen, key))
+      return _borrowed_from(records, target, borrows, (*seen, key))
   return data
+
+
+def _borrows_rank(kind, data):
+  return kind.borrows_rank
+
+
+def _borrows_name(kind, data):
+  return kind.borrows_name and 'name' not in data
 
 
 def _raw_rank(records, key):
   """The rank `Taxon` would give the raw record: that of the record a
-  spelling is of, else its own `rank` (`Unranked` for an explicit null),
-  else a species when its name is lower-case and a genus otherwise; `None`
-  when it has neither."""
-  data = _base_record(records, key)
+  spelling borrows it from, else its own `rank` (`Unranked` for an explicit
+  null), else a species when its name is lower-case and a genus otherwise;
+  `None` when it has neither."""
+  data = _borrowed_from(records, key, _borrows_rank)
   if 'rank' in data:
     return data['rank'] or 'Unranked'
   name = data.get('name')
@@ -55,8 +66,14 @@ def _raw_rank(records, key):
 
 def _raw_mineral(records, key):
   """Whether `Taxon` would read the raw record as a mineral: its own
-  `mineral`, or that of the record a spelling is of."""
-  return bool(_base_record(records, key).get('mineral'))
+  `mineral`, or that of the record a spelling borrows its rank from."""
+  return bool(_borrowed_from(records, key, _borrows_rank).get('mineral'))
+
+
+def _raw_name(records, key):
+  """The name `Taxon` would give the raw record: its own, else the one a
+  rank variant that gives none borrows from its target."""
+  return _borrowed_from(records, key, _borrows_name).get('name')
 
 
 def record_lookup(records):
@@ -65,7 +82,7 @@ def record_lookup(records):
   def lookup(key):
     if key not in records:
       return None
-    return _Record(records[key].get('name'), _raw_rank(records, key), _raw_mineral(records, key))
+    return _Record(_raw_name(records, key), _raw_rank(records, key), _raw_mineral(records, key))
 
   return lookup
 

@@ -146,6 +146,8 @@ def test_load_fails_on_logged_errors(monkeypatch):
   'field, relation',
   [
     ('altSpellingOf', 'alt spelling'),
+    ('altGenderOf', 'gender variant'),
+    ('latinSpellingOf', 'Latin spelling'),
     ('vulgarSpellingOf', 'vulgar spelling'),
     ('altRankOf', 'alt rank'),
   ],
@@ -480,3 +482,161 @@ def test_a_missing_record_ends_the_load_whatever_tolerate_says(monkeypatch, capl
     'a check fired',
     'Authority source "1899_nobody" not recognized at taxa.yaml testum',
   ]
+
+
+# -- derivative records ------------------------------------------------------
+#
+# A record derives from another by one of `derivatives.KINDS`; the loader
+# builds it from its target by the row's flags, after the target, wherever
+# the file puts the two.
+
+SOURCE = {'source': '1758_linnaeus'}
+
+
+def _taxa(records):
+  """`_load_taxa` over synthetic records, returning the errors it logged."""
+  import importlib
+
+  loading = importlib.import_module('phylohist.loader.load')
+  loading._load_taxa({'taxa': records})
+
+
+def test_a_chain_loads_in_any_file_order(caplog):
+  # A spelling of a rank variant of a base, the base listed last: each is
+  # built after its target, and borrows through the chain.
+  from phylohist.loader.taxa import Taxon
+
+  with caplog.at_level(logging.ERROR, logger='phylohist'):
+    _taxa(
+      {
+        'testiidae': {'name': 'Testiidae', 'altSpellingOf': 'testidae-order'},
+        'testidae-order': {'rank': 'Order', 'altRankOf': 'testidae'},
+        'testidae': {'name': 'Testidae', 'rank': 'Family', 'authority': SOURCE},
+      }
+    )
+  assert _errors(caplog) == []
+  assert list(Taxon._taxa)[-3:] == ['testidae', 'testidae-order', 'testiidae']
+  base, variant, spelling = (Taxon.get(k) for k in ('testidae', 'testidae-order', 'testiidae'))
+  assert (variant.name, variant.rank, variant.derivative_kind.field) == (
+    'Testidae',
+    'Order',
+    'altRankOf',
+  )
+  assert (spelling.name, spelling.rank) == ('Testiidae', 'Order')
+  assert spelling.authority is variant.authority is base.authority
+  assert spelling.derivative_of is variant and variant.derivative_of is base
+
+
+@pytest.mark.parametrize(
+  'records, message',
+  [
+    (
+      {'loopa': {'name': 'Loopa', 'altSpellingOf': 'loopa'}},
+      'Taxon loopa alt spelling of loopa closes a loop: loopa -> loopa',
+    ),
+    (
+      {
+        'loopa': {'name': 'Loopa', 'altSpellingOf': 'loopb'},
+        'loopb': {'name': 'Loopb', 'altSpellingOf': 'loopa'},
+      },
+      'Taxon loopb alt spelling of loopa closes a loop: loopa -> loopb -> loopa',
+    ),
+  ],
+)
+def test_a_loop_of_derivatives_ends_the_load(records, message, caplog):
+  from phylohist.loader import LoadError
+
+  with (
+    caplog.at_level(logging.ERROR, logger='phylohist'),
+    pytest.raises(LoadError, match='is in a loop of derivative records'),
+  ):
+    _taxa(records)
+  assert _errors(caplog) == [message]
+
+
+def test_an_unknown_target_at_the_end_of_a_chain_is_named(caplog):
+  from phylohist.loader import LoadError
+
+  with (
+    caplog.at_level(logging.ERROR, logger='phylohist'),
+    pytest.raises(LoadError, match='alt rank of an unknown record'),
+  ):
+    _taxa(
+      {
+        'testiidae': {'name': 'Testiidae', 'altSpellingOf': 'testidae-order'},
+        'testidae-order': {'rank': 'Order', 'altRankOf': 'nowhere'},
+      }
+    )
+  assert _errors(caplog) == ['Taxon testidae-order alt rank of unknown nowhere']
+
+
+@pytest.mark.parametrize('field', ['altSpellingOf', 'altGenderOf', 'latinSpellingOf'])
+def test_a_spelling_borrows_rank_and_authority_but_not_the_qualifiers(field, caplog):
+  # `homonym`, `originalParent` and `needsQualification` tell identically
+  # spelled records apart, so each spelling carries its own: the target's
+  # `originalParent` is not copied, and the key is checked without it.
+  from phylohist.claims import names_index
+  from phylohist.loader.taxa import Taxon
+
+  target = 'testa_linnaeus_1758_parentum'
+  with caplog.at_level(logging.ERROR, logger='phylohist'):
+    Taxon.add(
+      {
+        'name': 'testa',
+        'rank': 'species',
+        'originalParent': 'parentum',
+        'lang': 'DE',
+        'authority': SOURCE,
+      },
+      target,
+    )
+    Taxon.add({'name': 'testum', field: target}, 'testum_linnaeus_1758')
+  assert _errors(caplog) == []
+  taxon = Taxon.get('testum_linnaeus_1758')
+  assert (taxon.rank, taxon.derivative_kind.field) == ('species', field)
+  assert taxon.authority is Taxon.get(target).authority
+  assert 'originalParent' not in taxon._data
+  row = names_index()['testum_linnaeus_1758']
+  assert (row['kind'], row['of'], row['rank']) == (field, target, 'species')
+  assert 'originalParent' not in row
+
+
+def test_a_vernacular_record_carries_lang(caplog):
+  # A vulgar spelling says its language, and so does the vernacular
+  # original a Latin spelling points at; the loader reports either missing.
+  from phylohist.loader.taxa import Taxon
+
+  with caplog.at_level(logging.ERROR, logger='phylohist'):
+    Taxon.add({'name': 'Testen', 'vulgarSpellingOf': 'cyathocystidae'}, 'testen')
+    Taxon.add({'name': 'Tester', 'lang': 'DE', 'vulgarSpellingOf': 'cyathocystidae'}, 'tester')
+    Taxon.add({'name': 'Testeen', 'rank': None, 'authority': SOURCE}, 'testeen')
+    Taxon.add({'name': 'Testidae', 'latinSpellingOf': 'testeen'}, 'testidae')
+    Taxon.add({'name': 'Testoen', 'rank': None, 'lang': 'DE', 'authority': SOURCE}, 'testoen')
+    Taxon.add({'name': 'Testoidae', 'latinSpellingOf': 'testoen'}, 'testoidae')
+  assert _errors(caplog) == [
+    'Taxon testen vulgar spelling of cyathocystidae has no `lang`',
+    'Taxon testidae Latin spelling of testeen, whose record has no `lang`',
+  ]
+  assert Taxon.get('testoidae').rank == 'Unranked'
+
+
+def test_the_schema_knows_every_derivative_kind():
+  # Each kind is a `taxonRecord` property and an `oneOf` branch: a record
+  # with a name (a rank for a rank variant, a language for a vulgar form)
+  # validates, and the field alone does not.
+  from phylohist.derivatives import KINDS
+  from phylohist.loader import io
+  from tests import support
+
+  properties = io.load_yaml(io.SCHEMA_PATH)['$defs']['taxonRecord']['properties']
+  check = support.schema()['taxa'].check
+  for kind in KINDS:
+    assert kind.field in properties
+    record = {'name': 'Testa', kind.field: 'testb'}
+    if not kind.borrows_rank:
+      record['rank'] = 'Family'
+    if kind.lang == 'record':
+      record['lang'] = 'FR'
+    assert check({'testa': record}), kind.field
+    assert not check({'testa': {kind.field: 'testb'}}), kind.field
+  assert not check({'testen': {'name': 'Testen', 'vulgarSpellingOf': 'testa'}})
