@@ -186,7 +186,6 @@ taxonomies:
                     citedAs: >
                       CLASS I. HOLOTHURIOIDEA, C. T. v. Siebold (1848)
                     rank: Class
-                    auth: [siebold]
                     authority:
                       source: 1848b_siebold
                     pages: 218

@@ -1122,9 +1122,10 @@ astrea:
     source: 1801_lamarck
 astrocystites:
   name: Astrocystites
+  rank: genus
   authority:
     source: 1897_whiteaves
-    pages: 287
+    pages: [[287, 292]]
 astrocystites-sp_webby_1968:
   name: null
   rank: species
@@ -1974,6 +1975,7 @@ canadensis_billings_1866:
   year: 1866
 canadensis_whiteaves_1898:
   name: canadensis
+  rank: species
   authority:
     source: 1898_whiteaves
     pages: [[395, 396]]
@@ -3215,6 +3217,7 @@ cyathocystis:
     1880_schmidt.c.f, the proper publication, is often cited in error.
 cyathotheca:
   name: Cyathotheca
+  rank: genus
   authority:
     source: 1927_jaekel
     pages: 1
@@ -8832,9 +8835,13 @@ ostrea:
   citedAs: 278. OSTREA.
 ottawaensis_whiteaves_1897:
   name: ottawaensis
+  rank: species
   authority:
     source: 1897_whiteaves
     pages: 287
+    illustrations:
+    - page: 287
+      textFigures: [1, 2, 3]
 ottawacrinus:
   name: Ottawacrinus
   authority:
@@ -11539,6 +11546,7 @@ sphaeroides_linnaeus_1758:
   citedAs: ſphæroides. 3.
 sphaeronites:
   name: Sphaeronites
+  rank: genus
   authority:
     source: 1828_hisinger
     pages:
@@ -11719,9 +11727,10 @@ steganoblastidae:
     source: 1900_bather
 steganoblastus:
   name: Steganoblastus
+  rank: genus
   authority:
     source: 1898_whiteaves
-    pages: 395
+    pages: [[395, 396]]
   notes: A replacement name for Astrocystites, proposed at Bather's suggestion; issued 7 January 1898 in a Number whose wrapper says 1897.
 stellaris_billings_1859:
   name: stellaris
@@ -12005,6 +12014,7 @@ sucis crispis_leske_1778:
     source: 1778_leske
 suecica_jaekel_1927:
   name: suecica
+  rank: species
   authority:
     source: 1927_jaekel
     pages: 1

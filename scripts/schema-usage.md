@@ -119,7 +119,7 @@ property.
 |---|---|---|
 | `source` | 2025 | 99.9% |
 | `pages` | 67 | 3.3% |
-| `illustrations` | 40 | 2.0% |
+| `illustrations` | 41 | 2.0% |
 | `attributedTo` | 24 | 1.2% |
 | `ex` | 15 | 0.7% |
 | `notes` | 4 | 0.2% |
@@ -129,7 +129,7 @@ property.
 
 | property | data | data % |
 |---|---|---|
-| `auth` | 848 | 9.0% |
+| `auth` | 847 | 9.0% |
 | `year` | 846 | 9.0% |
 | `in` | 28 | 0.3% |
 
@@ -180,14 +180,14 @@ property.
 | `corrections.authority` | 9 | 64.3% |
 | `corrections.authority.source` | 9 | 100.0% |
 
-### `figureLocatorFields` -- 512 instances in `data/`
+### `figureLocatorFields` -- 513 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `figures` | 443 | 86.5% |
-| `plate` | 365 | 71.3% |
-| `page` | 134 | 26.2% |
-| `textFigures` | 68 | 13.3% |
+| `figures` | 443 | 86.4% |
+| `plate` | 365 | 71.2% |
+| `page` | 135 | 26.3% |
+| `textFigures` | 69 | 13.5% |
 | `notes` | 25 | 4.9% |
 | `non` | 0 | 0.0% |
 
@@ -202,12 +202,12 @@ property.
 | `mineralTaxon` | 1 | 0.0% |
 | `designation` | 0 | 0.0% |
 
-### `illustration` -- 512 instances in `data/`
+### `illustration` -- 513 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `of` | 254 | 49.6% |
-| `depicts` | 177 | 34.6% |
+| `of` | 254 | 49.5% |
+| `depicts` | 177 | 34.5% |
 | `uncertain` | 2 | 0.4% |
 
 ### `inferredContext` -- 1 instances in `data/`
@@ -429,7 +429,7 @@ property.
 |---|---|---|
 | `name` | 2800 | 98.9% |
 | `authority` | 1803 | 63.7% |
-| `rank` | 962 | 34.0% |
+| `rank` | 969 | 34.2% |
 | `pages` | 260 | 9.2% |
 | `notes` | 239 | 8.4% |
 | `altSpellingOf` | 149 | 5.3% |
@@ -641,15 +641,15 @@ property.
 
 ### `phylogeny#/$defs/rank`
 
-24 of 32 members used, 1508 occurrences.
+24 of 32 members used, 1515 occurrences.
 
 | value | count |
 |---|---|
 | `'Class'` | 283 |
 | `'Order'` | 267 |
-| `'species'` | 238 |
+| `'species'` | 241 |
 | `'Family'` | 222 |
-| `'genus'` | 132 |
+| `'genus'` | 136 |
 | `'Phylum'` | 59 |
 | `'variety'` | 59 |
 | `'Subphylum'` | 52 |
@@ -822,7 +822,7 @@ Tests whether each multi-type declaration is actually needed.
 | `phylogeny#/$defs/article/properties/plates/items` | integer/string | intx31, strx17 | `II`, `I`, `XXXVII`, `VI` | - |
 | `phylogeny#/$defs/article/properties/series` | integer/string | intx10, strx4 | `A`, `New Series` | - |
 | `phylogeny#/$defs/article/properties/volume` | integer/string | intx272, strx26 | `New Series`, `3: Echinoderms: Notes fo...`, `Report of the 68th Meeti...`, `Eighty-Three Plates to A...` | - |
-| `phylogeny#/$defs/citationNumber` | integer/string | intx2643, strx267 | `IV`, `II`, `IX`, `VIII` | - |
+| `phylogeny#/$defs/citationNumber` | integer/string | intx2649, strx267 | `IV`, `II`, `IX`, `VIII` | - |
 | `phylogeny#/$defs/cladisticFields/properties/matrix/items` | integer/string | intx139, strx5 | `?` | - |
 | `phylogeny#/$defs/contexts` | object/null | dictx59, nullx41 | - | - |
 | `phylogeny#/$defs/editorialObject/properties/inferred` | boolean/array | listx25, boolx14 | - | - |
