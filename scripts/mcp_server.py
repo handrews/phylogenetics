@@ -180,8 +180,6 @@ def source_coverage(source: str) -> dict:
 
 @server.tool(description=D['gap'])
 def gap(source: str | None = None, kind: str | None = None, name: str | None = None) -> dict:
-  if kind is not None and kind not in tools.COVERAGE_WORDS:
-    raise ValueError(f'kind must be one of {", ".join(tools.COVERAGE_WORDS)}, not {kind!r}')
   return _call('gap', source=source, kind=kind, name=name)
 
 

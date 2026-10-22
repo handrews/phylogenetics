@@ -213,6 +213,8 @@ def test_history_order_and_measurement(store):
   ]
   with_clado = store.history('rhenopyrgus', trees=('taxonomy', 'cladogram'), style='json')
   assert '1990_smith.a.b_jell' in [e['source'] for e in with_clado['entries']]
+  # The parameters report the span asked (none here); the heading the span found.
+  assert block['parameters']['years'] is None
   m = block['measurement']
   assert m['latestRank']['rank'] == 'genus' and m['latestRank']['firstYear'] == 1983
   assert m['ranks'][-1]['lastSource'] == '1966_regnéll'
@@ -311,6 +313,29 @@ def test_statements_in_words(store):
   assert '  2020  Ewin et al.  holotype: NHMUK EE 16642 (pp. 120–122)' in lines
   assert '  2020  Ewin et al.  paratype: NHMUK EE 15752–15755 (pp. 120–122)' in lines
   assert '  2020  Ewin et al.  paratype: MPEP 1126.1 (pp. 120–122)' in lines
+
+
+def test_descendants_follow_the_schemas_rank_order(store):
+  # A variety sorts after the species and an informal rank (a grade) after
+  # the variety, as the schema orders them; a parvclass sits between the
+  # subclass and the order. Both ranks used to sort below species.
+  def ranks_of(record):
+    rows = store.descendants([record], style='json')['rows']
+    return list(dict.fromkeys(row['cells'][1][0]['value'] for row in rows))
+
+  assert ranks_of('pelmatozoa')[-3:] == ['species', 'variety', 'Grade']
+  assert ranks_of('inadunata')[:3] == ['Subclass', 'Parvclass', 'Order']
+
+
+def test_statements_refuses_an_unknown_kind(store):
+  # `specimen` used to fall through to the classification gap sentence; a
+  # kind outside the list is refused the same way on every surface.
+  with pytest.raises(ValueError, match="kind must be one of usage, .*specimens, not 'specimen'"):
+    store.statements('rhenopyrgidae', source='Dehm 1961', kind='specimen')
+  with pytest.raises(ValueError, match="act_kind must be one of new, .*, not 'novum'"):
+    store.statements('rhenopyrgidae', act_kind='novum')
+  with pytest.raises(ValueError, match="kind must be one of skeleton, .*, not 'bogus'"):
+    store.gap('Dehm 1961', kind='bogus')
 
 
 def test_rank_variants_linked(store):

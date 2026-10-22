@@ -114,3 +114,11 @@ def test_measurement_of_rhenopyrgus(closure):
   # A cladogram enters only when asked for.
   with_clado = closure.measurement('rhenopyrgus', trees=('taxonomy', 'cladogram'))
   assert {r['rank']: r['papers'] for r in with_clado['ranks']}['genus'] == 6
+
+
+def test_a_designated_record_is_named_as_the_store_names_it(closure):
+  # The scheme parents the closure builds name a record as the store does,
+  # designation fallback included.
+  key = 'rhenopyrgus-sp-1_ewin_martin.m_isotalo_zamora_2020'
+  assert closure.name(key) == closure.store.name(key) == 'Rhenopyrgus sp. indet. 1'
+  assert closure.rank(key) == closure.store.rank(key) == 'species'

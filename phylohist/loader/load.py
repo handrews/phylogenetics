@@ -17,10 +17,11 @@ import json
 import logging
 
 from ..derivatives import kind_of
+from ..ranks import GENUS_GROUP, SPECIES_GROUP, fold_rank, rank_order
 from . import material, nomenclature
 from .io import DATA_DIR, TREE_DIR, LoadError, display_path, fail, load_files
 from .research import Author, Publication, Source
-from .taxa import RANKS, Section, Taxon, Tree
+from .taxa import Section, Taxon, Tree
 
 logger = logging.getLogger(__name__)
 
@@ -292,7 +293,7 @@ def _report_protologue_mismatches(data, roots):
 # species, a species its subspecies and varieties. Above the genus group a
 # source's scheme is its own (roadmap G8; Macleay 1821 lists classes under
 # an order), so a node there says nothing about the ranks of its children.
-_ORDERED_GROUPS = frozenset({'genus', 'subgenus', 'species', 'subspecies', 'variety'})
+_ORDERED_GROUPS = GENUS_GROUP + SPECIES_GROUP
 
 
 def _placed_rank(node):
@@ -325,9 +326,12 @@ def _report_rank_order(roots):
         if parent is None:
           continue
         above, own = _placed_rank(parent), node.taxon.rank
-        if (above or '').lower() not in _ORDERED_GROUPS or (own or '').lower() not in RANKS:
+        if fold_rank(above) not in _ORDERED_GROUPS:
           continue
-        if RANKS[own.lower()] < RANKS[above.lower()]:
+        # A rank the schema's order puts after the species group (an
+        # informal rank, or none) passes, as it did when the numeric rank
+        # table left it out.
+        if rank_order(own) > rank_order(above):
           continue
         logger.error(
           f'taxa.yaml {node.taxon.key}: rank {_protologue_value(own)} but the tree places '

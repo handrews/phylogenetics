@@ -21,19 +21,7 @@ from .loader.material import (
 from .loader.research import Author, Publication, Source
 from .loader.taxa import Taxon, names_attribution
 from .names import fold, fold_forms, key_stem
-
-KINDS = (
-  'usage',
-  'placement',
-  'acceptance',
-  'act',
-  'rejection',
-  'material',
-  'secondhand',
-  'editorial',
-  'absence',
-  'section',
-)
+from .ranks import GENUS_GROUP, SPECIES_GROUP, fold_rank
 
 # The audit.coverage kind each claim is counted under, for the manifest and
 # for the `audit.coverage` value carried on the claim.
@@ -158,17 +146,11 @@ _MATERIAL_FIELDS = (
   'uncertain',
   'roleUncertain',
 )
-# The ranks below which specimens are cited; `material` coverage counts
-# only nodes at these (phylohist/loader/taxa.py spells the same tuple);
-# `illustrations` coverage counts them too, since figures are of species.
-# `synonymy` and `occurrences` count every named node.
-SPECIES_LEVEL_RANKS = ('species', 'subspecies', 'variety')
-
-# The ranks whose names have a type species; `types` coverage counts only
-# named nodes at these (a family's `type` may be written and is not
-# counted, and a species' type is a specimen).
-GENUS_LEVEL_RANKS = ('genus', 'subgenus')
-
+# `material` coverage counts only the species-group nodes, below which
+# specimens are cited, and `illustrations` counts them too, since figures
+# are of species; `types` counts only the named genus-group nodes (a
+# family's `type` may be written and is not counted, and a species' type
+# is a specimen); `synonymy` and `occurrences` count every named node.
 # The coverage kinds derived from raw node state rather than a reviewer's
 # declaration. `fields`: the node fields whose presence (a value or a null)
 # counts the node as captured, a null in any being the audit's statement;
@@ -180,13 +162,13 @@ GENUS_LEVEL_RANKS = ('genus', 'subgenus')
 # presence (a material entry's `context` is an occurrence, a child's
 # `isType` the type statement).
 DERIVED_KINDS = {
-  'material': {'fields': ('material',), 'ranks': SPECIES_LEVEL_RANKS},
+  'material': {'fields': ('material',), 'ranks': SPECIES_GROUP},
   'occurrences': {'fields': ('contexts', 'ranges'), 'via': ('material', 'context')},
-  'illustrations': {'fields': ('illustrations',), 'ranks': SPECIES_LEVEL_RANKS},
+  'illustrations': {'fields': ('illustrations',), 'ranks': SPECIES_GROUP},
   'synonymy': {'fields': ('synonyms', 'non'), 'unused': ('synonyms',)},
   'types': {
     'fields': ('type',),
-    'ranks': GENUS_LEVEL_RANKS,
+    'ranks': GENUS_GROUP,
     'named': True,
     'via': ('children', 'isType'),
   },
@@ -196,7 +178,7 @@ DERIVED_KINDS = {
   'skeleton': {
     'fields': ('children',),
     'unused': None,
-    'excludeRanks': SPECIES_LEVEL_RANKS,
+    'excludeRanks': SPECIES_GROUP,
     'named': True,
   },
 }
@@ -977,9 +959,11 @@ def derived_coverage(roots):
         continue
       counted = nodes
       if 'ranks' in spec:
-        counted = [node for node in counted if node.taxon.rank in spec['ranks']]
+        counted = [node for node in counted if fold_rank(node.taxon.rank) in spec['ranks']]
       if 'excludeRanks' in spec:
-        counted = [node for node in counted if node.taxon.rank.lower() not in spec['excludeRanks']]
+        counted = [
+          node for node in counted if fold_rank(node.taxon.rank) not in spec['excludeRanks']
+        ]
       if spec.get('named'):
         counted = [node for node in counted if placeholder_kind(node.taxon) is None]
       via_field, via_key = spec.get('via', (None, None))

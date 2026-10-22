@@ -9,14 +9,14 @@ variants and spellings. Nothing here builds a block or a sentence.
 import html
 import re
 
-from . import blocks
 from .derivatives import KINDS
 from .names import fold, fold_forms
+from .ranks import SPECIES_GROUP, fold_rank
 from .words import short_citation
 
 
 def _species_group(rank):
-  return (rank or '').lower() in blocks.SPECIES_GROUP
+  return fold_rank(rank) in SPECIES_GROUP
 
 
 # A primary record first, then the derivatives in the table's order, a
@@ -218,7 +218,7 @@ class Resolver:
       entry['authority'] = row['authority'].get('display')
       if 'source' in row['authority']:
         entry['authoritySource'] = row['authority']['source']
-    if (row['rank'] or '').lower() in blocks.SPECIES_GROUP:
+    if _species_group(row['rank']):
       entry['combinations'] = self.store.words.combinations(key)
     # An open form says what it is compared with; the link lives on nodes,
     # so it comes from the store's index, not from the record.
@@ -247,7 +247,7 @@ class Resolver:
       k
       for form in fold_forms(bare[-1])
       for k in self.store.by_folded.get(form, ())
-      if self.store._rank_of(k) in blocks.SPECIES_GROUP
+      if self.store._rank_of(k) in SPECIES_GROUP
     }
     keys = set()
     for k in epithet_keys:
@@ -297,8 +297,8 @@ class Resolver:
       }
 
     if rank is not None:
-      wanted = rank.lower()
-      keys = {k for k in keys if (self.store.names[k]['rank'] or '').lower() == wanted}
+      wanted = fold_rank(rank)
+      keys = {k for k in keys if self.store._rank_of(k) == wanted}
 
     candidates = [self._candidate(k) for k in keys]
     candidates.sort(

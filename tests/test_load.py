@@ -642,3 +642,15 @@ def test_the_schema_knows_every_derivative_kind():
     assert check({'testa': record}), kind.field
     assert not check({'testa': {kind.field: 'testb'}}), kind.field
   assert not check({'testen': {'name': 'Testen', 'vulgarSpellingOf': 'testa'}})
+
+
+def test_the_ranks_are_the_schemas():
+  # `phylohist/ranks.py` restates the schema's `rank` enum for both sides
+  # of the package; the two must not drift apart.
+  from phylohist import ranks
+  from phylohist.loader import io
+
+  assert ranks.RANKS == tuple(io.load_yaml(io.SCHEMA_PATH)['$defs']['rank']['enum'])
+  assert set(ranks.SPECIES_GROUP + ranks.GENUS_GROUP) <= set(ranks.RANKS)
+  assert ranks.rank_order('variety') > ranks.rank_order('species') > ranks.rank_order('Genus')
+  assert ranks.rank_order(None) == ranks.rank_order('Stage') == len(ranks.RANKS)

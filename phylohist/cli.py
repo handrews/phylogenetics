@@ -134,8 +134,8 @@ def build_parser():
   p = add_parser('statements', help='every statement about a record, in words')
   p.add_argument('record')
   p.add_argument('--source')
-  p.add_argument('--kind')
-  p.add_argument('--act', dest='act_kind')
+  p.add_argument('--kind', choices=list(tools.STATEMENT_KINDS))
+  p.add_argument('--act', dest='act_kind', choices=list(tools.ACT_KINDS))
 
   p = add_parser(
     'specimen', help='every citation of one specimen, by catalog number or by source and label'
@@ -200,8 +200,16 @@ def _main(argv):
       print(f'{name}\n  {text}\n')
     return 0
   if command == 'plan':
-    text = sys.stdin.read() if args.file == '-' else open(args.file).read()
-    outcome = plans.execute(yaml.safe_load(text))
+    try:
+      if args.file == '-':
+        text = sys.stdin.read()
+      else:
+        with open(args.file) as fd:
+          text = fd.read()
+      document = yaml.safe_load(text)
+    except (OSError, yaml.YAMLError) as exc:
+      raise ValueError(f'plan: {exc}') from exc
+    outcome = plans.execute(document)
     for error in outcome['errors']:
       where = f'block {error["block"]} ({error["tool"]})' if error.get('block') else 'plan'
       print(f'{where}: {error["error"]}', file=sys.stderr)

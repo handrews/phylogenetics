@@ -16,12 +16,12 @@ for a key with no record; `record_lookup` builds one from the raw
 import collections
 
 from ..derivatives import kind_of
+from ..ranks import SPECIES_GROUP, fold_rank
 from .material import walk_document
 
 # The two signs of an open form's link, as the node fields naming the taxon
 # it is compared with.
 SIGNS = ('cf', 'aff')
-_SPECIES_RANKS = ('species', 'subspecies', 'variety')
 _OWN_FIELDS = ('taxon', 'openTaxon', 'mineralTaxon')
 # The node fields that name a record, `_OWN_FIELDS` and the bracket marks.
 _NAMING_FIELDS = (*_OWN_FIELDS, 'bracketStart', 'bracketEnd')
@@ -88,7 +88,7 @@ def record_lookup(records):
 
 
 def _is_species_level(record):
-  return (record.rank or '').lower() in _SPECIES_RANKS
+  return fold_rank(record.rank) in SPECIES_GROUP
 
 
 def compared_link(node):

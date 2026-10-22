@@ -119,6 +119,15 @@ def test_source_subcommand_and_citations(capsys):
   assert by_cite == by_key
 
 
+def test_plan_subcommand_unreadable_exits_2(capsys, tmp_path):
+  assert cli.main(['plan', str(tmp_path / 'missing.yaml')]) == 2
+  assert 'No such file' in capsys.readouterr().err
+  path = tmp_path / 'plan.yaml'
+  path.write_text('header: [unclosed\n')
+  assert cli.main(['plan', str(path)]) == 2
+  assert capsys.readouterr().err.startswith('plan: ')
+
+
 def test_plan_subcommand(capsys, tmp_path):
   path = tmp_path / 'plan.yaml'
   path.write_text(
@@ -140,9 +149,17 @@ def test_ambiguous_name_exits_2(capsys):
   assert cli.main(['history', 'Rhenopyrgus grayae']) == 0
 
 
-def test_bad_argument_exits_2(capsys):
+@pytest.mark.parametrize(
+  'argv',
+  [
+    ['gap', '1983_holloway_jell', 'no-such-kind'],
+    ['statements', 'rhenopyrgidae', '--kind', 'specimen'],
+    ['statements', 'rhenopyrgidae', '--act', 'novum'],
+  ],
+)
+def test_bad_argument_exits_2(capsys, argv):
   with pytest.raises(SystemExit) as exc:
-    cli.main(['gap', '1983_holloway_jell', 'no-such-kind'])
+    cli.main(argv)
   assert exc.value.code == 2
 
 
