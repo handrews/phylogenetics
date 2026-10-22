@@ -1,0 +1,112 @@
+# The rank table: the rank words a record or a node may give, and the
+# loader's suffix lint over them (`phylohist/ranks.py`, `$defs/ranks`).
+#
+# `ranks` lists the formal ranks in order, as the data writes them:
+# capitalised above the genus group, lower-case from the genus down. The
+# informal words follow, flagged `informal`; `section` stays until roadmap
+# C6. A word a source prints that is not here (Stage, Sub-branch) is added
+# by the auditor. The schema's `rank` enum restates the names in this order
+# (a test holds the two equal). A source that prints no rank word and no
+# cladistic term is written `rank: null`.
+ranks:
+- name: Domain
+- name: Kingdom
+- name: Subkingdom
+- name: Superphylum
+- name: Phylum
+- name: Subphylum
+- name: Infraphylum
+- name: Superclass
+- name: Class
+- name: Subclass
+- name: Infraclass
+- name: Parvclass
+- name: Superorder
+- name: Order
+- name: Suborder
+- name: Superfamily
+  endings:
+  - suffix: oidea
+  # The older ending; the Code's fourth edition (1999) settled -oidea.
+  - suffix: acea
+    before: 1999
+- name: Family
+  endings:
+  - suffix: idae
+- name: Subfamily
+  endings:
+  - suffix: inae
+- name: genus
+  group: genus
+- name: subgenus
+  group: genus
+- name: species
+  group: species
+- name: subspecies
+  group: species
+- name: variety
+  group: species
+- name: Division
+  informal: true
+- name: section
+  informal: true
+- name: Branch
+  informal: true
+- name: Group
+  informal: true
+- name: Grade
+  informal: true
+- name: Clade
+  informal: true
+- name: Plesion
+  informal: true
+- name: Scion
+  informal: true
+
+# The suffix lint checks a named record above the genus group, at a formal
+# rank, whose authority year is `checkedFrom` or later (a work with no
+# year, one in preparation, is not checked), at the rank it gives or
+# borrows. A spelling, gender or vernacular variant is not checked; a
+# Latin spelling and a rank variant are. Both directions: a name at a rank
+# with `endings` ends in one of them (one with `before` only in a work
+# before that year), and a name ending in one of `suffixes` is at one of
+# its ranks. None for -oidea, which echinoderm classes end in.
+checkedFrom: 1900
+suffixes:
+- suffix: inae
+  ranks: [Subfamily]
+- suffix: idae
+  ranks: [Family]
+- suffix: acea
+  ranks: [Superfamily]
+- suffix: ina
+  ranks: [Suborder]
+- suffix: ida
+  ranks: [Order]
+- suffix: zoa
+  ranks: [Class, Subphylum, Phylum, Subkingdom, Kingdom]
+
+# Names the lint passes at that rank only; the loader reports one that
+# names no record, or only records at another rank.
+exceptions:
+- name: Disparida
+  rank: Subclass
+  note: Moore & Laudon 1943's -ida name, ranked above the order.
+- name: Cladida
+  rank: Parvclass
+  note: Moore & Laudon 1943's -ida name, ranked above the order.
+- name: Helicoplacida
+  rank: Subclass
+  note: Durham 1967 names a subclass with the ordinal ending.
+- name: Polyplacida
+  rank: Subclass
+  note: Durham 1967 names a subclass with the ordinal ending.
+- name: Gogiida
+  rank: Subclass
+  note: Parsley 2021 raises Broadhead's order to a subclass, keeping the name.
+- name: Caryocystitida
+  rank: Superfamily
+  note: Jaekel 1918's -ida name, printed as a superfamily.
+- name: Promopalaeasteraceae
+  rank: Superfamily
+  note: Schuchert 1914's -aceae, neither -oidea nor -acea.

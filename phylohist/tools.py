@@ -118,7 +118,8 @@ TOOL_DESCRIPTIONS = {
     'name does not exist. An open form (a cf. or aff. record) says what it '
     "is compared with. A mineral formation's name, under which a fossil was "
     'once described, resolves like any named record and is marked "mineral". '
-    'Optionally restrict by rank word.'
+    'Optionally restrict by rank word; "unranked" finds the records whose source '
+    'prints no rank.'
   ),
   'resolve_source': (
     'The sources a citation can mean: "Dehm 1961", "Holloway & Jell '
@@ -308,7 +309,7 @@ TOOL_SPECS = [
     'resolve_name',
     {
       'query': {'type': 'string', 'description': 'the printed name'},
-      'rank': {'type': 'string', 'description': 'optional rank word'},
+      'rank': {'type': 'string', 'description': 'optional rank word; "unranked" for none'},
     },
     ['query'],
   ),

@@ -589,7 +589,7 @@ def test_a_section_and_an_unranked_node_count(records, monkeypatch):
   tree = {'taxon': ORDER, 'children': None}
   assert _skeleton(records, _phylum(tree, {'taxon': SECTION}), 1131) == 'partly'
   assert _skeleton(records, _phylum(tree, {'taxon': SECTION, 'children': None}), 1132) == 'all'
-  monkeypatch.setattr(records.taxa[SECTION], '_rank', 'Unranked')
+  monkeypatch.setattr(records.taxa[SECTION], '_rank', None)
   assert _skeleton(records, _phylum(tree, {'taxon': SECTION}), 1133) == 'partly'
   assert _skeleton(records, _phylum(tree, {'taxon': SECTION, 'children': None}), 1134) == 'all'
 

@@ -94,6 +94,12 @@ def test_resolve_absent_is_empty(store):
   assert store.resolve_name('') == []
 
 
+def test_an_unnamed_record_with_no_rank_reads_unnamed_unranked(store):
+  key = 'cystideae-unnamed-group_müller.j.p_1854'
+  assert store.rank(key) is None
+  assert store.words.display(key) == 'Unnamed unranked'
+
+
 def test_unnamed_records_are_not_found_by_name(store):
   # The words in a bin's key or an open-nomenclature designation name
   # other taxa; a prefix query must not sweep them in.

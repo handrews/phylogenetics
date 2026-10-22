@@ -423,6 +423,12 @@ $defs:
     - required: [source]
     - required: [auctt]
   rank:
+    description: |
+      The rank words of `data/ranks.yaml`, in its order and casing (a test
+      holds the two equal): the formal ranks, capitalised above the genus
+      group and lower-case from the genus down, then the informal words a
+      source prints in a rank's place. A record or node whose source prints
+      no rank word and no cladistic term writes `null`.
     type: string
     enum:
     - Domain
@@ -456,7 +462,6 @@ $defs:
     - Clade
     - Plesion
     - Scion
-    - Unranked
 
   citationFields:
     $comment: |
@@ -573,8 +578,9 @@ $defs:
         description: |
           Explicit on a record that gives its protologue page
           (`authority.pages`), where the tree node leaves a genus or
-          species implicit; `null` says the
-          protologue placed the taxon with no rank word. An unnamed record
+          species implicit; `null` says the protologue prints no rank word
+          and no cladistic term for the taxon, and the loader reads it as
+          no rank (a modern unranked clade is `Clade`). An unnamed record
           spells its rank, and a node giving no rank of its own under a
           genus, subgenus or species is at a rank below its parent's; a
           node written `rank: null` stands outside that order (the loader
@@ -819,7 +825,8 @@ $defs:
         - type: "null"
       rank:
         description: |
-          `null`: the source places the taxon with no rank word.
+          `null`: the source prints no rank word and no cladistic term for
+          the taxon (one it calls a clade is `Clade`).
         oneOf:
         - $ref: "phylogeny#/$defs/rank"
         - type: "null"
@@ -2157,6 +2164,82 @@ $defs:
           $ref: "#/$defs/role"
         notes:
           type: string
+  ranks:
+    description: |
+      `data/ranks.yaml`: the rank words in order and as the data writes
+      them, the informal ones flagged; the endings the loader's suffix lint
+      expects of a name at a rank and the ranks it expects of a name with
+      an ending; and the names it lets pass, each with why. Rank-valued
+      fields are plain strings, not `$defs/rank`, so that the census counts
+      only the data's ranks; a test holds them to the table's own names.
+    type: object
+    additionalProperties: false
+    required: [ranks, checkedFrom, suffixes, exceptions]
+    properties:
+      ranks:
+        type: array
+        minItems: 1
+        items:
+          type: object
+          additionalProperties: false
+          required: [name]
+          properties:
+            name:
+              type: string
+            informal:
+              description: Not a rank of the Code's hierarchy; the suffix lint skips it.
+              type: boolean
+            group:
+              description: The Code's genus or species group; the suffix lint skips it.
+              type: string
+              enum: [genus, species]
+            endings:
+              description: The endings a name at this rank takes; one with `before` only in a work before that year.
+              type: array
+              minItems: 1
+              items:
+                type: object
+                additionalProperties: false
+                required: [suffix]
+                properties:
+                  suffix:
+                    type: string
+                    pattern: ^[a-z]+$
+                  before:
+                    $ref: "#/$defs/publicationYear"
+      checkedFrom:
+        description: The authority year from which the suffix lint checks a name.
+        $ref: "#/$defs/publicationYear"
+      suffixes:
+        description: The ranks a name with an ending is expected to be at.
+        type: array
+        items:
+          type: object
+          additionalProperties: false
+          required: [suffix, ranks]
+          properties:
+            suffix:
+              type: string
+              pattern: ^[a-z]+$
+            ranks:
+              type: array
+              minItems: 1
+              items:
+                type: string
+      exceptions:
+        description: Names the lint passes at that rank only, each with why.
+        type: array
+        items:
+          type: object
+          additionalProperties: false
+          required: [name, rank, note]
+          properties:
+            name:
+              type: string
+            rank:
+              type: string
+            note:
+              type: string
   publicationYear:
     $comment: Linnaeus was born in 1707.  The upper bound is fragile but
       helpful for now; apologies to the future.

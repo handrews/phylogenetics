@@ -9,9 +9,9 @@ loader (`load.py`) runs them over the corpus's own documents and
 ``(level, message)`` pairs, ``level`` being ``'error'`` or ``'warning'``;
 the caller adds the source key and, for a per-node check, the node's path.
 A check that needs a taxon record takes `taxa`, a callable from a taxon
-key to an object with `name`, `rank` and `mineral` (a loaded corpus's `taxa.get` gives a
-`Taxon`, which does), or `None`
-for a key with no record; `record_lookup` builds one from the raw
+key to an object with `name`, `rank` (`None` for a record with none) and
+`mineral` (a loaded corpus's `taxa.get` gives a `Taxon`, which does), or
+`None` for a key with no record; `record_lookup` builds one from the raw
 `data/taxa.yaml` for a caller that has not loaded the corpus.
 """
 
@@ -56,12 +56,12 @@ def _borrows_name(kind, data):
 
 def _raw_rank(records, key):
   """The rank `Taxon` would give the raw record: that of the record a
-  spelling borrows it from, else its own `rank` (`Unranked` for an explicit
+  spelling borrows it from, else its own `rank` (`None` for an explicit
   null), else a species when its name is lower-case and a genus otherwise;
   `None` when it has neither."""
   data = _borrowed_from(records, key, _borrows_rank)
   if 'rank' in data:
-    return data['rank'] or 'Unranked'
+    return data['rank']
   name = data.get('name')
   return None if name is None else implied_rank(name)
 
@@ -93,6 +93,17 @@ def _is_species_level(record):
   return fold_rank(record.rank) in SPECIES_GROUP
 
 
+def _level_known(record):
+  """Whether the record's level can be compared: it has a rank, or it is a
+  mineral, which has none and is no species-level name; a record written
+  `rank: null` says nothing about its level."""
+  return record.rank is not None or record.mineral
+
+
+def _rank_words(record):
+  return record.rank or ('mineral' if record.mineral else 'no rank')
+
+
 def compared_link(node):
   """`(sign, target)` for an open form's link, or `None` when the node has
   no `openTaxon` or no link (or both, which `compared_links` reports)."""
@@ -105,8 +116,9 @@ def compared_link(node):
 def compared_links(node, taxa):
   """A `cf` or `aff` sits only on an `openTaxon` node, never both on one
   node; its target has a record that is named (not itself a placeholder),
-  and the open record and the target are both species-level or both not;
-  an error otherwise."""
+  and the open record and the target are both species-level or both not
+  (a record written `rank: null` is not compared; a mineral, which has no
+  rank, is no species-level name); an error otherwise."""
   signs = [sign for sign in SIGNS if sign in node]
   messages = [
     ('error', f'`{sign}` on a node that is not an `openTaxon`')
@@ -127,13 +139,13 @@ def compared_links(node, taxa):
       messages.append(
         ('error', f'`{sign}` target "{key}" is itself a placeholder (it has no name)')
       )
-    elif own is not None and own.rank and target.rank:
+    elif own is not None and _level_known(own) and _level_known(target):
       if _is_species_level(own) != _is_species_level(target):
         messages.append(
           (
             'error',
-            f'`{sign}` target "{key}" ({target.rank}) is not at the rank level of the open '
-            f'form "{node["openTaxon"]}" ({own.rank})',
+            f'`{sign}` target "{key}" ({_rank_words(target)}) is not at the rank level of the '
+            f'open form "{node["openTaxon"]}" ({_rank_words(own)})',
           ),
         )
   return messages
@@ -141,12 +153,13 @@ def compared_links(node, taxa):
 
 def quoted_parent(node, taxa):
   """`quotedParent` quotes a species' genus, so the node's own record is
-  species-level; an error otherwise."""
+  species-level; an error otherwise (a record written `rank: null` is not
+  reported; a mineral, which has no rank, is no species-level name)."""
   if not node.get('quotedParent'):
     return []
   key = next((node[f] for f in _OWN_FIELDS if isinstance(node.get(f), str)), None)
   record = taxa(key) if key is not None else None
-  if record is None or not record.rank or _is_species_level(record):
+  if record is None or not _level_known(record) or _is_species_level(record):
     return []
   return [('error', '`quotedParent` on a node that is not a species-level name')]
 

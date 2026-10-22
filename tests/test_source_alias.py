@@ -14,6 +14,7 @@ import types
 
 import pytest
 
+from phylohist import ranks
 from phylohist.claims import manifest
 from phylohist.loader import LoadError, load
 from phylohist.loader.load import _load_sources
@@ -141,6 +142,8 @@ def test_a_tree_file_named_by_an_alias_is_skipped(corpus, monkeypatch, caplog):
       'publications': documents['publications'],
       'taxa': {},
       'sections': {},
+      # The rank table with no exceptions: the files hold no record for one.
+      'ranks': {**ranks.TABLE.document, 'exceptions': []},
     }
     data['sources'] = {TARGET: documents['sources'][TARGET], '1985_banks': {'aliasOf': TARGET}}
     data['trees'] = {'1985_banks': {'taxonomies': [{'taxon': 'cyathocystis'}]}}

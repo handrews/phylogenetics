@@ -1,6 +1,7 @@
 """The records and trees of one load (`load.load`), handed explicitly to
 everything that looks a record up. Each load builds a corpus of its own."""
 
+from ..ranks import TABLE
 from .research import Author, Publication, Source, SourceAlias
 from .taxa import Section, Taxon
 
@@ -8,17 +9,20 @@ from .taxa import Section, Taxon
 class Corpus:
   """What one load builds: the author, publication, source, taxon and
   section records, each a dict from key to record in the order added; the
-  repository registry (`data/repositories.yaml`); the data files as loaded
-  (`data`); and ``{source_key: [root Tree]}`` (`roots`). A record is built
-  against the corpus it is added to and keeps no reference to it."""
+  repository registry (`data/repositories.yaml`); the rank table (`ranks`,
+  a `ranks.RankTable`: the load's `ranks.yaml`, the repository's own for a
+  bare `Corpus()`); the data files as loaded (`data`); and ``{source_key:
+  [root Tree]}`` (`roots`). A record is built against the corpus it is
+  added to and keeps no reference to it."""
 
-  def __init__(self, repositories=None):
+  def __init__(self, repositories=None, ranks=None):
     self.authors = {}
     self.publications = {}
     self.sources = {}
     self.taxa = {}
     self.sections = {}
     self.repositories = dict(repositories or {})
+    self.ranks = ranks if ranks is not None else TABLE
     self.data = None
     self.roots = {}
 
@@ -50,7 +54,7 @@ class Corpus:
     """A corpus whose dicts are its own, sharing the records and trees: what
     is added to the copy is not in this one. `data` is copied at its top
     level, `roots` with its lists."""
-    other = Corpus(self.repositories)
+    other = Corpus(self.repositories, self.ranks)
     other.authors = dict(self.authors)
     other.publications = dict(self.publications)
     other.sources = dict(self.sources)

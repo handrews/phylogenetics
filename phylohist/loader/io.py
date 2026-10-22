@@ -24,6 +24,7 @@ RECORD_NAMES = (
   'sections',
   'repositories',
   'roles',
+  'ranks',
 )
 
 

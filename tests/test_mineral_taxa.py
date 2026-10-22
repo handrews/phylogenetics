@@ -104,7 +104,6 @@ def test_schema_accepts_a_mineral_record_with_a_null_rank(record):
   [
     {'name': 'mineralum', 'mineral': True, **EARLIER},
     {'name': 'mineralum', 'rank': 'species', 'mineral': True, **EARLIER},
-    {'name': 'mineralum', 'rank': 'Unranked', 'mineral': True, **EARLIER},
     {'name': 'mineralum', 'rank': None, 'mineral': 'yes', **EARLIER},
   ],
 )
@@ -132,8 +131,8 @@ def test_schema_rejects_a_mineral_taxon_that_is_no_key():
 # -- records ------------------------------------------------------------------
 
 
-def test_a_mineral_reads_as_unranked_and_mineral(records):
-  assert (records.taxa[MINERAL].rank, records.taxa[MINERAL].mineral) == ('Unranked', True)
+def test_a_mineral_reads_as_no_rank_and_mineral(records):
+  assert (records.taxa[MINERAL].rank, records.taxa[MINERAL].mineral) == (None, True)
   assert (records.taxa[GENUS].mineral, records.taxa[UNRANKED].mineral) == (False, False)
 
 
@@ -158,12 +157,14 @@ def test_a_mineral_key_takes_the_authority_suffix_as_a_species_does(records, cap
 
 
 def test_a_mineral_is_exempt_from_the_rank_suffix_warnings(records, caplog):
-  record = {'name': 'Lapida', 'rank': None, **EARLIER}
+  record = {'name': 'Lapida', 'rank': 'Class', 'authority': {'auth': [], 'year': 1950}}
   _, warned = _logged(caplog, logging.WARNING, lambda: records.add_taxon(dict(record), 'lapida'))
-  assert len(warned) == 1 and 'Lapida with suffix "ida"' in warned[0]
-  mineral = {**record, 'mineral': True}
+  assert warned == [
+    'Lapida with suffix "ida" expected to have one of ranks (Order) but has rank Class'
+  ]
+  mineral = {**record, 'rank': None, 'mineral': True}
   _, warned = _logged(
-    caplog, logging.WARNING, lambda: records.add_taxon(mineral, 'lapida_linnaeus_1758')
+    caplog, logging.WARNING, lambda: records.add_taxon(mineral, 'lapida_unknown_1950')
   )
   assert warned == []
 
@@ -212,11 +213,11 @@ def test_mineral_taxon_beside_taxon_is_one_field_too_many(records, caplog):
 # -- the pairing check --------------------------------------------------------
 
 
-def test_record_lookup_carries_mineral_and_reads_an_explicit_null_as_unranked():
-  assert LOOKUP(MINERAL) == ('mineralum', 'Unranked', True)
-  assert LOOKUP(SPELLING) == ('mineralun', 'Unranked', True)
+def test_record_lookup_carries_mineral_and_reads_an_explicit_null_as_no_rank():
+  assert LOOKUP(MINERAL) == ('mineralum', None, True)
+  assert LOOKUP(SPELLING) == ('mineralun', None, True)
   assert LOOKUP(GENUS) == ('Testum', 'genus', False)
-  assert LOOKUP(UNRANKED) == ('Testaceum', 'Unranked', False)
+  assert LOOKUP(UNRANKED) == ('Testaceum', None, False)
   assert LOOKUP('nothing') is None
 
 
@@ -390,10 +391,16 @@ def test_a_mineral_synonym_yields_a_usage_and_an_acceptance(records):
 def test_the_names_index_marks_a_mineral_and_its_spellings(records):
   rows = names_index(records)
   mineral = rows[MINERAL]
-  assert (mineral['mineral'], mineral['rank'], mineral['kind']) == (True, 'Unranked', 'primary')
+  assert (mineral['mineral'], mineral['rank'], mineral['kind']) == (True, None, 'primary')
   spelling = rows[SPELLING]
   assert (spelling['mineral'], spelling['kind'], spelling['of']) == (True, 'altSpellingOf', MINERAL)
   assert 'mineral' not in rows[GENUS] and 'mineral' not in rows[UNRANKED]
+
+
+def test_the_names_index_carries_a_null_rank(records):
+  rows = names_index(records)
+  assert rows[UNRANKED]['rank'] is None and rows[MINERAL]['rank'] is None
+  assert rows[GENUS]['rank'] == 'genus'
 
 
 # -- the store ----------------------------------------------------------------
@@ -404,21 +411,25 @@ HOMONYM = 'mineralum'
 @pytest.fixture(scope='module')
 def synthetic(corpus, tmp_path_factory):
   """A `ClaimStore` over a copy of `claims/` with `SOURCE`'s claims replaced
-  by those of a tree citing the mineral in a synonymy, and the names index
-  carrying the mineral, its spelling and a genus of the same name."""
+  by those of a tree citing the mineral in a synonymy under a genus that
+  sits under a record written `rank: null`, and the names index carrying
+  the mineral, its spelling, that record and a genus of the mineral's
+  name."""
   directory = tmp_path_factory.mktemp('claims')
   shutil.copytree(corpus.claims, directory, dirs_exist_ok=True)
   added = (
     (MINERAL, MINERAL_RECORD),
     (SPELLING, RECORDS[SPELLING]),
     (GENUS, GENUS_RECORD),
+    (UNRANKED, RECORDS[UNRANKED]),
     (HOMONYM, {'name': 'Mineralum', 'rank': 'genus', **EARLIER}),
   )
   records = corpus.records.copy()
   for key, record in added:
     records.add_taxon(dict(record), key)
+  genus = {'taxon': GENUS, 'synonyms': [{'mineralTaxon': MINERAL, 'citedAs': 'Mineralum'}]}
   tree = Tree(
-    {'taxon': GENUS, 'synonyms': [{'mineralTaxon': MINERAL, 'citedAs': 'Mineralum'}]},
+    {'taxon': UNRANKED, 'children': [genus]},
     {'source_key': SOURCE, 'type': 'taxonomy', 'position': 620},
     corpus=records,
   )
@@ -436,10 +447,26 @@ def test_resolve_finds_a_mineral_and_keeps_it_apart_from_a_genus_of_the_name(syn
   candidates = {c['key']: c for c in synthetic.resolve_name('mineralum')}
   assert set(candidates) == {MINERAL, HOMONYM}
   mineral = candidates[MINERAL]
-  assert (mineral['mineral'], mineral['rank']) == (True, 'Unranked')
+  assert (mineral['mineral'], mineral['rank']) == (True, None)
   assert mineral['variants'] == [SPELLING]
   assert 'mineral' not in candidates[HOMONYM]
   assert MINERAL not in candidates[HOMONYM]['variants']
+
+
+def test_resolve_by_rank_unranked_finds_a_null_rank(synthetic):
+  # A record written `rank: null` has no rank word; `unranked` asks for it.
+  assert [c['key'] for c in synthetic.resolve_name('Testaceum', rank='unranked')] == [UNRANKED]
+  assert [c['key'] for c in synthetic.resolve_name('mineralum', rank='Unranked')] == [MINERAL]
+  assert [c['key'] for c in synthetic.resolve_name('mineralum', rank='genus')] == [HOMONYM]
+  assert synthetic.resolve_name('Testaceum', rank='') == []
+
+
+def test_a_null_rank_prints_no_rank_word(synthetic):
+  [block] = synthetic.contents(SOURCE, UNRANKED)
+  assert block['rendered'].splitlines()[1:] == ['  Testaceum', '    Genus Testum']
+  assert block['nodes'][0]['rank'] is None and 'rankWord' not in block['nodes'][0]
+  forms = synthetic.printed_forms(MINERAL)
+  assert forms['heading']['rank'] is None and forms['rendered'].splitlines()[0] == 'mineralum'
 
 
 def test_the_synonymy_block_lists_the_mineral_entry(synthetic):
@@ -453,7 +480,7 @@ def test_the_cli_prints_mineral_in_place_of_the_rank(capsys):
   candidate = {
     'key': MINERAL,
     'name': 'mineralum',
-    'rank': 'Unranked',
+    'rank': None,
     'kind': 'primary',
     'mineral': True,
     'sourcesWithStatements': 1,

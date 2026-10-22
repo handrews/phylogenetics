@@ -13,12 +13,13 @@ it is missing (`io.fail`), whatever the caller asked, with what was
 logged before it.
 """
 
+import collections
 import contextlib
 import json
 import logging
 
 from ..derivatives import kind_of
-from ..ranks import GENUS_GROUP, SPECIES_GROUP, fold_rank, implied_rank, rank_order
+from ..ranks import GENUS_GROUP, SPECIES_GROUP, RankTable, fold_rank, implied_rank, rank_order
 from . import checks, material, nomenclature
 from .corpus import Corpus
 from .io import DATA_DIR, TREE_DIR, LoadError, display_path, fail, load_files
@@ -206,9 +207,6 @@ def _page_form(value):
 
 
 def _same_protologue_value(field, record_value, node_value):
-  if field == 'rank':
-    # A node with no rank word is the record's null or `Unranked`.
-    return record_value == node_value or (node_value is None and record_value == 'Unranked')
   if field == 'pages':
     # An inferred node's null has no page to agree with the record's.
     return node_value is not None and _page_form(record_value) == _page_form(node_value)
@@ -339,6 +337,23 @@ _SECTION_PROTOLOGUE_FIELDS = (
 )
 
 
+def _report_rank_exceptions(corpus):
+  # An exception of the suffix lint (`ranks.yaml`) names a record at the
+  # rank it excuses; one that names none, or only records at another rank,
+  # is stale.
+  at_rank = collections.defaultdict(dict)
+  for taxon in corpus.taxa.values():
+    if taxon.name is not None:
+      at_rank[taxon.name][fold_rank(taxon.rank)] = taxon.rank
+  for name, rank in corpus.ranks.exceptions:
+    found = at_rank.get(name)
+    if not found:
+      logger.error(f'ranks.yaml: exception {name} ({rank}) names no record')
+    elif fold_rank(rank) not in found:
+      at = ', '.join(sorted(r or 'no rank' for r in found.values()))
+      logger.error(f'ranks.yaml: exception {name} ({rank}) names a record at another rank ({at})')
+
+
 def _report_section_protologues(corpus):
   # A section record that gives `pages` must agree with the `sectionStart`
   # marker flagged `new` for it in its authority's trees, on the fields that
@@ -460,6 +475,7 @@ def _load_trees(corpus):
   _report_missing_protologues(corpus)
   _report_protologue_mismatches(corpus)
   _report_rank_order(corpus)
+  _report_rank_exceptions(corpus)
   _report_section_protologues(corpus)
   _report_lapsus_records(corpus)
   _report_material(corpus)
@@ -556,7 +572,7 @@ def load(drafts=False, tolerate=False, data_dir=DATA_DIR, fast=False):
   `load_files`'s: another directory shaped like `data/`, and libyaml."""
   with collecting() as logged:
     data = load_files(drafts=drafts, data_dir=data_dir, fast=fast)
-    corpus = Corpus(data.get('repositories'))
+    corpus = Corpus(data.get('repositories'), RankTable(data['ranks']))
     corpus.data = data
     _basic_load(corpus, 'authors', corpus.add_author)
     _basic_load(corpus, 'publications', corpus.add_publication)

@@ -297,8 +297,9 @@ class Resolver:
       }
 
     if rank is not None:
+      # A record written `rank: null` has no rank word; `unranked` asks for it.
       wanted = fold_rank(rank)
-      keys = {k for k in keys if self.store._rank_of(k) == wanted}
+      keys = {k for k in keys if (self.store._rank_of(k) or 'unranked') == wanted}
 
     candidates = [self._candidate(k) for k in keys]
     candidates.sort(

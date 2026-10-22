@@ -1582,8 +1582,9 @@ Bather prints Pelmatozoa as "Sub-Phylum" in 1899 and "Grade" in 1900. Until
 G8 lands, the draft tree quotes each rank word in `notes`; whether Stage,
 Sub-branch and Sub-stage join the enum is the auditor's call.
 
-Decided 2026-10-22, for the rank table (`data/ranks.yaml` with
-`phylohist/ranks.py` over it, the next chunk of the code clean-up):
+Decided 2026-10-22 and built in the rank-table chunk (`data/ranks.yaml`
+with `phylohist/ranks.py` over it; the exceptions and the lint's rules live
+in the table, a test holds the schema enum to it):
 
 - `rank: null` means the source prints no rank word and no cladistic term
   for the taxon. The code reads it as none (`None`), the claims and the
@@ -1603,11 +1604,16 @@ Decided 2026-10-22, for the rank table (`data/ranks.yaml` with
   the auditor, never allowed open.
 - The suffix lint applies to records above the genus group whose authority
   year is 1900 or later, in both directions (a rank's expected ending, and
-  an ending's expected ranks); a name before 1900 is never checked. A
-  spelling derivative is skipped (it borrows its rank and may be a
-  vernacular form); a rank variant (`altRankOf`) is checked at its own
-  rank, like any record (today the eleven that would warn are all
-  pre-1900 families and classes of Linnaeus, Klein and Lamarck). A superfamily accepts -acea before 1999 and -oidea always.
+  an ending's expected ranks); a name before 1900 is never checked. An
+  `altSpellingOf`, `altGenderOf` or `vulgarSpellingOf` record is skipped
+  (it borrows its rank and may be a vernacular form); a `latinSpellingOf`
+  record is checked at the rank it borrows, since that is where a name
+  introduced in the vernacular first meets the conventions, and a rank
+  variant (`altRankOf`) at its own rank, like any record (the eleven rank
+  variants that would warn are all pre-1900 families and classes of
+  Linnaeus, Klein and Lamarck). A superfamily accepts -acea before 1999
+  and -oidea always; -oidea itself implies no rank, since echinoderm
+  classes end in it.
   The exceptions live in the table, each with a note, and the loader errors
   on one that names no record or a record at another rank, so the list
   cannot go stale.
