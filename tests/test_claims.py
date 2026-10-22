@@ -27,6 +27,7 @@ import yaml
 
 from phylohist import plan
 from phylohist.claims import (
+  citation,
   corrected_node,
   derived_coverage,
   extract,
@@ -93,6 +94,21 @@ def test_no_inconsistencies(production):
       f'{len(rows)} sources declare coverage their claims contradict '
       f'(run scripts/claims.py --inconsistencies):\n{listing}',
     )
+
+
+def test_citation_reads_the_records_own_fields():
+  from phylohist.loader.research import Source
+
+  linnaeus = Source.get('1758_linnaeus')
+  assert linnaeus.citation_fields == {
+    'title': 'Regnum Animalia',
+    'book': 'systema-naturae-10th-ed',
+    'volume': 1,
+  }
+  assert citation(linnaeus)['title'] == 'Regnum Animalia'
+  # A source with no title of its own cites none; the book is where it is.
+  untitled = citation(Source.get('1741_linnaeus'))
+  assert untitled['title'] is None and untitled['in']
 
 
 def test_merge_patch_follows_rfc_7396():

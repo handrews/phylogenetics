@@ -225,7 +225,8 @@ def test_a_derivative_with_locators_alone_borrows_its_targets_authority():
   Taxon.add({'name': 'Testvm', 'altSpellingOf': 'testum', 'authority': {'pages': 799}}, 'testvm')
   spelling = Taxon.get('testvm')
   assert spelling.authority is Taxon.get('testum').authority
-  assert spelling._data['authority'] == {'pages': 799}
+  assert (spelling.pages, spelling.illustrations) == (799, None)
+  assert Taxon.get('testum').pages == 10
   # A derivative that names a credit of its own keeps it.
   Taxon.add({'name': 'Testvn', 'altSpellingOf': 'testum', 'authority': PRINTED}, 'testvn')
   assert str(Taxon.get('testvn').authority) == 'Linnaeus 1758'
@@ -248,6 +249,26 @@ def test_a_capitalised_author_in_a_nodes_block_warns_when_its_key_is_registered(
   with caplog.at_level(logging.WARNING, logger='phylohist'):
     Tree(node, {'source_key': '1961_dehm', 'type': 'taxonomy', 'position': 940})
   assert [w for w in _warnings(caplog) if 'Unregistered author "Gmelin"' in w and '"gmelin"' in w]
+
+
+def test_a_capitalised_author_in_a_records_credit_warns_at_the_record(caplog):
+  # The warning names the record the credit is on; a bare block has none.
+  credit = {'auth': ['Linnaeus'], 'year': 1758}
+  with caplog.at_level(logging.WARNING, logger='phylohist'):
+    Taxon.add({'name': 'Testum', 'rank': 'genus', 'authority': credit}, 'testum')
+    Section.add({'name': 'Testa', 'authority': credit}, 'testa')
+    Authority(credit)
+  assert _warnings(caplog) == [
+    'Unregistered author "Linnaeus" at taxa.yaml testum matches registered key "linnaeus"',
+    'Unregistered author "Linnaeus" at sections.yaml testa matches registered key "linnaeus"',
+    'Unregistered author "Linnaeus" matches registered key "linnaeus"',
+  ]
+
+
+def test_qualified_keys_add_the_sources_disambiguator():
+  keys = Authority({'source': '1760a_linnaeus'}).qualified_keys('testa')
+  assert keys == {'testa_linnaeus_1760', 'testa_linnaeus_1760a'}
+  assert Authority(PRINTED).qualified_keys('testa') == {'testa_linnaeus_1758'}
 
 
 # -- extractor ----------------------------------------------------------------

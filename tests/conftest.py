@@ -15,7 +15,6 @@ are over the corpus too. `production` loads `data/` for the tests marked
 they run only with `--demo`.
 """
 
-import logging
 import os
 import types
 
@@ -24,7 +23,7 @@ import pytest
 from phylohist import tools
 from phylohist.claims import extract, manifest
 from phylohist.closure import Closure
-from phylohist.loader import load
+from phylohist.loader import collecting, load
 from phylohist.tools import ClaimStore
 from tests import support
 
@@ -46,43 +45,29 @@ def pytest_collection_modifyitems(config, items):
       item.add_marker(skip)
 
 
-class _CollectingHandler(logging.Handler):
-  def __init__(self):
-    super().__init__()
-    self.records = []
-
-  def emit(self, record):
-    self.records.append(record)
-
-
 def _load(**kwargs):
-  """``(data, records, roots)``: a tolerated load and the log records it
-  produced, for a test to assert on."""
-  handler = _CollectingHandler()
-  logger = logging.getLogger('phylohist')
-  logger.addHandler(handler)
-  try:
+  """``(data, logged, roots)``: a tolerated load and what it logged (the
+  `collecting` collector), for a test to assert on."""
+  with collecting() as logged:
     data, roots = load(tolerate=True, **kwargs)
-  finally:
-    logger.removeHandler(handler)
-  return data, handler.records, roots
+  return data, logged, roots
 
 
 @pytest.fixture(scope='session')
 def corpus(tmp_path_factory):
-  """The test corpus: its data, log records and roots, its claims by source
-  and the directory they are written to, a store over them, and the
-  registries as the load left them."""
+  """The test corpus: its data, what its load logged and its roots, its
+  claims by source and the directory they are written to, a store over
+  them, and the registries as the load left them."""
   support.reset()
-  data, records, roots = _load(data_dir=support.CORPUS, fast=True)
-  errors = [r.getMessage() for r in records if r.levelno >= logging.ERROR]
+  data, logged, roots = _load(data_dir=support.CORPUS, fast=True)
+  errors = [r.getMessage() for r in logged.errors]
   assert not errors, 'tests/corpus does not load cleanly:\n' + '\n'.join(errors)
   claims_by_source = extract(roots)
   claims = tmp_path_factory.mktemp('corpus-claims')
   support.script('claims').write(claims, claims_by_source, roots, full=True)
   return types.SimpleNamespace(
     data=data,
-    records=records,
+    logged=logged,
     roots=roots,
     claims_by_source=claims_by_source,
     claims=claims,
@@ -111,17 +96,16 @@ def closure(store):
 
 @pytest.fixture(scope='session')
 def production(corpus):
-  """`data/` loaded (and `drafts/` under `PHYLOHIST_DRAFTS`): its data, the
-  log records, and its manifest when the load logged no error. The
-  registries are the corpus's again afterwards."""
+  """`data/` loaded (and `drafts/` under `PHYLOHIST_DRAFTS`): its data,
+  what the load logged, and its manifest when the load logged no error.
+  The registries are the corpus's again afterwards."""
   support.reset()
   try:
-    data, records, roots = _load(drafts=bool(os.getenv('PHYLOHIST_DRAFTS')), fast=True)
-    clean = not any(r.levelno >= logging.ERROR for r in records)
-    report = manifest(extract(roots), roots) if clean else None
+    data, logged, roots = _load(drafts=bool(os.getenv('PHYLOHIST_DRAFTS')), fast=True)
+    report = manifest(extract(roots), roots) if not logged.errors else None
   finally:
     support.restore(corpus.registries)
-  return types.SimpleNamespace(data=data, records=records, manifest=report)
+  return types.SimpleNamespace(data=data, logged=logged, manifest=report)
 
 
 @pytest.fixture(scope='session')

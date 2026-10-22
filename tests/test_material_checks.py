@@ -8,6 +8,7 @@ documents, one test per rule; a few exercise the loader's own wiring
 import logging
 import subprocess
 import sys
+import types
 from pathlib import Path
 
 import pytest
@@ -756,6 +757,14 @@ def test_tree_file_contexts_defaults_when_absent():
   assert root.file_unused == ()
   assert root.contexts == {}
   assert root.context_scopes == {}
+
+
+def test_source_year_puts_a_work_in_preparation_last():
+  # `same_as_links` orders sources by this; a work in preparation sorts
+  # after every published one, and its `year` is never read.
+  assert material.source_year(None) is None
+  assert material.source_year(types.SimpleNamespace(in_preparation=False, year=1897)) == 1897
+  assert material.source_year(types.SimpleNamespace(in_preparation=True)) == 9999
 
 
 # -- loader wiring (`load.py`'s `_report_material`) ---------------------------

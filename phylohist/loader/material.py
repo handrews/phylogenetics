@@ -4,16 +4,16 @@ map.
 
 Pure functions over a raw node dict and the file-level maps, so
 `scripts/check_draft.py` can run the same checks on an unloaded draft; the
-loader (`load.py`) runs them over the corpus's own documents. Each check
-returns a list of ``(level, message)`` pairs, ``level`` being ``'error'``
-or ``'warning'``; the caller adds the source key and, for a per-node
-check, the node path. `context_key`, `flat_numbers`, `entries_named` and
-`same_as_matches` are exported for the claims extractor
-(`phylohist.claims`), and `in_run` for the store (`phylohist.store`,
-`specimen_history`);
-`set_repository_registry`/`repository_registry`
-hold the loaded `data/repositories.yaml`, set once by `load.py`, so the
-extractor can reach it the way it reaches `Source`.
+loader (`load.py`) runs them over the corpus's own documents, both from the
+tables in `checks.py`. Each check returns a list of ``(level, message)``
+pairs, ``level`` being ``'error'`` or ``'warning'``; the caller adds the
+source key and, for a per-node check, the node path. `context_key`,
+`flat_numbers`, `entries_named` and `same_as_matches` are exported for the
+claims extractor (`phylohist.claims`), and `in_run` for the store
+(`phylohist.store`, `specimen_history`);
+`set_repository_registry`/`repository_registry` hold the loaded
+`data/repositories.yaml`, set once by `load.py`, so the extractor can reach
+it the way it reaches `Source`.
 """
 
 import re
@@ -359,6 +359,16 @@ def _prefixes_used(document):
   return used
 
 
+def source_year(source):
+  """The year `same_as_links` orders a source by: `None` for no record
+  (`source` is `None`), 9999 for a work in preparation, else its year.
+  `year` is read only for a published work, since a work in preparation
+  has no publication date."""
+  if source is None:
+    return None
+  return 9999 if source.in_preparation else source.year
+
+
 def file_prefixes(document, repositories):
   """The tree file's `prefixes` map and `localityRegister`: each value and
   the register must be a registry key (errors); each prefix is used by a
@@ -504,7 +514,7 @@ NULLABLE_FIELDS = ('material', 'illustrations', 'contexts', 'ranges')
 # `type` are the ones that cited entries may carry as a list or a node (a
 # nested synonymy, the type of a synonym), so the cited-entry rule above
 # reads only `NULLABLE_FIELDS` (`nomenclature.type_node` has `type: null`,
-# `nomenclature.children_null` `children: null`).
+# `nomenclature.children_null` `children: null`); `draft_nulls` reads it all.
 ALL_NULLABLE_FIELDS = (*NULLABLE_FIELDS, 'synonyms', 'type', 'children')
 _PRIMARY_ONLY_KEYS = ('of', 'depicts')
 
@@ -575,6 +585,21 @@ def null_material(node, is_cited):
     if node.get('non'):
       messages.append(('error', '`synonyms: null` beside a `non` list'))
   return messages
+
+
+def draft_nulls(node, is_cited):
+  """A draft never emits `null` for a nullable field on a primary node
+  (roadmap G11): a model that has not found the content would write a false
+  "the source prints none"; only the auditor sets nulls. (On a cited entry
+  `null_material` already reports them.) `checks.py` runs it on a draft
+  only."""
+  if is_cited:
+    return []
+  return [
+    ('error', f'draft carries `{field}: null`; only an auditor sets nulls')
+    for field in ALL_NULLABLE_FIELDS
+    if field in node and node[field] is None
+  ]
 
 
 def unused_fields(document):

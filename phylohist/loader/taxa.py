@@ -3,9 +3,9 @@ import logging
 from functools import cached_property, reduce
 
 from ..derivatives import kind_of
-from ..ranks import SPECIES_GROUP, fold_rank
+from ..ranks import SPECIES_GROUP, fold_rank, implied_rank
 from .io import fail
-from .research import Author, Source
+from .research import Source, check_unregistered_author, resolve_authors
 
 logger = logging.getLogger(__name__)
 
@@ -15,16 +15,6 @@ NON_RANKS = {
   'Group',
   'Plesion',
 }
-
-
-def _check_unregistered_author(author_string, where=None):
-  # A capitalised author string is the convention for an author with no
-  # record; when its key form is registered, the record was meant.
-  if Author.get(author_string.lower()):
-    at = f' at {where}' if where is not None else ''
-    logger.warning(
-      f'Unregistered author "{author_string}"{at} matches registered key "{author_string.lower()}"',
-    )
 
 
 # The keys of an `authority` block that name an attribution, as against the
@@ -45,7 +35,6 @@ class Authority:
     the record it is on (`taxa.yaml <key>`), for the errors; a record the
     block needs and cannot find ends the load (`io.fail`)."""
     self._source = None
-    self._ex = None
     at = f' at {where}' if where is not None else ''
 
     if 'auctt' in block:
@@ -65,7 +54,7 @@ class Authority:
 
       self._source_authors = self._source.authors
       if 'attributedTo' in block:
-        self._authors = self._find_authors(block['attributedTo'], at)
+        self._authors = self._find_authors(block['attributedTo'], where)
       else:
         self._authors = None
 
@@ -73,10 +62,10 @@ class Authority:
         self._year = None
       else:
         self._year = self.source.year
-        self._disambiguator = self.source.disambiguator
 
       if 'ex' in block:
-        self._ex = Authority(block['ex'], where=where)
+        # Built for its checks: the work the name derives from must resolve.
+        Authority(block['ex'], where=where)
 
     else:
       # The printed credit. No `auth`, or `[]`, names an author the corpus
@@ -85,9 +74,9 @@ class Authority:
         self._source_authors = None
         self._authors = None
       else:
-        auth_authors = self._find_authors(block['auth'], at)
+        auth_authors = self._find_authors(block['auth'], where)
         if 'in' in block:
-          self._source_authors = self._find_authors(block['in'], at)
+          self._source_authors = self._find_authors(block['in'], where)
           self._authors = auth_authors
         else:
           self._source_authors = auth_authors
@@ -117,24 +106,17 @@ class Authority:
       string = f'{string} {self._year}' if string else str(self._year)
     return string
 
-  def _find_authors(self, author_strings, at=''):
-    authors = []
-    for author_string in author_strings:
-      if author_string == 'et al.':
-        continue
-
-      if author_string.lower() != author_string:
-        # Currently, we do not have unregistered authors with given names.
-        _check_unregistered_author(author_string)
-        authors.append(Author({'surname': author_string}))
-      else:
-        if not (author := Author.get(author_string)):
-          fail(
-            f'Author for author key {author_string} not found!{at}',
-            f'author key "{author_string}" has no author record',
-          )
-        authors.append(author)
-    return tuple(authors)
+  def _find_authors(self, author_strings, where):
+    at = f' at {where}' if where is not None else ''
+    return resolve_authors(
+      author_strings,
+      lambda key: (
+        f'Author for author key {key} not found!{at}',
+        f'author key "{key}" has no author record',
+      ),
+      credit=True,
+      where=where,
+    )
 
   @property
   def source(self):
@@ -169,6 +151,15 @@ class Authority:
       return f'{string}_{self._year}'
     return string
 
+  def qualified_keys(self, stem):
+    """The keys a name lower-cased to `stem` takes when this authority tells
+    it apart: the stem with `taxon_suffix`, and that with the source's
+    disambiguating letter."""
+    key = f'{stem}_{self.taxon_suffix}'
+    if self._source:
+      return {key, key + self._source.disambiguator}
+    return {key}
+
 
 class Taxon:
   _taxa = {}
@@ -199,7 +190,7 @@ class Taxon:
           f'Unnamed, unranked taxon {taxon_key}!',
           f'taxon {taxon_key} has neither a name nor a rank',
         )
-      self._rank = 'species' if self._name.islower() else 'genus'
+      self._rank = implied_rank(self._name)
       # TODO: Figure out if homonym/originalParent/needsQualification relevant.
 
     logger.debug(f'  Processing taxon "{taxon_key}"...')
@@ -257,9 +248,9 @@ class Taxon:
   def _check_lang(self, kind, target):
     """A vernacular record carries `lang`: a vulgar spelling itself, and
     the record a Latin spelling is of (`Kind.lang`)."""
-    if kind.lang == 'record' and 'lang' not in self._data:
+    if kind.lang == 'record' and self.lang is None:
       logger.error(f'Taxon {self._key} {kind.relation} of {target.key} has no `lang`')
-    elif kind.lang == 'target' and 'lang' not in target._data:
+    elif kind.lang == 'target' and target.lang is None:
       logger.error(f'Taxon {self._key} {kind.relation} of {target.key}, whose record has no `lang`')
 
   def _check_expected_taxon(self, expected):
@@ -270,21 +261,18 @@ class Taxon:
       return False, {expected}
 
     if (
-      self._data.get('homonym')
+      self.homonym
       or self._data.get('needsQualification')
       or fold_rank(self.rank) in SPECIES_GROUP
       # A mineral formation's name is keyed as a species is.
       or self.mineral
     ):
-      suffix_expected = expected + '_' + self.authority.taxon_suffix
-      expected_set = {suffix_expected}
-      if self.authority.source:
-        expected_set.add(suffix_expected + self.authority.source.disambiguator)
+      expected_set = self.authority.qualified_keys(expected)
     else:
       expected_set = {expected}
 
     expected_set.add(f'{expected}-{self.rank.lower()}')
-    if op := self._data.get('originalParent'):
+    if op := self.original_parent:
       expected_set = {e + f'_{op.lower()}' for e in expected_set}
 
     logger.debug(f'...built {expected_set}')
@@ -444,6 +432,48 @@ class Taxon:
     """The `derivatives.Kind` this record derives by, or `None`."""
     return self._kind
 
+  @property
+  def declared_rank(self):
+    """The `rank` the record writes, `None` when it writes none; `rank`
+    fills the gaps (a genus or species from the name, `Unranked` for a
+    null, a derivative's borrowed rank), and the protologue check reads
+    the record's own word."""
+    return self._data.get('rank')
+
+  @property
+  def pages(self):
+    """The protologue page, from the record's own `authority` block."""
+    return (self._data.get('authority') or {}).get('pages')
+
+  @property
+  def illustrations(self):
+    """The protologue figures, from the record's own `authority` block."""
+    return (self._data.get('authority') or {}).get('illustrations')
+
+  @property
+  def cited_as(self):
+    return self._data.get('citedAs')
+
+  @property
+  def designation(self):
+    return self._data.get('designation')
+
+  @property
+  def homonym(self):
+    return self._data.get('homonym')
+
+  @property
+  def original_parent(self):
+    return self._data.get('originalParent')
+
+  @property
+  def lang(self):
+    return self._data.get('lang')
+
+  @property
+  def status(self):
+    return self._data.get('status')
+
 
 class Section:
   """An informal division of a formal group (`data/sections.yaml`): a
@@ -488,10 +518,7 @@ class Section:
       if self._authority is None:
         logger.error(f'Section {self._key} needs qualification but has no authority')
       else:
-        suffix_expected = expected + '_' + self._authority.taxon_suffix
-        expected_set = {suffix_expected}
-        if self._authority.source:
-          expected_set.add(suffix_expected + self._authority.source.disambiguator)
+        expected_set = self._authority.qualified_keys(expected)
     return self._key in expected_set, expected_set
 
   def __repr__(self):
@@ -526,10 +553,6 @@ class Section:
   def pages(self):
     """The protologue page, from the record's `authority` block."""
     return (self._data.get('authority') or {}).get('pages')
-
-  @property
-  def notes(self):
-    return self._data.get('notes')
 
 
 # A subtree of a tree node other than `children`: the field holding it;
@@ -694,12 +717,6 @@ class Tree:
   CITED_AXES = frozenset(axis.name for axis in RELATED_AXES if axis.cited)
 
   _new_index = collections.defaultdict(set)
-  _type_index = {
-    TYPE_TAXONOMY: set(),
-    TYPE_CLADOGRAM: set(),
-    TYPE_DIAGRAM: set(),
-    TYPE_OTHER: set(),
-  }
 
   def __init__(
     self,
@@ -788,12 +805,11 @@ class Tree:
         for field in ('auth', 'in', 'attributedTo'):
           for author_string in block.get(field) or ():
             if author_string.lower() != author_string:
-              _check_unregistered_author(author_string, where=self)
+              check_unregistered_author(author_string, where=self)
 
     if self._parent is None:
       self._pair_brackets()
       self._pair_sections()
-      Tree._type_index[self._type].add(self)
 
   def _pair_brackets(self):
     """Pair the tree's bracket markers (`bracket_spans`), log what does not
@@ -1126,11 +1142,6 @@ class Tree:
     return self._bracket_start
 
   @property
-  def bracket_end(self):
-    """The `Taxon` whose bracket this node closes, or `None`."""
-    return self._bracket_end
-
-  @property
   def bracket_end_node(self):
     """On a node that opens a bracket, the node that closes it (itself for
     a one-node span); `None` elsewhere, or when the tree never closes it."""
@@ -1204,7 +1215,3 @@ class Tree:
       yield from node.walk()
     for child in self._children:
       yield from child.walk()
-
-  @property
-  def is_new(self):
-    return self._data.get('new', False)

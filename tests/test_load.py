@@ -28,7 +28,7 @@ EXPECTED_WARNINGS_PATH = pathlib.Path(__file__).parent / 'expected-warnings.txt'
 
 @pytest.mark.production
 def test_no_errors(production):
-  errors = [r for r in production.records if r.levelno >= logging.ERROR]
+  errors = production.logged.errors
   if errors:
     message = '\n'.join(r.getMessage() for r in errors)
     pytest.fail(f'{len(errors)} ERROR-level log records:\n{message}')
@@ -43,7 +43,7 @@ def test_data_loaded(production):
 def test_expected_warnings(production):
   if os.getenv('PHYLOHIST_DRAFTS'):
     pytest.skip('drafts loaded; the warning snapshot covers data/ only')
-  actual = {r.getMessage() for r in production.records if r.levelno == logging.WARNING}
+  actual = production.logged.warnings
   expected = regenerate.read_expected(EXPECTED_WARNINGS_PATH)
 
   stale = expected - actual
@@ -243,14 +243,32 @@ def test_the_colour_handler_colours_a_copy_of_the_record(caplog):
   assert '\x1b[' in coloured.stream.getvalue() and 'as logged' in coloured.stream.getvalue()
 
 
-def test_counting_errors_counts_only_errors():
-  from phylohist.loader import counting_errors
+def test_collecting_keeps_the_package_warnings_and_errors():
+  from phylohist.loader import collecting
 
-  with counting_errors() as errors:
-    logging.getLogger('phylohist.loader.io').warning('not counted')
-    logging.getLogger('phylohist.loader.io').error('counted')
-    logging.getLogger('phylohist.loader.research').error('counted too')
-  assert errors.count == 2
+  package = logging.getLogger('phylohist')
+  printing = package.handlers[:]
+  with collecting() as logged:
+    logging.getLogger('phylohist.loader.io').info('not kept')
+    logging.getLogger('phylohist.loader.io').warning('a warning')
+    logging.getLogger('phylohist.loader.research').error('an error')
+    logging.getLogger('phylohist.scripts.claims').critical('a failure')
+  logging.getLogger('phylohist.loader.io').error('after the block')
+  assert [r.getMessage() for r in logged.records] == ['a warning', 'an error', 'a failure']
+  assert [r.getMessage() for r in logged.errors] == ['an error', 'a failure']
+  assert logged.warnings == {'a warning'}
+  # The printing handler is left as it was.
+  assert package.handlers == printing
+
+
+def test_collecting_lets_go_when_the_block_raises():
+  from phylohist.loader import LoadError, collecting
+
+  package = logging.getLogger('phylohist')
+  printing = package.handlers[:]
+  with pytest.raises(LoadError), collecting():
+    raise LoadError('ended')
+  assert package.handlers == printing
 
 
 def test_tree_without_a_source_record_is_skipped(monkeypatch):
@@ -597,7 +615,7 @@ def test_a_spelling_borrows_rank_and_authority_but_not_the_qualifiers(field, cap
   taxon = Taxon.get('testum_linnaeus_1758')
   assert (taxon.rank, taxon.derivative_kind.field) == ('species', field)
   assert taxon.authority is Taxon.get(target).authority
-  assert 'originalParent' not in taxon._data
+  assert taxon.original_parent is None and Taxon.get(target).original_parent is not None
   row = names_index()['testum_linnaeus_1758']
   assert (row['kind'], row['of'], row['rank']) == (field, target, 'species')
   assert 'originalParent' not in row
@@ -654,3 +672,36 @@ def test_the_ranks_are_the_schemas():
   assert set(ranks.SPECIES_GROUP + ranks.GENUS_GROUP) <= set(ranks.RANKS)
   assert ranks.rank_order('variety') > ranks.rank_order('species') > ranks.rank_order('Genus')
   assert ranks.rank_order(None) == ranks.rank_order('Stage') == len(ranks.RANKS)
+  assert (ranks.implied_rank('testa'), ranks.implied_rank('Testum')) == ('species', 'genus')
+
+
+def test_resolve_authors_resolves_keys_and_credits(caplog):
+  # A printed credit may name `et al.` (no one) and an author with no record
+  # by surname; a key with no record ends the load with the caller's words.
+  from phylohist.loader import LoadError
+  from phylohist.loader.research import resolve_authors
+
+  def missing(key):
+    return f'no {key} here', f'author key "{key}" has no author record'
+
+  authors = resolve_authors(['linnaeus', 'et al.', 'Smith'], missing, credit=True)
+  assert [(a.key, a.surname) for a in authors] == [('linnaeus', 'Linnaeus'), (None, 'Smith')]
+  with (
+    caplog.at_level(logging.ERROR, logger='phylohist'),
+    pytest.raises(LoadError, match='author key "Smith" has no author record'),
+  ):
+    resolve_authors(['linnaeus', 'Smith'], missing)
+  assert _errors(caplog) == ['no Smith here']
+
+
+def test_declared_rank_is_the_records_own_word():
+  # `rank` fills in what the record leaves unsaid; `declared_rank` is what
+  # it wrote, which the protologue check compares with the node.
+  from phylohist.loader.taxa import Taxon
+
+  Taxon.add({'name': 'Testum', 'authority': {'source': '1758_linnaeus'}}, 'testum')
+  Taxon.add({'name': 'Testa', 'rank': None, 'authority': {'source': '1758_linnaeus'}}, 'testa')
+  Taxon.add({'name': 'Testvm', 'altSpellingOf': 'testum'}, 'testvm')
+  assert (Taxon.get('testum').rank, Taxon.get('testum').declared_rank) == ('genus', None)
+  assert (Taxon.get('testa').rank, Taxon.get('testa').declared_rank) == ('Unranked', None)
+  assert (Taxon.get('testvm').rank, Taxon.get('testvm').declared_rank) == ('genus', None)

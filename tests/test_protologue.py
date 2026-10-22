@@ -31,7 +31,6 @@ POSITIONS = itertools.count(400)
 def registries(monkeypatch):
   """Private copies of the class-level registries a `Tree` writes to."""
   monkeypatch.setattr(Tree, '_new_index', collections.defaultdict(set))
-  monkeypatch.setattr(Tree, '_type_index', {k: set() for k in Tree._type_index})
   monkeypatch.setattr(Taxon, '_taxa', dict(Taxon._taxa))
 
 

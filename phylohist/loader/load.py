@@ -17,8 +17,8 @@ import json
 import logging
 
 from ..derivatives import kind_of
-from ..ranks import GENUS_GROUP, SPECIES_GROUP, fold_rank, rank_order
-from . import material, nomenclature
+from ..ranks import GENUS_GROUP, SPECIES_GROUP, fold_rank, implied_rank, rank_order
+from . import checks, material, nomenclature
 from .io import DATA_DIR, TREE_DIR, LoadError, display_path, fail, load_files
 from .research import Author, Publication, Source
 from .taxa import Section, Taxon, Tree
@@ -179,24 +179,12 @@ def _report_missing_protologues(data, roots):
 # The fields a taxa record and its protologue node both give, and the verb the
 # message uses for the node's side.
 _PROTOLOGUE_FIELDS = (
-  ('rank', 'has'),
-  ('pages', 'has'),
-  ('illustrations', 'has'),
-  ('citedAs', 'prints'),
-  ('designation', 'prints'),
+  ('rank', 'has', 'declared_rank'),
+  ('pages', 'has', 'pages'),
+  ('illustrations', 'has', 'illustrations'),
+  ('citedAs', 'prints', 'cited_as'),
+  ('designation', 'prints', 'designation'),
 )
-
-
-# The protologue fields a record carries inside its `authority` block.
-_PROTOLOGUE_LOCATORS = frozenset({'pages', 'illustrations'})
-
-
-def _record_value(record, field):
-  """A record's side of a protologue field: the locators from its
-  `authority` block, the rest from the record itself."""
-  if field in _PROTOLOGUE_LOCATORS:
-    return (record.get('authority') or {}).get(field)
-  return record.get(field)
 
 
 def _page_form(value):
@@ -208,12 +196,6 @@ def _page_form(value):
     _page_form(v) if isinstance(v, list) else int(v) if isinstance(v, str) and v.isdigit() else v
     for v in value
   )
-
-
-def _implicit_rank(node):
-  """The rank a node leaves unsaid, as `Taxon` reads a record without one:
-  a species when the name is lower-case, else a genus."""
-  return 'species' if (node.taxon.name or '').islower() else 'genus'
 
 
 def _same_protologue_value(field, record_value, node_value):
@@ -236,7 +218,7 @@ def _report_protologue_mismatches(data, roots):
   # field its tree file lists as unused.
   mismatches = 0
   for taxon in Taxon._taxa.values():
-    if 'pages' not in (taxon._data.get('authority') or {}):
+    if taxon.pages is None:
       continue
     source = taxon.authority.source
     if source is None or source.canonical.key not in data['trees']:
@@ -246,8 +228,8 @@ def _report_protologue_mismatches(data, roots):
     tree_file = display_path(TREE_DIR / f'{source.key}.yaml')
     where = f'taxa.yaml {taxon.key}'
 
-    for field, _ in _PROTOLOGUE_FIELDS:
-      if trees and field in trees[0].file_unused and _record_value(taxon._data, field) is not None:
+    for field, _, prop in _PROTOLOGUE_FIELDS:
+      if trees and field in trees[0].file_unused and getattr(taxon, prop) is not None:
         logger.error(f'{where}: {field} given but {tree_file} lists it as unused')
         mismatches += 1
 
@@ -258,7 +240,7 @@ def _report_protologue_mismatches(data, roots):
       if node.is_primary and not node.is_cited and node.taxon is taxon and node.data.get('new')
     )
     for node in nodes:
-      for field, verb in _PROTOLOGUE_FIELDS:
+      for field, verb, prop in _PROTOLOGUE_FIELDS:
         if field == 'rank' and field not in node.data:
           if taxon.name is None or taxon.mineral:
             # An open form or bin has no name to read a rank from; its
@@ -268,17 +250,17 @@ def _report_protologue_mismatches(data, roots):
             continue
           # The node leaves a genus or species implicit; the record, which
           # has `pages`, spells its rank, and the two must agree.
-          implied = _implicit_rank(node)
-          if taxon._data.get('rank') != implied:
+          implied = implied_rank(taxon.name)
+          if taxon.declared_rank != implied:
             logger.error(
-              f'{where}: rank {_protologue_value(taxon._data.get("rank"))} but its '
+              f'{where}: rank {_protologue_value(taxon.declared_rank)} but its '
               f'protologue node in {tree_file} implies "{implied}"'
             )
             mismatches += 1
           continue
         if field not in node.data:
           continue
-        record_value, node_value = _record_value(taxon._data, field), node.data[field]
+        record_value, node_value = getattr(taxon, prop), node.data[field]
         if _same_protologue_value(field, record_value, node_value):
           continue
         logger.error(
@@ -343,9 +325,9 @@ def _report_rank_order(roots):
 
 # The fields a section record and its protologue marker both give.
 _SECTION_PROTOLOGUE_FIELDS = (
-  ('pages', 'has'),
-  ('citedAs', 'prints'),
-  ('designation', 'prints'),
+  ('pages', 'has', 'pages'),
+  ('citedAs', 'prints', 'cited_as'),
+  ('designation', 'prints', 'designation'),
 )
 
 
@@ -355,7 +337,7 @@ def _report_section_protologues(data, roots):
   # marker declares.
   mismatches = 0
   for section in Section._sections.values():
-    if 'pages' not in (section._data.get('authority') or {}):
+    if section.pages is None:
       continue
     source = section.authority.source if section.authority else None
     if source is None or source.canonical.key not in data['trees']:
@@ -373,10 +355,10 @@ def _report_section_protologues(data, roots):
       logger.warning(f'Section protologue not flagged: {section.key} in {source.key}')
       continue
     for marker in markers:
-      for field, verb in _SECTION_PROTOLOGUE_FIELDS:
+      for field, verb, prop in _SECTION_PROTOLOGUE_FIELDS:
         if field not in marker:
           continue
-        record_value, node_value = _record_value(section._data, field), marker[field]
+        record_value, node_value = getattr(section, prop), marker[field]
         if _same_protologue_value(field, record_value, node_value):
           continue
         logger.error(
@@ -477,114 +459,77 @@ def _log_material(level, message):
 
 
 def _report_material(data):
-  """Run every `material.py` check over the registry, then over every
-  opinion and its nodes, logging each at its level with the source key
-  and, for a per-node check, the node's path, then the `sameAs` links
-  across the whole corpus."""
+  """Run the material checks over the registry, then over every opinion
+  (`checks.FILE_CHECKS`) and its nodes (`checks.MATERIAL_CHECKS`), logging
+  each at its level with the source key and, for a per-node check, the
+  node's path, then the `sameAs` links across the whole corpus."""
   repositories = data.get('repositories') or {}
   for level, message in material.registry_links(repositories):
     _log_material(level, f'repositories: {message}')
 
   for source_key, opinion in data['trees'].items():
-    file_prefixes = opinion.get('prefixes') or {}
-    locality_register = opinion.get('localityRegister')
-    file_contexts = opinion.get('contexts') or {}
+    scope = checks.file_scope(opinion, repositories)
+    for level, message in checks.file_messages(scope, checks.FILE_CHECKS):
+      _log_material(level, f'{source_key}: {message}')
+    for path, level, message in checks.node_messages(scope, checks.MATERIAL_CHECKS):
+      _log_material(level, f'{source_key} at {path}: {message}')
 
-    for level, message in material.unreferenced_file_contexts(opinion):
-      _log_material(level, f'{source_key}: {message}')
-    for level, message in material.unused_fields(opinion):
-      _log_material(level, f'{source_key}: {message}')
-    for level, message in material.file_prefixes(opinion, repositories):
-      _log_material(level, f'{source_key}: {message}')
-    for level, message in material.locality_objects(
-      file_contexts, file_prefixes, locality_register, repositories
-    ):
-      _log_material(level, f'{source_key}: {message}')
-    for level, message in material.context_tentatives(file_contexts, file_level=True):
-      _log_material(level, f'{source_key}: {message}')
-
-    for path, node, is_cited in material.walk_document(opinion):
-      where = f'{source_key} at {path}'
-      node_contexts = node.get('contexts') or {}
-      for level, message in material.context_refs(node, node_contexts, file_contexts):
-        _log_material(level, f'{where}: {message}')
-      for level, message in material.figure_refs(node, is_cited):
-        _log_material(level, f'{where}: {message}')
-      for level, message in material.number_entries(node, file_prefixes, repositories):
-        _log_material(level, f'{where}: {message}')
-      for level, message in material.locality_objects(
-        node_contexts, file_prefixes, locality_register, repositories, node.get('material') or ()
-      ):
-        _log_material(level, f'{where}: {message}')
-      for level, message in material.context_tentatives(node_contexts):
-        _log_material(level, f'{where}: {message}')
-      for level, message in material.range_tentatives(node):
-        _log_material(level, f'{where}: {message}')
-      for level, message in material.cast_refs(node):
-        _log_material(level, f'{where}: {message}')
-      for level, message in material.null_material(node, is_cited):
-        _log_material(level, f'{where}: {message}')
-
-  for level, message in material.same_as_links(data['trees'], _source_year):
+  for level, message in material.same_as_links(
+    data['trees'], lambda key: material.source_year(Source.get(key))
+  ):
     _log_material(level, message)
 
 
-def _source_year(source_key):
-  """A source's publication year, 9999 for a work in preparation, `None`
-  for a key with no source record."""
-  source = Source.get(source_key)
-  if source is None:
-    return None
-  return 9999 if source.in_preparation else source.year
-
-
 def _report_nomenclature(data):
-  """Run every `nomenclature.py` check over every opinion's nodes, logging
-  each at its level with the source key and the node's path, then the one
-  check across the whole corpus."""
+  """Run the open-nomenclature checks (`checks.NOMENCLATURE_CHECKS`) over
+  every opinion's nodes, logging each at its level with the source key and
+  the node's path, then the one check across the whole corpus."""
+  repositories = data.get('repositories') or {}
   for source_key, opinion in data['trees'].items():
-    for path, node, is_cited in material.walk_document(opinion):
-      where = f'{source_key} at {path}'
-      for check, args in (
-        (nomenclature.compared_links, (node, Taxon.get)),
-        (nomenclature.quoted_parent, (node, Taxon.get)),
-        (nomenclature.mineral_fields, (node, Taxon.get)),
-        (nomenclature.role_uncertain, (node,)),
-        (nomenclature.type_node, (node, is_cited)),
-        (nomenclature.children_null, (node, is_cited)),
-        (nomenclature.inferred_pages, (node,)),
-      ):
-        for level, message in check(*args):
-          _log_material(level, f'{where}: {message}')
+    scope = checks.file_scope(opinion, repositories, Taxon.get)
+    for path, level, message in checks.node_messages(scope, checks.NOMENCLATURE_CHECKS):
+      _log_material(level, f'{source_key} at {path}: {message}')
   for level, message in nomenclature.compared_link_conflicts(data['trees'].items()):
     _log_material(level, message)
 
 
-class ErrorCount(logging.Handler):
-  """Counts the records at ERROR or above that pass through the logger it
-  is attached to; the loader's checks report by logging, and this is how
-  a caller learns whether any fired."""
+class Collector(logging.Handler):
+  """The records at WARNING and above that pass through the logger it is
+  attached to. The loader's checks report by logging, so this is how a
+  caller learns what they reported: `load` counts the errors, and the
+  scripts and tests compare the warnings with `tests/expected-warnings.txt`."""
 
   def __init__(self):
-    super().__init__(level=logging.ERROR)
-    self.count = 0
+    super().__init__(level=logging.WARNING)
+    self.records = []
 
   def emit(self, record):
-    self.count += 1
+    self.records.append(record)
+
+  @property
+  def errors(self):
+    """The records at ERROR and above, in the order logged."""
+    return [r for r in self.records if r.levelno >= logging.ERROR]
+
+  @property
+  def warnings(self):
+    """The messages logged at WARNING, the form the expected-warnings file lists."""
+    return {r.getMessage() for r in self.records if r.levelno == logging.WARNING}
 
 
 @contextlib.contextmanager
-def counting_errors():
-  """A block in which every error the package logs is counted; yields the
-  counter. Records propagate to the package logger from every module
-  under it, so the counter sits there."""
-  counter = ErrorCount()
+def collecting():
+  """A block in which the package's warnings and errors are kept; yields
+  the `Collector`. Records propagate to the package logger from every
+  module under it, so the collector sits there, beside the handler that
+  prints them."""
+  collector = Collector()
   package = logging.getLogger(__name__.partition('.')[0])
-  package.addHandler(counter)
+  package.addHandler(collector)
   try:
-    yield counter
+    yield collector
   finally:
-    package.removeHandler(counter)
+    package.removeHandler(collector)
 
 
 def load(drafts=False, tolerate=False, data_dir=DATA_DIR, fast=False):
@@ -595,7 +540,7 @@ def load(drafts=False, tolerate=False, data_dir=DATA_DIR, fast=False):
   to see everything before stopping. A record the load cannot continue
   without ends it at once, ``tolerate`` or not (`io.fail`). ``data_dir`` and ``fast`` are
   `load_files`'s: another directory shaped like `data/`, and libyaml."""
-  with counting_errors() as errors:
+  with collecting() as logged:
     data = load_files(drafts=drafts, data_dir=data_dir, fast=fast)
     material.set_repository_registry(data.get('repositories'))
     for field, cls in (
@@ -607,7 +552,8 @@ def load(drafts=False, tolerate=False, data_dir=DATA_DIR, fast=False):
     _load_taxa(data)
     _basic_load(data, 'sections', Section)
     roots = _load_trees(data)
-  if errors.count and not tolerate:
-    plural = 's' if errors.count != 1 else ''
-    raise LoadError(f'{errors.count} integrity error{plural} while loading; see the log')
+  count = len(logged.errors)
+  if count and not tolerate:
+    plural = 's' if count != 1 else ''
+    raise LoadError(f'{count} integrity error{plural} while loading; see the log')
   return data, roots

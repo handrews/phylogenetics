@@ -13,12 +13,11 @@ import contextlib
 import functools
 import importlib.util
 import io as stdio
-import logging
 import pathlib
 import types
 
 from phylohist import claims
-from phylohist.loader import io, material
+from phylohist.loader import collecting, io, material
 from phylohist.loader.research import Author, Publication, Source
 from phylohist.loader.taxa import Section, Taxon, Tree
 
@@ -58,17 +57,11 @@ def run_check_draft(path, data_dir=CORPUS):
   module = script('check_draft')
   module.build_schema = schema
   module.load_yaml = functools.partial(io.load_yaml, fast=True)
-  out, err = stdio.StringIO(), stdio.StringIO()
-  handler = logging.StreamHandler(err)
-  handler.setLevel(logging.WARNING)
-  logger = logging.getLogger('phylohist')
-  logger.addHandler(handler)
-  try:
-    with contextlib.redirect_stdout(out):
-      status = module.main([str(path), '--data', str(data_dir)])
-  finally:
-    logger.removeHandler(handler)
-  return types.SimpleNamespace(returncode=status, stdout=out.getvalue(), stderr=err.getvalue())
+  out = stdio.StringIO()
+  with collecting() as logged, contextlib.redirect_stdout(out):
+    status = module.main([str(path), '--data', str(data_dir)])
+  stderr = ''.join(f'{r.getMessage()}\n' for r in logged.records)
+  return types.SimpleNamespace(returncode=status, stdout=out.getvalue(), stderr=stderr)
 
 
 # -- the registries -----------------------------------------------------------
@@ -93,7 +86,6 @@ def snapshot():
     'indexes': {
       name: {key: set(value) for key, value in getattr(Tree, name).items()} for name in _INDEXES
     },
-    'types': {key: set(value) for key, value in Tree._type_index.items()},
     'repositories': dict(material.repository_registry()),
   }
 
@@ -109,7 +101,6 @@ def restore(snap):
     for key, value in snap['indexes'][name].items():
       index[key] = set(value)
     setattr(Tree, name, index)
-  Tree._type_index = {key: set(value) for key, value in snap['types'].items()}
   material.set_repository_registry(snap['repositories'])
   claims._rank_hubs = None
 
@@ -120,7 +111,6 @@ def reset():
     {
       'records': {name: {} for _, name in _RECORDS},
       'indexes': {name: {} for name in _INDEXES},
-      'types': {key: set() for key in Tree._type_index},
       'repositories': {},
     }
   )

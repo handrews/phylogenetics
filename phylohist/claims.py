@@ -1081,19 +1081,19 @@ def specimen_components(claims):
 
 def citation(source):
   """How a reader cites the source: names, year, title, where."""
-  data = source._data
+  fields = source.citation_fields
   entry = {
     'authors': [a.surname for a in source.authors],
     'year': None if source.in_preparation else source.year,
-    'title': data.get('title'),
+    'title': fields.get('title'),
   }
   for field in ('journal', 'book'):
-    if field in data:
-      publication = Publication.get(data[field])
-      entry['in'] = publication.name if publication is not None else data[field]
+    if field in fields:
+      publication = Publication.get(fields[field])
+      entry['in'] = publication.name if publication is not None else fields[field]
   for field in ('series', 'volume', 'number', 'pages', 'plates'):
-    if field in data:
-      entry[field] = data[field]
+    if field in fields:
+      entry[field] = fields[field]
   return entry
 
 
@@ -1102,13 +1102,12 @@ def names_index():
   what it is, with the folded lookup forms precomputed."""
   rows = {}
   for key, taxon in Taxon._taxa.items():
-    data = taxon._data
     kind = taxon.derivative_kind.field if taxon.derivative_kind else 'primary'
     if taxon.name is None:
       kind = 'placeholder'
     row = {'name': taxon.name, 'rank': taxon.rank, 'kind': kind}
-    if data.get('designation'):
-      row['designation'] = data['designation']
+    if taxon.designation:
+      row['designation'] = taxon.designation
     if taxon.derivative_of is not None:
       row['of'] = taxon.derivative_of.key
     authority = taxon.authority
@@ -1125,9 +1124,14 @@ def names_index():
           row['authority']['year'] = authority.year
       if authority.source is not None:
         row['authority']['source'] = authority.source.key
-    for field in ('homonym', 'originalParent', 'lang', 'status'):
-      if field in data:
-        row[field] = data[field]
+    for field, value in (
+      ('homonym', taxon.homonym),
+      ('originalParent', taxon.original_parent),
+      ('lang', taxon.lang),
+      ('status', taxon.status),
+    ):
+      if value is not None:
+        row[field] = value
     if taxon.mineral:
       row['mineral'] = True
     placeholder = placeholder_kind(taxon)
