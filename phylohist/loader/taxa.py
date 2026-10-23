@@ -9,14 +9,6 @@ from .research import check_unregistered_author, resolve_authors
 
 logger = logging.getLogger(__name__)
 
-NON_RANKS = {
-  'Grade',
-  'Branch',
-  'Group',
-  'Plesion',
-}
-
-
 # The keys of an `authority` block that name an attribution, as against the
 # locators (`pages`, `illustrations`) a block may carry alone.
 ATTRIBUTION_KEYS = ('source', 'auctt', 'auth', 'year')
@@ -172,10 +164,10 @@ class Taxon:
     self._rank = self._data.get('rank')
     self._mineral = bool(self._data.get('mineral'))
 
-    if 'rank' in self._data and self._rank is None:
-      # An explicit null: the protologue placed the taxon with no rank word.
-      self._rank = 'Unranked'
-    if not self._rank:
+    # `rank: null` is no rank: the source prints no rank word and no
+    # cladistic term. Only a record that writes no `rank` takes one from
+    # its name.
+    if 'rank' not in self._data:
       if self._name is None:
         # The schema requires `rank` on a null-name record; this is the backstop.
         fail(
@@ -221,7 +213,7 @@ class Taxon:
       if not valid:
         logger.error(f'"{taxon_key}" not in expected set: {valid_set}')
 
-      self._check_rank()
+      self._check_rank(corpus.ranks)
 
     logger.debug(f'    ...all authorities for "{taxon_key}" processed')
 
@@ -263,7 +255,8 @@ class Taxon:
     else:
       expected_set = {expected}
 
-    expected_set.add(f'{expected}-{self.rank.lower()}')
+    if self.rank is not None:
+      expected_set.add(f'{expected}-{fold_rank(self.rank)}')
     if op := self.original_parent:
       expected_set = {e + f'_{op.lower()}' for e in expected_set}
 
@@ -273,106 +266,15 @@ class Taxon:
       return True, expected_set
     return False, expected_set
 
-  def _check_rank(self):
-    if (
-      self.mineral
-      or self.rank in NON_RANKS
-      or self.name.lower() == self.name
-      or self.key.endswith('-' + self.rank.lower())
-    ):
+  def _check_rank(self, table):
+    """The suffix lint (`ranks.RankTable.suffix_problems`), each problem a
+    warning, on a record that is no mineral, at the rank it gives or
+    borrows, unless its kind is one the lint passes over
+    (`Kind.suffix_checked`)."""
+    if self._mineral or (self._kind is not None and not self._kind.suffix_checked):
       return
-
-    for suffix, rank, exceptions in (
-      ('inae', 'Subfamily', frozenset({'Placocystida'})),
-      (
-        'idae',
-        'Family',
-        frozenset(
-          {
-            'Crinoiden',
-            'Crinoideen',
-            'Cystideen',
-            'Cystidea',
-            'Cystideae',
-            'Cystoidea',
-            'Échinides',
-            'Echinides',
-            'Stelleridea',
-            'Stellérides',
-            'Stellerides',
-            'Stelleridica',
-            'Fistulides',
-          }
-        ),
-      ),
-    ):
-      if self.rank == rank and not self.name.endswith(suffix) and self.name not in exceptions:
-        logger.warning(
-          f'{self.name} of rank {rank} expected to end with suffix "{suffix}"',
-        )
-
-    # TODO: Verify that each exception is the expected rank
-    ida_classes = frozenset(
-      {
-        'Acalephida',
-        'Arachnida',
-        'Echinida',
-        'Fistulida',
-        'Medusida',
-        'Stellerida',
-        'Zoanthida',
-      }
-    )
-    ida_subclasses = frozenset({'Disparida', 'Helicoplacida', 'Polyplacida'})
-    ida_parvclasses = frozenset({'Cladida'})
-    ida_superfamilies = frozenset(
-      {
-        'Aristocystitida',
-        'Caryocystitida',
-        'Glyptocystitida',
-        'Glyptosphaeritida',
-        'Hemicosmitida',
-        'Protocrinitida',
-        'Sphaeronitida',
-      }
-    )
-    ida_subfamilies = frozenset({'Placocystida'})
-    ida_exceptions = (
-      ida_classes | ida_subclasses | ida_parvclasses | ida_superfamilies | ida_subfamilies
-    )
-
-    ina_exceptions = frozenset(
-      {
-        'Carallina',
-        'Corallina',
-        'Craterina',
-        'Funiculina',
-        'Intestina',
-        'Meandrina',
-        'Palasterina',
-        'Palaeasterina',
-        'Tellina',
-      }
-    )
-
-    for suffix, ranks, exceptions in (
-      ('inae', ('Subfamily',), frozenset({'Gallinae'})),
-      ('acea', ('Superfamily',), frozenset({'Crustacea', 'Testacea'})),
-      ('ina', ('Suborder',), ina_exceptions),
-      ('ida', ('Order',), ida_exceptions),
-      (
-        'zoa',
-        ('Class', 'Subphylum', 'Phylum', 'Subkingdom', 'Kingdom'),
-        frozenset({'Lithozoa'}),
-      ),
-    ):
-      if self.name.endswith(suffix) and self.rank not in ranks and self.name not in exceptions:
-        logger.warning(
-          f'{self.name} with suffix "{suffix}" expected to have one of ranks '
-          f'{ranks} but has rank {self.rank} and is not in {exceptions}',
-        )
-
-    # TODO: More ranks, but they get increasingly inconsistent.
+    for message in table.suffix_problems(self._name, self._rank, self._authority.year):
+      logger.warning(message)
 
   def __str__(self):
     return f'{self.display_name} ({self._authority})'
@@ -399,7 +301,9 @@ class Taxon:
 
   @property
   def rank(self):
-    # TODO: Handle this properly, it's more complex than it looks
+    """The record's rank: its own `rank`, `None` for an explicit null (the
+    source prints none), the rank a spelling borrows, or a genus or species
+    read from a name that gives none."""
     return self._rank
 
   @property
@@ -426,10 +330,10 @@ class Taxon:
 
   @property
   def declared_rank(self):
-    """The `rank` the record writes, `None` when it writes none; `rank`
-    fills the gaps (a genus or species from the name, `Unranked` for a
-    null, a derivative's borrowed rank), and the protologue check reads
-    the record's own word."""
+    """The `rank` the record writes, `None` when it writes none or writes a
+    null; `rank` fills the gaps (a genus or species from the name, a
+    derivative's borrowed rank), and the protologue check reads the
+    record's own word."""
     return self._data.get('rank')
 
   @property

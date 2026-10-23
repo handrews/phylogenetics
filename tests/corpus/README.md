@@ -1,7 +1,9 @@
 # The test corpus
 
 A frozen slice of `data/` for the tests, taken at commit 34f21b5 (main,
-11 October 2026): the seven record files whole, and 53 of the 220
+11 October 2026): the eight record files
+whole (`ranks.yaml` copied when the rank table was added; its `exceptions`
+are this corpus's own), and 53 of the 220
 trees. It is not resynced with `data/`, since the tests must not depend
 on what the curated data says today. Edit it only to add the case a test
 needs or to migrate it alongside a schema change, and keep it loading

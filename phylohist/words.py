@@ -413,15 +413,16 @@ class Words:
 
   def placeholder_words(self, key, source=None, path=None):
     """A placeholder in the source's words: a bin by its rank ("Order
-    uncertain", "Unnamed family"), an open-nomenclature record by its
-    designation, or the words of its key ("Agelacrinites sp.")."""
+    uncertain", "Unnamed family", "Unnamed unranked" for a record written
+    `rank: null`), an open-nomenclature record by its designation, or the
+    words of its key ("Agelacrinites sp.")."""
     row = self.store.names.get(key) or {}
     kind = row.get('placeholder')
     rank = (row.get('rank') or '').lower()
     if kind == 'uncertain':
       return f'{rank.capitalize()} uncertain' if rank else 'Uncertain'
     if kind == 'unnamed':
-      return f'Unnamed {rank}' if rank else 'Unnamed'
+      return f'Unnamed {rank}' if rank else 'Unnamed unranked'
     if row.get('designation'):
       return row['designation']
     words = [self._OPEN_WORDS.get(w, w) for w in key_stem(key).split('-')]

@@ -120,10 +120,9 @@ def test_null_illustrations_on_the_node_equal_none_on_the_record(records, caplog
   ]
 
 
-def test_an_unranked_node_equals_an_unranked_record(records, caplog):
-  assert _check(records, {'rank': 'Unranked'}, {'rank': None}, caplog=caplog)[0] == []
+def test_a_null_node_equals_a_null_record(records, caplog):
   assert _check(records, {'rank': None}, {'rank': None}, caplog=caplog)[0] == []
-  assert records.taxa[KEY].rank == 'Unranked'
+  assert records.taxa[KEY].rank is None
   errors, _ = _check(records, {'rank': 'variety'}, {'rank': None}, caplog=caplog)
   assert errors == [f'taxa.yaml {KEY}: rank "variety" but its protologue node in {FILE} has none']
 

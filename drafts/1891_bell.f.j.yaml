@@ -75,7 +75,7 @@ notes: |
 
   Rank words "Stage", "Sub-branch" and "Sub-stage" have no value in
   schemas/phylogeny.yaml's rank enum (which does have Branch, Division,
-  Class, Group, Grade, Unranked among others); each is quoted in `notes`
+  Class, Group, Grade, Clade among others); each is quoted in `notes`
   on its own node instead of set via the node's `rank` field. See the
   review doc, section (d).
 

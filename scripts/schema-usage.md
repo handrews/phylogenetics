@@ -352,6 +352,26 @@ property.
 | `regions/items/oneOf/1.value` | 2 | 100.0% |
 | `inferred` | 0 | 0.0% |
 
+### `ranks` -- 1 instances in `data/`
+
+| property | data | data % |
+|---|---|---|
+| `ranks/items.name` | 31 | 100.0% |
+| `ranks/items.informal` | 8 | 25.8% |
+| `exceptions/items.name` | 7 | 100.0% |
+| `exceptions/items.note` | 7 | 100.0% |
+| `exceptions/items.rank` | 7 | 100.0% |
+| `suffixes/items.ranks` | 6 | 100.0% |
+| `suffixes/items.suffix` | 6 | 100.0% |
+| `ranks/items.group` | 5 | 16.1% |
+| `ranks/items.endings/items.suffix` | 4 | 100.0% |
+| `ranks/items.endings` | 3 | 9.7% |
+| `checkedFrom` | 1 | 100.0% |
+| `exceptions` | 1 | 100.0% |
+| `ranks` | 1 | 100.0% |
+| `ranks/items.endings/items.before` | 1 | 25.0% |
+| `suffixes` | 1 | 100.0% |
+
 ### `relationalFields` -- 5784 instances in `data/`
 
 | property | data | data % |
@@ -639,7 +659,7 @@ property.
 
 ### `phylogeny#/$defs/rank`
 
-24 of 32 members used, 1515 occurrences.
+23 of 31 members used, 1512 occurrences.
 
 | value | count |
 |---|---|
@@ -663,12 +683,20 @@ property.
 | `'Kingdom'` | 6 |
 | `'Superorder'` | 4 |
 | `'Subkingdom'` | 3 |
-| `'Unranked'` | 3 |
 | `'Plesion'` | 3 |
 | `'Branch'` | 2 |
 | `'Parvclass'` | 1 |
 
 **Never used (8):** `'Domain'`, `'Superphylum'`, `'Infraphylum'`, `'Superclass'`, `'Infraclass'`, `'subspecies'`, `'Clade'`, `'Scion'`
+
+### `phylogeny#/$defs/ranks/properties/ranks/items/properties/group`
+
+2 of 2 members used, 5 occurrences.
+
+| value | count |
+|---|---|
+| `'species'` | 3 |
+| `'genus'` | 2 |
 
 ### `phylogeny#/$defs/repositories/additionalProperties/properties/subject`
 

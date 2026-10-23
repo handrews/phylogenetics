@@ -1475,9 +1475,9 @@ differs from `name`. A record with `pages` spells its `rank` (the schema
 requires it; `null` says the protologue placed the taxon with no rank word),
 where a tree node leaves a genus or species implicit: a node with no `rank`
 implies a species when its name is lower-case, else a genus, and the record
-must say the same. A `rank: null` node agrees with a record's `null` or
-`Unranked`, and a node's `pages: null` (an inferred node) never agrees with
-a record's pages. (`_report_protologue_mismatches`, in
+must say the same. A `rank: null` node agrees with a record's `null`, and
+a node's `pages: null` (an inferred node) never agrees with a record's
+pages. (`_report_protologue_mismatches`, in
 `phylohist/loader/load.py`.) `designation` is among the checked fields
 (2026-10-05), declared on an `openTaxon` node or a marker. A section record
 with `pages` is checked the same way against the `sectionStart` marker
@@ -1581,6 +1581,42 @@ Eleutherozoa printed as "2nd Sub-branch" where the record says Subphylum.
 Bather prints Pelmatozoa as "Sub-Phylum" in 1899 and "Grade" in 1900. Until
 G8 lands, the draft tree quotes each rank word in `notes`; whether Stage,
 Sub-branch and Sub-stage join the enum is the auditor's call.
+
+Decided 2026-10-22 and built in the rank-table chunk (`data/ranks.yaml`
+with `phylohist/ranks.py` over it; the exceptions and the lint's rules live
+in the table, a test holds the schema enum to it):
+
+- `rank: null` means the source prints no rank word and no cladistic term
+  for the taxon. The code reads it as none (`None`), the claims and the
+  names index carry `rank: null`, and a null node agrees with a null
+  record. `Unranked` leaves the vocabulary: the three unnamed Müller 1854
+  groups, whose notes say the rank is unstated, become `null`. A modern
+  unranked clade is `Clade`, as sources print it. `incertae sedis` is open
+  nomenclature, not a rank; such a placeholder may carry the rank of the
+  taxon it stands in for.
+- The table is the vocabulary: the formal ranks in order, with the casing
+  the data writes (capitalised above the genus group, lower-case from
+  genus down), and a curated set of informal words flagged as such
+  (Division, Group, Grade, Branch, Plesion, Clade, Scion, and `section`
+  until C6 re-enters the fourteen `rank: section` records). The schema
+  enum is checked against the table; every comparison folds the case; a
+  word a source prints that the table lacks (Stage, Sub-branch) is added by
+  the auditor, never allowed open.
+- The suffix lint applies to records above the genus group whose authority
+  year is 1900 or later, in both directions (a rank's expected ending, and
+  an ending's expected ranks); a name before 1900 is never checked. An
+  `altSpellingOf`, `altGenderOf` or `vulgarSpellingOf` record is skipped
+  (it borrows its rank and may be a vernacular form); a `latinSpellingOf`
+  record is checked at the rank it borrows, since that is where a name
+  introduced in the vernacular first meets the conventions, and a rank
+  variant (`altRankOf`) at its own rank, like any record (the eleven rank
+  variants that would warn are all pre-1900 families and classes of
+  Linnaeus, Klein and Lamarck). A superfamily accepts -acea before 1999
+  and -oidea always; -oidea itself implies no rank, since echinoderm
+  classes end in it.
+  The exceptions live in the table, each with a note, and the loader errors
+  on one that names no record or a record at another rank, so the list
+  cannot go stale.
 
 **G9. Coverage gaps are scope history, not errors.** Sources entered early
 capture less because the project's scope grew (skeleton first, then
@@ -1706,7 +1742,7 @@ Fields fall into three classes, and only the third is nullable:
   null: infraspecific names are rare enough to be entered when present, so
   their absence says nothing. The null is also an error on a cited entry,
   in a draft, and on a node of a cladogram or other tree that is not a
-  taxonomy. `Unranked`, `section` and the other informal ranks count as
+  taxonomy. `Clade`, `section` and the other informal ranks count as
   above the species level. There is no `unused` form: the tree's own nulls
   say where it stops, so `skeleton` is never `na`.
 

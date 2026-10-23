@@ -23,12 +23,16 @@ import collections
 # borrows_rank: takes the target's rank and mineral flag.
 # lang: which record must carry `lang`: 'record' for a vernacular form,
 #   'target' for the Latin spelling of one, None otherwise.
+# suffix_checked: the loader's suffix lint checks the record at its rank
+#   (`ranks.RankTable.suffix_problems`); a Latin spelling and a rank variant
+#   are names in their own right, another spelling, a gender form and a
+#   vernacular form are not.
 # words: how the variant relates to its target ("<words> <target>").
 # reverse: how the target relates to the variant, read from the other end.
 # order: the resolver's candidate order (a primary record is 0, a
 #   placeholder last).
 Kind = collections.namedtuple(
-  'Kind', 'field relation borrows_name borrows_rank lang words reverse order'
+  'Kind', 'field relation borrows_name borrows_rank lang suffix_checked words reverse order'
 )
 
 # In precedence order, should a record ever carry two of the fields.
@@ -39,6 +43,7 @@ KINDS = (
     borrows_name=False,
     borrows_rank=True,
     lang=None,
+    suffix_checked=False,
     words='spelling variant of',
     reverse='spelling variant of',
     order=2,
@@ -49,6 +54,7 @@ KINDS = (
     borrows_name=False,
     borrows_rank=True,
     lang=None,
+    suffix_checked=False,
     words='gender variant of',
     reverse='gender variant of',
     order=2,
@@ -59,6 +65,7 @@ KINDS = (
     borrows_name=False,
     borrows_rank=True,
     lang='target',
+    suffix_checked=True,
     words='Latin form of',
     reverse='vernacular form of',
     order=2,
@@ -69,6 +76,7 @@ KINDS = (
     borrows_name=False,
     borrows_rank=True,
     lang='record',
+    suffix_checked=False,
     words='vernacular form of',
     reverse='Latin form of',
     order=3,
@@ -79,6 +87,7 @@ KINDS = (
     borrows_name=True,
     borrows_rank=False,
     lang=None,
+    suffix_checked=True,
     words='same name at another rank as',
     reverse='same name at another rank as',
     order=1,

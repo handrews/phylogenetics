@@ -94,6 +94,12 @@ def test_resolve_absent_is_empty(store):
   assert store.resolve_name('') == []
 
 
+def test_an_unnamed_record_with_no_rank_reads_unnamed_unranked(store):
+  key = 'cystideae-unnamed-group_müller.j.p_1854'
+  assert store.rank(key) is None
+  assert store.words.display(key) == 'Unnamed unranked'
+
+
 def test_unnamed_records_are_not_found_by_name(store):
   # The words in a bin's key or an open-nomenclature designation name
   # other taxa; a prefix query must not sweep them in.
@@ -762,6 +768,17 @@ def test_followed_acts_and_sensu_words(store):
   assert words.claim_words(usage) == 'cites the name sensu stricto'
   node = {'key': 'crinoidea', 'name': 'Crinoidea', 'rank': 'Class', 'sensu': 'stricto'}
   assert node_label(node).endswith('Crinoidea (s. s.)')
+  # Every `sensu` the schema allows has a mark; Bather 1900 prints "sensu
+  # extenso" on Blastoidea, and the listing used to fail on it.
+  from phylohist import blocks
+  from phylohist.loader import io
+
+  schema = io.load_yaml(io.SCHEMA_PATH)
+  assert set(blocks.SENSU_MARKS) == set(
+    schema['$defs']['uncertaintyFields']['properties']['sensu']['enum']
+  )
+  node = {'key': 'blastoidea', 'name': 'Blastoidea', 'rank': 'Class', 'sensu': 'extenso'}
+  assert node_label(node).endswith('Blastoidea (s. ext.)')
 
 
 def test_material_words(store):

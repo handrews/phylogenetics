@@ -21,9 +21,12 @@ import warnings
 
 import pytest
 
-from phylohist import regenerate
+from phylohist import ranks, regenerate
 
 EXPECTED_WARNINGS_PATH = pathlib.Path(__file__).parent / 'expected-warnings.txt'
+# A fake set of record files carries the rank table with no exceptions, since
+# it has no records for one to name.
+EMPTY_TABLE = {**ranks.TABLE.document, 'exceptions': []}
 
 
 @pytest.mark.production
@@ -133,7 +136,10 @@ def test_load_fails_on_logged_errors(monkeypatch):
 
   def broken(drafts=False, **_):
     logging.getLogger('phylohist.loader.taxa').error('a check fired')
-    return {k: {} for k in ('authors', 'publications', 'sources', 'taxa', 'sections', 'trees')}
+    return {
+      **{k: {} for k in ('authors', 'publications', 'sources', 'taxa', 'sections', 'trees')},
+      'ranks': EMPTY_TABLE,
+    }
 
   monkeypatch.setattr(loading, 'load_files', broken)
   with pytest.raises(LoadError, match='1 integrity error while loading'):
@@ -283,6 +289,7 @@ def test_tree_without_a_source_record_is_skipped(monkeypatch):
 
   def orphan(drafts=False, **_):
     data = {k: {} for k in ('authors', 'publications', 'sources', 'taxa', 'sections')}
+    data['ranks'] = EMPTY_TABLE
     data['trees'] = {'9999_nobody': {'taxonomies': [{'taxon': 'cyathocystis'}]}}
     return data
 
@@ -426,6 +433,11 @@ def test_an_unnamed_record_spells_its_rank(records, caplog):
     records.add_taxon(unnamed, 'testum-sp')
   assert 'Unnamed, unranked taxon testum-sp!' in _errors(caplog)
   assert 'testum-sp' not in records.taxa
+  # An explicit null is a rank statement: the source gives none.
+  with caplog.at_level(logging.ERROR, logger='phylohist'):
+    caplog.clear()
+    records.add_taxon({**unnamed, 'rank': None}, 'testum-sp')
+  assert _errors(caplog) == [] and records.taxa['testum-sp'].rank is None
 
 
 def test_a_record_naming_no_author_loads(records, caplog):
@@ -488,6 +500,7 @@ def test_a_missing_record_ends_the_load_whatever_tolerate_says(monkeypatch, capl
   def broken(drafts=False, **_):
     logging.getLogger('phylohist.loader.taxa').error('a check fired')
     data = {k: {} for k in ('authors', 'publications', 'sources', 'sections', 'trees')}
+    data['ranks'] = EMPTY_TABLE
     data['taxa'] = {'testum': {'name': 'Testum', 'authority': {'source': '1899_nobody'}}}
     return data
 
@@ -642,7 +655,7 @@ def test_a_vernacular_record_carries_lang(records, caplog):
     'Taxon testen vulgar spelling of cyathocystidae has no `lang`',
     'Taxon testidae Latin spelling of testeen, whose record has no `lang`',
   ]
-  assert records.taxa['testoidae'].rank == 'Unranked'
+  assert records.taxa['testoidae'].rank is None
 
 
 def test_the_schema_knows_every_derivative_kind():
@@ -667,14 +680,36 @@ def test_the_schema_knows_every_derivative_kind():
   assert not check({'testen': {'name': 'Testen', 'vulgarSpellingOf': 'testa'}})
 
 
-def test_the_ranks_are_the_schemas():
-  # `phylohist/ranks.py` restates the schema's `rank` enum for both sides
-  # of the package; the two must not drift apart.
+def test_the_ranks_are_the_tables_and_the_schemas():
+  # `data/ranks.yaml` is the vocabulary: `phylohist/ranks.py` reads it for
+  # both sides of the package, and the schema's `rank` enum restates it;
+  # the three must not drift apart.
   from phylohist import ranks
   from phylohist.loader import io
 
+  assert ranks.RANKS == ranks.TABLE.names
   assert ranks.RANKS == tuple(io.load_yaml(io.SCHEMA_PATH)['$defs']['rank']['enum'])
-  assert set(ranks.SPECIES_GROUP + ranks.GENUS_GROUP) <= set(ranks.RANKS)
+  assert len(set(ranks.RANKS)) == len(ranks.RANKS) and 'Unranked' not in ranks.RANKS
+  genus = ranks.RANKS.index('genus')
+  assert all(rank[0].isupper() for rank in ranks.RANKS[:genus])
+  assert all(rank.islower() for rank in ranks.SPECIES_GROUP + ranks.GENUS_GROUP)
+  assert ranks.TABLE.informal == {
+    'division',
+    'section',
+    'branch',
+    'group',
+    'grade',
+    'clade',
+    'plesion',
+    'scion',
+  }
+  assert ranks.SPECIES_GROUP == ('species', 'subspecies', 'variety')
+  assert ranks.GENUS_GROUP == ('genus', 'subgenus')
+  table = ranks.TABLE.document
+  named = {r for rule in table['suffixes'] for r in rule['ranks']} | {
+    e['rank'] for e in table['exceptions']
+  }
+  assert named <= set(ranks.RANKS)
   assert ranks.rank_order('variety') > ranks.rank_order('species') > ranks.rank_order('Genus')
   assert ranks.rank_order(None) == ranks.rank_order('Stage') == len(ranks.RANKS)
   assert (ranks.implied_rank('testa'), ranks.implied_rank('Testum')) == ('species', 'genus')
@@ -708,5 +743,5 @@ def test_declared_rank_is_the_records_own_word(records):
   )
   records.add_taxon({'name': 'Testvm', 'altSpellingOf': 'testum'}, 'testvm')
   assert (records.taxa['testum'].rank, records.taxa['testum'].declared_rank) == ('genus', None)
-  assert (records.taxa['testa'].rank, records.taxa['testa'].declared_rank) == ('Unranked', None)
+  assert (records.taxa['testa'].rank, records.taxa['testa'].declared_rank) == (None, None)
   assert (records.taxa['testvm'].rank, records.taxa['testvm'].declared_rank) == ('genus', None)

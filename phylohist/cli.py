@@ -82,7 +82,7 @@ def build_parser():
 
   p = add_parser('resolve', help='records a printed name can refer to')
   p.add_argument('query')
-  p.add_argument('--rank')
+  p.add_argument('--rank', help='a rank word; "unranked" for a record whose source prints none')
 
   p = add_parser('source', help='the sources a citation can mean')
   p.add_argument('query')
@@ -241,7 +241,7 @@ def _print_resolved(result, style):
     print('(no record in the corpus carries this name)')
     return
   for c in result:
-    rank = 'mineral' if c.get('mineral') else c['rank']
+    rank = 'mineral' if c.get('mineral') else (c['rank'] or 'unranked')
     line = f'{c["key"]}  {c["name"] or "[placeholder]"} ({rank}, {c["kind"]}'
     if c.get('of'):
       line += f', of {c["of"]}'

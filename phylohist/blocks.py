@@ -36,7 +36,14 @@ ACT_MARKS = {
   'substituted': 'nom. subst.',
 }
 
-SENSU_MARKS = {'stricto': '(s. s.)', 'lato': '(s. l.)', 'emendato': '(s. em.)'}
+# The mark a listing prints after a name for each `sensu` value the schema
+# allows (a test holds the two equal).
+SENSU_MARKS = {
+  'stricto': '(s. s.)',
+  'lato': '(s. l.)',
+  'emendato': '(s. em.)',
+  'extenso': '(s. ext.)',
+}
 
 
 def auctt_words(value):
