@@ -4,6 +4,12 @@
 # words that look like names # may not be, while one word in a
 # multi-word heading may be capitalized # in a way that makes it seem
 # like it is important as a name beyond the description..
+ambulantes:
+  name: Ambulantes
+  authority:
+    source: 1766b_pallas
+    pages: 152
+  citedAs: ambulantes
 cochleae:
   name: Cochleae
   citedAs: "* * * Univalvia Spiralia COCHLEÆ."
@@ -32,6 +38,12 @@ echinus-regulares:
     source: 1758_linnaeus
     pages: 663
   citedAs: "* Regulares ano verticali."
+fixas:
+  name: Fixas
+  authority:
+    source: 1766b_pallas
+    pages: 152
+  citedAs: "fixas"
 fixata:
   name: Fixata
   authority:

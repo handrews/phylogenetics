@@ -116,6 +116,8 @@ elements-de:
   name: Elemente der Paläontologie
 elements-fr:
   name: Éléments de paléontologie
+elenchus-zoophytorum:
+  name: Elenchus zoophytorum
 es-rev:
   name: Earth-Science Reviews
 e-faunas-bromide:
@@ -227,6 +229,8 @@ manual-3rd:
   name: A Manual of Paleontology for the Use of Students, 3rd Ed.
 manual-inv:
   name: A manual of the anatomy of invertebrated animals
+medicinae:
+  name: Medicinae doctoris Miscellanea zoologica
 mem-aust:
   name: Memoirs of the Association of the Australian Palaeontologists
 mem-comp-zool:
@@ -365,6 +369,8 @@ soc-sci-nat-phys-maroc:
   name: Bulletin de la Société des sciences naturelles du Maroc
 sp-pub-harvard:
   name: Special Publication of the Museum of Comparative Zoology, Harvard University
+spicilegia:
+  name: Spicilegia zoologica
 stamm:
   name: Stammesgeschichte der Pelmatozoen
 strati:

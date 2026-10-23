@@ -30,9 +30,9 @@ taxonomies:
     children:
     - taxon: esculenta_linnaeus_1758
       children:
-      - taxon: fulcis brevibus_leske_1778
+      - taxon: sulcis brevibus_leske_1778
         new: true
-      - taxon: fulcis longis_leske_1778
+      - taxon: sulcis longis_leske_1778
         new: true
       - taxon: topasina_leske_1778
         new: true

@@ -1,0 +1,53 @@
+notes: >
+  Only the sea cucumber tuicate, and sipunculid are included so far.
+  Most taxa are not properly binomial, this is an approximation.
+taxonomies:
+- taxon: hydra
+  pages: 75
+  children:
+  - openTaxon: hydra-sp_bohadsch_1761
+    new: true
+    pages: 75
+    illustrations:
+    - plate: VI
+- taxon: syrinx
+  new: true
+  pages: 93
+  children:
+  - openTaxon: syrinx-sp_bohadsch_1761
+    new: true
+    pages: 93
+    illustrations:
+    - plate: VII
+      figures: [6, 7]
+- taxon: tethyum
+  new: true
+  pages: 129
+  children:
+  - taxon: coriaceum_bohadsch_1761
+    new: true
+    pages: 130
+    illustrations:
+    - plate: X
+      figures: [1, 2]
+  - taxon: gelatinosum_bohadsch_1761
+    new: true
+    pages: 130
+    illustrations:
+    - plate: X
+      figures: 3
+  - taxon: membranaceum_bohadsch_1761
+    new: true
+    pages: 130
+    illustrations: null
+  - taxon: fasciculatum_bohadsch_1761
+    new: true
+    illustrations:
+    - plate: X
+      figures: 4
+  - openTaxon: tethyum-sp_bohadsch_1761
+    new: true
+    pages: 130
+    illustrations:
+    - plate: X
+      figures: [5, 6]

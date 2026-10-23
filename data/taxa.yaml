@@ -108,16 +108,44 @@ actinia:
     Linnaeus's common practice with his closer colleagues.  As Gunnerus
     does not claim to have erected the genus, it is credited to Linnaeus
     even though the 12th edition came out later in the year.
+actinia_browne.p_1756:
+  name: Actinia
+  needsQualification: true
+  rank: genus
+  authority:
+    auth: [browne.p]
+    year: 1756
+  notes: Pre-Linnaean
+actinia_baster_1760:
+  name: Actinia
+  needsQualification: true
+  rank: genus
+  authority:
+    auth: [baster]
+    year: 1760
+  notes: Not fully binomial.
 actinia_pallas_1766:
   name: Actinia
   homonym: true
+  rank: genus
   authority:
-    auth: [Pallas]
-    year: 1766
+    source: 1766b_pallas
+    pages: 154
+  citedAs: ACTINIÆ
   notes: |
     Established for the sea cucumber A. doliolum, now Pentacta doliolum.
     Suppressed by ICZN Opinion 1295, replaced by Pentacta (Goldfuss 1820).
     Neither Gunnerus 1767 nor Linnaeus 1767 intended to reference this genus.
+actinia-pallas-zeeland-sp-1_pallas_1766:
+  name: null
+  rank: species
+  authority:
+    source: 1766b_pallas
+actinia-pallas-zeeland-sp-2_pallas_1766:
+  name: null
+  rank: species
+  authority:
+    source: 1766b_pallas
 actinocrinites:
   name: Actinocrinites
   authority:
@@ -149,10 +177,17 @@ acutus_lamarck_1816:
   name: acutus
   authority:
     source: 1816b_lamarck
+aculeata_linnaeus_1758:
+  name: aculeata
+  rank: species
+  authority:
+    source: 1758_linnaeus
+  notes: A species of Aphrodita.
 aculeata_linnaeus_1767:
   name: aculeata
   authority:
     source: 1767_linnaeus
+  notes: A brittle star.
 aculeata_pennant_1777:
   name: aculeata
   authority:
@@ -393,8 +428,7 @@ alcyonium_pallas_1766:
   name: Alcyonium
   homonym: true
   authority:
-    auth: [Pallas]
-    year: 1766
+    source: 1766a_pallas
   notes: Ascidian tunicates (instead of Linnaeus's octocorals)
 alphacrinus:
   name: Alphacrinus
@@ -722,8 +756,7 @@ anticostensis_billings_1857:
 antipathes:
   name: Antipathes
   authority:
-    auth: [Pallas]
-    year: 1766
+    source: 1766a_pallas
 anulocrinus:
   name: Anulocrinus
   authority:
@@ -923,6 +956,14 @@ argonauta:
     source: 1758_linnaeus
     pages: 708
   citedAs: 282. ARGONAUTA.
+argus_bohadsch_1761:
+  name: Argus
+  homonym: true
+  rank: genus
+  authority:
+    auth: [bohadsch]
+    year: 1761
+  notes: ICZN suppressed.
 aristocystitida:
   name: Aristocystitida
   rank: Superfamily
@@ -1024,8 +1065,17 @@ ascaris:
   citedAs: 247. ASCARIS.
 ascidia:
   name: Ascidia
+  rank: genus
   authority:
     source: 1767_linnaeus
+ascidia_baster_1760:
+  name: Ascidia
+  needsQualification: true
+  rank: genus
+  authority:
+    auth: [baster]
+    year: 1760
+  notes: Sea squirt, but does not fully use binomial nomenclature.
 ascidiastella:
   name: Ascidiastella
   authority:
@@ -1797,8 +1847,7 @@ brachiolata_lamarck_1816:
 brachionus:
   name: Brachionus
   authority:
-    auth: [Pallas]
-    year: 1766
+    source: 1766a_pallas
 brachiopoda:
   name: Brachiopoda
   rank: Phylum
@@ -1929,14 +1978,21 @@ caelatus_hall_1843:
   name: caelatus
   authority:
     source: 1843_hall
+calamaris_pallas_1766:
+  name: calamaris
+  rank: species
+  authority:
+    source: 1766a_pallas
+  notes: Species of Tubularia
 calamaria_pallas_1774:
   name: calamaria
   altSpellingOf: calamaris_pallas_1774
 calamaris_pallas_1774:
   name: calamaris
+  rank: species
   authority:
-    auth: [Pallas]
-    year: 1774
+    source: 1774_pallas
+  notes: Echinus
 calcar_lamarck_1816:
   name: calcar
   authority:
@@ -1998,6 +2054,18 @@ calvini_white_1876:
   authority:
     auth: [White]
     year: 1876
+calyciflora_gaertner_1762:
+  name: calyciflora
+  rank: species
+  authority:
+    source: 1762_gaertner
+    pages: 79
+    illustrations:
+    - plate: I
+      figures: 2
+  citedAs: >
+    Hydracalyciflora, tentaculis retradlilibus variegatis,
+    corpore verrucoſo.
 camarocystites:
   name: Camarocystites
   altSpellingOf: comarocystites
@@ -2189,6 +2257,17 @@ carallina:
   name: Carallina
   altSpellingOf: corallina
   notes: Apparent misspelling?  In Bruguiere 1789.
+carunculata_pallas_1766:
+  name: carunculata
+  rank: species
+  authority:
+    source: 1766b_pallas
+    pages: 102
+    illustrations:
+    - plate: VIII
+      figures:
+      - [12, 13]
+  citedAs: 6. APHRODITA CARUNCULATA.
 carbonarius_bassler_1936:
   name: carbonarius
   authority:
@@ -2405,14 +2484,21 @@ cellulana-order:
   notes: authority unclear
 cellularia:
   name: Cellularia
+  rank: genus
   authority:
-    auth: [Pallas]
-    year: 1766
+    source: 1766a_pallas
 celtocrinus:
   name: Celtocrinus
   authority:
     auth: [Donovan, Cope]
     year: 1989
+centronia:
+  name: Centronia
+  rank: Order
+  authority:
+    source: 1766b_pallas
+    pages: 153
+  citedAs: Centroniarum
 cephalopoda-order:
   name: Cephalopoda
   rank: Order
@@ -2672,6 +2758,17 @@ cirrhopodes:
   lang: FR
   authority:
     source: 1817b_cuvier
+cirrhosa_pallas_1766:
+  name: cirrhosa
+  rank: species
+  authority:
+    source: 1766b_pallas
+    pages: 95
+    illustrations:
+    - plate: VIII
+      figures:
+      - [3, 6]
+  citedAs: 4. APHRODITA CIRRHOSA.
 citrus_hisinger_1837:
   name: citrus
   authority:
@@ -2856,6 +2953,17 @@ compagicrinus:
   authority:
     auth: [Jobson, paul.c.r.c]
     year: 1979
+complanata_pallas_1766:
+  name: complanata
+  rank: species
+  authority:
+    source: 1766b_pallas
+    pages: 109
+    illustrations:
+    - plate: VIII
+      figures:
+      - [19, 26]
+  citedAs: 9. APHRODITA COMPLANATA.
 compressus_lamarck_1816:
   name: compressus
   authority:
@@ -3002,6 +3110,21 @@ cordata_lamarck_1816:
   name: cordata
   authority:
     source: 1816b_lamarck
+coriaceum_bohadsch_1761:
+  name: coriaceum
+  rank: species
+  authority:
+    source: 1761_bohadsch
+    pages: 130
+    illustrations:
+    - plate: X
+      figures: [1, 2]
+coriaceus_plancus_1760:
+  name: coriaceus
+  rank: species
+  authority:
+    auth: [Plancus]
+    year: 1760
 corine:
   name: Corine
   authority:
@@ -3029,6 +3152,16 @@ corollaris_leske_1778:
   name: corollaris
   authority:
     source: 1778_leske
+corolliflora_gaertner_1762:
+  name: corolliflora
+  rank: species
+  authority:
+    source: 1762_gaertner
+    pages: 80
+    illustrations:
+    - plate: I
+      figures: 3
+  citedAs: Hydra corolliflora, tentaculis retradilibus frondoſis.
 coronaeformis_rievers_1961:
   name: coronaeformis
   authority:
@@ -3064,9 +3197,9 @@ corrugata_müller.o.f_1776:
 coryne:
   name: Coryne
   authority:
-    auth: [gaertner]
-    year: 1774
-    in: [Pallas]
+    attributedTo:
+    - gaertner
+    source: 1774_pallas
 costosum_lamarck_1816:
   name: costosum
   authority:
@@ -3304,6 +3437,14 @@ cucullanus:
   authority:
     auth: [müller.o.f]
     year: 1777
+cucumis_barrelier_1714:
+  name: Cucumis
+  homonym: true
+  rank: genus
+  authority:
+    auth: [Barrelier]
+    year: 1714
+  notes: This is generic description more than a proper name.
 cucumis_hecker_1940:
   name: cucumis
   authority:
@@ -3996,6 +4137,30 @@ diraphora_bell_1941:
   authority:
     auth: [Bell]
     year: 1941
+disciflora_gaertner_1762:
+  name: disciflora
+  rank: species
+  authority:
+    source: 1762_gaertner
+    pages: 82
+    illustrations:
+    - plate: I
+      figures: 4
+  citedAs: >
+    Hydra diſciflora, tcntaculis retractilibus ſubdiaphanis; corpore
+    cylindrico, miliaribus glandulis longitudinaliter ſtriato.
+disciflora-green-stalk-var_gaertner_1762:
+  name: null
+  rank: variety
+  authority:
+    source: 1762_gaertner
+    pages: 82
+disciflora-red-feelers-var_gaertner_1762:
+  name: null
+  rank: variety
+  authority:
+    source: 1762_gaertner
+    pages: 82
 discocystinae:
   name: Discocystinae
   rank: Subfamily
@@ -4051,9 +4216,15 @@ dockeryi_lewis.r.d_sprinkle_bailey.j.b_moffit.j_parsley_1987:
     source: 1987_lewis.r.d_sprinkle_bailey.j.b_moffit.j_parsley
 doliolum_pallas_1766:
   name: doliolum
+  rank: species
   authority:
-    auth: [Pallas]
-    year: 1766
+    source: 1766b_pallas
+    pages: 154
+    illustrations:
+    - plate: IX
+      figures:
+      - [10, 12]
+  citedAs: ACTINIÆ DOLIOLI.
 donax:
   name: Donax
   rank: genus
@@ -4668,9 +4839,9 @@ edriophus-cf-laevis_bell.b.m_1982:
     source: 1982_bell.b.m
 edulis_pallas_1774:
   name: edulis
+  rank: species
   authority:
-    auth: [Pallas]
-    year: 1774
+    source: 1774_pallas
 effoeta_linnaeus_1767:
   name: effoeta
   authority:
@@ -5267,6 +5438,14 @@ fasciola:
     source: 1758_linnaeus
     pages: 648
   citedAs: 248. FASCIOLA.
+fasciculatum_bohadsch_1761:
+  name: fasciculatum
+  rank: species
+  authority:
+    source: 1761_bohadsch
+    illustrations:
+    - plate: X
+      figures: 4
 faunus_linnaeus_1758:
   name: faunus
   rank: species
@@ -5407,6 +5586,17 @@ flammea_leske_1778:
   name: flammea
   authority:
     source: 1778_leske
+flava_pallas_1766:
+  name: flava
+  rank: species
+  authority:
+    source: 1766b_pallas
+    pages: 97
+    illustrations:
+    - plate: VIII
+      figures:
+      - [7, 11]
+  citedAs: 5. APHRODITA FLAVA.
 flavescens_müller.o.f_1776:
   name: flavescens
   authority:
@@ -5525,16 +5715,6 @@ frondosa_gunnerus_1767:
     - plate: IV
       figures: [1, 2]
   citedAs: HOLOTHURIA frondoſa.
-fulcis brevibus_leske_1778:
-  name: fulcis brevibus
-  rank: variety
-  authority:
-    source: 1778_leske
-fulcis longis_leske_1778:
-  name: fulcis longis
-  rank: variety
-  authority:
-    source: 1778_leske
 fungia:
   name: Fungia
   authority:
@@ -5627,6 +5807,14 @@ gelatinosum_linnaeus_1767:
   name: gelatinosum
   authority:
     source: 1767_linnaeus
+gelatinosum_bohadsch_1761:
+  name: gelatinosum
+  rank: species
+  authority:
+    source: 1761_bohadsch
+    illustrations:
+    - plate: X
+      figures: 3
 geranioides_lamarck_1816:
   name: geranioides
   authority:
@@ -6817,6 +7005,50 @@ hydra:
     source: 1758_linnaeus
     pages: 816
   citedAs: 309. HYDRA.
+hydra-sp_bohadsch_1761:
+  name: null
+  authority:
+    source: 1761_bohadsch
+    pages: 75
+    illustrations:
+    - plate: VI
+  rank: species
+hydra-sp-1_gaertner_1762:
+  name: null
+  authority:
+    source: 1762_gaertner
+    pages: 78
+    illustrations:
+    - plate: I
+      figures: 1
+  rank: species
+  citedAs: >
+    Hydra tentaculis denudatis, numeroſiſſlimis;
+    corpore longitudinaliter ſulcato.
+hydra-sp-1-red-var_gaertner_1762:
+  name: null
+  authority:
+    source: 1762_gaertner
+    pages: 78
+  rank: variety
+hydra-sp-1-ash-var_gaertner_1762:
+  name: null
+  authority:
+    source: 1762_gaertner
+    pages: 78
+  rank: variety
+hydra-sp-2_gaertner_1762:
+  name: null
+  authority:
+    source: 1762_gaertner
+    pages: 82
+    illustrations:
+    - plate: 1
+      figures: 5
+  rank: species
+  citedAs: >
+    Hydra diſciflora, tentaculis retractilibus, extimo diſci
+    margine tuberculato.
 hymenoptera:
   name: Hymenoptera
   rank: Order
@@ -7568,6 +7800,18 @@ leonina_linnaeus_1758:
     source: 1758_linnaeus
     pages: 37
   citedAs: Leonina. 2.
+lepidota_pallas_1766:
+  name: lepidota
+  rank: species
+  authority:
+    source: 1766b_pallas
+    pages: 94
+    illustrations:
+    - plate: VII
+      figures: 15
+    - plate: VIII
+      figures: [1, 2]
+  citedAs: 3. APHRODITA LEPIDOTA.
 lepocrinites:
   name: Lepocrinites
   authority:
@@ -8138,9 +8382,9 @@ mammifères:
   vulgarSpellingOf: mammalia
 mamillaris_pallas_1774:
   name: mamillaris
+  rank: species
   authority:
-    auth: [Pallas]
-    year: 1774
+    source: 1774_pallas
 mammillaris_pallas_1774:
   name: mammillaris
   altSpellingOf: mamillaris_pallas_1774
@@ -8223,6 +8467,34 @@ mariae_callaway_1877:
   authority:
     auth: [Callaway]
     year: 1877
+marina_plancus_1760:
+  name: marina
+  rank: species
+  authority:
+    auth: [Plancus]
+    year: 1760
+    pages: 108
+    illustrations:
+    - plate: 8
+      figures: [A, B]
+  notes: This is generic description more than a proper name.
+marinus_barrelier_1714:
+  name: marinus
+  rank: species
+  authority:
+    auth: [Barrelier]
+    year: 1714
+    illustrations:
+    - plate: 1293
+  notes: This is generic description more than a proper name.
+marinus_vallisneri_1733:
+  name: marinus
+  rank: species
+  authority:
+    auth: [Vallisneri]
+    year: 1733
+    pages: 442
+  notes: This is generic description more than a proper name.
 marjumicystis:
   name: Marjumicystis
   authority:
@@ -8351,6 +8623,19 @@ membranacea_retzius_1783:
   authority:
     auth: [Retzius]
     year: 1783
+membranaceum_bohadsch_1761:
+  name: membranaceum
+  rank: species
+  authority:
+    source: 1761_bohadsch
+mentula_plancus_1760:
+  name: Mentula
+  needsQualification: true
+  rank: genus
+  authority:
+    auth: [Plancus]
+    year: 1760
+  notes: This is generic description more than a proper name.
 mentula_müller.o.f_1776:
   name: mentula
   authority:
@@ -8577,6 +8862,21 @@ mollusques:
   name: Mollusques
   vulgarSpellingOf: mollusca
   lang: FR
+mollusca-order-1_pallas_1766:
+  name: null
+  rank: Order
+  authority:
+    source: 1766b_pallas
+mollusca-order-2_pallas_1766:
+  name: null
+  rank: Order
+  authority:
+    source: 1766b_pallas
+mollusca-order-3_pallas_1766:
+  name: null
+  rank: Order
+  authority:
+    source: 1766b_pallas
 mollusca-unknown-class-1_macleay_1821:
   name: null
   rank: Class
@@ -9513,6 +9813,12 @@ palaeocystitidae:
 palasterina:
   name: Palasterina
   altSpellingOf: palaeasterina
+palliata_bohadsch_1761:
+  name: palliata
+  rank: species
+  authority:
+    source: 1761_bohadsch
+    pages: 135
 pallidus_lamarck_1816:
   name: pallidus
   authority:
@@ -11506,6 +11812,17 @@ rossica_jaekel_1918:
   authority:
     auth: [jaekel]
     year: 1918
+rostrata_pallas_1766:
+  name: rostrata
+  rank: species
+  authority:
+    source: 1766b_pallas
+    pages: 106
+    illustrations:
+    - plate: VIII
+      figures:
+      - [14, 18]
+  citedAs: 7. APHRODITA ROSTRATA.
 rotalaria_lamarck_1816:
   name: rotalaria
   authority:
@@ -12379,6 +12696,11 @@ sprinkleoglobus:
   authority:
     auth: [zamora, guensburg, sprinkle]
     year: 2024
+squamata_linnaeus_1758:
+  name: squamata
+  rank: species
+  authority:
+    source: 1758_linnaeus
 squamata_lamarck_1816:
   name: squamata
   authority:
@@ -12755,6 +13077,16 @@ sulcata_pennant_1777:
   authority:
     auth: [Pennant]
     year: 1777
+sulcis brevibus_leske_1778:
+  name: sulcis brevibus
+  rank: variety
+  authority:
+    source: 1778_leske
+sulcis longis_leske_1778:
+  name: sulcis longis
+  rank: variety
+  authority:
+    source: 1778_leske
 sumralli_guensburg_sprinkle_2003:
   name: sumralli
   authority:
@@ -12809,6 +13141,21 @@ syringocrinus:
   authority:
     auth: [billings]
     year: 1850
+syrinx:
+  name: Syrinx
+  rank: genus
+  authority:
+    source: 1761_bohadsch
+    pages: 93
+syrinx-sp_bohadsch_1761:
+  name: null
+  rank: species
+  authority:
+    source: 1761_bohadsch
+    pages: 93
+    illustrations:
+    - plate: VII
+      figures: [6, 7]
 ###################### T
 taenia:
   name: Taenia
@@ -12991,6 +13338,10 @@ testudineus_nardin_bohatý_2013:
   name: testudineus
   authority:
     source: 2013_nardin_bohatý
+tethis:
+  name: Tethis
+  altSpellingOf: tethys
+  notes: Not treated as separate from Tethys in IRMNG, unlike Asteria/s
 tethys:
   name: Tethys
   rank: genus
@@ -12998,10 +13349,21 @@ tethys:
     source: 1758_linnaeus
     pages: 653
   citedAs: 254. TETHYS.
-tethis:
-  name: Tethis
-  altSpellingOf: tethys
-  notes: Not treated as separate from Tethys in IRMNG, unlike Asteria/s
+tethyum:
+  name: Tethyum
+  rank: genus
+  authority:
+    source: 1761_bohadsch
+  notes: Ascidian; not Linnaeus's Tethys or Lamarck's Tethya.  ICZN suppressed.
+tethyum-sp_bohadsch_1761:
+  name: null
+  rank: species
+  authority:
+    source: 1761_bohadsch
+    pages: 130
+    illustrations:
+    - plate: X
+      figures: [5, 6]
 tetracystis:
   name: Tetracystis
   authority:
