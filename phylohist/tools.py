@@ -134,7 +134,8 @@ TOOL_DESCRIPTIONS = {
   'contents': (
     'What one source places under a record, as the source prints it: a '
     'classification block laid out as a Systematic Paleontology section '
-    '(rank words on the headings, the type species under its genus, new '
+    "(rank words on the headings, the source's own where the tree records "
+    "one, else the record's; the type species under its genus; new "
     'names marked as the source prints them or by rank: fam. nov., gen. '
     'nov., sp. nov.; provisional or questionable names ?; (sedis mutabilis) '
     'where printed), optionally '
@@ -183,7 +184,8 @@ TOOL_DESCRIPTIONS = {
     'combination there), its position above what the combination says, '
     'the acts (named as new, emended, nomen translatum, moved, a rejected '
     'placement), the page; the heading measures the papers, co-author '
-    'sets and years, the ranks used and the positions given (which is the '
+    'sets and years, the ranks used (each paper at the rank its node '
+    "writes, else the record's) and the positions given (which is the "
     "trajectory's present and history). The same name at other ranks is "
     'included unless include_related is false, and so are the forms '
     'compared with the name (cf., aff.), listed under their own names. '

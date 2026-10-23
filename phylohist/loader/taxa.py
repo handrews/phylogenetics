@@ -673,13 +673,13 @@ class Tree:
 
     if self._taxon:
       # A new combination is an act on a species-group name.
-      if self._data.get('recombined') and fold_rank(self._taxon.rank) not in _COMBINATION_RANKS:
+      if self._data.get('recombined') and fold_rank(self.rank) not in _COMBINATION_RANKS:
         logger.error(f'{self} is `recombined` but is not a species-group name')
 
-      if 'type' in self._data and fold_rank(self._taxon.rank) in SPECIES_GROUP:
+      if 'type' in self._data and fold_rank(self.rank) in SPECIES_GROUP:
         logger.error(f'{self} carries `type` but is a species-level name; its type is a specimen')
 
-      if children_null and fold_rank(self._taxon.rank) in SPECIES_GROUP:
+      if children_null and fold_rank(self.rank) in SPECIES_GROUP:
         logger.error(
           f'{self} carries `children: null` but is a species-level name; '
           'only a taxon above the species says the tree stops'
@@ -901,6 +901,15 @@ class Tree:
   @property
   def taxon(self):
     return self._taxon
+
+  @property
+  def rank(self):
+    """The rank the node sits at: the word it writes, `None` when it
+    writes `rank: null` (the source prints no rank word and no cladistic
+    term), else its record's; `None` on a node with no record."""
+    if 'rank' in self._data:
+      return self._data['rank']
+    return self._taxon.rank if self._taxon is not None else None
 
   @property
   def _path_list(self):

@@ -898,6 +898,9 @@ class Words:
     return cite[: -len(year)].rstrip() if cite.endswith(year) else cite
 
   def rank_lines(self, m):
+    """The ranks a history's papers used the name at, each paper at the
+    rank its node writes, else the record's, with its span and count;
+    `None` when there is only one."""
     rows = m['ranks']
     if len(rows) < 2:
       return None

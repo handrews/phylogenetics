@@ -573,15 +573,18 @@ class _NodeClaims:
     if 'designation' in data:
       claim['designation'] = data['designation']
     # A root has no placement claim to carry `rankAsPrinted`; its usage
-    # carries the one statement a root makes about rank, that it has none.
-    if node.axis == 'root' and 'rank' in data and data['rank'] is None:
-      claim['rankAsPrinted'] = None
+    # carries the rank the root writes, a word or the null that says the
+    # source prints none.
+    if node.axis == 'root' and 'rank' in data:
+      claim['rankAsPrinted'] = data['rank']
     self._emit(claim, field)
 
   def _placement_base(self):
     node, data = self.node, self.data
     claim = self._base('placement')
-    claim['rank'] = node.taxon.rank
+    # The rank the node sits at (`Tree.rank`): the word it writes, else
+    # its record's; `rankAsPrinted` marks one the node wrote.
+    claim['rank'] = node.rank
     if 'rank' in data:
       claim['rankAsPrinted'] = data['rank']
     for flag in _PLACEMENT_FLAGS:
@@ -922,7 +925,8 @@ def derived_coverage(roots):
   """Per source, `{kind: value}` for `material`, `occurrences`,
   `illustrations`, `synonymy`, `types` and `skeleton`, from raw node state over
   the primary, non-cited, named nodes of the source's taxonomy trees (a cladogram prints
-  no material): `na` when the file lists the kind's fields as `unused`;
+  no material), each node at the rank it sits at (the word it writes, else
+  its record's): `na` when the file lists the kind's fields as `unused`;
   `None` when no node writes a null for them (a value records what the
   source prints, not that the file was audited for it); else `all` when no
   node lacks the fields (`partly` if a material entry has `listComplete:
@@ -964,11 +968,9 @@ def derived_coverage(roots):
         continue
       counted = nodes
       if 'ranks' in spec:
-        counted = [node for node in counted if fold_rank(node.taxon.rank) in spec['ranks']]
+        counted = [node for node in counted if fold_rank(node.rank) in spec['ranks']]
       if 'excludeRanks' in spec:
-        counted = [
-          node for node in counted if fold_rank(node.taxon.rank) not in spec['excludeRanks']
-        ]
+        counted = [node for node in counted if fold_rank(node.rank) not in spec['excludeRanks']]
       if spec.get('named'):
         counted = [node for node in counted if placeholder_kind(node.taxon) is None]
       via_field, via_key = spec.get('via', (None, None))

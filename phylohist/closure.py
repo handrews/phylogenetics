@@ -353,9 +353,10 @@ class Closure:
 
   def measurement(self, record, include_related=True, trees=TAXONOMY, years=None):
     """The trajectory's header: the positions a name has been given
-    (parent families) and the ranks it has been used at, each with the
-    papers, co-author sets and years; the latest position by year; the
-    last paper for each earlier one."""
+    (parent families) and the ranks it has been used at (each paper at the
+    rank its node writes, else the record's), each with the papers,
+    co-author sets and years; the latest position by year; the last paper
+    for each earlier one."""
     schemes = self.schemes([record], include_related, trees, years)
     keys = self.expand([record], include_related)
     # The rank a source uses the name at, counted in the same trees as the
@@ -363,7 +364,6 @@ class Closure:
     # are entered less consistently and are a later concern.
     ranks = {}
     for key in keys:
-      rank = fold_rank(self.rank(key)) or 'unranked'
       for claim in self.store.by_subject.get(key, ()):
         if claim['kind'] != 'usage':
           continue
@@ -374,6 +374,8 @@ class Closure:
           continue
         if not self._wanted(claim, trees, years):
           continue
+        rank = self.store.node_rank(claim['source'], claim['path'], key)
+        rank = fold_rank(rank) or 'unranked'
         entry = ranks.setdefault(rank, {'rank': rank, 'records': set(), 'sources': set()})
         entry['records'].add(key)
         entry['sources'].add(claim['source'])

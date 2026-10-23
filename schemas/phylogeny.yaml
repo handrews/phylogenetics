@@ -581,10 +581,11 @@ $defs:
           species implicit; `null` says the protologue prints no rank word
           and no cladistic term for the taxon, and the loader reads it as
           no rank (a modern unranked clade is `Clade`). An unnamed record
-          spells its rank, and a node giving no rank of its own under a
-          genus, subgenus or species is at a rank below its parent's; a
-          node written `rank: null` stands outside that order (the loader
-          checks this). A record with `mineral: true` writes `rank: null`:
+          spells its rank, and a node under a genus, subgenus or species
+          is at a rank below its parent's, each at the word it writes,
+          else at its record's; a node written `rank: null` stands outside
+          that order (the loader checks this). A record with
+          `mineral: true` writes `rank: null`:
           a mineral formation's name has no rank.
         oneOf:
         - $ref: "#/$defs/rank"
@@ -825,8 +826,12 @@ $defs:
         - type: "null"
       rank:
         description: |
-          `null`: the source prints no rank word and no cladistic term for
-          the taxon (one it calls a clade is `Clade`).
+          The rank this source places the taxon at, over the record's,
+          wherever a node's rank matters: the placement claim, the rank
+          order under a genus or species, the open-nomenclature checks,
+          the listings and the history. A node that writes none sits at
+          its record's rank. `null`: the source prints no rank word and no
+          cladistic term for the taxon (one it calls a clade is `Clade`).
         oneOf:
         - $ref: "phylogeny#/$defs/rank"
         - type: "null"

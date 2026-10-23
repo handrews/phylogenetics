@@ -279,41 +279,32 @@ def _report_protologue_mismatches(corpus):
 
 # The ranks whose order every source keeps: a genus holds subgenera and
 # species, a species its subspecies and varieties. Above the genus group a
-# source's scheme is its own (roadmap G8; Macleay 1821 lists classes under
-# an order), so a node there says nothing about the ranks of its children.
+# source's scheme is its own (Macleay 1821 lists classes under an order),
+# so a node there says nothing about the ranks of its children.
 _ORDERED_GROUPS = GENUS_GROUP + SPECIES_GROUP
-
-
-def _placed_rank(node):
-  """The rank a node sits at: its printed rank word, or its record's where
-  it gives none; `None` for a node written `rank: null`, which the source
-  places with no rank, so that any rank may sit above or below it."""
-  if 'rank' in node.data:
-    return node.data['rank']
-  return node.taxon.rank
 
 
 def _report_rank_order(corpus):
   # A child of a genus, subgenus or species in a taxonomy is at a rank
-  # below its parent's. A node giving no rank of its own sits where its
-  # record's rank says, so the record must agree with the tree: an open
-  # form under a genus is a species, whatever its record says. A node
-  # with a rank word is the protologue check's, and one written
-  # `rank: null` stands outside the order.
+  # below its parent's, each node at the rank it sits at (`Tree.rank`):
+  # the word it writes, else its record's, so a record must agree with the
+  # tree where its node gives no rank (an open form under a genus is a
+  # species, whatever its record says). A node written `rank: null`
+  # stands outside the order.
   misplaced = 0
   for trees in corpus.roots.values():
     for root in trees:
       if root.tree_type != Tree.TYPE_TAXONOMY:
         continue
       for node in root.walk():
-        if node.axis != 'children' or node.taxon is None or 'rank' in node.data:
+        if node.axis != 'children' or node.taxon is None or node.rank is None:
           continue
         parent = node.parent
         while parent is not None and parent.taxon is None:
           parent = parent.parent
         if parent is None:
           continue
-        above, own = _placed_rank(parent), node.taxon.rank
+        above, own = parent.rank, node.rank
         if fold_rank(above) not in _ORDERED_GROUPS:
           continue
         # A rank the schema's order puts after the species group (an
@@ -321,8 +312,12 @@ def _report_rank_order(corpus):
         # table left it out.
         if rank_order(own) > rank_order(above):
           continue
+        if 'rank' in node.data:
+          where = f'{node.taxon.key}: printed rank'
+        else:
+          where = f'taxa.yaml {node.taxon.key}: rank'
         logger.error(
-          f'taxa.yaml {node.taxon.key}: rank {_protologue_value(own)} but the tree places '
+          f'{where} {_protologue_value(own)} but the tree places '
           f'it under {parent.taxon.key} ({above}) at {node}'
         )
         misplaced += 1

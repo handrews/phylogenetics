@@ -195,10 +195,25 @@ def test_a_null_rank_is_a_null_rank_as_printed(records):
   claims = _claims(records, root, 330)
   vermes = _at(claims, '330/children/0')
   assert 'rankAsPrinted' in vermes and vermes['rankAsPrinted'] is None
-  # The record's rank is unchanged, and a node with no `rank` has no key.
-  assert vermes['rank'] == 'Class'
-  assert 'rankAsPrinted' not in _at(claims, '330/children/1')
-  assert 'rankAsPrinted' not in _at(claims, '330', 'usage')
+  # The null is the node's rank; a node with no `rank` has no key and its
+  # record's rank; a root carries the word it writes on its usage.
+  assert vermes['rank'] is None
+  echinodermata = _at(claims, '330/children/1')
+  assert 'rankAsPrinted' not in echinodermata and echinodermata['rank'] == 'Phylum'
+  assert _at(claims, '330', 'usage')['rankAsPrinted'] == 'Kingdom'
+
+
+def test_a_printed_rank_word_is_the_placements_rank(records):
+  root = {
+    'taxon': 'animalia',
+    'rank': 'Kingdom',
+    'children': [{'taxon': 'vermes', 'rank': 'Order'}, {'taxon': 'echinodermata'}],
+  }
+  claims = _claims(records, root, 333)
+  vermes = _at(claims, '333/children/0')
+  assert vermes['rank'] == 'Order' and vermes['rankAsPrinted'] == 'Order'
+  assert 'rankAsPrinted' not in _at(claims, '333/children/1')
+  assert _at(claims, '333', 'usage')['rankAsPrinted'] == 'Kingdom'
 
 
 def test_an_inferred_node_with_null_pages_has_none(records):
@@ -285,12 +300,14 @@ def test_the_placement_sentence_says_unranked(synthetic):
   assert 'places it under Animalia, unranked' in sentences
 
 
-def test_the_placements_table_keeps_the_records_rank(synthetic):
+def test_the_placements_cell_carries_the_nodes_rank(synthetic):
+  # The row's rank column is the record's; a cell's is the rank the node
+  # places it at, here the null it writes.
   block = synthetic.placements(['vermes'])
   [row] = [r for r in block['rows'] if r['record'] == 'vermes']
   assert row['cells'][1] == [{'value': 'Class'}]
   [cell] = [c for cells in row['cells'][2:] for c in cells if SOURCE in c['claim']]
-  assert cell['value'] == 'Animalia' and cell['rank'] == 'Class'
+  assert cell['value'] == 'Animalia' and cell['rank'] is None
 
 
 def test_an_unranked_root_prints_its_name_alone(records, corpus, tmp_path):
@@ -304,6 +321,21 @@ def test_an_unranked_root_prints_its_name_alone(records, corpus, tmp_path):
   [block] = ClaimStore(directory).contents(SOURCE, 'vermes')
   assert block['rendered'].splitlines()[1] == '  Vermes'
   assert block['nodes'][0]['unranked'] is True
+
+
+def test_a_root_prints_the_rank_it_writes(records, corpus, tmp_path):
+  # A root's usage carries the word it writes, and the listing prints it
+  # over the record's Class; the node's `rank` stays the record's.
+  root = {'taxon': 'vermes', 'rank': 'Order', 'pages': 12, 'children': [{'taxon': 'mollusca'}]}
+  claims = _claims(records, root, 343)
+  assert _at(claims, '343', kind='usage')['rankAsPrinted'] == 'Order'
+  directory = tmp_path / 'claims'
+  shutil.copytree(corpus.claims, directory)
+  (directory / f'{SOURCE}.jsonl').write_text(''.join(json.dumps(c) + '\n' for c in claims))
+  [block] = ClaimStore(directory).contents(SOURCE, 'vermes')
+  assert block['rendered'].splitlines()[1:] == ['  Order Vermes', '    Order Mollusca']
+  node = block['nodes'][0]
+  assert node['rank'] == 'Class' and node['rankWord'] == 'Order' and 'unranked' not in node
 
 
 # -- `children: null` and the derived `skeleton` coverage -----------------------
@@ -594,6 +626,16 @@ def test_a_section_and_an_unranked_node_count(records, monkeypatch):
   assert _skeleton(records, _phylum(tree, {'taxon': SECTION, 'children': None}), 1134) == 'all'
 
 
+def test_a_node_counts_at_the_rank_it_writes(records):
+  # A genus the source prints as a species is species-level there: it
+  # counts for `material` and not for `skeleton`.
+  genus = {'taxon': GENUS, 'rank': 'species', 'material': None}
+  tree = _phylum({'taxon': CLASS, 'children': None}, {'taxon': ORDER, 'children': [genus]})
+  metadata = {**_BASE, 'position': 1146, 'file_unused': ()}
+  values = derived_coverage({'s': [Tree(tree, metadata, corpus=records)]})['s']
+  assert values['material'] == 'all' and values['skeleton'] == 'all'
+
+
 def test_a_placeholder_above_the_species_level_does_not_count(records):
   tree = _phylum({'taxon': ORDER, 'children': None}, {'openTaxon': PLACEHOLDER})
   assert _skeleton(records, tree, 1135) == 'all'
@@ -798,6 +840,20 @@ def test_the_members_row_of_a_species_appears_only_with_content(stopped):
   assert _members(_table(stopped, SPECIES_2)) == [
     ('1150/children/1/children/0/children/0/children/1', 'entered', 'claims', 1)
   ]
+
+
+def test_the_content_rows_follow_the_rank_the_node_writes(records, corpus, tmp_path):
+  # A genus the source prints as a species gets the species-level rows:
+  # specimens and figures always, no type row, and no members row without
+  # children or a `skeleton` absence.
+  root = {'taxon': ORDER, 'children': [{'taxon': GENUS, 'rank': 'species'}]}
+  claims = _claims(records, root, 344, DEHM)
+  directory = tmp_path / 'claims'
+  shutil.copytree(corpus.claims, directory)
+  (directory / f'{DEHM}.jsonl').write_text(''.join(json.dumps(c) + '\n' for c in claims))
+  table = _table(ClaimStore(directory), GENUS)
+  [content] = [n for n in table['content'] if n['path'] == '344/children/0']
+  assert [r['kind'] for r in content['rows']] == ['specimens', 'occurrences', 'figures', 'synonymy']
 
 
 def test_statements_by_placement_include_the_skeleton_absence(stopped):
