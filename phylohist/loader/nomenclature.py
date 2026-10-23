@@ -100,6 +100,16 @@ def _level_known(record):
   return record.rank is not None or record.mineral
 
 
+def _node_record(node, record):
+  """The record at the rank its node sits at, as the loader's `Tree.rank`
+  reads it: the node's written `rank` (a word, or `None` for a written
+  null) over the record's; the record itself when the node writes none
+  (or there is none)."""
+  if record is None or 'rank' not in node:
+    return record
+  return _Record(record.name, node['rank'], record.mineral)
+
+
 def _rank_words(record):
   return record.rank or ('mineral' if record.mineral else 'no rank')
 
@@ -116,9 +126,10 @@ def compared_link(node):
 def compared_links(node, taxa):
   """A `cf` or `aff` sits only on an `openTaxon` node, never both on one
   node; its target has a record that is named (not itself a placeholder),
-  and the open record and the target are both species-level or both not
-  (a record written `rank: null` is not compared; a mineral, which has no
-  rank, is no species-level name); an error otherwise."""
+  and the open form and the target are both species-level or both not,
+  the open form at the rank its node writes, else its record's (a form
+  at no rank, written or recorded, is not compared; a mineral, which has
+  no rank, is no species-level name); an error otherwise."""
   signs = [sign for sign in SIGNS if sign in node]
   messages = [
     ('error', f'`{sign}` on a node that is not an `openTaxon`')
@@ -127,7 +138,9 @@ def compared_links(node, taxa):
   ]
   if len(signs) > 1:
     messages.append(('error', 'both `cf` and `aff` on one node'))
-  own = taxa(node['openTaxon']) if isinstance(node.get('openTaxon'), str) else None
+  own = None
+  if isinstance(node.get('openTaxon'), str):
+    own = _node_record(node, taxa(node['openTaxon']))
   for sign in signs:
     key = node[sign]
     if not isinstance(key, str):
@@ -152,13 +165,14 @@ def compared_links(node, taxa):
 
 
 def quoted_parent(node, taxa):
-  """`quotedParent` quotes a species' genus, so the node's own record is
-  species-level; an error otherwise (a record written `rank: null` is not
-  reported; a mineral, which has no rank, is no species-level name)."""
+  """`quotedParent` quotes a species' genus, so the node is species-level,
+  at the rank it writes, else its record's; an error otherwise (a node at
+  no rank, written or recorded, is not reported; a mineral, which has no
+  rank, is no species-level name)."""
   if not node.get('quotedParent'):
     return []
   key = next((node[f] for f in _OWN_FIELDS if isinstance(node.get(f), str)), None)
-  record = taxa(key) if key is not None else None
+  record = _node_record(node, taxa(key)) if key is not None else None
   if record is None or not _level_known(record) or _is_species_level(record):
     return []
   return [('error', '`quotedParent` on a node that is not a species-level name')]

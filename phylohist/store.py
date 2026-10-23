@@ -337,6 +337,21 @@ class ClaimStore:
   def _node_claims(self, source_key, path):
     return self.at_path[source_key].get(path, [])
 
+  def node_rank(self, source_key, path, record):
+    """The rank the node at `path` places `record` at: its placement
+    claim's `rank` (the word the tree writes, else the record's), a root
+    usage's `rankAsPrinted`, else the record's. Only a claim whose subject
+    is the record counts: a bracket's placement and a cladogram terminal's
+    second usage sit at the same path as the node's own."""
+    for claim in self._node_claims(source_key, path):
+      if claim.get('subject') != record:
+        continue
+      if claim['kind'] == 'placement':
+        return claim.get('rank')
+      if claim['kind'] == 'usage' and 'rankAsPrinted' in claim:
+        return claim['rankAsPrinted']
+    return self.rank(record)
+
   def _node(self, source_key, path, depth):
     at = self._node_claims(source_key, path)
     usage = next(
@@ -355,7 +370,7 @@ class ClaimStore:
     for act in acts:
       if act['actKind'] in ('new', 'placeholder'):
         flags['new'] = True
-    rank_word = (placement or {}).get('rank') or self.rank(key)
+    rank_word = self.node_rank(source_key, path, key)
     node = {
       'key': key,
       'name': self.names.get(key, {}).get('name'),
@@ -379,10 +394,8 @@ class ClaimStore:
     if usage and usage.get('compared'):
       # A cf. or aff. form: the source originates the form, not a new taxon.
       node['compared'] = usage['compared']['sign']
-    stated = placement or usage or {}
-    if 'rankAsPrinted' in stated and stated['rankAsPrinted'] is None:
+    if rank_word is None and 'rankAsPrinted' in base:
       # `rank: null`: the source places the taxon with no rank word.
-      rank_word = None
       node['unranked'] = True
     if rank_word:
       node['rankWord'] = rank_word[:1].upper() + rank_word[1:]
@@ -737,7 +750,7 @@ class ClaimStore:
         {
           'key': n['key'],
           'label': self.words.display(n['key'], source_key, n['path']),
-          'rank': self.rank(n['key']),
+          'rank': self.node_rank(source_key, n['path'], n['key']),
           'kind': 'placeholder' if n['placeholder'] else 'placement',
           'alternatives': [self.words.display(a) for a in n['alternatives']],
           'provisional': n['provisional'],
@@ -1126,7 +1139,9 @@ class ClaimStore:
     """What a source gives at one node, per content kind: entered (with the
     count and the claims it rests on), none printed (the auditor's `absence`
     claim, or a source coverage that leaves nothing to enter), or not
-    entered. Above species rank the specimens and figures rows appear only
+    entered, the node at the rank it sits at (`node_rank`: the word the
+    tree writes, else the record's). Above species rank the specimens and
+    figures rows appear only
     when the node carries something of the kind, and the type row appears
     for a genus or subgenus, and at any other rank only with a type
     statement or a `types` absence. The members row appears for a named
@@ -1134,15 +1149,13 @@ class ClaimStore:
     species level only with children entered or a `skeleton` absence."""
     at = self._node_claims(source_key, path)
     coverage = self.sources[source_key].get('coverage') or {}
-    species_level = self._rank_of(record) in SPECIES_GROUP
+    rank = fold_rank(self.node_rank(source_key, path, record))
+    placeholder = (self.names.get(record) or {}).get('placeholder')
+    species_level = rank in SPECIES_GROUP
     # A placeholder (an unnamed or open genus) has no type to state.
-    genus_level = self._rank_of(record) in GENUS_GROUP and not (self.names.get(record) or {}).get(
-      'placeholder'
-    )
+    genus_level = rank in GENUS_GROUP and not placeholder
     # A placeholder (an unnamed or open taxon) has no members of its own.
-    above_species = self._rank_of(record) not in SPECIES_GROUP and not (
-      self.names.get(record) or {}
-    ).get('placeholder')
+    above_species = rank not in SPECIES_GROUP and not placeholder
     rows = []
     for label, material_kinds, absence_of, coverage_kind in _NODE_CONTENT:
       if material_kinds is None:

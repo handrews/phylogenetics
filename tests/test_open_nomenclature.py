@@ -180,6 +180,23 @@ def test_compared_links_skips_the_rank_check_for_a_missing_open_record():
   assert nomenclature.compared_links({'openTaxon': 'not-yet', 'cf': 'genus-a'}, LOOKUP) == []
 
 
+def test_compared_links_read_the_open_form_at_the_rank_its_node_writes():
+  # The node's written rank is the open form's, over its record's; a
+  # written null says nothing about its level.
+  node = {'openTaxon': 'open-bin', 'cf': 'species_a', 'rank': 'species'}
+  assert nomenclature.compared_links(node, LOOKUP) == []
+  node = {'openTaxon': 'open-sp-a', 'cf': 'species_a', 'rank': 'Genus'}
+  assert nomenclature.compared_links(node, LOOKUP) == [
+    (
+      'error',
+      '`cf` target "species_a" (species) is not at the rank level of the open form '
+      '"open-sp-a" (Genus)',
+    )
+  ]
+  node = {'openTaxon': 'open-sp-a', 'cf': 'genus-a', 'rank': None}
+  assert nomenclature.compared_links(node, LOOKUP) == []
+
+
 def test_quoted_parent():
   assert nomenclature.quoted_parent({'taxon': 'species_a', 'quotedParent': True}, LOOKUP) == []
   assert nomenclature.quoted_parent({'taxon': 'varietya', 'quotedParent': True}, LOOKUP) == []
@@ -189,6 +206,17 @@ def test_quoted_parent():
   assert nomenclature.quoted_parent({'quotedParent': True}, LOOKUP) == []
   assert nomenclature.quoted_parent({'taxon': 'genus-a', 'quotedParent': True}, LOOKUP) == [
     ('error', '`quotedParent` on a node that is not a species-level name'),
+  ]
+
+
+def test_quoted_parent_reads_the_node_at_the_rank_it_writes():
+  species = {'taxon': 'genus-a', 'quotedParent': True, 'rank': 'species'}
+  assert nomenclature.quoted_parent(species, LOOKUP) == []
+  unranked = {'taxon': 'species_a', 'quotedParent': True, 'rank': None}
+  assert nomenclature.quoted_parent(unranked, LOOKUP) == []
+  genus = {'taxon': 'species_a', 'quotedParent': True, 'rank': 'Genus'}
+  assert nomenclature.quoted_parent(genus, LOOKUP) == [
+    ('error', '`quotedParent` on a node that is not a species-level name')
   ]
 
 

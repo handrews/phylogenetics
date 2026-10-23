@@ -1563,24 +1563,34 @@ and Corrections (p. 300) and its "non Forbes" caution in a footnote on p. 238,
 while the node's `pages` says 245. Rule: a node's `pages` point where the
 claim is printed, and addenda are part of the source.
 
-**G8. Rank stated in the tree, not the record (long term).** Cladistic
+**G8. Rank stated in the tree, not the record (done 2026-10-22).** Cladistic
 authors use names that carry a traditional rank while declining to assign
 one; Smith 1985 prints "Plesion (Class)". Requiring rank on the tree node
-and dropping it from `taxa.yaml` would record each source's own usage. The
-migration is not automatic; noted, not scheduled.
+and dropping it from `taxa.yaml` would record each source's own usage.
+Built 2026-10-22, without the migration: a node that writes `rank`, a word
+or `null`, sits at that rank wherever a node's rank matters (the placement
+claim's `rank`, the order check under a genus or species, the
+open-nomenclature checks, the node checks, the derived coverage, the
+listings and `history`'s ranks); a node that writes none takes its
+record's, and nothing moves out of `taxa.yaml`. `rankAsPrinted` marks a
+written rank, on the placement or on a root's usage claim. The protologue
+check is unchanged: it compares the record's declared rank with its `new`
+node's.
 
 The reading round supplies the quote: "Inclusion of Linnaean ranks reflects
 editorial policy rather than the views of the author" (Sumrall 2009 p. 991).
 Sumrall, Brett & Cornell 2006 print no rank word above genus and list
 Isorophina above Isorophida (p. 190); the tree nests by the records' ranks
-and says so in `notes`, which is the right call until G8.
+and says so in `notes`; with G8 in force the nodes may write `rank: null`,
+the auditor's call.
 Bell 1891 is the older shape of the same problem: Branch, Stage,
 Sub-branch, Sub-stage, Division and Class, with "Sub-stage" on one side of
 a split and "Division" on the other at the same depth (pp. 212–213), and
 Eleutherozoa printed as "2nd Sub-branch" where the record says Subphylum.
-Bather prints Pelmatozoa as "Sub-Phylum" in 1899 and "Grade" in 1900. Until
-G8 lands, the draft tree quotes each rank word in `notes`; whether Stage,
-Sub-branch and Sub-stage join the enum is the auditor's call.
+Bather prints Pelmatozoa as "Sub-Phylum" in 1899 and "Grade" in 1900. The
+draft tree quotes each rank word in `notes`; once Stage, Sub-branch and
+Sub-stage are in `data/ranks.yaml` (the auditor's call) the words go on the
+nodes.
 
 Decided 2026-10-22 and built in the rank-table chunk (`data/ranks.yaml`
 with `phylohist/ranks.py` over it; the exceptions and the lint's rules live

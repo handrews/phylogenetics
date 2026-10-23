@@ -89,6 +89,9 @@ every `synonyms`, `non`, `removed`, `parents`, `or` and `type` entry. Fields add
 - `designation`: the phrase the node prints for an open taxon, when it
   declares one (an `openTaxon` node only; the loader rejects it beside
   `taxon` or `mineralTaxon`).
+- `rankAsPrinted`: on a root's usage only, the rank the root writes, a
+  word or null (the source prints no rank word); a child's written rank
+  goes on its placement claim.
 - A `synonyms` or `non` entry with no name field of its own is a usage of
   the node's own name by the cited source (the 2020 tree's stacked
   citations of *grayae* are this shape); it carries `ownName: true`.
@@ -101,13 +104,15 @@ Emitted for every child under its parent in a taxonomy. Fields added:
   siblings, since the tree keeps the printed order. Under an unnamed clade
   node the parent is null and `parentPath` points at the node; when the
   named ancestor is further up, `parentPath` says so too.
-- `rank`: the record's rank today, null for a record written `rank: null`
-  (its source prints no rank word and no cladistic term). When the tree
-  carries a printed rank word in `citedAs` or `notes`, `rankAsPrinted`
-  holds it; the rule that
-  rank belongs to the tree node is G8, not yet in force. A node written
-  `rank: null` (the source places the taxon with no rank word) carries
-  `rankAsPrinted: null`; `rank` is the record's, as ever.
+- `rank`: the rank the source places the taxon at: the word the node
+  writes, null for a node written `rank: null` (the source places the
+  taxon with no rank word and no cladistic term), else the record's (null
+  for a record written `rank: null`). `rankAsPrinted` is present exactly
+  when the node writes `rank`, with the same word or null; a root, which
+  has no placement claim, carries it on its usage claim. The listings,
+  `history`'s ranks and the placements cell read the node's rank; the
+  names index, `resolve_name`, the combination, the block headings and
+  the rank columns read the record's.
 - Flags copied from the node: `provisional`, `mutable` (the source
   prints "sedis mutabilis"), `questionable`, `quoted`,
   `quotedParent` (the genus is printed in quotation marks in this
@@ -487,9 +492,11 @@ Otherwise, when no node writes a `null` for the kind's fields, it is `None` and 
 records what the source prints, not that the file was audited for it. When
 some node writes a null, the kind is `all` if no node lacks the fields
 (`partly` if a material entry has `listComplete: false`), and `partly` if
-some node does. For `material` and `illustrations` only the species-level
-nodes (species, subspecies, variety) are counted, since specimens are
-cited and figures drawn for species; `occurrences` counts every named
+some node does. Each node counts at the rank it sits at, the word it
+writes, else its record's. For `material` and `illustrations` only the
+species-level nodes (species, subspecies, variety) are counted, since
+specimens are cited and figures drawn for species; `occurrences` counts
+every named
 node, and a node whose `material` entry has a `context` counts as carrying
 it. `synonymy` counts every named node of every rank: a node carrying
 `synonyms` or `non`, as a value or a null, is present (a `non` list is a
@@ -502,7 +509,7 @@ genus is present when it carries `type`, a node or a null, or has a child
 marked `isType` (the older form of the same statement); only `type: null`
 writes a null. `skeleton` counts the named nodes above the species level,
 genus and subgenus included (any rank but the species-level ones, so a
-node with no rank (`rank: null`) or a `section` node counts, and a placeholder, a bin with no members of its own,
+node at no rank, written or recorded, or a `section` node counts, and a placeholder, a bin with no members of its own,
 does not): `children` as a list or as a null is present, and only
 `children: null` writes a null. A genus with no `children` is a genus whose
 species are not yet entered, since a source often lists no species; a
@@ -545,7 +552,8 @@ not fail on them.
 - No merging of spellings (B28): a lookup folds ligatures, diacritics,
   hyphens and spaces (G10) to find records, and the claims keep the key
   as cited.
-- No rank inference: the record's rank is a convenience until G8.
+- No rank inference: a node that writes no `rank` takes its record's, a
+  convenience; one that writes it sits at the rank written.
 - No inference from absence: a kind with no claims for a source means
   "not captured", and only the declared coverage can say whether the paper
   prints any.
@@ -673,7 +681,7 @@ blocks; the CLI (`phylohist <tool>`, `--style`), the MCP server
 | `descendants(records, …)` | a table over the closure: everything any source places under the records, with how each was reached |
 | `ancestors(records, …)` | a chains block: each source's chain of taxa above the records, one line per source |
 | `placed_under(record, parent)` | a chains block of the sources that place the record under the parent, with the taxa between; first and last stated |
-| `history(record, include_related, synonymy)` | a timeline: one line per source in year order with the name as used, its position, the acts and the page; the measurement as the heading; each source's synonymy with `synonymy`; with `years`, only the sources in that span: the parameters report the span asked, the heading the span found |
+| `history(record, include_related, synonymy)` | a timeline: one line per source in year order with the name as used, its position, the acts and the page; the measurement as the heading (the papers, the positions given and the ranks used, each paper at the rank its node writes, else the record's); each source's synonymy with `synonymy`; with `years`, only the sources in that span: the parameters report the span asked, the heading the span found |
 | `synonymy(record, source)` | the synonymy a source prints under a record, as a list |
 | `statements(record, source, kind, act_kind)` | every claim about a record as a sentence with source, year and page, the drill-down; with a source named and nothing of that kind entered, the gap block for it ("nothing of this kind" when the source holds other claims about the record), and with no kind asked the gap names every kind of the source not yet entered; with a source and `kind='absence'`, a table of what the source gives for the record per content kind (members, specimens, occurrences, figures, synonymy, type; one group per node), each `N entered`, `none printed` (the auditor's `absence` claim, or a source coverage of `na` or `all` that leaves none to enter) or `not entered`; above species rank the specimens and figures rows appear only when the node carries some, since those kinds are cited for species, and the type row appears for a genus or subgenus, and at another rank only with a type statement (a `type` node, or a child marked `isType`) or a `types` absence, and the members row (the placements of the node's children, `N entered`, or a `skeleton` absence) appears for a named node above the species level, and at species level only with children entered or a `skeleton` absence; with no kind and an `act_kind` of `type`, or `kind='act'`, the `types` absence is selected too, and `kind='placement'` selects the `skeleton` absence; `kind` is one of the claim kinds other than `section` and `secondhand`, or `occurrences`, `illustrations`, `specimens` for one kind of material, and `act_kind` one of the act kinds: any other value is refused |
 | `specimen_history(number, repository, source, label)` | every citation of one specimen, by catalog number as a paper prints it ("UQF 5404", "F. 5404"): a list of the specimen claims whose `joinKeys` hold the number's key (`<repository>:<folded bare number>`, built as the extractor builds it) and those whose printed range contains it, one line per claim in year order: the role ("holotype of X") or, with none, "cited under X", "(doubtfully assigned)", the number as printed when it is not the one asked about (or "in the run …"), and the figures tied to it (locator notes left out) or "not figured"; for an entry with a run or several numbers only the figures whose own `of` names the number asked about, and nothing about figures when none does unless the claim is `figured: false`. The prefix names the repository; a number without one, or with a shared prefix, takes `repository` (a registry key), and without it the result is the `absent` statement, naming the competing repositories when the prefix is shared. A specimen with no number is asked for by `source` and `label` (the specimen claim of that source whose label matches, folded; no match is the `absent` statement, worded `the specimen "A" of Bather 1914`); with neither a number nor both of them the call is refused. The heading names what was asked (`Specimen UQF 5404 (holder)` or `Specimen "A" of Bather 1914`). Either way every claim in the component of a claim found is listed (`sameAsClaim` in either direction, through a chain, or a shared join key between one-number entries), still in year order; a line reached only through a link ends `(the same specimen according to Bather 1914)`, naming the source that carries the link, or `(the same specimen, editor's inference)` when the carrying claim's `inferredFields` lists `sameAs` |

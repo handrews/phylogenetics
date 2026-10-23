@@ -1,10 +1,11 @@
 """A child of a genus, subgenus or species node in a taxonomy is at a rank
-below its parent's. A node giving no rank of its own sits where its
-record's rank says, so the record must agree with the tree: an open form
-under a genus is a species, whatever its record says, and an error
-otherwise. A node written `rank: null` stands outside the order, and above
-the genus group a source's scheme is its own (roadmap G8), so nothing is
-checked there.
+below its parent's, each node at the rank it sits at (`Tree.rank`): the
+word it writes, else its record's. So a record must agree with the tree
+where its node gives no rank (an open form under a genus is a species,
+whatever its record says, and an error otherwise), and a node that writes
+a word is checked by that word. A node written `rank: null` stands outside
+the order, and above the genus group a source's scheme is its own, so
+nothing is checked there.
 
 The records and trees are synthetic, built on each test's copy of the
 loaded test corpus (`records`).
@@ -62,10 +63,9 @@ def _open_under(parent, **node):
   return {'taxon': parent, 'children': [{'openTaxon': OPEN, 'new': True, **node}]}
 
 
-def _misplaced(key, rank, parent, above, where):
-  return (
-    f'taxa.yaml {key}: rank "{rank}" but the tree places it under {parent} ({above}) at {where}'
-  )
+def _misplaced(key, rank, parent, above, where, printed=False):
+  opening = f'{key}: printed rank' if printed else f'taxa.yaml {key}: rank'
+  return f'{opening} "{rank}" but the tree places it under {parent} ({above}) at {where}'
 
 
 def test_an_open_species_under_a_genus_says_nothing(records, caplog):
@@ -108,10 +108,45 @@ def test_the_parents_printed_rank_word_is_the_rank_it_sits_at(records, caplog):
   assert errors == [_misplaced(OPEN, 'subgenus', GENUS, 'Subgenus', f'{root}/0/{OPEN}')]
 
 
-def test_a_node_printing_its_own_rank_word_is_left_to_the_protologue_check(records, caplog):
-  # The source's own rank word is compared with the record where the node
-  # is the protologue; this check reads only a node that gives none.
-  assert _check(records, _open_under(GENUS, rank='Genus'), rank='genus', caplog=caplog)[0] == []
+def test_a_node_printing_its_own_rank_word_is_checked_by_that_word(records, caplog):
+  # The source's own rank word is the rank the node sits at, whatever its
+  # record says, and the error names the word as printed.
+  errors, _, root = _check(records, _open_under(GENUS, rank='Genus'), caplog=caplog)
+  assert errors == [_misplaced(OPEN, 'Genus', GENUS, 'genus', f'{root}/0/{OPEN}', printed=True)]
+  assert _check(records, _open_under(GENUS, rank='species'), rank='genus', caplog=caplog)[0] == []
+
+
+def test_a_parent_and_child_at_printed_words(records, caplog):
+  tree = {
+    'taxon': GENUS,
+    'rank': 'Subgenus',
+    'children': [{'openTaxon': OPEN, 'new': True, 'rank': 'Subgenus'}],
+  }
+  errors, _, root = _check(records, tree, caplog=caplog)
+  assert errors == [
+    _misplaced(OPEN, 'Subgenus', GENUS, 'Subgenus', f'{root}/0/{OPEN}', printed=True)
+  ]
+  tree['children'][0]['rank'] = 'species'
+  assert _check(records, tree, rank='genus', caplog=caplog)[0] == []
+
+
+def test_a_node_sits_at_the_rank_it_writes_else_at_its_records(records):
+  tree = {
+    'taxon': GENUS,
+    'rank': 'Subgenus',
+    'children': [
+      {'taxon': SPECIES, 'rank': None},
+      {'taxon': SUBGENUS},
+      {'notes': 'a bin', 'children': []},
+    ],
+  }
+  metadata = {'source_key': SOURCE, 'type': 'taxonomy', 'position': next(POSITIONS)}
+  root = Tree(tree, metadata, corpus=records)
+  nodes = {node.pointer: node for node in root.walk()}
+  assert root.rank == 'Subgenus'
+  assert nodes['/children/0'].rank is None
+  assert nodes['/children/1'].rank == 'subgenus'
+  assert nodes['/children/2'].rank is None
 
 
 def test_a_null_rank_stands_outside_the_order(records, caplog):
@@ -124,7 +159,7 @@ def test_a_null_rank_stands_outside_the_order(records, caplog):
 
 def test_above_the_genus_group_nothing_is_said(records, caplog):
   # Macleay 1821 lists classes under an order: a source's scheme above the
-  # genus group is its own (roadmap G8).
+  # genus group is its own.
   assert _check(records, _open_under(FAMILY), rank='Family', caplog=caplog)[0] == []
   assert _check(records, _open_under(FAMILY), rank='Order', caplog=caplog)[0] == []
 

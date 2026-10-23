@@ -267,6 +267,34 @@ def test_contents_of_a_family_in_a_source(store):
   assert [b['source'] for b in every][:2] == ['1935_bassler', '1967a_fay']
 
 
+def test_a_listing_prints_the_rank_its_node_writes(store):
+  # Whiteaves 1897 prints his cystoid groups as orders where the records
+  # say Group; Guensburg & Sprinkle 2003 print Protocrinoida as a plesion
+  # where the record says Order, and the new mark follows the word.
+  [block] = store.contents('1897_whiteaves', 'cystoidea', depth=1)
+  assert block['rendered'].splitlines()[1:] == [
+    '  Class Cystoidea',
+    '    Order Aporitidae',
+    '    Order Diploporitidae',
+    '    Order Rhombiferi',
+  ]
+  [block] = store.contents('2003_guensburg_sprinkle', 'protocrinoida')
+  node = block['nodes'][0]
+  assert (node['rank'], node['rankWord'], node['newMark']) == ('Order', 'Plesion', 'nov.')
+  assert block['rendered'].splitlines()[1] == '  Plesion Protocrinoida nov.'
+  [entry] = store.ancestors(['titanocrinidae'], style='json')['entries']
+  assert [(n['label'], n['rank']) for n in entry['chain']][2] == ('Protocrinoida', 'Plesion')
+
+
+def test_history_counts_each_paper_at_its_nodes_rank(store):
+  # Whiteaves 1897 lists Diploporitidae as an order where the record says
+  # Group; Smith 1985 prints Edrioasteroidea as a plesion.
+  lines = store.history('diploporitidae')['rendered'].splitlines()
+  assert lines[1] == 'class since 1973 (2 papers), order 1897 (1 paper)'
+  ranks = store.history('edrioasteroidea', style='json')['measurement']['ranks']
+  assert [r['sources'] for r in ranks if r['rank'] == 'plesion'] == [['1985_smith.a.b']]
+
+
 def test_gap_sentences(store):
   assert store.gap('1983_holloway_jell', 'material')['rendered'] == (
     'The material printed in Holloway & Jell 1983 has not yet been entered '
