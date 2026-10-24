@@ -50,4 +50,5 @@ taxonomies:
       - taxon: entozoa
     - taxon: acalèphes
     - taxon: polypes-class
-    - taxon: infusoires-class
+    - taxon: infusoires
+      rank: Class

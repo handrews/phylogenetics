@@ -3,7 +3,7 @@ notes: >
   the context of von Buch's definition of Cystidea as "forming a distinct
   order of Echinoderms, inferior to the Crinoids." (p. 233).
 
-  Note that some fossils may appear in more places than their chapter
+  Note that some fossils may appear in more localities than their chapter
   position implies.
 taxonomies:
 - taxon: echinodermata
@@ -315,7 +315,11 @@ taxonomies:
             - 20†
           new: true
           notes: Niagara Group.
-  - taxon: asteriadae-family
+  - taxon: asteriadae
+    rank: Family
+    editorial:
+      inferred: [rank]
+      basis: Hall calls most things Families, and the name structure is close.
     children:
     - taxon: palaeaster
       new: true

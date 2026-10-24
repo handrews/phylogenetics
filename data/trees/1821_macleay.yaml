@@ -7,7 +7,7 @@ taxonomies:
     - taxon: agastria
       new: true
       synonyms:
-      - taxon: infusoria-class
+      - taxon: infusoria
     - taxon: intestina
       rank: Class
     - taxon: natantes-class

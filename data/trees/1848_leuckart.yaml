@@ -2,7 +2,7 @@ taxonomies:
 - taxon: animalia
   rank: Kingdom
   removed:
-    taxon: infusoria
+  - taxon: infusoria
   pages: 10
   editorial:
     inferred: true
@@ -28,12 +28,11 @@ taxonomies:
     citedAs: Echinodermata
     rank: Division
     sensu: emendato
-    emended:
-      by:
-        source: cuvier_1817d
+    emendedBy:
+    - source: 1817d_cuvier
     non:
-      authority:
-        source: bruguière_1789a
+    - authority:
+        source: 1789a_bruguière
     pages: 31
     editorial:
       inferred: [sensu, emended, non]
@@ -73,7 +72,7 @@ taxonomies:
         Namen der Actinozoa bezeichen möchte
       rank: Class
       authority:
-        source: latreille_1825
+        source: 1825_latreille
       pages: 43
       notes: >
         Elsewhere, Latreille is cited as "Natürliche Familien des Thierreichs.
@@ -96,13 +95,14 @@ taxonomies:
       citedAs: Die dritte Klasse, die der Scytodermata Brmstr.
       rank: Class
       authority:
-        source: 1837_burmeister
+        source: 1837b_burmeister
       pages: 43
       children:
       - taxon: holothuriae
         citedAs: umfasst als Ordnungen die Holothuriae und Sipunculida.
         rank: Order
         pages: 43
+        notes: Müller & Troschel. 1842?
       - taxon: sipunculida
         citedAs: umfasst als Ordnungen die Holothuriae und Sipunculida.
         rank: Order

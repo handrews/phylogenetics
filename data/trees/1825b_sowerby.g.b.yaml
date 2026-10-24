@@ -1,7 +1,9 @@
 taxonomies:
 - taxon: radiaria
+  rank: Class
   children:
-  - taxon: asteriadae-family
+  - taxon: asteriadae
+    rank: Family
     children:
     - openTaxon: asteriadae-gen_sowerby.g.b_1825
       new: true
@@ -23,8 +25,11 @@ taxonomies:
             - Lower Canada
             - Canada
             notes: Specimen from the plates.
-  - taxon: crinoidea-family
-  - taxon: blastoidea-family
+  - taxon: crinoidea
+    rank: Family
+  - taxon: blastoidea
+    rank: Family
     authority:
       source: 1825a_say
-  - taxon: echinida-family
+  - taxon: echinida
+    rank: Family

@@ -8,10 +8,11 @@ taxonomies:
     - taxon: cyclocystoides
       provisional: true
       altPlacements:
-      - taxon: asteriadae-order
-        notes: |
+      - taxon: asteriadae
+        inferred: true
+        basis: >
           Discussed only as "star-fishes", but Asteriadæ used by Billings
-          in another article in the same publication.  Rank is a guess.
+          in another article in the same publication.
       new: true
       children:
       - taxon: halli_billings_1858

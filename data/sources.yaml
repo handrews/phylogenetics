@@ -1153,7 +1153,8 @@
   - burmeister
   identifiers:
     url: https://www.biodiversitylibrary.org/bibliography/100177
-1837c_burmeister:
+  notes: Botanik (sometimes considered part of vol. 1)
+1837b_burmeister:
   book: handbuch-nat
   volume: 3
   pages:
@@ -1165,7 +1166,7 @@
   - burmeister
   identifiers:
     url: https://www.biodiversitylibrary.org/bibliography/100177
-  notes: Zoologie
+  notes: Zoologie (sometimes considered vol. 2 if Botanik included in vol. 1)
 1837_hisinger:
   book: lethaea-suecica
   authors:

@@ -1,5 +1,9 @@
 taxonomies:
-- taxon: asteriadae-order
+- taxon: asteriadae
+  rank: Order
+  editorial:
+    inferred: [rank]
+    basis: Edrioasteridae is later proposed as a sub-order of Asteridae
   children:
   - taxon: palasterina
     notes: As defined by Mr. Salter, 1857
@@ -55,7 +59,8 @@ taxonomies:
           source: 1857_billings
           pages: 294
 - notes: Speculative tree establishing Edrioasteridæ (Edrioasteroidea)
-  taxon: asteriadae-order
+  taxon: asteriadae
+  rank: Order
   children:
   - taxon: edrioasteridae_billings_1858b
     citedAs: a sub-order, for which the name Edrioasteridæ would be appropriate

@@ -1169,19 +1169,26 @@ asterias-sp_hall_1847:
   rank: species
   authority:
     source: 1847_hall
-asteriadae-family:
-  rank: Family
-  altRankOf: asteriadae-order
-asteriadae-order:
+asteriadae:
   name: Asteriadae
-  rank: Order
+  rank: Family
   authority:
     auth: [Gray]
     year: 1840
-  notes: |
-    There is some confusion about this taxon as order vs family, and whether
-    it was re-ranked to the modern similarly-spelled family, or re-spelled
-    to Asteroidea, although that is always credited to blainville.
+  notes: >
+    Gray published many papers in 1840; the relevant one here is
+    Synopsis of the Contents of the British Museum, 42nd edition
+asterida:
+  name: Asterida
+  rank: Order
+  auth: [Grant]
+  year: 1835
+  notes: >
+    1835 Tabular view of the primary divisions of the animal kingdom
+    but this might not be the earliest usage by Grant?
+asteriden:
+  name: Asteriden
+  vulgarSpellingOf: asterida
 asteriadae-gen_sowerby.g.b_1825:
   name: null
   rank: genus
@@ -2476,7 +2483,7 @@ cellepora:
   name: Cellepora
   authority:
     source: 1767_linnaeus
-cellulana-order:
+cellulana:
   name: Cellulana
   rank: Order
   authority:
@@ -6576,7 +6583,7 @@ helix:
     source: 1758_linnaeus
     pages: 768
   citedAs: 293. HELIX.
-helminthica-order:
+helminthica:
   name: Helminthica
   rank: Order
   authority:
@@ -7212,35 +7219,19 @@ infundus_frest_strimple_mcginnis_1976:
   authority:
     auth: [frest, strimple, McGinnis]
     year: 1976
-infusoria-class:
-  name: Infusoria
-  rank: Class
+infusionsthierchen:
+  name: Infusionsthierchen
+  rank: null
+  lang: DE
   authority:
     auth: [Ledermüller]
     year: 1763
-infusoria-order:
+infusoria:
   name: Infusoria
-  rank: Order
-  authority:
-    auth: [Ledermüller]
-    year: 1763
-infusoria-section:
-  name: Infusoria
-  rank: section
-  authority:
-    auth: [Ledermüller]
-    year: 1763
-infusoires-class:
-  name: Infusoires
-  vulgarSpellingOf: infusoria-class
-  lang: FR
+  latinSpellingOf: infusionsthierchen
 infusoires:
   name: Infusoires
-  vulgarSpellingOf: infusoria-order
-  lang: FR
-infusoires-section:
-  name: Infusoires
-  vulgarSpellingOf: infusoria-section
+  vulgarSpellingOf: infusoria
   lang: FR
 inhaerens_müller.o.f_1776:
   name: inhaerens
@@ -12417,7 +12408,7 @@ sinuatus_leske_1778:
   name: sinuatus
   authority:
     source: 1778_leske
-sipunculida-order:
+sipunculida:
   name: Sipunculida
   rank: Order
   authority:

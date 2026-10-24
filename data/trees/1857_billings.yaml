@@ -126,7 +126,10 @@ taxonomies:
         - taxon: florealis_billings_1854
         - taxon: radiatus_billings_1854
         - taxon: tenuistriatus_billings_1854
-    - taxon: asteriadae-order
+    - taxon: asteriadae
+      citedAs: Order ASTERIADÆ.
+      rank: Order
+      pages: 290
       children:
       - taxon: palaeasterina
         children:

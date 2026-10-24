@@ -1,7 +1,8 @@
 taxonomies:
 - taxon: vermes
   children:
-  - taxon: infusoria-order
+  - taxon: infusoria
+    rank: Order
     children:
     - taxon: monas
       new: true
@@ -26,7 +27,8 @@ taxonomies:
       new: true
     - taxon: vorticella
     - taxon: brachionus
-  - taxon: helminthica-order
+  - taxon: helminthica
+    rank: Order
     new: true
   - taxon: testacea
     rank: Order
