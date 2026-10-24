@@ -675,13 +675,13 @@ taxonomies:
               Fistularia (Forsskål 1775), it is treated nas
               Actinia (Pallas 1766).
             children:
-            - taxon: rufa_müller.o.f_1776
+            - taxon: rufa_müller.o.f_1776         # rusa?
             - taxon: crassicornis_müller.o.f_1776
             - taxon: plumosa_müller.o.f_1776
             - taxon: coccinia_müller.o.f_1776
             - taxon: judaica_linnaeus_1761
             - taxon: viduata_müller.o.f_1776
-            - taxon: effoeta_linnaeus_1767
+            - taxon: effoeta_linnaeus_1767        # essoeta?
             - taxon: senilis_linnaeus_1761
             - taxon: undata_müller.o.f_1784
             - taxon: sulcata_pennant_1777

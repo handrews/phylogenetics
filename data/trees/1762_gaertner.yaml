@@ -1,0 +1,70 @@
+taxonomies:
+- taxon: hydra
+  children:
+  - openTaxon: hydra-sp-1_gaertner_1762
+    citedAs: >
+      Hydra tentaculis denudatis, numeroſiſſlimis;
+      corpore longitudinaliter ſulcato.
+    new: true
+    pages: 78
+    illustrations:
+    - plate: I
+      figures: 1
+    children:
+    - openTaxon: hydra-sp-1-red-var_gaertner_1762
+      rank: variety
+      new: true
+      pages: 78
+    - openTaxon: hydra-sp-1-ash-var_gaertner_1762
+      rank: variety
+      new: true
+      pages: 78
+  - taxon: calyciflora_gaertner_1762
+    citedAs: >
+      Hydracalyciflora, tentaculis retradlilibus variegatis,
+      corpore verrucoſo.
+    new: true
+    pages: 79
+    illustrations:
+    - plate: I
+      figures: 2
+  - taxon: corolliflora_gaertner_1762
+    citedAs: Hydra corolliflora, tentaculis retradilibus frondoſis.
+    new: true
+    pages: 80
+    illustrations:
+    - plate: I
+      figures: 3
+  - taxon: disciflora_gaertner_1762
+    citedAs: >
+      Hydra diſciflora, tcntaculis retractilibus ſubdiaphanis; corpore
+      cylindrico, miliaribus glandulis longitudinaliter ſtriato.
+    new: true
+    pages: 82
+    illustrations:
+    - plate: I
+      figures: 4
+    children:
+    - openTaxon: disciflora-green-stalk-var_gaertner_1762
+      new: true
+      pages: 82
+    - openTaxon: disciflora-red-feelers-var_gaertner_1762
+      new: true
+      pages: 82
+  - openTaxon: hydra-sp-2_gaertner_1762
+    citedAs: >
+      Hydra diſciflora, tentaculis retractilibus, extimo diſci
+      margine tuberculato.
+    new: true
+    cf: disciflora_gaertner_1762
+    editorial:
+      inferred: [cfTaxon]
+      basis: >
+        Gaertner introduced calyciflora, corolliflora, and disciflora
+        as a group and described them one after the other.  But then
+        he describes this one at the end.  A cfTaxon seemed the best
+        way to capture the vagueness of the text.
+    pages: 82
+    illustrations:
+    - plate: 1
+      figures: 5

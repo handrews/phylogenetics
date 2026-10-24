@@ -12,6 +12,7 @@
   "banks": "Banks",
   "barrande": "Barrande",
   "bassler": "Bassler",
+  "baster": "Baster",
   "bather": "Bather",
   "beecher": "Beecher",
   "bell.b.m": "Bell",
@@ -31,6 +32,7 @@
   "broadhead": "Broadhead",
   "bronn.h.g": "Bronn",
   "brown.i.a": "Brown",
+  "browne.p": "Browne",
   "bruguière": "Bruguière",
   "buch": "Buch",
   "burmeister": "Burmeister",
@@ -202,6 +204,7 @@
   "norman": "Norman",
   "orłowski": "Orłowski",
   "owen": "Owen",
+  "pallas": "Pallas",
   "pan.y": "Pan",
   "pander": "Pander",
   "pang.j.y": "Pang",
@@ -341,7 +344,9 @@
    "tree": false
   },
   "1740_tilas": {
-   "acts": {},
+   "acts": {
+    "new": 1
+   },
    "audit": {
     "state": "unaudited"
    },
@@ -359,7 +364,11 @@
     "volume": 1,
     "year": 1740
    },
-   "claims": {},
+   "claims": {
+    "act": 1,
+    "material": 1,
+    "usage": 1
+   },
    "coverage": {
     "illustrations": null,
     "material": null,
@@ -370,11 +379,24 @@
     "synonymy": null,
     "types": null
    },
-   "derived": {},
-   "derivedCoverage": {},
+   "derived": {
+    "illustrations": 1,
+    "newTaxa": 1,
+    "skeleton": 1
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
    "inconsistencies": [],
-   "material": {},
-   "tree": false
+   "material": {
+    "illustration": 1
+   },
+   "tree": true
   },
   "1741_linnaeus": {
    "acts": {},
@@ -567,7 +589,10 @@
    "tree": false
   },
   "1761_bohadsch": {
-   "acts": {},
+   "acts": {
+    "new": 6,
+    "placeholder": 3
+   },
    "audit": {
     "state": "unaudited"
    },
@@ -579,9 +604,15 @@
     "title": null,
     "year": 1761
    },
-   "claims": {},
+   "claims": {
+    "absence": 1,
+    "act": 9,
+    "material": 6,
+    "placement": 7,
+    "usage": 10
+   },
    "coverage": {
-    "illustrations": null,
+    "illustrations": "all",
     "material": null,
     "newTaxa": null,
     "occurrences": null,
@@ -590,46 +621,24 @@
     "synonymy": null,
     "types": null
    },
-   "derived": {},
-   "derivedCoverage": {},
-   "inconsistencies": [],
-   "material": {},
-   "tree": false
-  },
-  "1761_gaertner": {
-   "acts": {},
-   "audit": {
-    "state": "unaudited"
+   "derived": {
+    "illustrations": 6,
+    "newTaxa": 9,
+    "skeleton": 17
    },
-   "citation": {
-    "authors": [
-     "Gaertner"
-    ],
-    "in": "Philosophical Transactions, giving some account of the present undertakings, studies, and labours of the ingenious, in many considerable parts of the world.\n",
-    "pages": [
-     75,
-     85
-    ],
-    "title": "An Account of the Urtica Marina: In a Letter to Mr. Peter Collinson, F. R. S. from Joseph Gaertner, M. D.\n",
-    "volume": 52,
-    "year": 1761
-   },
-   "claims": {},
-   "coverage": {
-    "illustrations": null,
+   "derivedCoverage": {
+    "illustrations": "all",
     "material": null,
-    "newTaxa": null,
     "occurrences": null,
-    "phylogeny": null,
     "skeleton": null,
     "synonymy": null,
     "types": null
    },
-   "derived": {},
-   "derivedCoverage": {},
    "inconsistencies": [],
-   "material": {},
-   "tree": false
+   "material": {
+    "illustration": 6
+   },
+   "tree": true
   },
   "1761_linnaeus": {
    "acts": {
@@ -679,6 +688,63 @@
    "material": {},
    "tree": true
   },
+  "1762_gaertner": {
+   "acts": {
+    "new": 3,
+    "placeholder": 6
+   },
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Gaertner"
+    ],
+    "in": "Philosophical Transactions, giving some account of the present undertakings, studies, and labours of the ingenious, in many considerable parts of the world.\n",
+    "pages": [
+     75,
+     85
+    ],
+    "title": "An Account of the Urtica Marina: In a Letter to Mr. Peter Collinson, F. R. S. from Joseph Gaertner, M. D.\n",
+    "volume": 52,
+    "year": 1762
+   },
+   "claims": {
+    "act": 9,
+    "editorial": 1,
+    "material": 5,
+    "placement": 9,
+    "usage": 10
+   },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {
+    "illustrations": 5,
+    "newTaxa": 9,
+    "skeleton": 19
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "inconsistencies": [],
+   "material": {
+    "illustration": 5
+   },
+   "tree": true
+  },
   "1766_linnaeus": {
    "acts": {},
    "audit": {
@@ -721,6 +787,95 @@
    },
    "inconsistencies": [],
    "material": {},
+   "tree": true
+  },
+  "1766a_pallas": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Pallas"
+    ],
+    "in": "Elenchus zoophytorum",
+    "title": null,
+    "year": 1766
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
+  "1766b_pallas": {
+   "acts": {
+    "emended": 1,
+    "moved": 32,
+    "new": 9,
+    "nomTransl": 1
+   },
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Pallas"
+    ],
+    "in": "Medicinae doctoris Miscellanea zoologica",
+    "title": null,
+    "year": 1766
+   },
+   "claims": {
+    "absence": 3,
+    "acceptance": 13,
+    "act": 43,
+    "editorial": 27,
+    "material": 10,
+    "placement": 75,
+    "rejection": 32,
+    "section": 2,
+    "usage": 129
+   },
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": "partly",
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {
+    "illustrations": 10,
+    "newTaxa": 9,
+    "skeleton": 155,
+    "synonymy": 13
+   },
+   "derivedCoverage": {
+    "illustrations": null,
+    "material": null,
+    "occurrences": null,
+    "skeleton": "partly",
+    "synonymy": null,
+    "types": null
+   },
+   "inconsistencies": [],
+   "material": {
+    "illustration": 10
+   },
    "tree": true
   },
   "1767_gunnerus": {
@@ -832,6 +987,262 @@
    "material": {},
    "tree": true
   },
+  "1767a_pallas": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Pallas"
+    ],
+    "in": "Spicilegia zoologica",
+    "number": 1,
+    "title": null,
+    "volume": 1,
+    "year": 1767
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
+  "1767b_pallas": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Pallas"
+    ],
+    "in": "Spicilegia zoologica",
+    "number": 2,
+    "title": null,
+    "volume": 1,
+    "year": 1767
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
+  "1767c_pallas": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Pallas"
+    ],
+    "in": "Spicilegia zoologica",
+    "number": 3,
+    "title": null,
+    "volume": 1,
+    "year": 1767
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
+  "1767d_pallas": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Pallas"
+    ],
+    "in": "Spicilegia zoologica",
+    "number": 4,
+    "title": null,
+    "volume": 1,
+    "year": 1767
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
+  "1769a_pallas": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Pallas"
+    ],
+    "in": "Spicilegia zoologica",
+    "number": 5,
+    "title": null,
+    "volume": 1,
+    "year": 1769
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
+  "1769b_pallas": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Pallas"
+    ],
+    "in": "Spicilegia zoologica",
+    "number": 6,
+    "title": null,
+    "volume": 1,
+    "year": 1769
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
+  "1769c_pallas": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Pallas"
+    ],
+    "in": "Spicilegia zoologica",
+    "number": 7,
+    "title": null,
+    "volume": 1,
+    "year": 1769
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
+  "1770_pallas": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Pallas"
+    ],
+    "in": "Spicilegia zoologica",
+    "number": 8,
+    "title": null,
+    "volume": 1,
+    "year": 1770
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
   "1772_gyllenhaal": {
    "acts": {
     "new": 2
@@ -892,6 +1303,38 @@
    },
    "tree": true
   },
+  "1772_pallas": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Pallas"
+    ],
+    "in": "Spicilegia zoologica",
+    "number": 9,
+    "title": null,
+    "volume": 1,
+    "year": 1772
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
   "1773_müller.o.f": {
    "acts": {
     "new": 11
@@ -939,6 +1382,38 @@
    "inconsistencies": [],
    "material": {},
    "tree": true
+  },
+  "1774_pallas": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Pallas"
+    ],
+    "in": "Spicilegia zoologica",
+    "number": 10,
+    "title": null,
+    "volume": 1,
+    "year": 1774
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
   },
   "1774_van phelsum": {
    "acts": {
@@ -1129,6 +1604,38 @@
    "material": {},
    "tree": true
   },
+  "1776_pallas": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Pallas"
+    ],
+    "in": "Spicilegia zoologica",
+    "number": 11,
+    "title": null,
+    "volume": 1,
+    "year": 1776
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
   "1776_walch": {
    "acts": {},
    "audit": {
@@ -1179,6 +1686,38 @@
     "illustration": 1
    },
    "tree": true
+  },
+  "1777_pallas": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Pallas"
+    ],
+    "in": "Spicilegia zoologica",
+    "number": 12,
+    "title": null,
+    "volume": 2,
+    "year": 1777
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
   },
   "1778_klein": {
    "acts": {
@@ -1273,6 +1812,70 @@
    "inconsistencies": [],
    "material": {},
    "tree": true
+  },
+  "1779_pallas": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Pallas"
+    ],
+    "in": "Spicilegia zoologica",
+    "number": 13,
+    "title": null,
+    "volume": 2,
+    "year": 1779
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
+  },
+  "1780_pallas": {
+   "acts": {},
+   "audit": {
+    "state": "unaudited"
+   },
+   "citation": {
+    "authors": [
+     "Pallas"
+    ],
+    "in": "Spicilegia zoologica",
+    "number": 14,
+    "title": null,
+    "volume": 2,
+    "year": 1780
+   },
+   "claims": {},
+   "coverage": {
+    "illustrations": null,
+    "material": null,
+    "newTaxa": null,
+    "occurrences": null,
+    "phylogeny": null,
+    "skeleton": null,
+    "synonymy": null,
+    "types": null
+   },
+   "derived": {},
+   "derivedCoverage": {},
+   "inconsistencies": [],
+   "material": {},
+   "tree": false
   },
   "1788a_gmelin": {
    "acts": {},
@@ -18499,7 +19102,20 @@
    "1801_lamarck",
    "1816b_lamarck"
   ],
+  "actinia-pallas-zeeland-sp-1_pallas_1766": [
+   "1766b_pallas"
+  ],
+  "actinia-pallas-zeeland-sp-2_pallas_1766": [
+   "1766b_pallas"
+  ],
+  "actinia_baster_1760": [
+   "1766b_pallas"
+  ],
+  "actinia_browne.p_1756": [
+   "1766b_pallas"
+  ],
   "actinia_pallas_1766": [
+   "1766b_pallas",
    "1816b_lamarck"
   ],
   "actinocrinites": [
@@ -18523,6 +19139,9 @@
   ],
   "actinozoa": [
    "1848_leuckart"
+  ],
+  "aculeata_linnaeus_1758": [
+   "1766b_pallas"
   ],
   "aculeata_linnaeus_1767": [
    "1767_linnaeus",
@@ -18952,6 +19571,7 @@
   ],
   "anomia": [
    "1758_linnaeus",
+   "1766b_pallas",
    "1767_linnaeus",
    "1776_müller.o.f"
   ],
@@ -18990,6 +19610,7 @@
   "aphrodita": [
    "1758_linnaeus",
    "1761_linnaeus",
+   "1766b_pallas",
    "1767_linnaeus",
    "1789a_bruguière",
    "1798_cuvier"
@@ -19055,6 +19676,7 @@
   ],
   "arca": [
    "1758_linnaeus",
+   "1766b_pallas",
    "1767_linnaeus",
    "1776_müller.o.f"
   ],
@@ -19108,6 +19730,9 @@
    "1767_linnaeus",
    "1776_müller.o.f"
   ],
+  "argus_bohadsch_1761": [
+   "1766b_pallas"
+  ],
   "aristocystidae": [
    "1900_bather",
    "1997_paul.c.r.c"
@@ -19158,6 +19783,7 @@
   ],
   "ascaris": [
    "1758_linnaeus",
+   "1766b_pallas",
    "1767_linnaeus",
    "1774a_müller.o.f",
    "1776_müller.o.f",
@@ -19168,6 +19794,9 @@
    "1767_linnaeus",
    "1776_müller.o.f",
    "1789a_bruguière"
+  ],
+  "ascidia_baster_1760": [
+   "1766b_pallas"
   ],
   "ascidiastella": [
    "1900_bather"
@@ -19251,6 +19880,7 @@
   "asterias": [
    "1758_linnaeus",
    "1761_linnaeus",
+   "1766b_pallas",
    "1767_linnaeus",
    "1776_müller.o.f",
    "1789a_bruguière",
@@ -19862,6 +20492,7 @@
   ],
   "buccinum": [
    "1758_linnaeus",
+   "1766b_pallas",
    "1767_linnaeus",
    "1774b_müller.o.f",
    "1776_müller.o.f"
@@ -19875,6 +20506,7 @@
   ],
   "bulla": [
    "1758_linnaeus",
+   "1766b_pallas",
    "1767_linnaeus",
    "1776_müller.o.f"
   ],
@@ -19935,6 +20567,10 @@
   ],
   "calvini_white_1876": [
    "1968b_paul.c.r.c"
+  ],
+  "calyciflora_gaertner_1762": [
+   "1762_gaertner",
+   "1766b_pallas"
   ],
   "cambraster": [
    "1985_jell_burrett_banks",
@@ -20094,6 +20730,7 @@
   ],
   "cardium": [
    "1758_linnaeus",
+   "1766b_pallas",
    "1767_linnaeus",
    "1776_müller.o.f"
   ],
@@ -20148,6 +20785,9 @@
   "carteri_bassler_1936": [
    "1936_bassler",
    "1966_regnéll"
+  ],
+  "carunculata_pallas_1766": [
+   "1766b_pallas"
   ],
   "carychium": [
    "1774b_müller.o.f",
@@ -20249,6 +20889,9 @@
    "2003_guensburg_sprinkle",
    "2009_guensburg_sprinkle"
   ],
+  "centronia": [
+   "1766b_pallas"
+  ],
   "cephalopoda-class": [
    "1821_macleay"
   ],
@@ -20284,6 +20927,7 @@
   ],
   "chama": [
    "1758_linnaeus",
+   "1766b_pallas",
    "1767_linnaeus",
    "1776_müller.o.f"
   ],
@@ -20418,6 +21062,9 @@
   ],
   "cirrhopodes": [
    "1817b_cuvier"
+  ],
+  "cirrhosa_pallas_1766": [
+   "1766b_pallas"
   ],
   "cirripeda": [
    "1821_macleay"
@@ -20559,6 +21206,9 @@
   "complanata_fabricius_1780": [
    "1789a_bruguière"
   ],
+  "complanata_pallas_1766": [
+   "1766b_pallas"
+  ],
   "complanatus_gmelin_1791a": [
    "1816b_lamarck"
   ],
@@ -20619,6 +21269,7 @@
   ],
   "conus": [
    "1758_linnaeus",
+   "1766b_pallas",
    "1767_linnaeus"
   ],
   "convolutus_hall_1852": [
@@ -20666,6 +21317,12 @@
   "cordata_lamarck_1816": [
    "1816b_lamarck"
   ],
+  "coriaceum_bohadsch_1761": [
+   "1761_bohadsch"
+  ],
+  "coriaceus_plancus_1760": [
+   "1766b_pallas"
+  ],
   "corine": [
    "1798_cuvier"
   ],
@@ -20686,6 +21343,10 @@
   ],
   "corollaris_leske_1778": [
    "1778_leske"
+  ],
+  "corolliflora_gaertner_1762": [
+   "1762_gaertner",
+   "1766b_pallas"
   ],
   "coronaeformis_rievers_1961": [
    "1961_dehm",
@@ -20922,6 +21583,9 @@
   "cucullanus": [
    "1798_cuvier"
   ],
+  "cucumis_barrelier_1714": [
+   "1766b_pallas"
+  ],
   "cucumis_hecker_1940": [
    "2012_doweld"
   ],
@@ -21153,6 +21817,7 @@
   ],
   "cypraea": [
    "1758_linnaeus",
+   "1766b_pallas",
    "1767_linnaeus"
   ],
   "cystaster": [
@@ -21489,6 +22154,16 @@
   "diptera": [
    "1758_linnaeus"
   ],
+  "disciflora-green-stalk-var_gaertner_1762": [
+   "1762_gaertner"
+  ],
+  "disciflora-red-feelers-var_gaertner_1762": [
+   "1762_gaertner"
+  ],
+  "disciflora_gaertner_1762": [
+   "1762_gaertner",
+   "1766b_pallas"
+  ],
   "discocystinae": [
    "1993_sumrall",
    "1996_sumrall",
@@ -21538,15 +22213,18 @@
    "1987_lewis.r.d_sprinkle_bailey.j.b_moffit.j_parsley"
   ],
   "doliolum_pallas_1766": [
+   "1766b_pallas",
    "1816b_lamarck"
   ],
   "donax": [
    "1758_linnaeus",
+   "1766b_pallas",
    "1767_linnaeus",
    "1776_müller.o.f"
   ],
   "doris": [
    "1758_linnaeus",
+   "1766b_pallas",
    "1767_linnaeus",
    "1776_müller.o.f",
    "1789a_bruguière"
@@ -21899,6 +22577,7 @@
    "1741_linnaeus",
    "1758_linnaeus",
    "1761_linnaeus",
+   "1766b_pallas",
    "1767_linnaeus",
    "1772_gyllenhaal",
    "1776_müller.o.f",
@@ -22250,6 +22929,7 @@
    "1825a_say"
   ],
   "encrinus": [
+   "1766b_pallas",
    "1801_lamarck",
    "1816a_lamarck",
    "1817d_cuvier",
@@ -22599,6 +23279,9 @@
   "fasciatus_lamarck_1816": [
    "1816b_lamarck"
   ],
+  "fasciculatum_bohadsch_1761": [
+   "1761_bohadsch"
+  ],
   "fasciola": [
    "1758_linnaeus",
    "1767_linnaeus",
@@ -22700,6 +23383,9 @@
   "flammea_leske_1778": [
    "1778_leske"
   ],
+  "flava_pallas_1766": [
+   "1766b_pallas"
+  ],
   "flavescens_müller.o.f_1776": [
    "1776_müller.o.f"
   ],
@@ -22787,12 +23473,6 @@
    "1776_müller.o.f",
    "1816b_lamarck"
   ],
-  "fulcis brevibus_leske_1778": [
-   "1778_leske"
-  ],
-  "fulcis longis_leske_1778": [
-   "1778_leske"
-  ],
   "fungia": [
    "1801_lamarck"
   ],
@@ -22846,6 +23526,9 @@
   ],
   "gelatinosa_linnaeus_1767": [
    "1789a_bruguière"
+  ],
+  "gelatinosum_bohadsch_1761": [
+   "1761_bohadsch"
   ],
   "gelatinosum_linnaeus_1767": [
    "1767_linnaeus"
@@ -23136,6 +23819,7 @@
   ],
   "gordius": [
    "1758_linnaeus",
+   "1766b_pallas",
    "1767_linnaeus",
    "1774a_müller.o.f",
    "1776_müller.o.f",
@@ -23320,6 +24004,7 @@
   ],
   "haliotis": [
    "1758_linnaeus",
+   "1766b_pallas",
    "1767_linnaeus",
    "1776_müller.o.f"
   ],
@@ -23446,6 +24131,7 @@
   ],
   "helix": [
    "1758_linnaeus",
+   "1766b_pallas",
    "1767_linnaeus",
    "1774b_müller.o.f",
    "1776_müller.o.f"
@@ -23609,6 +24295,7 @@
   ],
   "hirudo": [
    "1758_linnaeus",
+   "1766b_pallas",
    "1767_linnaeus",
    "1774a_müller.o.f",
    "1798_cuvier"
@@ -23757,13 +24444,34 @@
   ],
   "hydra": [
    "1758_linnaeus",
+   "1761_bohadsch",
    "1761_linnaeus",
+   "1762_gaertner",
+   "1766b_pallas",
    "1767_linnaeus",
    "1774a_müller.o.f",
    "1776_müller.o.f",
    "1789a_bruguière",
    "1798_cuvier",
    "1801_lamarck"
+  ],
+  "hydra-sp-1-ash-var_gaertner_1762": [
+   "1762_gaertner"
+  ],
+  "hydra-sp-1-red-var_gaertner_1762": [
+   "1762_gaertner"
+  ],
+  "hydra-sp-1_gaertner_1762": [
+   "1762_gaertner",
+   "1766b_pallas"
+  ],
+  "hydra-sp-2_gaertner_1762": [
+   "1762_gaertner",
+   "1766b_pallas"
+  ],
+  "hydra-sp_bohadsch_1761": [
+   "1761_bohadsch",
+   "1766b_pallas"
   ],
   "hymenoptera": [
    "1758_linnaeus"
@@ -24169,6 +24877,7 @@
    "2022_zamora_rahman_sumrall_gibson_thompson"
   ],
   "kalckballar_tilas_1740": [
+   "1740_tilas",
    "1844_buch"
   ],
   "kaskaskiensis_hall_1858": [
@@ -24424,6 +25133,7 @@
   ],
   "lepas": [
    "1758_linnaeus",
+   "1766b_pallas",
    "1767_linnaeus",
    "1776_müller.o.f"
   ],
@@ -24486,6 +25196,9 @@
   "lepidoptera": [
    "1758_linnaeus"
   ],
+  "lepidota_pallas_1766": [
+   "1766b_pallas"
+  ],
   "lepidus_zhao.y.l_huang.y.z_gong.x.y_1994": [
    "2006_parsley_zhao.y.l"
   ],
@@ -24503,6 +25216,7 @@
   "lernaea": [
    "1758_linnaeus",
    "1761_linnaeus",
+   "1766b_pallas",
    "1767_linnaeus",
    "1776_müller.o.f"
   ],
@@ -24567,6 +25281,7 @@
   "limax": [
    "1758_linnaeus",
    "1761_linnaeus",
+   "1766b_pallas",
    "1767_linnaeus",
    "1774b_müller.o.f",
    "1776_müller.o.f",
@@ -24712,6 +25427,7 @@
   ],
   "lumbricus": [
    "1758_linnaeus",
+   "1766b_pallas",
    "1767_linnaeus",
    "1774a_müller.o.f",
    "1776_müller.o.f",
@@ -24912,6 +25628,15 @@
    "1973_sprinkle",
    "2020_guensburg_sprinkle_mooi_lefebvre_david_roux_derstler"
   ],
+  "marina_plancus_1760": [
+   "1766b_pallas"
+  ],
+  "marinus_barrelier_1714": [
+   "1766b_pallas"
+  ],
+  "marinus_vallisneri_1733": [
+   "1766b_pallas"
+  ],
   "marmorata_lamarck_1816": [
    "1816a_lamarck"
   ],
@@ -24955,6 +25680,7 @@
   "medusa": [
    "1758_linnaeus",
    "1761_linnaeus",
+   "1766b_pallas",
    "1767_linnaeus",
    "1776_müller.o.f",
    "1789a_bruguière",
@@ -24986,9 +25712,15 @@
    "1798_cuvier",
    "1816a_lamarck"
   ],
+  "membranaceum_bohadsch_1761": [
+   "1761_bohadsch"
+  ],
   "mentula_müller.o.f_1776": [
    "1776_müller.o.f",
    "1789a_bruguière"
+  ],
+  "mentula_plancus_1760": [
+   "1766b_pallas"
   ],
   "meristoschisma": [
    "1973_sprinkle"
@@ -25140,12 +25872,22 @@
   "mollusca": [
    "1758_linnaeus",
    "1761_linnaeus",
+   "1766b_pallas",
    "1767_linnaeus",
    "1772_gyllenhaal",
    "1776_müller.o.f",
    "1791_bruguière",
    "1798_cuvier",
    "1821_macleay"
+  ],
+  "mollusca-order-1_pallas_1766": [
+   "1766b_pallas"
+  ],
+  "mollusca-order-2_pallas_1766": [
+   "1766b_pallas"
+  ],
+  "mollusca-order-3_pallas_1766": [
+   "1766b_pallas"
   ],
   "mollusca-unknown-class-1_macleay_1821": [
    "1821_macleay"
@@ -25266,6 +26008,7 @@
   ],
   "murex": [
    "1758_linnaeus",
+   "1766b_pallas",
    "1767_linnaeus"
   ],
   "murinus_linnaeus_1758": [
@@ -25283,6 +26026,7 @@
   ],
   "mya": [
    "1758_linnaeus",
+   "1766b_pallas",
    "1767_linnaeus",
    "1774b_müller.o.f",
    "1776_müller.o.f"
@@ -25301,6 +26045,7 @@
   ],
   "mytilus": [
    "1758_linnaeus",
+   "1766b_pallas",
    "1767_linnaeus",
    "1774b_müller.o.f",
    "1776_müller.o.f"
@@ -25345,6 +26090,7 @@
   ],
   "nautilus": [
    "1758_linnaeus",
+   "1766b_pallas",
    "1767_linnaeus"
   ],
   "navicula_whitehouse_1941": [
@@ -25393,6 +26139,7 @@
   "nereis": [
    "1758_linnaeus",
    "1761_linnaeus",
+   "1766b_pallas",
    "1767_linnaeus",
    "1776_müller.o.f",
    "1789a_bruguière",
@@ -25400,6 +26147,7 @@
   ],
   "nerita": [
    "1758_linnaeus",
+   "1766b_pallas",
    "1767_linnaeus",
    "1774b_müller.o.f",
    "1776_müller.o.f"
@@ -25682,6 +26430,7 @@
   ],
   "ostrea": [
    "1758_linnaeus",
+   "1766b_pallas",
    "1767_linnaeus",
    "1776_müller.o.f"
   ],
@@ -26171,6 +26920,7 @@
   ],
   "pholas": [
    "1758_linnaeus",
+   "1766b_pallas",
    "1767_linnaeus",
    "1776_müller.o.f"
   ],
@@ -26222,6 +26972,7 @@
   ],
   "pinna": [
    "1758_linnaeus",
+   "1766b_pallas",
    "1767_linnaeus"
   ],
   "pinnata_forsskål_1775": [
@@ -26538,6 +27289,7 @@
   "priapus": [
    "1758_linnaeus",
    "1761_linnaeus",
+   "1766b_pallas",
    "1767_gunnerus",
    "1816b_lamarck"
   ],
@@ -27281,6 +28033,9 @@
    "1967b_fay",
    "1973_sprinkle"
   ],
+  "rostrata_pallas_1766": [
+   "1766b_pallas"
+  ],
   "rotalaria_lamarck_1816": [
    "1816a_lamarck"
   ],
@@ -27533,6 +28288,7 @@
   ],
   "scyllaea": [
    "1758_linnaeus",
+   "1766b_pallas",
    "1767_linnaeus"
   ],
   "scyphocrinus": [
@@ -27585,6 +28341,7 @@
   "sepia": [
    "1758_linnaeus",
    "1761_linnaeus",
+   "1766b_pallas",
    "1767_linnaeus",
    "1776_müller.o.f",
    "1789a_bruguière"
@@ -27606,6 +28363,7 @@
   ],
   "serpula": [
    "1758_linnaeus",
+   "1766b_pallas",
    "1767_linnaeus",
    "1776_müller.o.f",
    "1798_cuvier"
@@ -27722,6 +28480,7 @@
   ],
   "solen": [
    "1758_linnaeus",
+   "1766b_pallas",
    "1767_linnaeus",
    "1776_müller.o.f"
   ],
@@ -27878,6 +28637,7 @@
   ],
   "spondylus": [
    "1758_linnaeus",
+   "1766b_pallas",
    "1767_linnaeus"
   ],
   "spongia": [
@@ -27907,6 +28667,9 @@
   ],
   "squamata_lamarck_1816": [
    "1816a_lamarck"
+  ],
+  "squamata_linnaeus_1758": [
+   "1766b_pallas"
   ],
   "squamata_müller.o.f_1776": [
    "1776_müller.o.f",
@@ -28157,6 +28920,7 @@
   ],
   "strombus": [
    "1758_linnaeus",
+   "1766b_pallas",
    "1767_linnaeus"
   ],
   "strongylus": [
@@ -28240,6 +29004,12 @@
   "sulcatum_aurivillius_1892": [
    "1935_bassler"
   ],
+  "sulcis brevibus_leske_1778": [
+   "1778_leske"
+  ],
+  "sulcis longis_leske_1778": [
+   "1778_leske"
+  ],
   "sumralli_guensburg_sprinkle_2003": [
    "2003_guensburg_sprinkle",
    "2020_guensburg_sprinkle_mooi_lefebvre_david_roux_derstler"
@@ -28274,9 +29044,16 @@
   "syringocrinus": [
    "1960_gill_caster"
   ],
+  "syrinx": [
+   "1761_bohadsch"
+  ],
+  "syrinx-sp_bohadsch_1761": [
+   "1761_bohadsch"
+  ],
   "taenia": [
    "1758_linnaeus",
    "1761_linnaeus",
+   "1766b_pallas",
    "1767_linnaeus",
    "1789a_bruguière",
    "1798_cuvier"
@@ -28314,6 +29091,7 @@
   ],
   "tellina": [
    "1758_linnaeus",
+   "1766b_pallas",
    "1767_linnaeus",
    "1774b_müller.o.f",
    "1776_müller.o.f"
@@ -28361,6 +29139,7 @@
   ],
   "teredo": [
    "1758_linnaeus",
+   "1766b_pallas",
    "1767_linnaeus"
   ],
   "teres_gmelin_1791a": [
@@ -28375,6 +29154,7 @@
   "testacea": [
    "1758_linnaeus",
    "1761_linnaeus",
+   "1766b_pallas",
    "1767_linnaeus",
    "1773_müller.o.f",
    "1774a_müller.o.f",
@@ -28397,8 +29177,16 @@
   ],
   "tethys": [
    "1758_linnaeus",
+   "1766b_pallas",
    "1767_linnaeus",
    "1789a_bruguière"
+  ],
+  "tethyum": [
+   "1761_bohadsch",
+   "1766b_pallas"
+  ],
+  "tethyum-sp_bohadsch_1761": [
+   "1761_bohadsch"
   ],
   "tetracystis": [
    "1967_paul.c.r.c",
@@ -28625,6 +29413,7 @@
   ],
   "trochus": [
    "1758_linnaeus",
+   "1766b_pallas",
    "1767_linnaeus",
    "1776_müller.o.f"
   ],
@@ -28687,6 +29476,7 @@
   ],
   "turbo": [
    "1758_linnaeus",
+   "1766b_pallas",
    "1767_linnaeus",
    "1776_müller.o.f"
   ],
@@ -28886,6 +29676,7 @@
   ],
   "venus": [
    "1758_linnaeus",
+   "1766b_pallas",
    "1767_linnaeus",
    "1776_müller.o.f"
   ],
@@ -29033,6 +29824,7 @@
   ],
   "voluta": [
    "1758_linnaeus",
+   "1766b_pallas",
    "1767_linnaeus"
   ],
   "volvox": [

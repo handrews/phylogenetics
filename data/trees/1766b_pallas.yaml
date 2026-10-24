@@ -1,0 +1,471 @@
+taxonomies:
+- notes: >
+    Tree for Chapter VIII. APHRODITÆ.
+    In this chapter, Pallas refers to Mollsuca (Animalum Molluscorum)
+    as a Class despite mostly citing Linnaeus.  It's unclear whether
+    he is promoting the taxon so that he can divide it into Orders,
+    or if one of his cited sources did the promoting.  He is dismissive
+    of Linnaeus's placement of Mollusca within Vers, and of Testacea as
+    a distinct order from Mollusca.  When discussing "families" within
+    Linnaeus's Mollusca, Pallas seems to be referring to the section
+    headings Linnaeus used in his tabular summaries.
+
+    Pallas's Class Mollusca encompasses Linnaeus's Orders Mollusca and Testacea.
+  taxon: mollusca
+  rank: Class
+  translated:
+    taxon: mollusca
+    rank: Order
+  emended: true
+  children:
+  - openTaxon: mollusca-order-1_pallas_1766
+    citedAs: COCHLIDES or univalve Testacea
+    designation: Cochlides or univalve Testacea
+    notes: >
+      Moved genera based on Linnaeus 1758; Pallas lists only the exceptions.
+    children:
+    - taxon: nautilus
+      moved:
+        taxon: testacea
+        rank: Order
+      editorial:
+        inferred: true
+        basis: Member of group in Linnaeus 1758.
+    - taxon: conus
+      moved:
+        taxon: testacea
+        rank: Order
+      editorial:
+        inferred: true
+        basis: Member of group in Linnaeus 1758.
+    - taxon: cypraea
+      moved:
+        taxon: testacea
+        rank: Order
+      editorial:
+        inferred: true
+        basis: Member of group in Linnaeus 1758.
+    - taxon: bulla
+      moved:
+        taxon: testacea
+        rank: Order
+      editorial:
+        inferred: true
+        basis: Member of group in Linnaeus 1758.
+    - taxon: voluta
+      moved:
+        taxon: testacea
+        rank: Order
+      editorial:
+        inferred: true
+        basis: Member of group in Linnaeus 1758.
+    - taxon: buccinum
+      moved:
+        taxon: testacea
+        rank: Order
+      editorial:
+        inferred: true
+        basis: Member of group in Linnaeus 1758.
+    - taxon: strombus
+      moved:
+        taxon: testacea
+        rank: Order
+      editorial:
+        inferred: true
+        basis: Member of group in Linnaeus 1758.
+    - taxon: murex
+      moved:
+        taxon: testacea
+        rank: Order
+      editorial:
+        inferred: true
+        basis: Member of group in Linnaeus 1758.
+    - taxon: trochus
+      moved:
+        taxon: testacea
+        rank: Order
+      editorial:
+        inferred: true
+        basis: Member of group in Linnaeus 1758.
+    - taxon: turbo
+      moved:
+        taxon: testacea
+        rank: Order
+      editorial:
+        inferred: true
+        basis: Member of group in Linnaeus 1758.
+    - taxon: helix
+      moved:
+        taxon: testacea
+        rank: Order
+      editorial:
+        inferred: true
+        basis: Member of group in Linnaeus 1758.
+    - taxon: nerita
+      moved:
+        taxon: testacea
+        rank: Order
+      editorial:
+        inferred: true
+        basis: Member of group in Linnaeus 1758.
+    - taxon: haliotis
+      moved:
+        taxon: testacea
+        rank: Order
+      editorial:
+        inferred: true
+        basis: Member of group in Linnaeus 1758.
+    - taxon: limax
+      pages: 73
+      notes: Synonym list from footnote.
+      synonyms:
+      - taxon: doris
+        authority:
+          source: 1758_linnaeus
+      - taxon: tethys
+        authority:
+          source: 1758_linnaeus
+      - taxon: lernaea
+        authority:
+          source: 1761_bohadsch
+        notes: >
+          Unclear if "non Linnaeus" is implied?  Bohadsch cites Linnaeus
+          while assigning new species to the genus.
+      - taxon: argus_bohadsch_1761
+        authority:
+          source: 1761_bohadsch
+      - taxon: scyllaea
+        authority:
+          source: 1758_linnaeus
+    - taxon: sepia
+      pages: 73
+    - taxon: medusa
+      pages: 73
+      provisional: true
+  - openTaxon: mollusca-order-2_pallas_1766
+    citedAs: BIVALVE Testacea
+    designation: Bivalve Testacea
+    children:
+    - taxon: pholas
+      moved:
+        taxon: testacea
+        rank: Order
+      editorial:
+        inferred: true
+        basis: Member of group in Linnaeus 1758.
+    - taxon: mya
+      moved:
+        taxon: testacea
+        rank: Order
+      editorial:
+        inferred: true
+        basis: Member of group in Linnaeus 1758.
+    - taxon: solen
+      moved:
+        taxon: testacea
+        rank: Order
+      editorial:
+        inferred: true
+        basis: Member of group in Linnaeus 1758.
+    - taxon: tellina
+      moved:
+        taxon: testacea
+        rank: Order
+      editorial:
+        inferred: true
+        basis: Member of group in Linnaeus 1758.
+    - taxon: cardium
+      moved:
+        taxon: testacea
+        rank: Order
+      editorial:
+        inferred: true
+        basis: Member of group in Linnaeus 1758.
+    - taxon: donax
+      moved:
+        taxon: testacea
+        rank: Order
+      editorial:
+        inferred: true
+        basis: Member of group in Linnaeus 1758.
+    - taxon: venus
+      moved:
+        taxon: testacea
+        rank: Order
+      editorial:
+        inferred: true
+        basis: Member of group in Linnaeus 1758.
+    - taxon: spondylus
+      moved:
+        taxon: testacea
+        rank: Order
+      editorial:
+        inferred: true
+        basis: Member of group in Linnaeus 1758.
+    - taxon: chama
+      moved:
+        taxon: testacea
+        rank: Order
+      editorial:
+        inferred: true
+        basis: Member of group in Linnaeus 1758.
+    - taxon: arca
+      moved:
+        taxon: testacea
+        rank: Order
+      editorial:
+        inferred: true
+        basis: Member of group in Linnaeus 1758.
+    - taxon: ostrea
+      moved:
+        taxon: testacea
+        rank: Order
+      editorial:
+        inferred: true
+        basis: Member of group in Linnaeus 1758.
+    - taxon: anomia
+      moved:
+        taxon: testacea
+        rank: Order
+      editorial:
+        inferred: true
+        basis: Member of group in Linnaeus 1758.
+    - taxon: mytilus
+      moved:
+        taxon: testacea
+        rank: Order
+      editorial:
+        inferred: true
+        basis: Member of group in Linnaeus 1758.
+    - taxon: pinna
+      moved:
+        taxon: testacea
+        rank: Order
+      editorial:
+        inferred: true
+        basis: Member of group in Linnaeus 1758.
+    - taxon: teredo
+    - taxon: ascidia_baster_1760
+    - taxon: tethyum
+    - taxon: priapus
+      provisional: true
+    - taxon: lepas
+      provisional: true
+      moved:
+        taxon: testacea
+        rank: Order
+    - taxon: echinus
+      provisional: true
+    - taxon: asterias
+      provisional: true
+    - taxon: encrinus
+      provisional: true
+  - openTaxon: mollusca-order-3_pallas_1766
+    children:
+    - taxon: serpula
+      moved:
+        taxon: testacea
+        rank: Order
+    - taxon: nereis
+    - taxon: aphrodita
+      pages: 77
+      children:
+      - taxon: aculeata_linnaeus_1758
+        citedAs: 1. APHRODITA ACULEATA
+        pages: 77
+        illustrations:
+        - plate: VII
+          figures:
+          - [1, 13]
+      - taxon: squamata_linnaeus_1758
+        citedAs: 2. APHRODITA SQUAMATA
+        pages: 91
+        illustrations:
+        - plate: VII
+          figures:
+          - [14a, 14d]
+      - taxon: lepidota_pallas_1766
+        citedAs: 3. APHRODITA LEPIDOTA.
+        new: true
+        pages: 94
+        illustrations:
+        - plate: VII
+          figures: 15
+        - plate: VIII
+          figures: [1, 2]
+      - taxon: cirrhosa_pallas_1766
+        citedAs: 4. APHRODITA CIRRHOSA.
+        new: true
+        pages: 95
+        illustrations:
+        - plate: VIII
+          figures:
+          - [3, 6]
+      - taxon: flava_pallas_1766
+        citedAs: 5. APHRODITA FLAVA.
+        new: true
+        pages: 97
+        illustrations:
+        - plate: VIII
+          figures:
+          - [7, 11]
+      - taxon: carunculata_pallas_1766
+        citedAs: 6. APHRODITA CARUNCULATA.
+        new: true
+        pages: 102
+        illustrations:
+        - plate: VIII
+          figures:
+          - [12, 13]
+      - taxon: rostrata_pallas_1766
+        citedAs: 7. APHRODITA ROSTRATA.
+        new: true
+        pages: 106
+        illustrations:
+        - plate: VIII
+          figures:
+          - [14, 18]
+      - taxon: complanata_pallas_1766
+        citedAs: 9. APHRODITA COMPLANATA.
+        new: true
+        pages: 109
+        illustrations:
+        - plate: VIII
+          figures:
+          - [19, 26]
+        notes: Numbered 9, apparently in error as there is no 8.
+    - taxon: lumbricus
+      provisional: true
+    - taxon: hirudo
+      provisional: true
+    - taxon: ascaris
+      provisional: true
+    - taxon: gordius
+      provisional: true
+    - taxon: taenia
+      provisional: true
+- notes: >
+    Tree for Chapter XII. ACTINIA DOLIOLUM.
+  taxon: mollusca
+  rank: Class
+  children:
+  - taxon: centronia
+    citedAs: Centroniarum
+    new: true
+    pages: 153
+    rank: Order
+    notes: >
+      Erected in a footnote with the contents below.
+    children:
+    - taxon: actinia_pallas_1766
+      citedAs: ACTINIÆ
+      new: true
+      pages: 154
+      synonyms:
+      - taxon: actinia_browne.p_1756
+      - taxon: actinia_baster_1760
+      children:
+      - sectionStart:
+          section: fixas
+          new: true
+          pages: 152
+        openTaxon: hydra-sp-1_gaertner_1762
+      - taxon: calyciflora_gaertner_1762
+      - taxon: disciflora_gaertner_1762
+      - openTaxon: hydra-sp-2_gaertner_1762
+      - openTaxon: actinia-pallas-zeeland-sp-1_pallas_1766
+      - openTaxon: actinia-pallas-zeeland-sp-2_pallas_1766
+        sectionEnd: fixas
+      - sectionStart:
+          section: ambulantes
+          new: true
+          pages: 152
+        taxon: corolliflora_gaertner_1762
+        synonyms:
+        - authority:
+            source: 1762_gaertner
+            illustrations:
+            - plate: 1
+              figures: 3
+          parents:
+          - taxon: hydra
+      - taxon: doliolum_pallas_1766
+        citedAs: ACTINIÆ DOLIOLI.
+        new: true
+        pages: 154
+        illustrations:
+        - plate: IX
+          figures:
+          - [10, 12]
+      - taxon: coriaceus_plancus_1760
+        synonyms:
+        - parents:
+          - taxon: echinus
+          authority:
+            auth: [Plancus]
+            year: 1760
+            pages: 99
+            illustrations:
+            - plate: VI
+              figures: [D, E, F]
+      - taxon: marinus_vallisneri_1733
+        notes: This is generic description more than a proper name.
+        synonyms:
+        - authority:
+            auth: [Vallisneri]
+            year: 1733
+            pages: 442
+          parents:
+          - taxon: priapus
+      - taxon: marinus_barrelier_1714
+        notes: This is generic description more than a proper name.
+        synonyms:
+        - authority:
+            auth: [Barrelier]
+            year: 1714
+            illustrations:
+            - plate: 1293
+          parents:
+          - taxon: cucumis_barrelier_1714
+      - openTaxon: hydra-sp_bohadsch_1761
+        synonyms:
+        - parents:
+          - taxon: hydra
+          authority:
+            source: 1761_bohadsch
+            illustrations:
+            - plate: 6
+      - taxon: marina_plancus_1760
+        notes: This is generic description more than a proper name.
+        synonyms:
+        - authority:
+            auth: [Plancus]
+            year: 1760
+            pages: 108
+            illustrations:
+            - plate: 8
+              figures: [A, B]
+          parents:
+          - taxon: mentula_plancus_1760
+        sectionEnd: ambulantes
+    - taxon: echinus
+      citedAs: Echini
+      pages: 153
+      moved:
+        openTaxon: mollusca-order-2_pallas_1766
+        rank: Order
+      children: null
+    - taxon: asterias
+      citedAs: Aſteriæ
+      pages: 153
+      moved:
+        openTaxon: mollusca-order-2_pallas_1766
+        rank: Order
+      children: null
+    - taxon: encrinus
+      citedAs: Encrinorium
+      pages: 153
+      moved:
+        openTaxon: mollusca-order-2_pallas_1766
+        rank: Order
+      children: null

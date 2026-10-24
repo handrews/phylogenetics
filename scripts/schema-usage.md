@@ -29,7 +29,6 @@ even when its parent is also unreached, so read parents first.
 | `eon` | `phylogeny#/$defs/eon` |
 | `era` | `phylogeny#/$defs/era` |
 | `figureLocatorFields` | `phylogeny#/$defs/figureLocatorFields/properties/non` |
-| `identificationFields` | `phylogeny#/$defs/identificationFields/properties/designation` |
 | `inferredContext` | `phylogeny#/$defs/inferredContext/properties/basis`<br>`phylogeny#/$defs/inferredContext/properties/sources`<br>`phylogeny#/$defs/inferredContext/properties/sources/items` |
 | `localTimeFields` | `phylogeny#/$defs/localTimeFields/properties/localStageBoundary` |
 | `localityNumber` | `phylogeny#/$defs/localityNumber/not`<br>`phylogeny#/$defs/localityNumber/properties/register` |
@@ -51,15 +50,15 @@ even when its parent is also unreached, so read parents first.
 `data %` is the share of that container's instances carrying the
 property.
 
-### `actAndModifierFields` -- 5784 instances in `data/`
+### `actAndModifierFields` -- 5934 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `new` | 1603 | 27.7% |
-| `isType` | 364 | 6.3% |
-| `emended` | 55 | 1.0% |
+| `new` | 1631 | 27.5% |
+| `isType` | 364 | 6.1% |
+| `emended` | 56 | 0.9% |
 | `pars` | 21 | 0.4% |
-| `translated` | 18 | 0.3% |
+| `translated` | 19 | 0.3% |
 | `emendedBy` | 9 | 0.2% |
 | `nudum` | 7 | 0.1% |
 | `recombined` | 3 | 0.1% |
@@ -67,37 +66,37 @@ property.
 | `stem` | 1 | 0.0% |
 | `restrictedBy` | 0 | 0.0% |
 
-### `article` -- 384 instances in `data/`
+### `article` -- 400 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `authors` | 384 | 100.0% |
-| `pubDate` | 383 | 99.7% |
-| `volume` | 298 | 77.6% |
-| `title` | 284 | 74.0% |
-| `identifiers` | 267 | 69.5% |
-| `pages` | 254 | 66.1% |
-| `journal` | 242 | 63.0% |
-| `number` | 185 | 48.2% |
-| `identifiers.url` | 184 | 68.9% |
-| `book` | 141 | 36.7% |
-| `processDates` | 101 | 26.3% |
-| `notes` | 71 | 18.5% |
+| `authors` | 400 | 100.0% |
+| `pubDate` | 399 | 99.8% |
+| `volume` | 312 | 78.0% |
+| `title` | 284 | 71.0% |
+| `identifiers` | 283 | 70.8% |
+| `pages` | 254 | 63.5% |
+| `journal` | 242 | 60.5% |
+| `identifiers.url` | 200 | 70.7% |
+| `number` | 199 | 49.8% |
+| `book` | 157 | 39.2% |
+| `processDates` | 101 | 25.2% |
+| `notes` | 71 | 17.8% |
 | `processDates.accepted` | 63 | 62.4% |
-| `identifiers.doi` | 62 | 23.2% |
+| `identifiers.doi` | 62 | 21.9% |
 | `processDates.received` | 53 | 52.5% |
-| `audit` | 48 | 12.5% |
+| `audit` | 48 | 12.0% |
 | `audit.notes` | 48 | 100.0% |
 | `audit.state` | 48 | 100.0% |
 | `audit.coverage` | 30 | 62.5% |
 | `processDates.online` | 28 | 27.7% |
-| `plates` | 25 | 6.5% |
-| `identifiers.jstor` | 24 | 9.0% |
+| `plates` | 25 | 6.2% |
+| `identifiers.jstor` | 24 | 8.5% |
 | `processDates.revised` | 18 | 17.8% |
-| `series` | 14 | 3.6% |
+| `series` | 14 | 3.5% |
 | `processDates.read` | 11 | 10.9% |
 | `articleNumber` | 7 | 1.8% |
-| `seen` | 5 | 1.3% |
+| `seen` | 5 | 1.2% |
 | `processDates.transmitted` | 4 | 4.0% |
 | `processDates.conferenceEnd` | 3 | 3.0% |
 | `processDates.conferenceStart` | 3 | 3.0% |
@@ -107,34 +106,34 @@ property.
 | `translationOf` | 2 | 0.5% |
 | `translations` | 2 | 0.5% |
 | `/oneOf/3.inPrep` | 1 | 100.0% |
-| `editors` | 1 | 0.3% |
-| `inPrep` | 1 | 0.3% |
+| `editors` | 1 | 0.2% |
+| `inPrep` | 1 | 0.2% |
 | `processDates.printed` | 1 | 1.0% |
 | `processDates.published` | 1 | 1.0% |
 | `processDates.unknown` | 1 | 1.0% |
-| `quotes` | 1 | 0.3% |
+| `quotes` | 1 | 0.2% |
 | `reading` | 0 | 0.0% |
 
-### `authority` -- 2896 instances in `data/`
+### `authority` -- 2953 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `source` | 2025 | 69.9% |
-| `auth` | 847 | 29.2% |
-| `year` | 844 | 29.1% |
-| `pages` | 370 | 12.8% |
-| `illustrations` | 61 | 2.1% |
-| `in` | 28 | 1.0% |
-| `attributedTo` | 24 | 0.8% |
+| `source` | 2078 | 70.4% |
+| `auth` | 851 | 28.8% |
+| `year` | 848 | 28.7% |
+| `pages` | 401 | 13.6% |
+| `illustrations` | 86 | 2.9% |
+| `in` | 27 | 0.9% |
+| `attributedTo` | 25 | 0.8% |
 | `ex` | 15 | 0.5% |
 | `notes` | 4 | 0.1% |
 | `auctt` | 2 | 0.1% |
 
-### `citationFields` -- 9407 instances in `data/`
+### `citationFields` -- 9601 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `citedAs` | 1020 | 10.8% |
+| `citedAs` | 1055 | 11.0% |
 
 ### `cladisticFields` -- 793 instances in `data/`
 
@@ -167,47 +166,47 @@ property.
 | `paleocontinent` | 0 | 0.0% |
 | `sources` | 0 | 0.0% |
 
-### `editorialObject` -- 53 instances in `data/`
+### `editorialObject` -- 81 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `basis` | 53 | 100.0% |
-| `inferred` | 39 | 73.6% |
-| `corrections` | 14 | 26.4% |
+| `basis` | 81 | 100.0% |
+| `inferred` | 67 | 82.7% |
+| `corrections` | 14 | 17.3% |
 | `corrections.authority` | 10 | 71.4% |
 | `corrections.authority.source` | 9 | 90.0% |
 | `corrections.authority.auth` | 8 | 80.0% |
 | `corrections.authority.year` | 8 | 80.0% |
 | `corrections.authority.in` | 0 | 0.0% |
 
-### `figureLocatorFields` -- 513 instances in `data/`
+### `figureLocatorFields` -- 561 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `figures` | 443 | 86.4% |
-| `plate` | 365 | 71.2% |
-| `page` | 135 | 26.3% |
-| `textFigures` | 69 | 13.5% |
-| `notes` | 25 | 4.9% |
+| `figures` | 486 | 86.6% |
+| `plate` | 413 | 73.6% |
+| `page` | 135 | 24.1% |
+| `textFigures` | 69 | 12.3% |
+| `notes` | 25 | 4.5% |
 | `non` | 0 | 0.0% |
 
-### `identificationFields` -- 6577 instances in `data/`
+### `identificationFields` -- 6727 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `taxon` | 5968 | 90.7% |
-| `openTaxon` | 248 | 3.8% |
-| `cf` | 15 | 0.2% |
+| `taxon` | 6091 | 90.5% |
+| `openTaxon` | 268 | 4.0% |
+| `cf` | 16 | 0.2% |
 | `aff` | 14 | 0.2% |
-| `mineralTaxon` | 1 | 0.0% |
-| `designation` | 0 | 0.0% |
+| `designation` | 2 | 0.0% |
+| `mineralTaxon` | 2 | 0.0% |
 
-### `illustration` -- 513 instances in `data/`
+### `illustration` -- 561 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `of` | 254 | 49.5% |
-| `depicts` | 177 | 34.5% |
+| `of` | 254 | 45.3% |
+| `depicts` | 177 | 31.6% |
 | `uncertain` | 2 | 0.4% |
 
 ### `inferredContext` -- 1 instances in `data/`
@@ -240,11 +239,11 @@ property.
 | `prefix` | 28 | 47.5% |
 | `register` | 0 | 0.0% |
 
-### `locationFields` -- 6577 instances in `data/`
+### `locationFields` -- 6727 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `illustrations` | 181 | 2.8% |
+| `illustrations` | 203 | 3.0% |
 
 ### `materialEntry` -- 299 instances in `data/`
 
@@ -278,45 +277,45 @@ property.
 | `sameAs` | 0 | 0.0% |
 | `sameAs.source` | 0 | - |
 
-### `materialsFields` -- 5784 instances in `data/`
+### `materialsFields` -- 5934 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `material` | 125 | 2.2% |
-| `ranges` | 113 | 2.0% |
+| `material` | 125 | 2.1% |
+| `ranges` | 113 | 1.9% |
 | `contexts` | 98 | 1.7% |
 
-### `metaFields` -- 6577 instances in `data/`
+### `metaFields` -- 6727 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `notes` | 514 | 7.8% |
-| `editorial` | 51 | 0.8% |
+| `notes` | 525 | 7.8% |
+| `editorial` | 79 | 1.2% |
 
-### `modularDate` -- 383 instances in `data/`
+### `modularDate` -- 399 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `year` | 383 | 100.0% |
-| `month` | 88 | 23.0% |
-| `day` | 33 | 8.6% |
+| `year` | 399 | 100.0% |
+| `month` | 88 | 22.1% |
+| `day` | 33 | 8.3% |
 | `/then/oneOf/2.day` | 18 | 100.0% |
 | `/then/oneOf/2.month` | 18 | 100.0% |
 | `/then/oneOf/1.day` | 13 | 100.0% |
 | `/then/oneOf/1.month` | 13 | 100.0% |
-| `months` | 6 | 1.6% |
+| `months` | 6 | 1.5% |
 | `/then/oneOf/0.day` | 2 | 100.0% |
 | `/then/oneOf/0.month` | 2 | 100.0% |
 | `season` | 1 | 0.3% |
 
-### `person` -- 307 instances in `data/`
+### `person` -- 310 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `given` | 307 | 100.0% |
-| `surname` | 307 | 100.0% |
-| `birth` | 107 | 34.9% |
-| `death` | 105 | 34.2% |
+| `given` | 310 | 100.0% |
+| `surname` | 310 | 100.0% |
+| `birth` | 110 | 35.5% |
+| `death` | 108 | 34.8% |
 | `suffix` | 0 | 0.0% |
 
 ### `phylogeny` -- 36 instances in `data/`
@@ -329,15 +328,15 @@ property.
 | `notes` | 7 | 19.4% |
 | `characteristics` | 1 | 2.8% |
 
-### `publication` -- 174 instances in `data/`
+### `publication` -- 177 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `name` | 174 | 100.0% |
-| `editors` | 10 | 5.7% |
-| `place` | 8 | 4.6% |
-| `publisher` | 8 | 4.6% |
-| `notes` | 5 | 2.9% |
+| `name` | 177 | 100.0% |
+| `editors` | 10 | 5.6% |
+| `place` | 8 | 4.5% |
+| `publisher` | 8 | 4.5% |
+| `notes` | 5 | 2.8% |
 | `type` | 0 | 0.0% |
 
 ### `range` -- 77 instances in `data/`
@@ -372,12 +371,12 @@ property.
 | `ranks/items.endings/items.before` | 1 | 25.0% |
 | `suffixes` | 1 | 100.0% |
 
-### `relationalFields` -- 5784 instances in `data/`
+### `relationalFields` -- 5934 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `synonyms` | 365 | 6.3% |
-| `moved` | 49 | 0.8% |
+| `synonyms` | 373 | 6.3% |
+| `moved` | 81 | 1.4% |
 | `type` | 6 | 0.1% |
 | `corrected` | 5 | 0.1% |
 | `non` | 5 | 0.1% |
@@ -410,31 +409,31 @@ property.
 | `/additionalProperties.notes` | 6 | 50.0% |
 | `/additionalProperties.equivalent` | 2 | 16.7% |
 
-### `sectionFields` -- 5784 instances in `data/`
+### `sectionFields` -- 5934 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `sectionEnd` | 23 | 0.4% |
-| `sectionStart` | 23 | 0.4% |
-| `sectionStart.section` | 23 | 100.0% |
-| `sectionStart.citedAs` | 12 | 52.2% |
-| `sectionStart.new` | 12 | 52.2% |
-| `sectionStart.pages` | 12 | 52.2% |
-| `sectionStart.notes` | 5 | 21.7% |
-| `sectionStart.designation` | 3 | 13.0% |
-| `sectionStart.editorial` | 1 | 4.3% |
+| `sectionEnd` | 25 | 0.4% |
+| `sectionStart` | 25 | 0.4% |
+| `sectionStart.section` | 25 | 100.0% |
+| `sectionStart.new` | 14 | 56.0% |
+| `sectionStart.pages` | 14 | 56.0% |
+| `sectionStart.citedAs` | 12 | 48.0% |
+| `sectionStart.notes` | 5 | 20.0% |
+| `sectionStart.designation` | 3 | 12.0% |
+| `sectionStart.editorial` | 1 | 4.0% |
 
-### `sectionRecord` -- 12 instances in `data/`
+### `sectionRecord` -- 14 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `authority` | 12 | 100.0% |
-| `citedAs` | 12 | 100.0% |
-| `name` | 12 | 100.0% |
-| `notes` | 5 | 41.7% |
+| `authority` | 14 | 100.0% |
+| `citedAs` | 14 | 100.0% |
+| `name` | 14 | 100.0% |
+| `notes` | 5 | 35.7% |
 | `/if.name` | 3 | 100.0% |
-| `designation` | 3 | 25.0% |
-| `needsQualification` | 1 | 8.3% |
+| `designation` | 3 | 21.4% |
+| `needsQualification` | 1 | 7.1% |
 
 ### `sourceAlias` -- 4 instances in `data/`
 
@@ -442,22 +441,22 @@ property.
 |---|---|---|
 | `aliasOf` | 4 | 100.0% |
 
-### `taxonRecord` -- 2830 instances in `data/`
+### `taxonRecord` -- 2874 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `name` | 2800 | 98.9% |
-| `authority` | 2607 | 92.1% |
-| `/if.authority` | 2606 | 100.0% |
-| `rank` | 969 | 34.2% |
-| `notes` | 239 | 8.4% |
-| `altSpellingOf` | 149 | 5.3% |
-| `lang` | 76 | 2.7% |
+| `name` | 2844 | 99.0% |
+| `authority` | 2651 | 92.2% |
+| `/if.authority` | 2650 | 100.0% |
+| `rank` | 1020 | 35.5% |
+| `notes` | 253 | 8.8% |
+| `altSpellingOf` | 149 | 5.2% |
+| `lang` | 76 | 2.6% |
 | `originalParent` | 71 | 2.5% |
 | `altRankOf` | 51 | 1.8% |
 | `vulgarSpellingOf` | 45 | 1.6% |
-| `homonym` | 16 | 0.6% |
-| `needsQualification` | 13 | 0.5% |
+| `homonym` | 18 | 0.6% |
+| `needsQualification` | 17 | 0.6% |
 | `bracket` | 9 | 0.3% |
 | `designation` | 4 | 0.1% |
 | `holotype` | 1 | 0.0% |
@@ -482,34 +481,34 @@ property.
 | `stageBoundary` | 0 | 0.0% |
 | `stageRange` | 0 | 0.0% |
 
-### `translatedNode` -- 15 instances in `data/`
+### `translatedNode` -- 16 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `by` | 1 | 6.7% |
+| `by` | 1 | 6.2% |
 
-### `tree` -- 6577 instances in `data/`
+### `tree` -- 6727 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `children` | 2220 | 33.8% |
-| `pages` | 1185 | 18.0% |
-| `rank` | 601 | 9.1% |
-| `parents` | 329 | 5.0% |
-| `authority` | 326 | 5.0% |
+| `children` | 2237 | 33.3% |
+| `pages` | 1222 | 18.2% |
+| `rank` | 639 | 9.5% |
+| `authority` | 337 | 5.0% |
+| `parents` | 335 | 5.0% |
 | `bracketEnd` | 28 | 0.4% |
 | `bracketStart` | 28 | 0.4% |
 | `mergeInto` | 14 | 0.2% |
 | `altPlacements` | 6 | 0.1% |
 
-### `treeDocument` -- 223 instances in `data/`
+### `treeDocument` -- 227 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `taxonomies` | 219 | 98.2% |
-| `prefixes` | 31 | 13.9% |
-| `phylogenies` | 25 | 11.2% |
-| `notes` | 19 | 8.5% |
+| `taxonomies` | 223 | 98.2% |
+| `prefixes` | 31 | 13.7% |
+| `phylogenies` | 25 | 11.0% |
+| `notes` | 20 | 8.8% |
 | `unused` | 5 | 2.2% |
 | `contexts` | 2 | 0.9% |
 | `assumptions` | 1 | 0.4% |
@@ -522,11 +521,11 @@ property.
 | `fixation` | 2 | 33.3% |
 | `fixedBy` | 0 | 0.0% |
 
-### `uncertaintyFields` -- 6577 instances in `data/`
+### `uncertaintyFields` -- 6727 instances in `data/`
 
 | property | data | data % |
 |---|---|---|
-| `provisional` | 129 | 2.0% |
+| `provisional` | 140 | 2.1% |
 | `tentative` | 17 | 0.3% |
 | `questionable` | 14 | 0.2% |
 | `quotedParent` | 14 | 0.2% |
@@ -659,17 +658,17 @@ property.
 
 ### `phylogeny#/$defs/rank`
 
-23 of 31 members used, 1512 occurrences.
+23 of 31 members used, 1601 occurrences.
 
 | value | count |
 |---|---|
-| `'Class'` | 283 |
-| `'Order'` | 267 |
-| `'species'` | 241 |
+| `'Order'` | 305 |
+| `'Class'` | 285 |
+| `'species'` | 273 |
 | `'Family'` | 222 |
-| `'genus'` | 136 |
+| `'genus'` | 147 |
+| `'variety'` | 65 |
 | `'Phylum'` | 59 |
-| `'variety'` | 59 |
 | `'Subphylum'` | 52 |
 | `'Superfamily'` | 33 |
 | `'Subfamily'` | 26 |
@@ -843,25 +842,25 @@ Tests whether each multi-type declaration is actually needed.
 |---|---|---|---|---|
 | `phylogeny#/$defs/article/properties/articleNumber` | integer/string | intx5, strx2 | `e1465`, `e38296` | - |
 | `phylogeny#/$defs/article/properties/chapter` | integer/string | strx2 | `III. Stamm. Echinodermat...`, `Report of E. Billings, E...` | integer |
-| `phylogeny#/$defs/article/properties/number` | integer/string | intx172, strx13 | `Supplement`, `1/2`, `Part 4, No. 220`, `Adv. Pr.` | - |
+| `phylogeny#/$defs/article/properties/number` | integer/string | intx186, strx13 | `Supplement`, `1/2`, `Part 4, No. 220`, `Adv. Pr.` | - |
 | `phylogeny#/$defs/article/properties/pages/items` | integer/string | intx474, strx46 | `S637`, `S634`, `S631`, `S627` | - |
 | `phylogeny#/$defs/article/properties/plates/items` | integer/string | intx31, strx17 | `II`, `I`, `XXXVII`, `VI` | - |
 | `phylogeny#/$defs/article/properties/series` | integer/string | intx10, strx4 | `A`, `New Series` | - |
-| `phylogeny#/$defs/article/properties/volume` | integer/string | intx272, strx26 | `New Series`, `3: Echinoderms: Notes fo...`, `Report of the 68th Meeti...`, `Eighty-Three Plates to A...` | - |
-| `phylogeny#/$defs/citationNumber` | integer/string | intx2649, strx267 | `IV`, `II`, `IX`, `VIII` | - |
+| `phylogeny#/$defs/article/properties/volume` | integer/string | intx286, strx26 | `New Series`, `3: Echinoderms: Notes fo...`, `Report of the 68th Meeti...`, `Eighty-Three Plates to A...` | - |
+| `phylogeny#/$defs/citationNumber` | integer/string | intx2787, strx316 | `IV`, `X`, `VII`, `VIII` | - |
 | `phylogeny#/$defs/cladisticFields/properties/matrix/items` | integer/string | intx139, strx5 | `?` | - |
 | `phylogeny#/$defs/contexts` | object/null | dictx59, nullx41 | - | - |
 | `phylogeny#/$defs/editorialObject/properties/corrections/properties/authority/properties/auth` | array/null | nullx7, listx1 | - | - |
-| `phylogeny#/$defs/editorialObject/properties/inferred` | boolean/array | listx25, boolx14 | - | - |
-| `phylogeny#/$defs/locationFields/properties/illustrations` | array/null | listx169, nullx12 | - | - |
+| `phylogeny#/$defs/editorialObject/properties/inferred` | boolean/array | boolx41, listx26 | - | - |
+| `phylogeny#/$defs/locationFields/properties/illustrations` | array/null | listx190, nullx13 | - | - |
 | `phylogeny#/$defs/materialsFields/properties/material` | array/null | listx116, nullx9 | - | - |
 | `phylogeny#/$defs/materialsFields/properties/ranges` | array/null | listx72, nullx41 | - | - |
-| `phylogeny#/$defs/person/properties/death` | integer/null | intx104, nullx1 | - | - |
+| `phylogeny#/$defs/person/properties/death` | integer/null | intx107, nullx1 | - | - |
 | `phylogeny#/$defs/phylogeny/properties/characteristics/items/additionalProperties/additionalProperties` | integer/string | intx40 | - | string |
 | `phylogeny#/$defs/printedNumber` | string/integer | intx668, strx352 | `B`, `A`, `S-3965`, `SH-2` | - |
-| `phylogeny#/$defs/relationalFields/properties/synonyms` | array/null | listx365 | - | null |
-| `phylogeny#/$defs/sectionRecord/properties/name` | string/null | strx9, nullx3 | `Stellatae`, `Radiatae`, `Multivalvia`, `Lunatae` | - |
+| `phylogeny#/$defs/relationalFields/properties/synonyms` | array/null | listx373 | - | null |
+| `phylogeny#/$defs/sectionRecord/properties/name` | string/null | strx11, nullx3 | `Stellatae`, `Radiatae`, `Multivalvia`, `Lunatae` | - |
 | `phylogeny#/$defs/taxonRecord/properties/holotype/additionalProperties/items` | array/string/integer | strx1 | `E23470` | array, integer |
-| `phylogeny#/$defs/taxonRecord/properties/name` | string/null | strx2575, nullx225 | `Zoophytes`, `Zoophyta`, `Zoophites`, `Zoanthida` | - |
-| `tree#/properties/children` | array/null | listx2217, nullx3 | - | - |
+| `phylogeny#/$defs/taxonRecord/properties/name` | string/null | strx2605, nullx239 | `Zoophytes`, `Zoophyta`, `Zoophites`, `Zoanthida` | - |
+| `tree#/properties/children` | array/null | listx2231, nullx6 | - | - |
 

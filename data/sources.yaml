@@ -94,7 +94,15 @@
   identifiers:
     url: https://www.biodiversitylibrary.org/bibliography/11527
   notes: Suppressed by ICZN Opinion 185. (1944)
-1761_gaertner:
+1761_linnaeus:
+  book: fauna-svecica
+  pubDate:
+    year: 1761
+  authors:
+  - linnaeus
+  identifiers:
+    url: https://www.biodiversitylibrary.org/item/100333#page/11/mode/1up
+1762_gaertner:
   title: >
     An Account of the Urtica Marina: In a Letter to
     Mr. Peter Collinson, F. R. S. from Joseph Gaertner, M. D.
@@ -104,19 +112,11 @@
   - 75
   - 85
   pubDate:
-    year: 1761
+    year: 1762
   authors:
   - gaertner
   identifiers:
-    url: https://archive.org/details/philtrans08475937
-1761_linnaeus:
-  book: fauna-svecica
-  pubDate:
-    year: 1761
-  authors:
-  - linnaeus
-  identifiers:
-    url: https://www.biodiversitylibrary.org/item/100333#page/11/mode/1up
+    url: http://www.biodiversitylibrary.org/page/50911829
 1766_linnaeus:
   book: systema-naturae-12th-ed
   volume: 1
@@ -127,6 +127,22 @@
   - linnaeus
   identifiers:
     url: https://www.biodiversitylibrary.org/item/137337#page/5/mode/1up
+1766a_pallas:
+  book: elenchus-zoophytorum
+  pubDate:
+    year: 1766
+  authors:
+  - pallas
+  identifiers:
+    url: https://www.biodiversitylibrary.org/bibliography/6595
+1766b_pallas:
+  book: medicinae
+  pubDate:
+    year: 1766
+  authors:
+  - pallas
+  identifiers:
+    url: https://www.biodiversitylibrary.org/bibliography/69851
 1767_gunnerus:
   title: Beskrifning på trenne Norrska sjö-kräk, sjö-pungar kallade
   journal: konglinga
@@ -155,6 +171,86 @@
   - linnaeus
   identifiers:
     url: https://www.biodiversitylibrary.org/item/137240#page/5/mode/1up
+1767a_pallas:
+  book: spicilegia
+  volume: 1
+  number: 1
+  pubDate:
+    year: 1767
+  authors:
+  - pallas
+  identifiers:
+    url: http://www.biodiversitylibrary.org/page/27817652
+1767b_pallas:
+  book: spicilegia
+  volume: 1
+  number: 2
+  pubDate:
+    year: 1767
+  authors:
+  - pallas
+  identifiers:
+    url: http://www.biodiversitylibrary.org/page/27817671
+1767c_pallas:
+  book: spicilegia
+  volume: 1
+  number: 3
+  pubDate:
+    year: 1767
+  authors:
+  - pallas
+  identifiers:
+    url: http://www.biodiversitylibrary.org/page/27817709
+1767d_pallas:
+  book: spicilegia
+  volume: 1
+  number: 4
+  pubDate:
+    year: 1767
+  authors:
+  - pallas
+  identifiers:
+    url: http://www.biodiversitylibrary.org/page/27817753
+1769a_pallas:
+  book: spicilegia
+  volume: 1
+  number: 5
+  pubDate:
+    year: 1769
+  authors:
+  - pallas
+  identifiers:
+    url: http://www.biodiversitylibrary.org/page/27817783
+1769b_pallas:
+  book: spicilegia
+  volume: 1
+  number: 6
+  pubDate:
+    year: 1769
+  authors:
+  - pallas
+  identifiers:
+    url: http://www.biodiversitylibrary.org/page/27817833
+1769c_pallas:
+  book: spicilegia
+  volume: 1
+  number: 7
+  pubDate:
+    year: 1769
+  authors:
+  - pallas
+  identifiers:
+    url: http://www.biodiversitylibrary.org/page/27817881
+1770_pallas:
+  book: spicilegia
+  volume: 1
+  number: 8
+  pubDate:
+    year: 1770
+  authors:
+  - pallas
+  identifiers:
+    url: http://www.biodiversitylibrary.org/page/27817937
 1772_gyllenhaal:
   title: På de så kallade Crystall-åplen och kalk-bollar, såsom petreficerade Djur af Echini genus, eller defs når maste flågtingär
   journal: kungliga-svenska
@@ -171,6 +267,16 @@
     months: [7, 8, 9]
   authors:
   - gyllenhaal
+1772_pallas:
+  book: spicilegia
+  volume: 1
+  number: 9
+  pubDate:
+    year: 1772
+  authors:
+  - pallas
+  identifiers:
+    url: http://www.biodiversitylibrary.org/page/27823085
 1773_müller.o.f:
   book: vermium-t-e-f
   volume: 1
@@ -201,6 +307,16 @@
   - müller.o.f
   identifiers:
     url: https://www.biodiversitylibrary.org/item/100154#page/5/mode/1up
+1774_pallas:
+  book: spicilegia
+  volume: 1
+  number: 10
+  pubDate:
+    year: 1774
+  authors:
+  - pallas
+  identifiers:
+    url: http://www.biodiversitylibrary.org/page/27823183
 1774_van phelsum:
   book: brief-we
   pubDate:
@@ -215,6 +331,16 @@
     year: 1776
   authors:
   - müller.o.f
+1776_pallas:
+  book: spicilegia
+  volume: 1
+  number: 11
+  pubDate:
+    year: 1776
+  authors:
+  - pallas
+  identifiers:
+    url: http://www.biodiversitylibrary.org/page/27823245
 1776_walch:
   title: Joh. Ernst Imm. Walchs lithologische Beobachtungen. Siebentes Stuck.
   journal: naturforscher
@@ -241,12 +367,42 @@
     inconsistent usage, but that rule does not apply above the Family level.
   identifiers:
     url: https://www.biodiversitylibrary.org/bibliography/11571
+1777_pallas:
+  book: spicilegia
+  volume: 2
+  number: 12
+  pubDate:
+    year: 1777
+  authors:
+  - pallas
+  identifiers:
+    url: http://www.biodiversitylibrary.org/page/27823343
 1778_leske:
   book: additamenta-klein
   pubDate:
     year: 1778
   authors:
   - leske
+1779_pallas:
+  book: spicilegia
+  volume: 2
+  number: 13
+  pubDate:
+    year: 1779
+  authors:
+  - pallas
+  identifiers:
+    url: http://www.biodiversitylibrary.org/page/27823423
+1780_pallas:
+  book: spicilegia
+  volume: 2
+  number: 14
+  pubDate:
+    year: 1780
+  authors:
+  - pallas
+  identifiers:
+    url: http://www.biodiversitylibrary.org/page/27823475
 1788a_gmelin:
   book: systema-naturae-13th-ed
   volume: 1

@@ -45,6 +45,11 @@ bassler:
   given: Ray S.
   birth: 1878
   death: 1961
+baster:
+  surname: Baster
+  given: Job
+  birth: 1711
+  death: 1775
 bather:
   surname: Bather
   given: F. A.
@@ -120,6 +125,12 @@ brown.i.a:
   surname: Brown
   given: Ida A.
   notes: Credited as "Ida A. Brown (Mrs. W. R. Browne)" in at least one paper.
+browne.p:
+  surname: Browne
+  given: Patrick
+  birth: 1720
+  death: 1790
+  notes: Birth year approximate
 bruguière:
   surname: Bruguière
   given: Jean Guillaume
@@ -772,6 +783,11 @@ orłowski:
 owen:
   surname: Owen
   given: Alan W.
+pallas:
+  surname: Pallas
+  given: Peter Simon
+  birth: 1741
+  death: 1811
 pan.y:
   surname: Pan
   given: Yu

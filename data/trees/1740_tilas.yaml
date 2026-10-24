@@ -1,0 +1,13 @@
+taxonomies:
+- mineralTaxon: kalckballar_tilas_1740
+  new: true
+  pages: 196
+  illustrations:
+  - plate: II
+    figures: 18
+  notes: >
+    Page 196 is correct in the first printing of the journal.
+    For the more commonly available later printings, the page
+    number shifts to 204.  The plate is the same, although it
+    is incorrectly cited as Plate XI (which does not exist)
+    in Buch 1844.  Possibly an errneous round trip II -> 11 -> XI?
