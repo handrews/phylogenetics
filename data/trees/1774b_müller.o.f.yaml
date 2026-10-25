@@ -1,8 +1,10 @@
 taxonomies:
 - taxon: vermes
   children:
-  - taxon: infusoria-order
-  - taxon: helminthica-order
+  - taxon: infusoria
+    rank: Order
+  - taxon: helminthica
+    rank: Order
   - taxon: testacea
     rank: Order
     children:

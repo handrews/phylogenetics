@@ -4,9 +4,11 @@ taxonomies:
   children:
   - taxon: zoophytes-phylum
     children:
-    - taxon: échinodermes-class
+    - taxon: échinodermes
+      rank: Class
       children:
-      - taxon: pédicellés-order
+      - taxon: pédicellés
+        rank: Order
         new: true
         children:
         - taxon: asterias-family
@@ -35,7 +37,8 @@ taxonomies:
           - taxon: spatangus_leske_1778 # Lamarck, Klein
           - taxon: brissus # Klein
         - taxon: holothuria
-      - taxon: sans pédicellés-order
+      - taxon: sans pédicellés
+        rank: Order
         new: true
         children:
         - taxon: molpadia # Cuvier, Holothuroideans
@@ -50,4 +53,5 @@ taxonomies:
       - taxon: entozoa
     - taxon: acalèphes
     - taxon: polypes-class
-    - taxon: infusoires-class
+    - taxon: infusoires
+      rank: Class

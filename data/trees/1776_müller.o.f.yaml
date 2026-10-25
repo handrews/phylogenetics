@@ -8,7 +8,8 @@ taxonomies:
   - taxon: insecta
   - taxon: vermes
     children:
-    - taxon: infusoria-order
+    - taxon: infusoria
+      rank: Order
       children:
       - taxon: monas
       - taxon: volvox
@@ -23,7 +24,8 @@ taxonomies:
       - taxon: trichoda
       - taxon: vorticella
       - taxon: brachionus
-    - taxon: helminthica-order
+    - taxon: helminthica
+      rank: Order
       children:
       - taxon: gordius
       - taxon: ascaris

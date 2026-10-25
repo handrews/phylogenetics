@@ -6612,7 +6612,7 @@ helix:
     source: 1758_linnaeus
     pages: 768
   citedAs: 293. HELIX.
-helminthica-order:
+helminthica:
   name: Helminthica
   rank: Order
   authority:
@@ -10098,7 +10098,7 @@ pedicellaria:
   name: Pedicellaria
   authority:
     source: 1776_müller.o.f
-pédicellés-order:
+pédicellés:
   name: Pédicellés
   rank: Order
   lang: FR
@@ -12001,7 +12001,7 @@ sanguisuga:
   name: Sanguisuga
   authority:
     source: 1789a_bruguière
-sans pédicellés-order:
+sans pédicellés:
   name: Sans Pédicellés
   rank: Order
   lang: FR

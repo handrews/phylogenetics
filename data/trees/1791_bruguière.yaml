@@ -11,7 +11,8 @@ notes: |
 taxonomies:
 - taxon: vermes
   children:
-  - taxon: infusoria-order
+  - taxon: infusoria
+    rank: Order
   - taxon: intestina
     rank: Order
   - taxon: mollusca

@@ -181,7 +181,8 @@ taxonomies:
         - taxon: cristatella
           new: true
         - taxon: vorticella
-      - taxon: infusoires-section
+      - taxon: infusoires
+        rank: section
         notes: |
           Les trèspetits isolés, appelés vulgairement ANIMAUX INFUSOIRES.
           (These very small, isolated organisms are commonly called
