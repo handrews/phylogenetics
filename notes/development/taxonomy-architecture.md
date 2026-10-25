@@ -4,7 +4,17 @@
 
 ## Principles
 
+### Buch
+
 [quote from von Buch, which I sadly have misplaced for now]
+
+### Müller 1773 Preface
+
+If one wishes to properly understand and distinguish natural objects, they must be examined from every perspective and at every stage—to the extent that human frailty allows. While this makes the study more difficult, it also renders it more rewarding and precise; although the number of genera may increase, this is the only true and genuine path by which species can be determined. This is the primary and ultimate goal of all scientific endeavor; any system, method, or genus devised within the vast confines of human knowledge is, in the end, merely arbitrary. Nature recognizes only one fundamental distinction among living bodies—that between living beings and inanimate matter—and generally rejects the divisions into Classes, Orders, Families, and Genera imposed by systematists. The objects of nature are so interconnected that any classification scheme—devised by humans for the sake of convenience—can never be applied with absolute rigor when it comes to individual species. In broader classifications, errors arise not only from the criteria derived from the internal and external structure of the organisms, but also from those based on their life... Not even among those things that are perceived by the naked eye do they present clear distinctions. Therefore, there is a single family—and one FATHER of all—who has marked every species, from the Monad up to the tower-bearing Elephant, with a consistent characteristic; yet He endowed man alone with an inventive soul.
+
+However, since our intellect tends to conflate a vast multitude of entities—lacking the necessary division and subdivision—resulting in a vague and chaotic understanding of species, a methodical description of things becomes absolutely essential. Thus, after long contemplation of this vast and sprawling array, it occurred to me that Nature herself—quite willingly—might be divided into two distinct orders, based on the presence or absence of a clearly discernible organ.
+
+### Actual principles
 
 Science Moves.
 
