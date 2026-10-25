@@ -1,10 +1,12 @@
 taxonomies:
-- taxon: echinus
-  notes: |
-    On page 134 rather than 136 as some later sources indicate.
-    "Echinus" not used, instead states "[resembles a] valvulum echini"
-  children:
-  - openTaxon: echinus-sp_linnaeus_1741
-    pages: 134
-    illustrations:
-    - page: 134
+- openTaxon: unnamed-sp_linnaeus_1741
+  aff:
+    taxon: echinus
+  pages: 134
+  illustrations:
+  - page: 134
+  editorial:
+    inferred: [aff]
+    basis: >
+      On page 134 rather than 136 as some later sources indicate.
+      "Echinus" not used, instead states "[resembles a] valvulum echini"
