@@ -117,6 +117,19 @@
   - gaertner
   identifiers:
     url: http://www.biodiversitylibrary.org/page/50911829
+1763_andreae:
+  title: >
+    Briefe aus der Schweiz nach Hannover geschrieben,
+    in dem Jahre 1763: Brief I & II,
+  journal: hanover-mag
+  pubDate:
+    year: 1763
+  authors:
+  - andreae
+  notes: >
+    ICZN Opinion 636 credits this as 1763, although I cannot find a clear
+    citation proving it.  Some other sources suggest Vol. 2 No. 1 pp 1–16,
+    January 2nd, 1974
 1766_linnaeus:
   book: systema-naturae-12th-ed
   volume: 1

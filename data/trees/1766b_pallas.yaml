@@ -258,7 +258,7 @@ taxonomies:
       provisional: true
     - taxon: asterias
       provisional: true
-    - taxon: encrinus
+    - taxon: encrinus_andreae_1763
       provisional: true
   - openTaxon: mollusca-order-3_pallas_1766
     children:
@@ -462,7 +462,7 @@ taxonomies:
         openTaxon: mollusca-order-2_pallas_1766
         rank: Order
       children: null
-    - taxon: encrinus
+    - taxon: encrinus_andreae_1763
       citedAs: Encrinorium
       pages: 153
       moved:

@@ -1,0 +1,21 @@
+taxonomies:
+- taxon: encrinus_andreae_1763
+  new: true
+  rank: genus
+  notes: Original page number unknown.
+  children:
+  - taxon: coralloides_andreae_1763
+    citedAs: Encrinus Coralloides
+    new: true
+    notes: Original page number unknown.
+    children:
+    - taxon: divergentes_andreae_1763
+      citedAs: Encrinos coralloidaeos divergentes
+      rank: variety
+      new: true
+      notes: Original page number unknown.
+    - taxon: convergentes_andreae_1763
+      citedAs: Encrinos coralloidaeos convergentes
+      rank: variety
+      new: true
+      notes: Original page number unknown.

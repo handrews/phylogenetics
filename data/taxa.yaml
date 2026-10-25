@@ -2964,6 +2964,22 @@ complanata_pallas_1766:
       figures:
       - [19, 26]
   citedAs: 9. APHRODITA COMPLANATA.
+complanata_fabricius_1780:
+  name: complanata
+  authority:
+    auth: [Fabricius]
+    year: 1780
+  notes: Ascidia
+complanatus_gmelin_1791a:
+  name: complanatus
+  authority:
+    source: 1791a_gmelin
+  notes: Spatangus (Leske)
+complanatus_lamarck_1816:
+  name: complanatus
+  authority:
+    source: 1816b_lamarck
+  notes: Cassidulus
 compressus_lamarck_1816:
   name: compressus
   authority:
@@ -3043,6 +3059,13 @@ conus:
     source: 1758_linnaeus
     pages: 712
   citedAs: 284. CONUS.
+convergentes_andreae_1763:
+  name: convergentes
+  rank: variety
+  authority:
+    source: 1763_andreae
+  citedAs: Encrinos coralloidaeos convergentes
+  notes: Original page number unknown.
 convolutus_hall_1852:
   name: convolutus
   authority:
@@ -3060,22 +3083,6 @@ coopericystis:
   authority:
     auth: [parsley]
     year: 1970
-complanata_fabricius_1780:
-  name: complanata
-  authority:
-    auth: [Fabricius]
-    year: 1780
-  notes: Ascidia
-complanatus_gmelin_1791a:
-  name: complanatus
-  authority:
-    source: 1791a_gmelin
-  notes: Spatangus (Leske)
-complanatus_lamarck_1816:
-  name: complanatus
-  authority:
-    source: 1816b_lamarck
-  notes: Cassidulus
 cor anguinum_leske_1778:
   name: cor anguinum
   authority:
@@ -3101,6 +3108,13 @@ corallium:
   name: Corallium
   authority:
     source: 1798_cuvier
+coralloides_andreae_1763:
+  name: coralloides
+  rank: species
+  authority:
+    source: 1763_andreae
+  citedAs: Encrinus Coralloides
+  notes: Original page number unknown.
 corallum_jaekel_1918:
   name: corallum
   authority:
@@ -4204,6 +4218,13 @@ disterminus_briggs.d.e.g_siveter.de.j_siveter.da.j_sutton.m.d_rahman_2017:
   name: disterminus
   authority:
     source: 2017_briggs.d.e.g_siveter.de.j_siveter.da.j_sutton.m.d_rahman
+divergentes_andreae_1763:
+  name: divergentes
+  rank: variety
+  authority:
+    source: 1763_andreae
+  citedAs: Encrinos coralloidaeos divergentes
+  notes: Original page number unknown.
 dizonida:
   name: Dizonida
   rank: Order
@@ -4960,29 +4981,44 @@ encrinites:
     It's a bit unclear if "alt spelling" is correct; if not, the authority
     varies including Blumenbach 1802 (or 1803?), J.S. Miller 1821, or
     Gray 1840.  The term was also used for crinoid fragment rocks in general.
+encrinus_andreae_1763:
+  name: Encrinus
+  needsQualification: true
+  authority:
+    source: 1763_andreae
+  notes: >
+    Andreae (1763) credit suppressed by ICZN ruling, although noted as earliest
+    use —  Opinion 636 Bulletin of Zoological Nomenclature 19, 262-265 (1962) -
+    via Official Lists and Indexes of Names in Zoology
+encrinus_andreae_1776:
+  name: Encrinus
+  needsQualification: true
+  authority:
+    auth: [andreae]
+    year: 1776
+  notes: >
+    Andreae (1776) credit suppressed separately from 1763 by ICZN ruling, —
+    Opinion 636 Bulletin of Zoological Nomenclature 19, 262-265 (1962) -
+    via Official Lists and Indexes of Names in Zoology
 encrinus:
   name: Encrinus
   authority:
     source: 1801_lamarck
-  notes: |
-    Andreae (1764) credit suppressed by ICZN ruling —
-    International Commission on Zoological Nomenclature. Opinion 636
+  notes: >
     Encrinus Lamarck, 1801 (Grinoidea); validation under the Plenary Powers
-    in its accustomed sense.
+    in its accustomed sense. Opinion 636
     Bulletin of Zoological Nomenclature 19, 262-265 (1962) -
     via Official Lists and Indexes of Names in Zoology
-encrinus_andreae_1764:
-  name: Encrinus
-  homonym: true
-  authority:
-    auth: [andreae]
-    year: 1764
 encrinus_blumenbach_1779:
   name: Encrinus
   homonym: true
   authority:
     auth: [Blumenbach]
     year: 1779
+  notes: >
+    Blumenbach (1779) credit suppressed by ICZN ruling,
+    use —  Opinion 636 Bulletin of Zoological Nomenclature 19, 262-265 (1962) -
+    via Official Lists and Indexes of Names in Zoology
 encrinus_linnaeus_1758:
   name: encrinus
   rank: species
@@ -13906,6 +13942,20 @@ unicolor_leske_1778:
   rank: variety
   authority:
     source: 1778_leske
+unnamed-genus_linnaeus_1741:
+  name: null
+  rank: genus
+  authority:
+    source: 1741_linnaeus
+    pages: 134
+unnamed-sp_linnaeus_1741:
+  name: null
+  rank: species
+  authority:
+    source: 1741_linnaeus
+    pages: 134
+    illustrations:
+    - page: 134
 uractinina:
   name: Uractinina
   rank: Suborder
