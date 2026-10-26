@@ -30,8 +30,3 @@ taxonomies:
       new: true
     - taxon: vorticella
     - taxon: brachionus
-  - taxon: helminthica
-    rank: Order
-    new: true
-  - taxon: testacea
-    rank: Order

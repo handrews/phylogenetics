@@ -1,10 +1,15 @@
 taxonomies:
-- taxon: vermes
+- mergeInto: [1773_müller, 0]
+  taxon: vermes
   children:
   - taxon: infusoria
     rank: Order
   - taxon: helminthica
     rank: Order
+    pages: 5
+    new: true
+    notes: >
+      First listed in Müller 1773, but only fully defined here.
     children:
     - taxon: hydra
     - taxon: tubularia
@@ -15,5 +20,3 @@ taxonomies:
     - taxon: ascaris
     - taxon: hirudo
     - taxon: fasciola
-  - taxon: testacea
-    rank: Order

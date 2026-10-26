@@ -1,5 +1,6 @@
 taxonomies:
-- taxon: vermes
+- mergeInto: [1773_müller, 0]
+  taxon: vermes
   children:
   - taxon: infusoria
     rank: Order
@@ -14,7 +15,10 @@ taxonomies:
       new: true
     - taxon: carychium
       new: true
-      notes: Some sources say Müller 1773 for this, but 1774 for others?
+      notes: >
+        Some sources say Müller 1773 for this, presumably because it was
+        included in lists in volume 1, part 1, but it is only fully
+        defined here.
     - taxon: buccinum
     - taxon: planorbis
       new: true

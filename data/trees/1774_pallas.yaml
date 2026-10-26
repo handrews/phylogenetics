@@ -1,0 +1,105 @@
+taxonomies:
+- taxon: lumbricus
+  pages: 3
+  children:
+  - taxon: echiurus_pallas_1766
+    pages: 3
+  - taxon: edulis_pallas_1774
+    new: true
+    pages: 10
+  - taxon: phalloides_pallas_1774
+    new: true
+    pages: 12
+  - taxon: oxyurus_pallas_1774
+    new: true
+    pages: 15
+- taxon: fasciola
+  pages: 17
+  children:
+  - taxon: ventricosa_pallas_1774
+    new: true
+    pages: 17
+  - taxon: quadrangularis_pallas_1774
+    new: true
+    pages: 20
+  - taxon: fusca_pallas_1774
+    new: true
+    pages: 21
+  - taxon: punctatus_pallas_1774
+    new: true
+    pages: 23
+- taxon: limax
+  pages: 19
+  children:
+  - taxon: lanceolatus_pallas_1774
+    new: true
+    pages: 19
+    notes: A lancelet
+- taxon: ascidia
+  pages: 24
+  children:
+  - taxon: mamillaris_pallas_1774
+    new: true
+    pages: 24
+  - taxon: clauata_pallas_1774
+    new: true
+    pages: 25
+- taxon: holothurium
+  pages: 26
+  children:
+  - taxon: zonarium_pallas_1774
+    new: true
+    pages: 26
+    notes: A salp
+- taxon: clione
+  pages: 28
+  children:
+  - taxon: borealis_pallas_1774
+    new: true
+    pages: 28
+- taxon: medusa
+  pages: 29
+  children:
+  - taxon: frondosa_pallas_1774
+    new: true
+    pages: 29
+- taxon: echinus
+  pages: 31
+  children:
+  - taxon: calamaris_pallas_1774
+    new: true
+    pages: 31
+- taxon: buccinum
+  pages: 33
+  children:
+  - taxon: geuersianum_pallas_1774
+    new: true
+    pages: 33
+    illustrations:
+    - plate: III
+      figures: [1, 2]
+  - taxon: monodon_pallas_1774
+    new: true
+    pages: 33
+    illustrations:
+    - plate: III
+      figures: [3, 4]
+- taxon: turbo
+  pages: 33
+  children:
+  - taxon: principalis_pallas_1774
+    new: true
+    pages: 33
+    illustrations:
+    - plate: III
+      figures: [5, 6]
+- openTaxon: testacea-indeterminate-genus_pallas_1774
+  new: true
+  pages: 34
+  children:
+  - openTaxon: testacea-indeterminate-sp_pallas_1774
+    new: true
+    pages: 34
+    illustrations:
+    - plate: V
+      figures: [24, 25]

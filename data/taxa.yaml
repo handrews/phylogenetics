@@ -6616,8 +6616,7 @@ helminthica:
   name: Helminthica
   rank: Order
   authority:
-    source: 1773_müller.o.f
-  notes: Authority uncertain
+    source: 1774a_müller.o.f
 hemicosmites:
   name: Hemicosmites
   authority:
@@ -11018,6 +11017,17 @@ punctata_lamarck_1816:
   authority:
     source: 1816a_lamarck
   notes: Asterias
+punctata_müller.o.f_1773:
+  name: punctata
+  authority:
+    source: 1773_müller.o.f
+  notes: Fasciola, but not the same as Fasciola punctata Pallas 1774.
+punctata_pallas_1774:
+  name: punctata
+  pages: 23
+  authority:
+    source: 1774_pallas
+  notes: Fasciola, but not the same as Fasciola punctata Müller 1773.
 punctatus_billings_1854:
   name: punctatus
   altSpellingOf: punctuatus_billings_1854
