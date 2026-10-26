@@ -1824,8 +1824,8 @@ botryoides_leske_1778:
 botryllus:
   name: Botryllus
   authority:
-    auth: [gaertner]
-    year: 1774
+    attributedTo: [gaertner]
+    source: 1774_pallas
 brachiatus_hall_1852_glyptaster:
   name: brachiatus
   originalParent: glyptaster
@@ -12806,8 +12806,8 @@ stellata_leske_1778:
 stellatus_gaertner_1774:
   name: stellatus
   authority:
-    auth: [gaertner]
-    year: 1774
+    atrributedTo: [gaertner]
+    source: 1774_pallas
 stellatus_hall_1866:
   name: stellatus
   authority:

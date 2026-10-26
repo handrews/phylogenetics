@@ -101,5 +101,72 @@ taxonomies:
     new: true
     pages: 34
     illustrations:
-    - plate: V
+    - plate: I
       figures: [24, 25]
+- taxon: botryllus
+  citedAs: Botryllus
+  authority:
+    attributedTo: [gaertner]
+  new: true
+  pages: 35
+  notes: >
+    Pallas notes that (unlike his own proposal of Alcyonium schlosseri),
+    Gaertner assigned the same organism to a distinct genus "on account
+    of its remarkable structure").
+  children:
+  - taxon: stellatus_gaertner_1774
+    citedAs: BOTRYLLUS ſtellatus GAERTNERI in Litter.
+    authority:
+      attributedTo: [gaertner]
+    new: true
+    pages: 37
+    synonyms:
+    - taxon: schlosseri_pallas_1766
+      citedAs: Alcyonium Schlofferi. El. Zooph. n. 208.
+      authority:
+        source: 1766a_pallas
+        pages: 208
+- taxon: distomus
+  citedAs: Diſtomus
+  authority:
+    attributedTo: [gaertner]
+  new: true
+  pages: 35
+  children:
+  - taxon: variolosus_gaertner_1774
+    citedAs: Diſtomus varioloſus GAERTNERI
+    authority:
+      attributedTo: [gaertner]
+    new: true
+    pages: 35
+- taxon: coryne
+  citedAs: Coryne
+  authority:
+    attributedTo: [gaertner]
+  notes: >
+    Figure 8.B.b. is mentioned, probably meaning plate IV although while there
+    are two drawings labeled 8, the right is labeled A and the left is
+    unlabeled except for several lower-case a (but not b) letters.
+  new: true
+  pages: 36
+  children:
+  - taxon: 
+
+- taxon: alcyonium
+  pages: 35
+  children:
+  - taxon: schlosseri_pallas_1766
+    citedAs: Alcyonium Schloſſeri
+    pages: 35
+    synonyms:
+    - taxon: stellatus_gaernter_1774
+      parents:
+      - taxon: botryllus
+  - taxon: ascidioides
+    citedAs: Alcyonium aſcidioides
+    new: true
+    pages: 35
+    synonyms:
+    - taxon: variolosus_gaertner_1774
+      parents:
+      - taxon: distomus
