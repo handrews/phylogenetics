@@ -1,4 +1,14 @@
-# Phylogenetic Research Tools
+# Welcoem to Phylohist!
+
+***Please Note:*** *This is a former hobby project that I am in the
+process of making into a proper piece of software.  The original code
+was, to put it mildly, casual and quirky.  It is also still purely
+a solo project, so improvements in methodology and project discipline
+happen as I get to them, balanced with advancing capabilities on my
+own personal priorities.  I am also working on humanizing the AI-written
+documentation.*
+
+## Phylogenetic Research Tools
 
 Science is always in motion.  Most online taxonomy or phylogeny
 databases attempt to show a consensus or accepted view, with
